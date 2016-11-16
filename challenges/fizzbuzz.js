@@ -17,6 +17,25 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+	let i = 1;
+	let arr = [];
+	
+	while(i <= num){
+		if(i % 15 === 0){
+			arr.push("fizzbuzz");
+		}else if(num % 5 === 0){
+			arr.push("buzz");
+
+		}else if( i % 3 === 0){
+			arr.push("fizz");
+		}else{
+			arr.push(i);
+		}
+		
+		i += 1;
+	}
+
+	return arr;
 
 }
 
