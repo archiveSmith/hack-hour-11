@@ -16,10 +16,10 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
+function fizzbuzz(num = 0) {
   const result = [];
 
-  if (num <= 0 || num === undefined || typeof num !== "number") {
+  if (num <= 0 || typeof num !== "number") {
   }
 
   else {
