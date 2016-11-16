@@ -17,7 +17,13 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  const result = []; // the array that we store our output in
+  for (var i = 1; i <= num; i++) { // loop from 1 to num
+    let f = i % 3 === 0, b = i % 5 === 0; // our fizz/buzz/fizzbuzz conditions
+    result.push(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i); // if f and b, push fizzbuzz, otherwise f = fizz, and b = buzz. if nothing matches, push i.
+  }
+  return result; // return our array.
 }
+
 
 module.exports = fizzbuzz;
