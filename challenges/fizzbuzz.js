@@ -30,4 +30,22 @@ function fizzbuzz(num) {
 }
 
 
+
+
+function fizzbuzz2(num){
+	const result = [];
+  let i = 1;
+  for (i; i <= num; i += 1) {
+  	result.push(i);
+  };
+  result.map(val => {
+  	if (i % 3 === 0) val = 'fizz';
+    if (i % 5 === 0) val = 'buzz';
+    if (i % 3 === 0 && i % 5 === 0) val = 'fizzbuzz';
+    return val;
+  })
+  return result;
+}
+
+
 module.exports = fizzbuzz;
