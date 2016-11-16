@@ -18,6 +18,29 @@
 
 function fizzbuzz(num) {
 
+  if (Number.isNaN(parseInt(num))) {
+    throw new Error('The given parameter is NaN');
+  } else if (num < 1) {
+    throw new Error('The fizzbuzz function takes in a number greater than 0.');
+  } 
+
+  const arr = [];
+  let counter = 1;
+
+  while (counter <= num) {
+    if (counter % 3 === 0 && counter % 5 === 0) {
+      arr.push('fizzbuzz');
+    } else if (counter % 3 === 0) {
+      arr.push('fizz');
+    } else if (counter % 5 === 0) {
+      arr.push('buzz');
+    } else {
+      arr.push(counter);
+    }
+    counter += 1;
+  }
+
+  return arr;
 }
 
 module.exports = fizzbuzz;
