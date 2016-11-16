@@ -18,7 +18,7 @@
 
 function fizzbuzz(num) {
   let i = 1;
-  const array = [];
+  const array = [;
 
   for (i; i <= num; i++) {
     let word = '';
