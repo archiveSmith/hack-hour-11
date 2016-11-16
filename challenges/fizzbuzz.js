@@ -16,7 +16,37 @@
 //                     'fizzbuzz',
 //                     16 ]
 
+
+//while with a counter
+//while if counter logic push it it new array
+
+
 function fizzbuzz(num) {
+	
+	if (num.constructor !== Number){
+		alert("You should only input numbers!!")
+	}
+	let counter = num;
+
+	let array = [];
+
+	while (counter > 0){
+		
+		if (counter % 3 === 0 && counter % 5 === 0){
+			array.push("fizzbuzz")
+		}
+		else if (counter % 5 === 0){
+			array.push("buzz")
+		}
+		else if (counter % 3 === 0){
+			array.push("fizz")
+		}
+		else {
+			array.push(counter)
+		}
+		counter--
+	}
+	return array;
 
 }
 
