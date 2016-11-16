@@ -17,7 +17,47 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+	//solution 1
+	/*
+	const arr = [];
+	let i = 1;
+	if (!isNaN(num)) {
+		for (; i <= num; i++) {
+			if (i % 3 === 0 && i % 5 === 0) {
+				arr.push("fizzbuzz");
+			}
+			else if (i % 3 === 0) {
+				arr.push("fizz");
+			} else if (i % 5 === 0) {
+				arr.push("buzz");
+			} else {
+				arr.push(i);
+			}
+		}
+	}
 
+	return arr;
+	*/
+
+	//solution 2
+	const arr = [];
+	let el;
+	let i = 1;
+ 
+ 	if (!isNaN(num)) {
+ 		for (; i <= num; i++) {
+			el = "";
+			if (i % 3 === 0) el = "fizz";
+
+			if (i % 5 === 0) el = el + "buzz";
+
+			if (!el) el = i;
+
+			arr.push(el);
+		}
+ 	}	
+
+	return arr;
 }
 
 module.exports = fizzbuzz;
