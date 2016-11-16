@@ -16,8 +16,50 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
 
+// vvv solution #1 vvv
+function fizzbuzz(num) {
+  const fizzBuzzArray = [];
+  let i = 1;
+  for (; i <= num; i++) {
+    if (i % 15 === 0) {
+      fizzBuzzArray.push('fizzbuzz');
+    } else if (i % 5 === 0) {
+      fizzBuzzArray.push('buzz');
+    } else if (i % 3 === 0) {
+      fizzBuzzArray.push('fizz');
+    } else {
+      fizzBuzzArray.push(i);
+    }
+  }
+
+  return fizzBuzzArray;
 }
 
+
+
+// vvv solution #1 reversed vvv
+function fizzbuzz2(num) {
+  const fizzBuzzArray = [];
+  let i = num;
+  for (; i >= 1; i--) {
+    if (i % 15 === 0) {
+      fizzBuzzArray.push('fizzbuzz');
+    } else if (i % 5 === 0) {
+      fizzBuzzArray.push('buzz');
+    } else if (i % 3 === 0) {
+      fizzBuzzArray.push('fizz');
+    } else {
+      fizzBuzzArray.push(i);
+    }
+  }
+
+  return fizzBuzzArray;
+}
+
+
+
 module.exports = fizzbuzz;
+
+
+
