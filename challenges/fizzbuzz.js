@@ -20,16 +20,16 @@ function fizzbuzz(num) {
     resultArray[0] = 1;
   }
   
-	for (i; i<len; i++) {
+	for (i; i<=len; i++) {
 		if (i%3 === 0) {
 			result += "fizz";
 		}
 		if (i%5 === 0) {
 			result += "buzz";
 		} 
-    if (i%3 !== 0 && i%5 !== 0) {
-      result = i;
-    }
+	    if (i%3 !== 0 && i%5 !== 0) {
+	      result = i;
+	    }
 		resultArray.push(result);
 		result = "";
 	}
