@@ -27,5 +27,12 @@
     "type": "git",
     "url": "git+https://github.com/CodesmithLLC/hack-hour-11.git"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
+    "eslint-plugin-react": "^6.7.1"
+  }
 }
