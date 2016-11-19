@@ -14,7 +14,7 @@
 
 function drawStairs(n) {
 var maxWidth = n;
-for ( var i = 0; i <= maxWidth; i++) {
+for ( var i = 0; i < maxWidth; i++) {
 	let row = "";
 	for (var j = maxWidth; j > i; j--){
 		row += " ";
