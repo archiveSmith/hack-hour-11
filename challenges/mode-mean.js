@@ -71,12 +71,12 @@ function modemean(array) {
 
 	let mean = Math.floor(sum/array.length);
 
-	console.log(mean, finalMode)
+	
 	return mean === finalMode
 
 
 }
 
-console.log(modemean([1,2,2,3]))
 
-//module.exports = modemean;
+
+module.exports = modemean;
