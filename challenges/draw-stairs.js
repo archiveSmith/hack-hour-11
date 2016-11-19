@@ -28,27 +28,4 @@ function drawStairs(n) {
 }
 
 
-
-
-
-  
-
-
-
-function drawStairs(n) {
-  if (n < 1 || n > 100) return 'unacceptable input - must be 1 to 100';
-  let stars = 1;
-  let whitespace = n-1;
-  let result = '';
- for ()
-  while (whitespace > 0) {
-    result += ' ';
-  }
-  while (star > 0){
-    result += *;
-  }
-  
-
-};
-
 module.exports = drawStairs;
