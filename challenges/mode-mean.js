@@ -14,7 +14,7 @@ function modemean(array) {
 let sorted = array.sort();
 let most = 1;
 let count = 0;
-let mode = sorted[0];
+let moded = sorted[0];
 for(let i = 0; i < array.length; i++){
 	if(array[i] === array[i+1]){
 		count++;
@@ -39,7 +39,7 @@ for(let i = 0; i < array.length; i++){
 
 let total = array.reduce((acc, ele) => acc + ele);
 let mean = total / array.length;
-return mean === mode;
+return mean === moded;
 }
 
 
