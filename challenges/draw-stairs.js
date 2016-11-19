@@ -34,7 +34,7 @@ function drawStairs(n) {
   return stairCase;
 }
 
-console.log(drawStairs(6));
+console.log(drawStairs(3));
 
 
 module.exports = drawStairs;
