@@ -12,9 +12,9 @@
 
 function modemean(array) {
 let sorted = array.sort();
-let most = 0;
+let most = 1;
 let count = 0;
-let mode = 0;
+let mode = sorted[0];
 for(let i = 0; i < array.length; i++){
 	if(array[i] === array[i+1]){
 		count++;
