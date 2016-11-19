@@ -34,12 +34,12 @@ function modemean(array) {
 		if (counts[num] === modeCount) modes.push(num);
 	}
 
-	mode = Math.max(modes);
+	mode = modes.reduce((max, cur) => {
+		if (cur > max) return cur;
+		else return max;
+	});
 
 	return mean === mode;
 }
 
 module.exports = modemean;
-
-let array = [1, 1, 1];
-console.log(modemean(array));
