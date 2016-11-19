@@ -14,7 +14,7 @@
 function modemean(array) {
   const sum = array.reduce((accum, val) => accum + val);
   console.log('SUM: ', sum);
-  const mean = Math.floor(sum / 2);
+  const mean = Math.floor(sum / array.length);
   console.log('MEAN: ', mean);
   const modeTable = [];
   array.forEach((val) => {
