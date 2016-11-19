@@ -19,7 +19,7 @@ function drawStairs(n) {
     for (let j = i; j < n; j += 1) {
       str += ' ';
     }
-    for (let k = n - i; k <= n; k += 1) {
+    for (let k = n - i ; k < n; k += 1) {
       str += '*';
     }
     console.log(str);
