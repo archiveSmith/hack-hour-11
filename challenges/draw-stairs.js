@@ -10,6 +10,7 @@
   ****
  *****
 ******
+<<<<<<< HEAD
 */
 
 function drawStairs(n) {
@@ -39,3 +40,14 @@ function drawStairs(n) {
 
 
 module.exports = drawStairs;
+=======
+
+*/
+
+function drawStairs(n) {
+
+}
+
+
+module.exports = drawStairs;
+>>>>>>> fe0e09e39e24b93f6b7ba7713891d144539a85b7
