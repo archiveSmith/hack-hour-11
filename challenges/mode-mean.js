@@ -23,7 +23,7 @@ function modemean(array) {
     else { modeTable[val] = 1; }
   });
   console.log('MODE TABLE: ', modeTable);
-  let max = [0, 0];
+  let max = [-Infinity, 0];
   for (const prop in modeTable) {
     if (modeTable[prop] >= max[1] && prop > max[0]) max = [prop, modeTable[prop]];
   }
