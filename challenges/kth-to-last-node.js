@@ -51,7 +51,7 @@ function kthToLastNode(k, head) {
         //console.log('curr after: ' + curr.value);
         //console.log('savedElement after: ' + savedElement.value);
       } else {
-        return savedElement;
+        return savedElement.value;
       }
       
   }
