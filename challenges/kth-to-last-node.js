@@ -34,7 +34,9 @@ while (curNode.next !== null) {
 	curNode = curNode.next;
 	i++;
 }
-
+if (k > i){
+	return undefined;
+}
 
 let j =0
 curNode = head;
