@@ -29,10 +29,7 @@ function modemean(array) {
     return result;
   });
 
-  return mean === mode;
+  return Math.floor(mean) === mode;
 }
-
-console.log(modemean([1, 2, 3, 3, 3, 4, 4])); // false
-console.log(modemean([10, 20, 20, 20, 20, 20, 30])); // true
 
 module.exports = modemean;
