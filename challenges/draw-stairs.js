@@ -10,6 +10,7 @@
   ****
  *****
 ******
+<<<<<<< HEAD
 */
 
 function drawStairs(n) {
@@ -29,3 +30,14 @@ for ( var i = 0; i < maxWidth; i++) {
 
 
 module.exports = drawStairs;
+=======
+
+*/
+
+function drawStairs(n) {
+
+}
+
+
+module.exports = drawStairs;
+>>>>>>> e5028ff0e5aac5e362c4d8ac99cdb5929204c68c

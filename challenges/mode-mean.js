@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+<<<<<<< HEAD
 let sorted = array.sort();
 let most = 1;
 let count = 0;
@@ -45,3 +46,9 @@ return mean === moded;
 
 
 module.exports = modemean;
+=======
+
+}
+
+module.exports = modemean;
+>>>>>>> e5028ff0e5aac5e362c4d8ac99cdb5929204c68c
