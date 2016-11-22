@@ -27,14 +27,14 @@ function kthToLastNode(k, head) {
   function inner(k, head) {
     console.log(toTheEnd, k);
     if (head.next === null) {
-      console.log("At the end");
+      //console.log("At the end");
       toTheEnd = 1;
       return toTheEnd;
     } else if (toTheEnd && toTheEnd < k) {
-      console.log("Retreating");
+      //console.log("Retreating");
       return toTheEnd++;
     } else {
-      console.log("Dig deeper");
+      //console.log("Dig deeper");
       toTheEnd = inner(k, head.next);
       return toTheEnd++;
     }
