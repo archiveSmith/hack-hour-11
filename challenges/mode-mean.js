@@ -29,7 +29,7 @@ function modemean(array) {
     return result;
   });
 
-  return mean === mode;
+  return Math.floor(mean) === mode;
 }
 
 module.exports = modemean;
