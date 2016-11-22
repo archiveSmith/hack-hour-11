@@ -22,6 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+
   
   let savedElement = head;
   let curr = head;
@@ -33,8 +34,11 @@ function kthToLastNode(k, head) {
       for (let i=0; i<=numTimes; i++) {
         //console.log('curr: ' + curr.value);
         curr = curr.next;
-        console.log(curr.value);
+        //console.log(curr.value);
         ranBefore = true;
+        if (i< numTimes && (curr === null || curr === undefined)) {
+          return undefined;
+        }
       }
       savedElement = savedElement.next;
     }
@@ -45,7 +49,7 @@ function kthToLastNode(k, head) {
         curr = curr.next;
         savedElement = savedElement.next; 
         //console.log('curr after: ' + curr.value);
-        console.log('savedElement after: ' + savedElement.value);
+        //console.log('savedElement after: ' + savedElement.value);
       } else {
         return savedElement;
       }
