@@ -37,7 +37,7 @@ function kthToLastNode(k, head) {
     }
   }
   // the behind value will be our solution when current hits the end.
-  while (typeof current.next !== 'undefined'){
+  while (current.next !== null){
     behind = behind.next;
     current = current.next;
   }
