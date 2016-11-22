@@ -10,6 +10,7 @@
  */
 
 
+<<<<<<< HEAD
  function modemean(array) {
    const mean = Math.floor(array.reduce((prev, curr) => prev += curr) / array.length);
    let countObj = {3:1};
@@ -29,5 +30,10 @@
    }
    return largest[1] === mean;
  }
+=======
+function modemean(array) {
+
+}
+>>>>>>> e5028ff0e5aac5e362c4d8ac99cdb5929204c68c
 
 module.exports = modemean;
