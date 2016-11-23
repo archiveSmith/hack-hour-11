@@ -19,6 +19,7 @@
 function Node(val) {
   this.value = val;
   this.next = null;
+<<<<<<< HEAD
   this.counter = 0;
 }
 function kthToLastNode(k, head) {
@@ -53,5 +54,12 @@ function kthToLastNode(k, head) {
  
 }
 
+=======
+}
+
+function kthToLastNode(k, head) {
+
+}
+>>>>>>> 680f6209a189dae9f94a37a181b3fd72eafd0997
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
