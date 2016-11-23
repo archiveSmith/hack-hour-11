@@ -33,7 +33,6 @@ function kthToLastNode(k, head) {
 	}
 
 	return requested.value;
-
 }
 
 console.log(kthToLastNode(2, a));
