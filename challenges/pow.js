@@ -10,11 +10,14 @@
        result = result * base;
        count ++;
        exponent();
+     } else if (count >= power) {
+       result = result / base;
+       count --;
+       exponent();
      }
    }
    exponent();
    return result;
-
  }
 
 module.exports = pow;
