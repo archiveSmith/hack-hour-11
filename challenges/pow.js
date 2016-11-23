@@ -3,20 +3,24 @@
  */
 
  function pow(base, power) {
-   let count = 1;
+   let count = 0;
    let result = 1;
-   function exponent() {
-     if (count <= power) {
+   function exponentPlus() {
+     if (count < power) {
        result = result * base;
        count ++;
-       exponent();
-     } else if (count >= power) {
-       result = result / base;
-       count --;
-       exponent();
+       exponentPlus();
      }
    }
-   exponent();
+   function exponentMinus() {
+     if (count > power) {
+       result = result / base;
+       count --;
+       exponentMinus();
+     }
+   }
+   exponentPlus();
+   exponentMinus();
    return result;
  }
 
