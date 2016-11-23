@@ -34,19 +34,24 @@ var a = new Node('A');
 
 function kthToLastNode(k, head) {
   let nodes = [];
-  let count = 2;
-  
-  if(head.next !== null) {
-    count++;
+   let nodes = [];
+  for(let i = head; i;  i = i.next) {
+    nodes.push(head.i.value);
   }
+  return nodes[nodes.length - k];
+  // let count = 2;
+  
+  // if(head.next !== null) {
+  //   count++;
+  // }
   
   
-  for(let i = 0; i < count; i++) {
-    nodes.push(head);
-    head = head.next;
-  }
+  // for(let i = 0; i < count; i++) {
+  //   nodes.push(head);
+  //   head = head.next;
+  // }
   
-  return nodes;//[nodes.length - k].value; 
+  // return nodes;//[nodes.length - k].value; 
 	}
 
 
