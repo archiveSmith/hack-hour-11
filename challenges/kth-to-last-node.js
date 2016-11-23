@@ -26,7 +26,7 @@ function kthToLastNode(k, head) {
   let currentNode = head;
   currentNode.counts = 1;
   let lastNode;
-  if(head.next === null){
+  if(head.next === null && k !== 1){
    return head;
   }else{
     while(currentNode.next !== null){
@@ -42,12 +42,13 @@ function kthToLastNode(k, head) {
   }
   currentNode = head;
   while(currentNode !== lastNode){
-     if(currentNode.counts === lastNode.counts - k+1){
+     if(currentNode.counts === lastNode.counts - k){
         return currentNode.value;
      }else{
     currentNode = currentNode.next;
   }
   }
+  return undefined;
 }
 
 
