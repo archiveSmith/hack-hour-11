@@ -46,25 +46,12 @@ LinkedList.prototype.push = function (val) {
   return this;
 };
 
-let myLinkedList = new LinkedList();
-myLinkedList.push(1);
-myLinkedList.push(2);
-myLinkedList.push(4);
-myLinkedList.push('last');
-
-console.log(myLinkedList);
-
 function kthToLastNode(k, head) {
-  let currentNode = head;
-  let count = 0;
-  while (currentNode.next) {
-    currentNode = currentNode.next;
+  const tracker = [];
+  for (i = head; i; i = i.next) {
+    tracker.push(i.value);
   }
-  while (count <= k) {
-    currentNode = currentNode.before;
-    count += 1;
-  }
-  return currentNode;
+  return tracker[tracker.length - k];
 }
 
 module.exports = { Node: Node, kthToLastNode: kthToLastNode };
