@@ -29,7 +29,7 @@ function drawStairs(n) {
       return spaces + stars;
     }
 
-    for (let i = 1; i <= n; i++) {
+    for (let i = 1; i < n; i++) {
       console.log(artist(i, n));
     }
   }
