@@ -22,6 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+	/*
   let toTheEnd = 0;
   
   function inner(k, head) {
@@ -45,6 +46,11 @@ function kthToLastNode(k, head) {
   }
   
   toTheEnd = inner(k, head);
+  */
+
+  for (let i = head; i; i = head.next) {
+
+  }
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
