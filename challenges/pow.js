@@ -13,18 +13,3 @@ function pow(base, power) {
   }
 }
 module.exports = pow;
-
-
-/*
-for example pow(3,-3)
-
---
-return 1/3 * 1/pow(3,-2) 1/3
-
-return 1/3 *1/pow(3,-1) 1
-
-return 1/3 * 1/pow(3,0)  == 1/3
-
-return 1
-
-*/
