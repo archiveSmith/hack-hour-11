@@ -27,29 +27,33 @@ var a = new Node('A');
   c.next = d;
   d.next = e;
   
-  function Node(val) {
+
+function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function kthToLastNode(k, head) {
   let nodes = [];
-  let count = 2;
-  
-  if(head.next !== null) {
-    count++;
+   let nodes = [];
+  for(let i = head; i;  i = i.next) {
+    nodes.push(head.i.value);
   }
+  return nodes[nodes.length - k];
+  // let count = 2;
+  
+  // if(head.next !== null) {
+  //   count++;
+  // }
   
   
-  for(let i = 0; i < count; i++) {
-    nodes.push(head);
-    head = head.next;
-  }
+  // for(let i = 0; i < count; i++) {
+  //   nodes.push(head);
+  //   head = head.next;
+  // }
   
-  return nodes;//[nodes.length - k].value; 
+  // return nodes;//[nodes.length - k].value; 
 	}
 
-
-kthToLastNode(2,a);
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
