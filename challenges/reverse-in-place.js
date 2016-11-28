@@ -13,7 +13,7 @@
  */
 
 function reverseInPlace(array) {
-	if (!Array.isArray(array)) return -1;
+	if (!Array.isArray(array)) return undefined;
 
 	const len = array.length;
 	const halfPoint = (len - 1) / 2;
