@@ -13,6 +13,17 @@
  */
 
 function reverseInPlace(array) {
+    let result = array;
+    let i = 0;
+    let j = result.length-1;
+    while (i < result.length/2) {
+        temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
+        i++;
+        j--; 
+    }
+    return result;
 
 }
 
