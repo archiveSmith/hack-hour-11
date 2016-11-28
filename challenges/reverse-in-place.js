@@ -13,7 +13,9 @@
  */
 
 function reverseInPlace(array) {
-
+return array.reduceRight(function (prev, curr) {
+  return prev.concat(curr);
+}, []);
 }
 
 module.exports = reverseInPlace;
