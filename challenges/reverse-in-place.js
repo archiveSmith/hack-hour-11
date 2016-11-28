@@ -13,13 +13,12 @@
  */
 
 function reverseInPlace(array) {
-	let newArr = array;
 
-	for (let i = newArr.length-1; i >= 0; i--){
-		
-		newArr.push(newArr[i]);
+ 	for (let i = array.length-1; i >= 0; i--){
+			array.push(array[i]);
 	}
-	return newArr.slice((newArr.length/2))
+	
+	return array.slice((array.length/2))
 
 }
 
