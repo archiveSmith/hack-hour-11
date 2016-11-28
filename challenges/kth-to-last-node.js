@@ -1,7 +1,6 @@
 /**
  * Write a function that takes an integer and the head of a singly linked list,
  * and returns the VALUE kth to last node in the list.
-
  */
 
  var a = new Node('A');
@@ -43,6 +42,5 @@ function kthToLastNode(k, head) {
   }
   return curr.value;
 }
-
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
