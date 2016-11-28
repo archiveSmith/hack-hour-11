@@ -12,7 +12,7 @@
  *
  */
 
-function reverseInPlace(array) {
+function reverseInPlace(array = []) {
   let mid = Math.floor(array.length / 2);
   let counter = 0;
   for (let i = 0; i < mid; i++) {
