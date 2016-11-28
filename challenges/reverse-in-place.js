@@ -13,6 +13,14 @@
  */
 
 function reverseInPlace(array) {
+    let args = Array.prototype.slice.call(arguments);
+    if (args[0] === undefined) {
+        return [];
+    } 
+    else if (array.length === 0) {
+        return [];
+    }
+    
     let result = array;
     let i = 0;
     let j = result.length-1;
