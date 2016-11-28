@@ -13,6 +13,9 @@
  */
 
 function reverseInPlace(array) {
+	if(array === undefined){
+		return [];
+	}
 let left = 0;
 let right = 0;
 for(let i = 0; i < Math.floor(array.length/2); i++){
