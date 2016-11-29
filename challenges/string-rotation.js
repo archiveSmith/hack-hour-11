@@ -38,9 +38,13 @@ function stringRotation(s1, s2) {
   }
   if (result === s1) {
     return true;
-  }
+  } 
+  
+  return false;
 
   
 }
+
+console.log(stringRotation("hello", "ollhe"));
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
