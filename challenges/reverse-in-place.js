@@ -13,9 +13,13 @@
  */
 
 function reverseInPlace(array) {
+<<<<<<< HEAD
 return array.reduceRight(function (prev, curr) {
   return prev.concat(curr);
 }, []);
+=======
+
+>>>>>>> 526ccfdc56a6402d39cc2df1bdaa33d577a2ac21
 }
 
 module.exports = reverseInPlace;
