@@ -14,7 +14,7 @@
 // don't use methods
 function reverseInPlace(array) {
   let temp = [];
-  if(array === undefined || []){
+  if(array === undefined || array.length === 0){
     return [];
   }
   for(let i =array.length; i >= 0; i--) {
