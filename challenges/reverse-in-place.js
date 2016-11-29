@@ -13,6 +13,10 @@
  */
 
 function reverseInPlace(array) {
+  if(array === undefined || array.length === 0) {
+    return [];
+  }
+
   let len = array.length;
   let temp;
 
