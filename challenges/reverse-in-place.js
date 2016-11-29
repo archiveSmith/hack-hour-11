@@ -13,6 +13,7 @@
  */
 
 function reverseInPlace(array) {
+<<<<<<< HEAD
 	if(array === undefined){
 		return [];
 	}
@@ -25,6 +26,9 @@ for(let i = 0; i < Math.floor(array.length/2); i++){
 	array[array.length-1-i] = left;
 }
 return array;
+=======
+
+>>>>>>> 526ccfdc56a6402d39cc2df1bdaa33d577a2ac21
 }
 
 module.exports = reverseInPlace;
