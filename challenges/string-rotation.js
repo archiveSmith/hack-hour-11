@@ -23,20 +23,9 @@ function stringRotation(s1, s2) {
 	let a1 = s1[0];
 	let i = a2.indexOf(a1);
 	let newString = [];
-	while(i < a2.length){
-		newString.push(a2[i]);
-		i++;
-	}
-
-	i = a2.indexOf(a1[0]);
-	let a = 0;
-	while(a < i) {
-		newString.push(a2[a]);
-		a++;
-	}
-
-	newString = newString.join('');
-	return isSubstring(s1, newString);
+	a2.unshift(a2.splice(i));
+	a2 = a2.join('').replace(/,/g, '');
+	return isSubstring(s1, a2);
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
