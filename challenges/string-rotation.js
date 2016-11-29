@@ -19,6 +19,9 @@ function stringRotation(s1, s2) {
 	if(s1 === undefined || s1 === "" && s2 === undefined || s2 === ""){
 		return false;
 	}
+	if(s1.length !== s2.length){
+		return false;
+	}
 	let a2 = s2.split('');
 	let a1 = s1[0];
 	let i = a2.indexOf(a1);
