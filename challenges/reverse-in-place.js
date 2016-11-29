@@ -13,6 +13,8 @@
  */
 
 function reverseInPlace(array) {
+  // if input is not provided return empty array
+  if (array === undefined) return [];
   // start is index of last element
   const start = array.length - 1;
   // starting from last element and moving backwards, push these element into array
