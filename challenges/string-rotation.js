@@ -18,21 +18,27 @@ function isSubstring(s1, s2) {
 
 function stringRotation(s1, s2) {
 	if (typeof s1 !== 'string' || typeof s2 !== 'string') return undefined;
-	if (s1.length < 1 || s2.length < 1) return false;
 	if (s1 === s2) return true;
-	let s2arr = s2.split('');
-	let targetIndex = s2arr.indexOf(s1[0]);
-	let count = 0;
+	if (s1.length < 1 || s2.length < 1) return false;
 
-	while (count < targetIndex - 1) {
-		let num = s2arr.pop();
-		s2arr.unshift(num);
-		count += 1;
-	}
+	const s2double = s2.concat(s2);
+	
+	return isSubstring(s2double, s1);
+	// let s2arr = s2.split('');
+	// let targetIndex = s2arr.indexOf(s1[0]);
+	// let count = 0;
 
-	const s2edit = s2arr.join('')
+	// while (count < targetIndex - 1) {
+	// 	let num = s2arr.pop();
+	// 	s2arr.unshift(num);
+	// 	count += 1;
+	// }
 
-	return s1 === s2edit;
+	// const s2edit = s2arr.join('')
+
+	// return s1 === s2edit;
+
+
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
