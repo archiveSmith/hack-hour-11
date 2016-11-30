@@ -1,3 +1,4 @@
+'use strict';
 /*
  * write a function that takes a string of text and returns true if
  * the parentheses are balanced and false otherwise.
@@ -24,8 +25,18 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+	const len = input.length;
+	let parenCount = 0;
 
+	for (let i = 0; i < len; i += 1) {
+		if (input[i] === '(') parenCount += 1;
+		if (input[i] === ')') parenCount -= 1;
+	}
+
+	return parenCount === 0;
 }
 
 module.exports = balancedParens;
+
+console.log(balancedParens('()'));
