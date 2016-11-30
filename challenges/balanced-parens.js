@@ -15,7 +15,7 @@
  *  balancedParens('[](){}'); // true
  *  balancedParens('[({})]');   // true
  *  balancedParens('[(]{)}'); // false
- *
+
  * Step 3:
  * ignore non-bracket characters
  * balancedParens(' var wow  = { yo: thisIsAwesome() }'); // true
@@ -25,6 +25,30 @@
  */
 
 function balancedParens(input){
+	let brackets = input.replace(/[^\)([\][\{}]/g , '');
+	console.log(brackets);
+  let work = [];
+for( let i = 0; i < brackets.length; i++){
+    if(brackets[i] === "(" || brackets[i] === "[" || brackets[i] === "{"){
+      work.push(brackets[i]);
+    } else {
+    if(brackets[i] === ")"){
+    if(work.indexOf("(") === -1) return false;
+    work.splice(work.indexOf("("),1);
+    }
+     if(brackets[i] === "]"){
+    if(work.indexOf("[") === -1) return false;
+    work.splice(work.indexOf("["),1);
+    }
+     if(brackets[i] === "}"){
+    if(work.indexOf("{") === -1) return false;
+     work.splice(work.indexOf("{"),1);
+    }
+   
+    }
+}
+
+return work.length === 0;
 
 }
 
