@@ -28,25 +28,16 @@ function stringRotation(s1, s2) {
 	//we can find the first letter, keep checking the next to see if it's in order
 	//if not, find the other letter that matches the first letter, if no other foubd, return false 
 
-	let newS1 = s1.split("");
-	let newS2 = s2.split("");
-
-	for (var i = 0;i < newS2.length-1; i++){
-		if (newS2[i] === newS1[0]){
-			for (var j = i; j-1;j++){
-				if (j > newS2.length-1){
-					j = 0
-				}
-				if (newS2[j] !== newS1[])
-
-			}
-		}
-	}
+	
 	//doesnt work, need to go back and fix it!!
+
+	let newStr = s2 + s2;
+	
+	return isSubstring(newStr,s1);
 
 	
 
 }
 
-//console.log(stringRotation("hello","llohe"))
+console.log(stringRotation("hello", "he"))
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
