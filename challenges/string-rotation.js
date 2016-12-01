@@ -15,17 +15,23 @@ function isSubstring(s1, s2) {
   return s1.indexOf(s2) >= 0;
 }
 
-function stringRotation(s1, s2) {
-  let collection = [];
+function stringRotation(s1, s2) {   //trying to refactor, but the stuff that's commented out work
+  // let collection = [];
   let counter = 0;
   let arr = s1.split("");
+  // while (counter < arr.length) {
+  //   arr[arr.length] = arr[0];
+  //   arr = arr.slice(1);
+  //   collection.push(arr.join(""));
+  //   counter += 1;
+  }
   while (counter < arr.length) {
     arr[arr.length] = arr[0];
     arr = arr.slice(1);
-    collection.push(arr.join(""));
     counter += 1;
+    if (arr.join("") === s2) return true;
   }
-  return collection.indexOf(s2) !== -1;
+  return false;
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
