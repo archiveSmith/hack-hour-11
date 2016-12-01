@@ -43,7 +43,7 @@
     }
 
     let answer = nodeArray[nodeArray.length - k];
-    return answer.value;
+    return answer;
 
   }
 }
