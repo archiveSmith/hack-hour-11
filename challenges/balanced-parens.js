@@ -27,6 +27,7 @@
  */
 
 function balancedParens(input) {
+	if (typeof input !== 'string') return undefined;
 	const len = input.length;
 	const openBrackets = '({[';
 	const closeBrackets = ')}]';
