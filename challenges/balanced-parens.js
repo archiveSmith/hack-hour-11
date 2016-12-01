@@ -25,25 +25,13 @@
  */
 
 function balancedParens(input){
-  // COUNT HOW MANY OF EACH PARENTS
-  const counter = {};
-  // FILTER OUT EVERY OTHER CHAR
-  const test = '[](){}';
-  const tally = input
-    .split('')
-    .filter(x => test.split('').includes(x));
-  // EARLY CHECK FOR ODD NUMBER OF PARENTS
-  if (tally.length % 2 !== 0) return false;
-  tally.forEach(x => {
-    counter[x] = counter[x] + 1 || 1;
-  });
-  // CHECK IF VALUES ARE EVEN, WHICH MEANS THEY ARE PAIRED
-  const keys = Object.keys(counter);
-  if (counter['['] !== counter[']']) return false;
-  if (counter['{'] !== counter['}']) return false;
-  if (counter['('] !== counter[')']) return false;
-  // RETURN TRUE IF ALL PASS
-  return true;
+  const test = ['[', ']', '(', ')', '{', '}']
+  let copy = input.split('').filter(x => test.includes(x));
+  for (let i = 0; i < copy.length; i ++) {
+    
+  }
 }
+
+balancedParens(' var wow  = { yo: thisIsAwesome() }');
 
 module.exports = balancedParens;
