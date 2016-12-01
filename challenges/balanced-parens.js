@@ -24,8 +24,31 @@
  *
  */
 
-function balancedParens(input){
 
+function balancedParens(input){
+	let newStr = '';
+	let symbols = input.replace(/[a-zA-Z=:]+/g,'');
+	for(let i = 0; i< symbols.length; i++){
+    if(symbols[i].includes(')') ) {
+    	newStr+=symbols[i];
+    }else if(symbols[i].includes('(')){
+    	newStr+=symbols[i];
+    }else if(symbols[i].includes('[')){
+    	newStr+=symbols[i];
+    }else if(symbols[i].includes(']')){
+    	newStr+=symbols[i];
+    }else if(symbols[i].includes('{')){
+    	newStr+=symbols[i];
+    }else if(symbols[i].includes('}')){
+    	newStr+=symbols[i];
+    }  	
 }
+ if(newStr.length%2!==0){
+    return false;
+  }else{
+  return true;
+  }
+}
+
 
 module.exports = balancedParens;
