@@ -25,6 +25,7 @@
  */
 
 function balancedParens(input){
+<<<<<<< HEAD
  strArr = input.match(/\[|\]|{|}|\(|\)/gi)
 
  let stack = [];
@@ -57,6 +58,9 @@ function balancedParens(input){
      return true;
  }
 return false;
+=======
+
+>>>>>>> c2d85d98aadc865e5372179f960654118c7a2930
 }
 
 module.exports = balancedParens;
