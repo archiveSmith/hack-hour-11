@@ -26,6 +26,57 @@
 
 function balancedParens(input){
 
+    for (let i=0; i<input.length; i++) {
+        console.log('i is: ' + i);
+        console.log('input i is: ' + input[i]);
+        // if (input[i] === ')' || ']' || '}') {
+        //     return false;
+        // } 
+        if (input[i] === '(') {
+            i++;
+            i = recurseParens(i);
+            console.log('i is now... ' + i);
+        }
+        
+        if (i === false) {
+            console.log('recurse parens returned false');
+            return false;
+        }
+
+
+
+    }
+
+
+    function recurseParens(loc) {
+        console.log('found parenthesis');
+        for (let j=loc; j<input.length; j++) {
+            console.log('input[j] is: ' + input[j]);
+            
+            // if (input[j] === ']' || '}') {
+            //     console.log('found illegal bracket after open parenthesis');
+            //     return false;
+            // }
+            if (input[j] === ')') {
+                console.log('found parenthesis');
+                return j;
+            }
+
+        }
+        
+
+    }
+
+    // recurseBrackets() {
+
+    // }
+
+    // recurseCurlies() {
+
+    // }
+
 }
+
+balancedParens('hi(my name is anto)lol');
 
 module.exports = balancedParens;
