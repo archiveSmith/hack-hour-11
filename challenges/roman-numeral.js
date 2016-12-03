@@ -44,7 +44,7 @@ function romanNumeral(n) {
     for (let i = 0; i < breakPoints.length; i++) {
       if (Math.floor(n/breakPoints[i]) !== 0) {
   
-        if (numberChars[breakPoints[i]] !== "I" && Math.floor(n/breakPoints[i]) > 1) {
+        if (Math.floor(n/breakPoints[i]) > 1) {
           for (let j = 0; j < Math.floor(n/breakPoints[i]); j++) {
             rn = rn + numberChars[breakPoints[i]];
             n = n - breakPoints[i];
