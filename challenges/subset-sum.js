@@ -10,6 +10,11 @@
 
 function subsetSum(array, target) {
   const len = array.length;
+
+  if (len === 1) {
+    return array[0] === target;
+  }
+  
   let newTarget = target;
   
   const newArr = [];
