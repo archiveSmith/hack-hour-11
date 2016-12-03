@@ -9,7 +9,39 @@
  */
 
 function subsetSum(array, target) {
+  const len = array.length;
+  let newTarget = target;
+  
+  const newArr = [];
+  
+  for (let x = 0; x < array.length; x += 1) {
+    if (x < 0) {
+     newTarget += Math.abs(array[x]);
+    }
+    newArr.push(Math.abs(array[x]));
+  }
+  
+  let currSum = 0;
 
+  for (let i = 0; i < len; i += 1) {
+    if (target - newArr[i] > 1) {
+      currSum += newArr[i];
+      if (currSum === newTarget) {
+        return true;
+      }
+    }
+  }
+
+  if (currSum > newTarget) {
+    for (let j = 0; j < len; j += 1) {
+
+      if (currSum - newArr[j] === newTarget) {
+        return true;
+      } 
+    }
+  }
+  
+  return false;
 }
 
 module.exports = subsetSum;
