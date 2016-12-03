@@ -17,13 +17,9 @@ function subsetSum(array, target) {
     let sum = 0;
 
     let filteredArr = sortedArr.filter(function(value) { return value <= target; })
-
-
-    console.log(filteredArr);
     
     for (let i=filteredArr.length-1; i>=0; i--) {
         sum += filteredArr[i];
-        console.log('sum is at: ' + sum);
         if (sum === target) {
             return true;
         }
@@ -36,6 +32,6 @@ function subsetSum(array, target) {
     return false;
 }
 
-//console.log(subsetSum([12,5,2,9,4,2,5,22,15,6], 16));
+// console.log(subsetSum([12,5,2,9,4,2,5,22,15,6], 15));
 
 module.exports = subsetSum;
