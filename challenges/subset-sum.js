@@ -29,10 +29,7 @@ function subsetSum(array, target) {
         }
         if (sum > target) {
             sum = 0;
-            console.log('sum was greater, now its ' + sum);
-            console.log('splicing ' + filteredArr[i+1]);
             filteredArr.splice(i+1);
-            console.log(filteredArr);
             i++;
         }
     } 
