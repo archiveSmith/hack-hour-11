@@ -1,3 +1,4 @@
+'use strict';
 /* Given a positive integer, return it as a string in Roman Numeral form.
  * Some basic conversions are given below:
  *
@@ -18,7 +19,33 @@
  */
 
 function romanNumeral(n) {
+	if (typeof n !== 'number' || n < 1 || isNaN(n)) return undefined;
+	let result = '';
+	let newN = n;
+	const romans = {
+		M: 1000,
+		CM: 900,
+		D: 500,
+		CD: 400,
+		C: 100,
+		XC: 90,
+		L: 50,
+		XL: 40,
+		X: 10,
+		IX: 9,
+		V: 5,
+		IV: 4,
+		I: 1
+	};
 
+	for (let letter in romans) {
+		while (newN >= romans[letter]) {
+			result += letter;
+			newN -= romans[letter];
+		}
+	}
+
+	return result;
 }
 
 module.exports = romanNumeral;
