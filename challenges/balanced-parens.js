@@ -26,6 +26,11 @@
 
 function balancedParens(input){
   //generate array with all non bracket characters removed
+  const openBracket = {
+    "[": "]",
+    "{": "}",
+    "(": ")"
+  };
   const closeBracket = {
     "]": "[",
     "}": "{",
@@ -51,10 +56,22 @@ function balancedParens(input){
   }
   
   //loop through the array making sure every corresponding character on the opposite end is the correct closing bracket
+  /*
   for (let i = 0; i < bracketArr.length/2; i++) {
-    console.log("compare: ", i+": "+bracketArr[i], (bracketArr.length - 1 - i)+": "+ closeBracket[bracketArr[bracketArr.length - 1 - i]])
     if (bracketArr[i] !== closeBracket[bracketArr[bracketArr.length - 1 - i]]) {
       return false;
+    }
+  }
+  */
+  
+  let startPos = 0;
+  
+  while (startPos < bracketArr.length) {
+    let openChar = bracketArr[startPos];
+    for (let i = startPos + 1; i < bracketArr.length; i++) {
+      if (openBracket[bracketArr[i]]) {
+        
+      }
     }
   }
   
