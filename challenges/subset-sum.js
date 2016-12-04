@@ -9,6 +9,10 @@
  */
 
  function subsetSum(array, target) {
+   array = array.sort(function(a,b){
+     return a - b;
+   })
+
    if (array.length === 0) return false;
      let i = array.length - 2;
      let firstNum = array[array.length - 1];
@@ -25,6 +29,5 @@
      array.pop()
      return subsetSum(array, target);
  }
-
 
 module.exports = subsetSum;
