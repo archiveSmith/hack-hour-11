@@ -21,6 +21,4 @@ function subsetSum(array, target) {
   return false;
 }
 
-console.log(subsetSum([2, 7, -1, -5], 12)); // TRUE
-
-// module.exports = subsetSum;
+module.exports = subsetSum;
