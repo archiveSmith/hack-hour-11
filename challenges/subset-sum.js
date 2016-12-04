@@ -9,18 +9,18 @@
  */
 
  function subsetSum(array, target) {
-   let sum = 0
-   let index = -1;
-   function bstSearch(num, sum) {
-     console.log('sum', sum);
-     index += 1;
-     if (sum === target) return true;
-     else if (sum > target || index === array.length) return false;
-     return (bstSearch(index, sum += array[index]) || bstSearch(index, sum));
-   }
-   return bstSearch(index, sum);
- }
+   let num = target;
+   let index = array.length - 1;
 
- subsetSum([1,2,3], 4)
+   function recursive(i, num) {
+     if (num === 0) return true;
+     else if (i === -1) return false;
+     else {
+       const subtracted = num - array[i];
+       return recursive(i - 1, subtracted) || recursive(i - 1, num);
+     }
+   }
+   return recursive(index, num)
+ }
 
 module.exports = subsetSum;
