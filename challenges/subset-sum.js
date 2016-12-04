@@ -18,7 +18,7 @@
        }  if (firstNum + array[i] < target) {
          firstNum += array[i]
          i--;
-       }  if (firstNum + array[i]=== target){
+       }  if (firstNum + array[i]=== target || firstNum === target) {
          return true;
        }
      }
