@@ -24,6 +24,7 @@
  *
  */
 
+<<<<<<< HEAD
  function balancedParens(input){
    let countBracket = 0;
    let countParens = 0;
@@ -41,5 +42,10 @@
    }
    return countBracket === 0 && countParens === 0
  }
+=======
+function balancedParens(input){
+
+}
+>>>>>>> c2d85d98aadc865e5372179f960654118c7a2930
 
 module.exports = balancedParens;
