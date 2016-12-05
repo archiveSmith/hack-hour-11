@@ -9,7 +9,34 @@
  */
 
 function subsetSum(array, target) {
-
+  // have an accumalator
+  const arr = [true];
+  for (let i = 0; i < target; i++) {
+    arr.push(false);
+  }
+  for (let j = 0; j < arr.length; j++) {
+    if ()
+  }
 }
 
 module.exports = subsetSum;
+
+// array of 5
+// 1 : 5
+// 2 : 
+
+// array of 4
+// 1 : 4
+// 2 : 6
+// 3 : 4
+// 4 : 1
+
+// array of 3
+// 1 : 3
+// 2 : 3
+// 3 : 1
+
+// array of 2
+// 1 : 2
+// 2 : 1
+

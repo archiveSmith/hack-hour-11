@@ -25,64 +25,21 @@
  */
 
 function balancedParens(input){
-  // // Step 2
-  // let lparen = 0;
-  // let rparen = 0;
-  // let lsquare = 0;
-  // let rsquare = 0;
-  // let lcurly = 0;
-  // let rcurly = 0;
-  // for (let i = 0; i < input.length; i++) {
-  //   if (input[i] === '(') {
-  //     lparen += 1;
-  //   }
-  //   if (input[i] === ')') {
-  //     if (lparen > rparen) {
-  //       rparen += 1;
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  //   if (input[i] === '[') {
-  //     lsquare += 1;
-  //   }
-  //   if (input[i] === ']') {
-  //     if (lsquare > rsquare) {
-  //       rsquare += 1;
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  //   if (input[i] === '{') {
-  //     lcurly += 1;
-  //   }
-  //   if (input[i] === '}') {
-  //     if (lcurly > rcurly) {
-  //       rcurly += 1;
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  // }
-  // if (lparen === rparen && lsquare === rsquare && lcurly === rcurly) return true;
-  // return false;
-
-  // Step 1
-  let lparen = 0;
-  let rparen = 0;
+  const matching = {
+    ')' : '(',
+    ']' : '[',
+    '}' : '{'
+  }
+  const parens = [];
   for (let i = 0; i < input.length; i++) {
-    if (input[i] === '(') {
-      lparen += 1;
-    }
-    if (input[i] === ')') {
-      if (lparen > rparen) {
-        rparen += 1;
-      } else {
-        return false;
-      }
+    console.log(parens);
+    if (input[i] === '(' || input[i] === '[' || input[i] === '{') parens.push(input[i]);
+    if (input[i] === ')' || input[i] === ']' || input[i] === '}') {
+      if (parens[parens.length - 1] === matching[input[i]]) parens.pop();
+      else return false;
     }
   }
-  if (lparen === rparen) return true;
+  if (parens.length === 0) return true;
   return false;
 }
 
