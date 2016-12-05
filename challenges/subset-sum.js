@@ -21,7 +21,18 @@ function subsetSum(array, target) {
     subsetSum(array.slice(0, len - 1), target - array[len - 1]));
 }
 
+/*
+Official Codesmith answer: 
 
+function subsetSum(array, target) {
+  if (!target) return true;
+  if (!array.length) return false;
+  
+  return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
+}
+
+
+*/
 
 /* Only works for pairs
 function subsetSum2(array, target) {
