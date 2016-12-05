@@ -9,10 +9,15 @@
  */
 
 function subsetSum(array, target) {
-  if (array.includes(target)) return true;
+  let arr = [[]];
   for (let i = 0; i < array.length; i += 1) {
-    for (let j = i + 1; j < array.length; j += 1) {
-      if (array[i] + array[j] === target) return true;
+    for (let j = 0, len = arr.length; j < len; j += 1) {
+      let temp = arr[j].concat(array[i]);
+      arr.push(temp);
+      const result = temp.reduce((acc, curr) => acc + curr);
+      if (result === target) {
+        return true;
+      }
     }
   }
   return false;
