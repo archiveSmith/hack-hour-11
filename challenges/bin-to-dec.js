@@ -29,5 +29,32 @@ function binToDec(binary) {
 
 }
 
+function decToBin(decimal){
+  let num = Number(decimal);
+	let pow2 = 0;
+	while((Math.pow(2,pow2)) < num){
+		pow2++;
+	}
+	let result = "";
+	pow2 = pow2-1;
+	console.log(pow2);
+	while(pow2 >= 0){
+		if(Math.pow(2,pow2) <= num){
+			result += '1';
+			num = num - Math.pow(2,pow2);
+			pow2--;
+		} else {
+			result += '0';
+			pow2--;
+		}
+	}
+	while(result.length % 8 !== 0){
+	  result = '0' + result;
+	}
+	return result;
+ 
+}
+
+
 
 module.exports = binToDec;
