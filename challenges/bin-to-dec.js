@@ -25,4 +25,18 @@ function binToDec(binary) {
   return sum;
 }
 
+
+// function decToBin(dec) {
+//   let arr;
+//   while ( dec > 1){
+//     let furthestIndex = Math.floor(dec/2);
+//     arr = new Array(furthestIndex).fill('0');
+//     arr[furthestIndex] = 1;
+//     dec = dec % furthestIndex;
+//     console.log(dec);
+//   }
+//   let result = arr.join('');
+//   return result;
+// }
+
 module.exports = binToDec;
