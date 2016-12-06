@@ -14,7 +14,21 @@
  */
 
 function binToDec(binary) {
-
+  let bin = [];
+  let dec = binary.split('').map(x => Number(x));
+  let len = dec.length;
+  let power = 0;
+  for (let i = 0; i < dec.length; i++) {
+    bin.push(Math.pow(2, power));
+    power += 1;
+  }
+  bin.reverse();
+  return bin.map((e, i) => {
+    if (dec[i] === 0) return 0;
+    return e;
+  }).reduce((a, c) => a + c);
 }
+
+// console.log('hi', binToDec('10011100'));
 
 module.exports = binToDec;
