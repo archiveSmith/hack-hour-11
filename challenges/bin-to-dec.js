@@ -3,10 +3,10 @@
  * Write a function that converts the binary string to a decimal number
  *
  * Example:
-* 	binToDec('0')   -> 0
- * 	binToDec('11')  -> 3
- * 	binToDec('100') -> 4
- * 	binToDec('101') -> 5
+*   binToDec('0')   -> 0
+ *  binToDec('11')  -> 3
+ *  binToDec('100') -> 4
+ *  binToDec('101') -> 5
  *  binToDec('0101') -> 5
  *
  * Extension:
@@ -14,7 +14,7 @@
  */
 
 function binToDec(binary) {
-
+  return parseInt(binary, 2);
 }
 
 module.exports = binToDec;
