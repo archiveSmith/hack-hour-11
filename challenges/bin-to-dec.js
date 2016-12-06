@@ -14,7 +14,7 @@
  */
 
 function binToDec(binary) {
-  if (binary) {
+  if (/^[01]+$/.test(binary)) {
     //start countining columns based on position of first non 0 position
     binary = binary.substr(binary.indexOf("1"));
     let dec = 0;
