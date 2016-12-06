@@ -52,6 +52,7 @@ function decToBin(dec) {
     }
     return result;
 
+
 }
 
 module.exports = binToDec;
