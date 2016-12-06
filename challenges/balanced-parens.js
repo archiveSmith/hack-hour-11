@@ -26,6 +26,39 @@
 
 function balancedParens(input){
 
+//split up string into array....
+//loop through it, when you find a type of bracket, loop through rest of array
+//if you find closing great, else return false
+//loop again
+
+
+
+	let newInput = input.split("");
+	for (var i = 0; i < newInput.length; i++){
+		if (newInput[i] === "["){
+			for (var j = i; j < newInput.length; j++){
+
+				if (newInput[j] === "]"){
+					console.log("hi")
+					
+				}
+				
+
+
+			}
+			return true
+		}
+
+	}
 }
 
+
+
+
+
+
+
+
+
+console.log(balancedParens('[]'));
 module.exports = balancedParens;
