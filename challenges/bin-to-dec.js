@@ -16,7 +16,8 @@
 function binToDec(binary) {
 
 //used parseInt, but specified a radix of 10 for the decimal numeral system
-return parseInt(binary, 10);
+if(b)
+return parseInt(binary, 2);
 
 }
 
