@@ -14,21 +14,11 @@
  */
 
 function binToDec(binary) {
-  let bin = [];
-  let dec = binary.split('').map(x => Number(x));
-  let len = dec.length;
+  const bin = [];
+  const dec = binary.split('').map(x => Number(x));
   let power = 0;
-  for (let i = 0; i < dec.length; i++) {
-    bin.push(Math.pow(2, power));
-    power += 1;
-  }
-  bin.reverse();
-  return bin.map((e, i) => {
-    if (dec[i] === 0) return 0;
-    return e;
-  }).reduce((a, c) => a + c);
+  dec.forEach(e => bin.unshift(Math.pow(2, power++)));
+  return bin.map((e, i) => dec[i] === 0 ? 0 : e).reduce((a, c) => a + c);
 }
-
-// console.log('hi', binToDec('10011100'));
 
 module.exports = binToDec;
