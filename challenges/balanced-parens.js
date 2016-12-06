@@ -188,4 +188,6 @@ function balancedParens(input){
 
 }
 
+console.log(balancedParens('hi(my [ name { } ] ) '))
+
 module.exports = balancedParens;
