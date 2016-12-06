@@ -16,7 +16,7 @@
 function binToDec(binary) {
   let sum = 0;
   let currVal = 1;
-  let binaryArr = binary.split('');
+  let binaryArr = binary.split('').reverse();
   while (binaryArr.length) {
     let curr = binaryArr.shift();
     sum += (curr * currVal);
