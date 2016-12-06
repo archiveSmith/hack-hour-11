@@ -9,6 +9,7 @@
  */
 
 function subsetSum(array, target) {
+    
 let currentSum = 0;
 let difference;
 for(let i = 0; i < array.length; i += 1) {
