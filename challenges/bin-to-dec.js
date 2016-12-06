@@ -54,6 +54,4 @@ function decToBin(dec) {
 
 }
 
-// binToDec(10);
-// decToBin(18);
 module.exports = binToDec;
