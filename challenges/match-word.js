@@ -10,19 +10,16 @@
 function matchWord(str) {
   var wordCloses = {};
   var wordArr = [];
-  console.log("start: ", str);
   
   //make all letters uppercase for the purpose of matching later
   str = str.toUpperCase();
-  console.log("upper: ", str);
   
   //replace all non alpha chars with a space
   str = str.replace(/[^0-9A-Z]/g, " ");
-  console.log("alpha only: ", str);
   
   //convert to an array of words
   str = str.split(" ");
-  console.log("to array: ", str);
+
   //now loop through string and push new word/closes to wordCloses object for checking
   for (let i = 0; i < str.length; i++) {
     if (str[i] !== "") {
@@ -30,14 +27,12 @@ function matchWord(str) {
     }
   }
   
-  //now we have a clean word arr with only potential words and there respective closing (reversed) words
-  console.log("word arr: ", wordArr);
-  
+  //now we have a clean word arr with only potential words and there respective closing (reversed) words  
   //firstly, we can check to make sure there are an even number of elements. If there aren't, we know that we will have an unclosed tag
   if (wordArr.length % 2 !== 0) {
-    console.log("Odd number of words, missing close");
     return false;
   }
+
   //now loop through the array for open/closing matches
   let innerCloseFound = true;
   while (innerCloseFound) {
@@ -48,14 +43,11 @@ function matchWord(str) {
       //check for same length
       if (wordArr[i].length === wordArr[i + 1].length) {
         //see if the last character of the current word is equal to the first character of the next word
-        console.log("Check rev: ", wordArr[i], wordArr[i + 1])
         if (wordArr[i] === wordArr[i + 1].split("").reverse().join("")) {
           wordArr.splice(i, 2);
           innerCloseFound = true;
         }
       }
-      
-      console.log("word Arr now: ", wordArr, wordArr.length); 
     }
   }
   
