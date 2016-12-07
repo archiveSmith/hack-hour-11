@@ -8,8 +8,14 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-str.match([])
-  return true;
+  const bank = [];
+  const words = str.toLowerCase().match(/([A-Z])+/ig);
+  if (!words) return true;
+  for (let i = 0; i < words.length; i++){
+    if (bank[bank.length - 1] === words[i])bank.pop();
+    else (bank.push(words[i].split('').reverse().join('')));
+  }
+  return !bank.length;
 }
 
 module.exports = matchWord;
