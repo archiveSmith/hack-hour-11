@@ -9,18 +9,16 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-	const lowCaseStr = str.toLowerCase();
-	let lowCaseArr = lowCaseStr.split(/[^a-z]/);
+	if (typeof str !== 'string') return undefined;
+	let lowCaseArr = str.toLowerCase().split(/[^a-z]/);
 	let checkArr = [];
-	lowCaseArr = lowCaseArr
-	.filter(word => word.length > 0)
+	lowCaseArr.filter(word => word.length > 0)
 	.forEach((word) => {
 		const len = checkArr.length;
 		const revWord = word.split('').reverse().join('');
 		if (checkArr[len -1] === revWord) checkArr.pop();
 		else (checkArr.push(word));
 	});
-	
 
 	return checkArr.length === 0
 }
