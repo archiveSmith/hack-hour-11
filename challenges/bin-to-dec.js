@@ -43,6 +43,6 @@ function binToDec(binary) {
 
 }
 
-console.log(binToDec("1011"))
+console.log(binToDec("101"))
 
 //module.exports = binToDec;
