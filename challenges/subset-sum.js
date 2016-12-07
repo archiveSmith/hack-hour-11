@@ -18,6 +18,7 @@ function subsetSum(array, target) {
   if(addedArr === 0){
     return addedArr === 0;
   }else if(arr.filter((value) => value === addedArr)[0] === addedArr){
+      console.log(arr.filter((value) => value === addedArr))
       return true;
   }else{
       let last = arr.map((item) => item > addedArr ? item = 0 : item);
