@@ -25,6 +25,9 @@ function binToDec(binary) {
   return sum;
 }
 
+function binToDec2(binary){
+   return binary.split("").reverse().reduce((accum, val, index) => accum + val*Math.pow(2,index),0);
+}
 
 // function decToBin(dec) {
 //   let arr;
