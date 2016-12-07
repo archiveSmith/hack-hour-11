@@ -13,12 +13,13 @@ function matchWord(str) {
   if (typeof str !== 'string') return undefined;
   const lowCaseArr = str.toLowerCase().split(/[^a-z]/);
   const checkArr = [];
-  lowCaseArr.filter(word => word.length > 0)
-  .forEach((word) => {
+  lowCaseArr.forEach((word) => {
     const len = checkArr.length;
-    const revWord = word.split('').reverse().join('');
-    if (checkArr[len - 1] === revWord) checkArr.pop();
-    else (checkArr.push(word));
+    if (word.length > 0) {
+      const revWord = word.split('').reverse().join('');
+      if (checkArr[len - 1] === revWord) checkArr.pop();
+      else (checkArr.push(word));
+    }
   });
 
   return checkArr.length === 0;
