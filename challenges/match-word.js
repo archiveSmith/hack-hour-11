@@ -8,7 +8,7 @@
 // matchWord('');  -> true
 function matchWord(str) {
 	str = str.replace(/[^a-z]/gi,' ');
-	str = str.trim();
+	str = str.trim().toLowerCase();
 	let rev = str.split('').reverse().join('');
 	let arr = [];
 	for(let i =0; i < str.length; i++){
