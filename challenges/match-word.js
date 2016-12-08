@@ -10,7 +10,7 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-  var keywords = sr.match(/[a-zA-Z]+/g) || [];
+  var keywords = str.match(/[a-zA-Z]+/g) || [];
   var wordStack = [];
   for (var i = 0; i < keywords.length; i++) {
     if (keywords[i].split('').reverse().join('').toLowerCase() === (wordStack[0] || '').toLowerCase()) {
