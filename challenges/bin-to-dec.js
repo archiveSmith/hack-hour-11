@@ -26,6 +26,7 @@ function binToDec(binary) {
 function decToBin(dec) {
     let i=0;
     let num=0;
+    
     result = '';
     
     while(dec >= num) {
