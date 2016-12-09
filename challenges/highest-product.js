@@ -3,17 +3,16 @@
  */
 
 function highestProduct(array) {
-  let result;
   const len = array.length;
 
-  if (!len || len < 3) {
+  if (len < 3) {
     return 0;
   }
   array.sort();
 
   const productBeginning = array[0] * array[1] * array[len - 1];
   const productEnd = array[len - 1] * array[len - 2] * array[len - 3];
-  result = productEnd > productBeginning ? productEnd : productBeginning;
+  const result = productEnd > productBeginning ? productEnd : productBeginning;
 
   return result;
 }
