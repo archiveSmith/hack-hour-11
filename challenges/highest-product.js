@@ -5,7 +5,7 @@
 function highestProduct(array) {
   const len = array.length;
 
-  if (len < 3) {
+  if (!array || len < 3) {
     return 0;
   }
   array.sort();
