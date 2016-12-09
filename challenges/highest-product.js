@@ -3,13 +3,17 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) {
-    return 0;
+  if (array) {
+      if (array.length < 3) {
+        return 0;
+      } else {
+        array = array.sort(function(a, b) {
+          return b - a;
+        });
+        return (array[0] * array[1] * array[2]);
+      }
   } else {
-    array = array.sort(function(a, b) {
-      return b - a;
-    });
-    return (array[0] * array[1] * array[2]);
+    return 0;
   }
 }
 
