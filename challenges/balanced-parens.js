@@ -25,24 +25,23 @@
  */
 
 function balancedParens(input){
-  // let fInput = input.match(/[\(\)\{\}\[\]]/g);    //fInput is an array
-  let fInput = input.match(/[\(\)]/g);
-  let count1 = 0, count2 = 0;
-  if (fInput.length % 2 !== 0) return false;
-  if (fInput[0] === ')') return false;
-  for (let i = 0; i < fInput.length; i += 1) {
-    (fInput[i] === '(') ? count1 += 1 : count2 += 1;
-  }
-  if (count1 !== count2) return false;
-
-  for (let i = 0; i < fInput.length; i += 1) {
-    if (fInput[i] === '(') {
-      for (let j = i + 1; j < fInput.length; j += 1) {
-         
-      }
+  let obj = {
+    '[': ']',
+    '(': ')',
+    '{': '}',
+  };
+  let stack = [];
+  for (let i = 0; i <input.length; i += 1) {
+    if (input[i] === '(' ||input[i] === '[' ||input[i] === '{') {
+      stack.push(fInput[i]);
+    }
+    if (input[i] === ')' ||input[i] === ']' ||input[i] === '}') {
+      if (obj[stack[stack.length - 1]] ===input[i]) {
+        stack.pop();
+      } else return false;
     }
   }
-
+  return stack.length === 0 ? true : false;
 }
 
 module.exports = balancedParens;
