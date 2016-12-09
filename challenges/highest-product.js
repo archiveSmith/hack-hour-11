@@ -19,10 +19,9 @@ function highestProduct(array) {
             result[result.length-2] = sortedArray[len-2];
         }
     }
-    return result;
+    return result[0] * result[1] * result[2];
 
 }
 
-console.log(highestProduct([1,6,5,4,9,7,-3,-9,-1]))
 
 module.exports = highestProduct;
