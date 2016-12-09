@@ -3,10 +3,10 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) return 0;
-  array = array.sort((a,b) => a - b);
+  if (array.length < 3) return false;
+  array = array.sort((a, b) => a - b);
   let arr1 = array.slice(-3);
-  let arr2 = array.slice(0,2).concat(array[array.length - 1])
+  let arr2 = array.slice(0, 2).concat(array[array.length - 1]);
   let result1 = 1;
   let result2 = 1;
   for (let i = 0; i < arr1.length; i += 1) {
