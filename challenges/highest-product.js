@@ -10,7 +10,15 @@ function highestProduct(array) {
         array = array.sort(function(a, b) {
           return b - a;
         });
-        return (array[0] * array[1] * array[2]);
+        let t = array.length - 1;
+        let highEnd = (array[0] * array[1] * array[2]);
+        let lowEnd = (array[0] * array[t] * array[t-1]);
+        console.log(lowEnd, highEnd);
+        if (highEnd > lowEnd) {
+        	return highEnd;
+        } else {
+        	return lowEnd;
+        }
       }
   } else {
     return 0;
