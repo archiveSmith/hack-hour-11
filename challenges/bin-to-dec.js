@@ -14,10 +14,12 @@
  */
 
 function binToDec(binary) {
-
-//used parseInt, but specified a radix of 10 for the decimal numeral system
-return parseInt(binary, 2);
-
+  let answer = 0;
+    for(let i = binary.length - 1; i >= 0; i--) {
+      answer += Math.pow(2, binary.length -1 - i);
+    }
+  }
+  return answer;
 }
 
 module.exports = binToDec;
