@@ -23,6 +23,5 @@ function highestProduct(array) {
 
 }
 
-// console.log(highestProduct([1,6,5,4,9,7,-3,-9,-1]))
 
 module.exports = highestProduct;
