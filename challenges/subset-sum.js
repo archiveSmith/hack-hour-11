@@ -8,6 +8,7 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
+<<<<<<< HEAD
 
  
 /*
@@ -55,3 +56,10 @@ function subsetSum(array, target) {
 
 console.log(subsetSum([3, 7, 4, 2], 5))
 //module.exports = subsetSum;
+=======
+function subsetSum(array, target) {
+
+}
+
+module.exports = subsetSum;
+>>>>>>> b5eb6fc6d69a6a9df3d646c7dd6937e7605f82a0

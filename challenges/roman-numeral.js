@@ -18,6 +18,7 @@
  */
 
 function romanNumeral(n) {
+<<<<<<< HEAD
 //if under 10, then do brute force if statement
 //then do all options for 10,20,30,40,50
 //then do options for 100,200,300, 
@@ -144,3 +145,9 @@ return newNum.join("");
 console.log(romanNumeral(98))
 
 //module.exports = romanNumeral;
+=======
+
+}
+
+module.exports = romanNumeral;
+>>>>>>> b5eb6fc6d69a6a9df3d646c7dd6937e7605f82a0

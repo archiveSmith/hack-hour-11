@@ -15,6 +15,7 @@
 
 function binToDec(binary) {
 
+<<<<<<< HEAD
 	let newBin = binary.split("");
 
 	let newestBin = newBin.map(function(val){
@@ -46,3 +47,8 @@ function binToDec(binary) {
 console.log(binToDec("101"))
 
 //module.exports = binToDec;
+=======
+}
+
+module.exports = binToDec;
+>>>>>>> b5eb6fc6d69a6a9df3d646c7dd6937e7605f82a0
