@@ -9,30 +9,12 @@
  */
 
 function subsetSum(array, target) {
-<<<<<<< HEAD
-let resultArr = [];
-let resultArr2 = [];
-for (var i = 0; i<array.length; i++){
-  for (var k =1; k<array.length; k++){
-    resultArr.push(array[i]+array[k])
-    for(var j=0; j<resultArr.length; j++){
-      resultArr2.push(array[i]+ resultArr[j])
-    }
-      }
-    }
-if (resultArr.includes(target) || resultArr2.includes(target)){
-
-    return true;
-} 
-console.log(resultArr)
-  console.log(resultArr2)
-return false
+if (target === 0){
+  return true;
 }
-
-
-=======
-
+if (!target) {
+  return true
 }
-
->>>>>>> 2d5e6c3e4be4404efad54fee792c1e1a98feee46
+return (subsetSum(array.slice(1), target-1) || subsetSum(array.slice(1), target))
+}
 module.exports = subsetSum;
