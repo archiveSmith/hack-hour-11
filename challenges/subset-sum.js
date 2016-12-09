@@ -14,8 +14,12 @@
    })
 
    if (array.length === 0) return false;
+
      let i = array.length - 2;
      let firstNum = array[array.length - 1];
+     if(array.length === 1 && firstNum === target) return true;
+     else if(array.length === 1 && firstNum !== target) return false
+     else {
      while( i > 0) {
        if(firstNum + array[i] > target || firstNum + array[i] < firstNum) {
          i--;
@@ -28,6 +32,7 @@
      }
      array.pop()
      return subsetSum(array, target);
+   }
  }
 
 module.exports = subsetSum;
