@@ -6,14 +6,8 @@ function highestProduct(array) {
   let result;
   const len = array.length;
 
-  if (!len) {
-    return undefined;
-  } else if (len > 0 && len < 3) {
-    result = 1;
-    for (let i = 0; i < array.length; i += 1) {
-      result *= array[0];
-    }
-    return result;
+  if (!len || len < 3) {
+    return 0;
   }
   array.sort();
 
