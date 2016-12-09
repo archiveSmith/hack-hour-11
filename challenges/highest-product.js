@@ -8,7 +8,7 @@ function highestProduct(array) {
   // multiply the highest number and two lowest numbers (in case they are high negatives)
   // compare the two numbers and return the higher product.
   // profit.
-  if (array.length < 3) return "boo";
+  if (array.length < 3 || !array) return "boo";
   let data = array.sort(function(a,b) { return a - b; });
   const prod1 = data[0] * data[1] * data[2];
   const prod2 = data[0] * data[data.length-1] * data[data.length-2];
