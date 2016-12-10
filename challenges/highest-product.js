@@ -3,6 +3,7 @@
  */
 
 function highestProduct(array) {
+
   if (array.length < 3) {
     return 0;
   }
@@ -16,6 +17,7 @@ function highestProduct(array) {
     const product = sortedArr[0] * sortedArr[1] * sortedArr[2];
   }
   return product;
+
 }
 
 
