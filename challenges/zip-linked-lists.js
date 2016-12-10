@@ -17,10 +17,10 @@ function zip(l1, l2) {
 	let next = l2;
 	let hold;
 	while(curr.next !== null){
-		hold = curr;
+		hold = curr.next;
 		curr.next = next;
-		next = curr.next;
-		curr = hold;
+		next = hold;
+		curr = curr.next;
 	}
 	return l1;
 };
