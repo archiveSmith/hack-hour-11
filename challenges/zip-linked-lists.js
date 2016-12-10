@@ -14,6 +14,8 @@ function Node(val) {
 
 function zip(l1, l2) {
   let temp, temp2;
+  if (!l1) return l2;
+  if (!l2) return l1;
   if (l1.next === null) {
     if (l2) l1.next = l2;
     return l1;
@@ -35,3 +37,8 @@ function zip(l1, l2) {
 }
 
 module.exports = {Node: Node, zip: zip};
+
+const ll1 = null;
+const ll2 = { 'value': 2, 'next': { 'value': 4, 'next': { 'value': 6, 'next': null } } };
+
+console.log(JSON.stringify(zip(ll1, ll2)));
