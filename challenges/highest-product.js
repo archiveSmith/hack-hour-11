@@ -7,7 +7,6 @@ function highestProduct(array) {
     return 0;
   }
   const sortedArray = array.sort(function (a, b) { return b - a; });
-  console.log(sortedArray);
   const product = sortedArray[0] * sortedArray[1] * sortedArray[2];
   return product;
 }
