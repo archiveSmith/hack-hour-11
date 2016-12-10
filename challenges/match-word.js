@@ -41,5 +41,6 @@ console.log(matchWord('IF()()fi[]'));
 console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw'));
 console.log(matchWord('__ENDDNE__'));
 console.log(matchWord('you hi ih uoy you'));
+console.log(matchWord('__END_DNE-----'));
 
 module.exports = matchWord;

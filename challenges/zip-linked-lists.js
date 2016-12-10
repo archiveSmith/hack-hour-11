@@ -32,9 +32,7 @@ function zip(l1, l2) {
     bottom = tempBottom;
     top = tempTop;
   }
-
   return l1;
-
 };
 
 
