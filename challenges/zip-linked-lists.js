@@ -11,8 +11,14 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  if (!l1 || !l2) {
+  if (!l1 && !l2) {
     return -1;
+  }
+  if (!l1) {
+    return l2;
+  }
+  if (!l2) {
+    return l1;
   }
   top = l1;
   bottom = l2;
@@ -26,9 +32,7 @@ function zip(l1, l2) {
     bottom = tempBottom;
     top = tempTop;
   }
-
   return l1;
-
 };
 
 
