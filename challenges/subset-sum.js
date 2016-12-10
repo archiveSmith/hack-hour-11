@@ -9,12 +9,12 @@
  */
 
 function subsetSum(array, target) {
-if (target === 0){
+if (!target){
   return true;
 }
-if (!target) {
-  return true
+if (!array.length) {
+  return false;
 }
-return (subsetSum(array.slice(1), target-1) || subsetSum(array.slice(1), target))
+return (subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target))
 }
 module.exports = subsetSum;
