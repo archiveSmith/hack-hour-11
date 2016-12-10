@@ -8,15 +8,13 @@ function highestProduct(array) {
     return 0;
   }
 
-  else {
+  const sortedArr = array.sort(function (a, b) {
+     return b - a;
+  });
 
-    const sortedArr = array.sort(function (a, b) {
-       return b - a;
-    });
+  const product = sortedArr[0] * sortedArr[1] * sortedArr[2];
+  return product;
 
-    const product = sortedArr[0] * sortedArr[1] * sortedArr[2];
-    return product;
-  }
 
 }
 
