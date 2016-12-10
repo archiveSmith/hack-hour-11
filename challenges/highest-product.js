@@ -3,22 +3,19 @@
  */
 
 function highestProduct(array) {
-let highestProduct = 0;
-
-//checking for edge case
-if(array.length < 3) {
-  return highestProduct;
-}
-
-//iterate over the array
-for(let i = 0; i < array.length; i += 1) {
-  let loopProduct = array[i] * array[i + 1] * array[i + 2]
-  if(loopProduct > highestProduct) {
-    highestProduct = loopProduct;
+  if (array.length < 3) {
+    return 0;
   }
-}
 
-return highestProduct;
+  else {
+
+    const sortedArr = array.sort(function (a, b) {
+       return b - a;
+    });
+
+    const product = sortedArr[0] * sortedArr[1] * sortedArr[2];
+  }
+  return product;
 }
 
 
