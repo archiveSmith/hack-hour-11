@@ -8,14 +8,22 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-strClean = str.replace(/\W|_/g, " ")
+strClean = str.toLowerCase().replace(/\W|_/g, " ")
 strArr = strClean.trim().split(" ");
 stack = [];
 
+if (str === "") {
+  return true;
+}
+
+if (strArr.length === 0) {
+  return false;
+}
+
 for (var i=0; i<strArr.length; i++) {
   if (strArr[i].length>0){
-    if (stack[length-1] === strArr[i].split("").reverse().join("")){
-      strArr.pop()
+    if (stack[stack.length-1] === strArr[i].split("").reverse().join("")){
+      stack.pop()
     } else {
     stack.push(strArr[i]);
     }
@@ -23,7 +31,8 @@ for (var i=0; i<strArr.length; i++) {
 }
 if (stack.length === 0){
 return true;
-}
+  }
 return false
 }
+
 module.exports = matchWord;
