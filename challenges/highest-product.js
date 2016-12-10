@@ -15,8 +15,8 @@ function highestProduct(array) {
     });
 
     const product = sortedArr[0] * sortedArr[1] * sortedArr[2];
+    return product;
   }
-  return product;
 
 }
 
