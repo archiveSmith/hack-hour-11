@@ -5,16 +5,13 @@
  */
 
 function highestProduct(array) {
-  if (!Array.isArray(array)) return undefined;
-  if (array.length < 3) return 0;
+  if (array.length < 3 || !Array.isArray(array)) return 0;
+  const bigThreeProduct = array.sort((a, b) => a - b)
+                          .slice(-3)
+                          .reduce((acc, cur) => { return acc *= cur; });
+  const negProduct = [array[0], array[1], array[array.length - 1]].reduce((acc, cur) => { return acc *= cur; });
 
-  const bigThree = array.sort((a, b) => a - b).slice(-3);
-  return bigThree.reduce((acc, cur) => {
-    return acc *= cur;
-  });
+  return Math.max(bigThreeProduct, negProduct);
 }
 
 module.exports = highestProduct;
-
-const array = [3, 2, -1];
-console.log(highestProduct(array));
