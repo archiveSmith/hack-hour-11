@@ -11,21 +11,23 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  if (l1 && l2) {
-    l1.next = l2;
-    l2.next = l1;
-  } else if (l2) {
-    let l1 = new Node('l1');
-    return zip(l1, l2);
-  } else if (l1) {
-    let l2 = new Node('l2');
-    return zip(l1, l2);
-  } else {
-    let l1 = new Node('l1');
-    let l2 = new Node('l2');
-    return zip(l1,l2);
+  if (!l1) return l2;
+  else if (!l2) return l1;
+  else {
+    let nodeL1 = l1;
+    let nodeL2 = l2;
+    let nodeL2save;
+    while (nodeL1.next && nodeL2.next) {
+      const l1next = nodeL1.next;
+      nodeL1.next = l2;
+      nodeL2save = l2.next;
+      l2.next = l1next;
+      nodeL1 = nodeL1.next;
+      nodeL2 = nodeL2.next;
+    }
   }
   return l1;
 };
+
 
 module.exports = {Node: Node, zip: zip};
