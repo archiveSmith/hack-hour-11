@@ -10,9 +10,9 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(list1, list2) {
-  let l1 = Object.assign({}, list1); // good practice - clone and preserve arg
-  let l2 = Object.assign({}, list2);
+function zip(l1, l2) {
+  // let l1 = Object.assign({}, list1); // good practice - clone and preserve arg
+  // let l2 = Object.assign({}, list2);
   if (!l1) return l2; // no need to zip if only one list given
   if (!l2) return l1;
 
