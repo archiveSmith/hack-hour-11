@@ -20,7 +20,7 @@ function zip(l1, l2) {
   let tail = l1;
   l1 = l1.next; // shifting down list
 
-  while (l1 || l2) {
+  while (l1 && l2) {
     tail.next = l2; // add l2 element to main chain
     l2 = l2.next; // shift l2 chain
     tail = tail.next; // reset tail
