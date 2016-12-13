@@ -31,8 +31,8 @@ function drawStairs(n) {
 				stairs += '\n';
 				n -= 1;
 			}
-			console.log(stairs);
 		}
+		console.log(stairs);
 }
 
 
