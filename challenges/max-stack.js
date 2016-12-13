@@ -7,7 +7,31 @@
  */
 
 function Stack() {
-  // body...
+	this.elements = [];
+	this.length = 0;
+
+	this.push = function(item){
+		for(let i = this.length; i> 0; i--){
+			this.elements[i] = this.elements[i-1];
+		}
+		this.elements[0] = item;
+		this.length++;
+		return this.length;
+	};
+
+	this.pop = function(){
+		let val = this.elements[this.elements.length-1];
+		this.elements.length = this.elements.length-1;
+		this.length--;
+		return val;
+	};
+
+	this.getMax = function(){
+		if(this.length === 0) return undefined;
+		return Math.max(...this.elements);
+
+	}.bind(this);
+ 
 }
 
 module.exports = Stack;
