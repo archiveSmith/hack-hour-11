@@ -25,6 +25,7 @@ class Stack {
   }
 
   getMax() {
+    if (!this.index) return undefined;
     const index = Object.keys(this.storage);
     return index.reduce((acc, curr) => {
       return this.storage[curr] > acc
