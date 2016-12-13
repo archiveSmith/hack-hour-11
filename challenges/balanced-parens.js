@@ -26,30 +26,26 @@
 
 function balancedParens(input){
 
-//split up string into array....
-//loop through it, when you find a type of bracket, loop through rest of array
-//if you find closing great, else return false
-//loop again
-
-
 
 	let newInput = input.split("");
-	for (var i = 0; i < newInput.length; i++){
-		if (newInput[i] === "["){
-			for (var j = i; j < newInput.length; j++){
+	
 
-				if (newInput[j] === "]"){
-					console.log("hi")
-					
-				}
-				
+	const openClose = [];
 
-
-			}
-			return true
-		}
+	for (let i = 0; i < newInput.length; i++){
+		if (newInput[i] === "{" || newInput[i] === "(" || newInput[i] === "[" ||newInput[i] === "}" || newInput[i] === ")" || newInput[i] === "]"){
+			openClose.push(newInput[i])
+		};
+		if (openClose[openClose.length-1] === "}" && openClose[openClose.length-2] === "{" || openClose[openClose.length-1] === "]" && openClose[openClose.length-2] === "[" || openClose[openClose.length-1] === ")" && openClose[openClose.length-2] === "("){
+			openClose.pop();
+			openClose.pop();
+		};
 
 	}
+	if (openClose.length > 0){
+		return false
+	}
+	return true
 }
 
 
@@ -60,5 +56,5 @@ function balancedParens(input){
 
 
 
-console.log(balancedParens('[]'));
-module.exports = balancedParens;
+console.log(balancedParens('[(]{)}'));
+//module.exports = balancedParens;

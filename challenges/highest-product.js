@@ -34,33 +34,23 @@ need it to run through array and continue
 
  */
 
- let arr = [1,2,3,4,5,6,7,8]
+ let arr = [1,3,4,1,1,2,3]
 
 
 
 function highestProduct(array) {
 
-	let highProd = 0;
+	const newArr = array.sort(function(a,b){
+		return a-b;
+	});
 
-	if (array.length < 3){
-		return 0
-	}
+	return (newArr[newArr.length-1] * newArr[newArr.length-2] * newArr[newArr.length-3]);
 
-	else{
-
-		for (var i = 0; i < array.length; i++){
-			let product = array[i]*array[i+1]*array[i+2];
-			if (product> highProd){
-				highProd = product;
-			}
-		}
-
-
-	}
-	return highProd;
-
+	
 
 }
 
+console.log(highestProduct(arr))
 
-module.exports = highestProduct;
+
+//module.exports = highestProduct;
