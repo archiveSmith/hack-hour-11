@@ -18,8 +18,31 @@ function binToDec(binary) {
   let output = 0;
   for (let i = 0; i < nums.length; i++) {
     if (Number(nums[i]) === 1) {
-      output += Math.pow(2, i);
+      output += 2 ** i;
     } 
+  }
+  return output;
+}
+
+function decToBin(n) {
+  let max = 0;
+  let power = 0;
+  while (max <= n) {
+    power += 1;
+    max = Math.pow(2, power);
+  }
+  let target = n;
+  let output = '';
+  let limit = power;
+  for (let i = 0; i < limit; i++) {
+    if (target >= Math.pow(2, power - 1)) {
+      output += '1';
+      target -= Math.pow(2, power - 1);
+      power -= 1;
+    } else {
+      output += '0';
+      power -= 1;
+    }
   }
   return output;
 }
