@@ -11,14 +11,16 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  
-  if(l1.next === null && l2.next === null) {
+  if(!l1) {
+  return l2;
+  }
+  if(!l2) {
   return l1;
   }
 
-  else {
-  return zip(l1.next= l2, l2.next= l1.next);
-  }
+
+  l1.next = zip(l2, l1.next);
+  return l1;
 
 };
 
