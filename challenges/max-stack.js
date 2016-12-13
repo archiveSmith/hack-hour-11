@@ -17,12 +17,16 @@ Stack.prototype.push = function(ele) {
 }
 
 Stack.prototype.pop = function() {
-  let result = this.contents.splice((this.length - 1), 1);
-  this.length -= 1;
-  return result;
+  if (this.contents === {}) return {};
+  else {
+    let result = this.contents.splice((this.length - 1), 1);
+    this.length -= 1;
+    return result;
+  }
 }
 
 Stack.prototype.getMax = function() {
+  if (this.contents === {}) return undefined;
   this.contents.sort((a, b) => a - b);
   return this.contents[this.length - 1];
 }
