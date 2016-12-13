@@ -31,7 +31,7 @@ Stack.prototype.pop = function () {
       return max;
     });
   }
-  return popped;
+  return popped; 
 };
 
 Stack.prototype.getMax = function () {
