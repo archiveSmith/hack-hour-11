@@ -7,7 +7,36 @@
  */
 
 function Stack() {
-  // body...
+  this.stack = [];
+  this.prevMax = [];
+  this.max;
+  
+  this.push = function(val) {
+    this.stack.push(val);
+    if (!this.max) {
+      this.max = val;
+    } else {
+      if (val > this.max) {
+        this.prevMax.push(this.max);
+        this.max = val;
+      }
+    }
+    return this.stack.length;
+  };
+  
+  this.pop = function() {
+    if (this.stack.length) {
+      let poppedVal = this.stack.pop();
+      if (poppedVal === this.max) {
+        this.max = this.prevMax.pop();
+      }
+      return poppedVal;
+    }
+  };
+  
+  this.getMax = function() {
+    return this.max;
+  };
 }
 
 module.exports = Stack;
