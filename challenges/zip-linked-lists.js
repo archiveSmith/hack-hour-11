@@ -11,14 +11,12 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-	let curNode = l1;
-	while (curNode.next) {
-		let l1sNextL2 = l2.next;
-		l1.next = l2;
-		l2.next = l2sNextl1;
-		curNode = curNode.next;
-	}
+	if (!l1) return l2;
 
+	if (!l2) return l1;
+
+	l1 = zip(l2, l1.next);
+	
 	return l1;
 };
 
