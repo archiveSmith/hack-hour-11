@@ -9,23 +9,26 @@
 function Stack() {
   // body...
 let this.stack = [];
+let  this.length = 0;
 
 function push (input) {
   this.stack[this.stack.length] = input;
+  this.length++;
   return this.stack.length;
 }
 
 function pop () {
-  let temp = this.stack[this.stack.length-1];
-  delete this.stack[this.stack.length-1];
+  let temp = this.stack[this.length-1];
+  this.stack = this.stack.slice(0, this.length-1)
+  this.length--;
   return temp;
 }
 
 function getMax () {
-  if (this.stack.length = 0){
+  if (this.length = 0){
     return undefined;
   } else {
-  return Math.max(...this.stack)
+  return Math.max.apply(null, this.stack)
   }
 }
 
