@@ -18,6 +18,7 @@ function Stack() {
     else if (element >= max[max.length-1]){
       max.push(element);
     }
+
     return storage.length;
   }
   
@@ -25,12 +26,13 @@ function Stack() {
     if (storage[storage.length-1] === max[max.length-1]){
       max.pop();
     }
-    console.log(storage, max);
+
     return storage.pop();
   }
   
   this.getMax = function() {
     if (!max) return undefined;
+    
     return max[max.length-1];
   }
 }
