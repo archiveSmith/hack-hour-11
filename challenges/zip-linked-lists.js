@@ -12,11 +12,10 @@ function Node(val) {
 
 function zip(l1, l2) {
   let head;
-  let tail;// = head;
+  let tail;
 
   if (l1) {
     head = l1;
-    //tail = l2;
     tail = head;
     l1 = l1.next;
   } else {
@@ -24,14 +23,11 @@ function zip(l1, l2) {
     tail = head;
     l2 = l2.next;
   }
-  //let tail = head;
 
-  while (l1 !== null || l2 !== null) {//tail !== null) {
+  while (l1 !== null || l2 !== null) {
     if (l2) {
       tail.next = l2;
       l2 = l2.next;
-      //tail.next = l2;
-      //l2 = l2.next;
       tail = tail.next;
     }
 
