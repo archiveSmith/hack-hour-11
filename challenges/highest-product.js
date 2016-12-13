@@ -3,7 +3,8 @@
  */
 
 function highestProduct(array) {
-  if (Array.iaArray(array) && array.length < 3) return 0;
+  if (Array.iaArray(array)) return 0;
+  if (array.length === 0) return 0;
   const perms = [[]];
   let currentHighestProduct = 0;
   for (let i = 0; i < array.length; i ++) {
