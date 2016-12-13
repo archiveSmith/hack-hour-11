@@ -29,7 +29,7 @@ function Stack() {
       if (this.storage.length > 0) {
         let temp = this.storage[this.storage.length-1];
         this.storage.splice(-1, 1);
-        if (temp === this.maxNum && this.storage.length > 1) {
+        if (temp === this.maxNum && this.storage.length >= 1) {
           this.storage.sort(function(a,b){return a-b});
           this.maxNum = this.storage[this.storage.length-1];
         }
@@ -39,5 +39,6 @@ function Stack() {
    };
    this.getMax = function () {return this.maxNum};
 }
+
 
 module.exports = Stack;
