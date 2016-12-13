@@ -18,7 +18,7 @@ function Stack() {
     else if (element >= max[max.length-1]){
       max.push(element);
     }
-    console.log(storage, max);
+    return storage.length;
   }
   
   this.pop = function(){
