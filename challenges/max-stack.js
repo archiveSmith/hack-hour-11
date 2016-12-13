@@ -10,10 +10,12 @@ class Stack {
   constructor() {
     this.storage = {};
     this.index = 0;
+    this.max = 0;
   }
 
   push(val) {
     this.storage[this.index++] = val;
+    this.max = this.max > val ? this.max : val;
     return this.index;
   }
 
@@ -21,17 +23,18 @@ class Stack {
     const poppedVal = this.storage[this.index - 1];
     delete this.storage[this.index - 1]
     this.index -= 1;
-    return poppedVal;
-  }
-
-  getMax() {
-    if (!this.index) return undefined;
     const index = Object.keys(this.storage);
-    return index.reduce((acc, curr) => {
+    this.max = index.reduce((acc, curr) => {
       return this.storage[curr] > acc
         ? this.storage[curr]
         : acc;
     });
+    return poppedVal;
+  }
+
+  getMax() {
+    if (!this.storage) return undefined;
+    return this.max;
   }
 }
 
