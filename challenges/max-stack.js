@@ -9,6 +9,7 @@
 function Stack() {
   let lengths = 0;
   let myStack = [];
+  
   this.push= function(item){
     myStack[lengths]=item;
     lengths+=1;
@@ -16,7 +17,8 @@ function Stack() {
   }
 
   this.pop = function(){
-    let temp = myStack[myStack.length-1]
+    let temp = myStack[lengths-1]
+    console.log(temp)
     myStack[lengths-1] = undefined;
     lengths -=1;
     return temp;
@@ -25,9 +27,11 @@ function Stack() {
   this.getMax = function(){
     for(let i = 0; i< myStack.length; i++){
       let sortedmyStack = myStack.sort((a,b)=> {return a - b });
-      return sortedmyStack[length-1];
+      return sortedmyStack[lengths-1];
   }
 }
+}
+
 
 
 module.exports = Stack;
