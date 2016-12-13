@@ -10,7 +10,7 @@ function Stack() {
   // body...
 
   this.stack = {
-    max: null,
+    max: undefined,
     //secondMax: null,
     container: {},
     length: 0,
@@ -40,7 +40,7 @@ Stack.prototype.pop = function() {
 
   if (popped) {
     if (this.stack.length < 1) {
-      this.stack.max = null;
+      this.stack.max = undefined;
     } else if (popped >= this.stack.max) { // condition might be >= 0
       const len = this.stack.length;
       let newMax = this.stack.container[0];
