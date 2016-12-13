@@ -9,9 +9,11 @@
 function Stack() {
 	this.array = [];
 	this.length = 0;
+	this.max = -Infinity;
 }
 
 Stack.prototype.push = function(element) {
+	if (element > this.max) this.max = element;
 	this.array[this.length] = element;
 	this.length += 1;
 	return this.length;
@@ -25,7 +27,8 @@ Stack.prototype.pop = function() {
 }
 
 Stack.prototype.getMax = function() {
- 	return Math.max(...this.array);
+	if(this.length === 0) return undefined;
+ 	return this.max
 }
 
 module.exports = Stack;
