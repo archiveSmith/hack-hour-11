@@ -8,8 +8,8 @@
 
 function Stack() {
   // body...
-let this.stack = [];
-let  this.length = 0;
+this.stack = [];
+this.length = 0;
 
 function push (input) {
   this.stack[this.stack.length] = input;
@@ -28,7 +28,7 @@ function getMax () {
   if (this.length = 0){
     return undefined;
   } else {
-  return Math.max.apply(null, this.stack)
+  return Math.max.apply(null, this.stack);
   }
 }
 
