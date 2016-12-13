@@ -24,6 +24,7 @@ function Stack() {
     pop: function() {
       let val = this.stack[this.length - 1];
       this.stack.length = this.stack.length - 1;
+      this.length--;
       return val;
     },
     getMax: function() {
