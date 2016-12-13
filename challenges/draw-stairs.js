@@ -17,20 +17,15 @@ function drawStairs(n) {
 	let stairs = '';
 	let stairLength = n;
 
-		while(n > 0) {
-			let spaces = n - 1;
-			for(let i = 0; i <= stairLength; i += 1) {
-				if(spaces > 0) {
-					stairs += ' ';
-				}
-
-				else {
-					stairs += '*';
-					spaces -= 1;
-				}
-				stairs += '\n';
-				n -= 1;
+	while(n > 0) {
+		let spaces = n - 1;
+		for(let i = 0; i <= stairLength; i += 1) {
+			if(spaces > 0) stairs += ' ';
+			else stairs += '*';
+			spaces -= 1;
 			}
+			stairs += '\n';
+			n -= 1;
 		}
 		console.log(stairs);
 }
