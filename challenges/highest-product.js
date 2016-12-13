@@ -18,6 +18,8 @@ function highestProduct(array) {
   const orderedNegatives = negatives.sort(sortNumber);
   if (orderedNegatives.length < 2) {
     return orderedPositives[orderedPositives.length - 1] * orderedPositives[orderedPositives.length - 2] * orderedPositives[orderedPositives.length - 3];
+  } else if (orderedPositives.length < 3) {
+    
   } else {
     if (orderedNegatives[0] * orderedNegatives[1] > orderedPositives[orderedPositives.length - 1] * orderedPositives[orderedPositives.length - 2]) {
       return orderedNegatives[0] * orderedNegatives[1] * orderedPositives[orderedPositives.length - 1];
