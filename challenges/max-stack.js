@@ -27,6 +27,7 @@ Stack.prototype.push = function(value) {
   // if (!this.stack.secondMax || value > this.stack.secondMax) {
   //   this.stack.secondMax = value;
   // }
+  return this.stack.length;
 };
 
 Stack.prototype.pop = function() {
