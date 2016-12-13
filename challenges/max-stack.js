@@ -17,7 +17,7 @@ function Stack() {
     if (!this.max) {
       this.max = val;
     } else {
-      if (val > this.max) {
+      if (val >= this.max) {
         this.prevMax.push(this.max);
         this.max = val;
       }
