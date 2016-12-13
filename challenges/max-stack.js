@@ -11,10 +11,7 @@ function Stack() {
 	this.length = 0;
 
 	this.push = function(item){
-		for(let i = this.length; i> 0; i--){
-			this.elements[i] = this.elements[i-1];
-		}
-		this.elements[0] = item;
+		this.elements[this.length] = item;
 		this.length++;
 		return this.length;
 	};
@@ -30,7 +27,7 @@ function Stack() {
 		if(this.length === 0) return undefined;
 		return Math.max(...this.elements);
 
-	}.bind(this);
+	};
  
 }
 
