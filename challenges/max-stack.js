@@ -25,10 +25,10 @@ this.pop = function () {
 }
 
 this.getMax = function () {
-  if (this.length = 0){
+  if (this.length === 0){
     return undefined;
   } else {
-  return Math.max.apply(null, this.stack);
+  return Math.max(...this.stack);
   }
 }
 
