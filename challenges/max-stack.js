@@ -1,4 +1,4 @@
-/*
+mmi/*
  * Create a stack with the push, pop, and getMax methods.
  * push should return the new length of the stack.
  * pop should return the element that was just removed.
@@ -7,21 +7,22 @@
  */
 
 function Stack() {
-  this.stack = [];
+  let arr = [];
+  let lengths = 0;
   this.push = function(num) {
-    this.stack.push(num);
-    return stack.length;
-  }
-  this.pop = function(num) {
-    let popped = this
-    this.stack.pop(num);
+    arr[lengths] = num;
+    lengths++;
+    return lengths;
+  };
+  this.pop = function() {
+    let popped = arr[lengths - 1];
+    arr[lengths - 1] = undefined;
+    lengths-=1;
     return popped;
-    
-  }
-  // below should return undefined if array is empty
+  };
   this.getMax = function() {
     let largest = -Infinity;
-    this.stack.forEach(function(item) {
+    arr.forEach(function(item) {
       if (largest < item) {
         largest = item;
       }
@@ -29,5 +30,6 @@ function Stack() {
     return largest;
   };
 }
+
 
 module.exports = Stack;
