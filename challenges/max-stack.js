@@ -22,6 +22,7 @@ function Stack() {
       return this.length;
     },
     pop: function() {
+      if (this.stack[0] === undefined) return undefined;
       let val = this.stack[this.length - 1];
       this.stack.length = this.stack.length - 1;
       this.length--;
