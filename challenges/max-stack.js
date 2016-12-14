@@ -1,4 +1,4 @@
-mmi/*
+/*
  * Create a stack with the push, pop, and getMax methods.
  * push should return the new length of the stack.
  * pop should return the element that was just removed.
@@ -9,6 +9,7 @@ mmi/*
 function Stack() {
   let arr = [];
   let lengths = 0;
+  
   this.push = function(num) {
     arr[lengths] = num;
     lengths++;
