@@ -7,12 +7,16 @@
  */
 
 function Stack() {
-  this.contents = {};
-  this.length = 0;
+  this.contents = [];
+  // this.length = 0;
+  this.push = function(ele) {
+    this.contents[this.contents.length] = ele;
+    return this.contents.length += 1;
+  }
 }
 
 Stack.prototype.push = function(ele) {
-  this.contents[this.length] = ele;
+  this.contents[this.contents.length] = ele;
   return this.length += 1;
 }
 
