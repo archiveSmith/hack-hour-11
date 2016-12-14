@@ -16,14 +16,15 @@ Stack.prototype.push = function(el) {
    this.value[this.len] = el;
     this.len++;
     this.maxValue = el > this.maxValue ? el : this.maxValue;
-    return length;
+    return this.len;
 };
 
 Stack.prototype.pop = function() {
+    if (this.len < 1) return undefined;
     let pop =  this.value[this.len-1];
     this.value.splice(this.len-1, 1)
     this.len --
-    if (pop === this.maxValue){ this.maxValue = this.value.reduce((acc, el) => {return el > acc ? el : acc}) }
+    if (pop === this.maxValue){ this.maxValue = this.value.reduce((acc, el) => el > acc ? el : acc); }
     return pop; 
 }
   
