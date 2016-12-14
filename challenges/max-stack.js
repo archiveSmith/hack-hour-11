@@ -11,20 +11,20 @@ function Stack() {
 this.stack = [];
 this.length = 0;
 
-function push (input) {
+this.push = function (input) {
   this.stack[this.stack.length] = input;
   this.length++;
-  return this.stack.length;
+  return this.length;
 }
 
-function pop () {
+this.pop = function () {
   let temp = this.stack[this.length-1];
   this.stack = this.stack.slice(0, this.length-1)
   this.length--;
   return temp;
 }
 
-function getMax () {
+this.getMax = function () {
   if (this.length = 0){
     return undefined;
   } else {
