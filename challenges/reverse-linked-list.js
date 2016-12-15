@@ -15,24 +15,29 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
-  let c = head;
-  let llvals = [];
-  while (c.next) {
-    llvals[llvals.length] = c.value;
-    c = c.next
-  }
+	if (!head)
+		return undefined;
+	
+	let c = head;
+	let llvals = [];
+	while (c.next) {
+		llvals[llvals.length] = c.value;
+		c = c.next
+	}
 
-  llvals[llvals.length] = c.value;
+	llvals[llvals.length] = c.value;
 
-  c = head;
-  let i = llvals.length - 1;
-  while (head.next) {
-  	head.value = llvals[i];
-  	head = head.next
-  	i--;
-  }
+	c = head;
+	let i = llvals.length - 1;
+	while (head.next) {
+		head.value = llvals[i];
+		head = head.next
+		i--;
+	}
 
-  return c;
+	head.value = llvals[i];
+
+	return c;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
