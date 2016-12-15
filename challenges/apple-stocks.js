@@ -18,7 +18,9 @@ function bestProfit(stock) {
   let profitArr = [0];
   let maxKeys = [0];
   let minKeys = [0];
+  if (!Array.isArray(stock)) return 0;
   for (let i = 1; i < stock.length; i++) {
+    if (typeof stock[i] !== 'number') return 0;
     if (stock[i] - min > profitArr[profitArr.length - 1] ) {
       console.log('max')
       max = stock[i]
