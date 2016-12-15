@@ -13,7 +13,22 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+    let spy = stock_prices_yesterday;
+    let l = spy.length;
+    let max = Math.max(...spy);
+    let min = Math.min(...spy);
+    let placeMax, placeMin;
+    for(let i =0; i<l; i++){
+      if(spy[i] === max && placeMin < i){
+        placeMax = i;
+      }else if(spy[i] === min){
+        placeMin = i;
+      }else if( placeMin > i){
+        return 0;
+      }
+    }
+      return max-min;
 }
+
 
 module.exports = bestProfit;
