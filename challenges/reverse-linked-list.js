@@ -8,13 +8,23 @@
  *
  */
 
+
 function Node(value) {
-    this.value = value;
-    this.next = null;
+  this.value = value;
+  this.next = null;
 }
 
 function reverseLinkedList(head) {
-
+  let tail = head;
+  let prev = null;
+  
+  while(tail !==null){
+    let temp = tail.next;
+    tail.next = prev;
+    prev = tail;
+    tail = temp;
+  }
+   return prev;
 }
 
-module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
+module.exports = { Node: Node, reverseLinkedList: reverseLinkedList };
