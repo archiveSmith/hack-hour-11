@@ -15,7 +15,7 @@ function Node(value) {
 
 
 function reverseLinkedList(head) {
-  if (!head) return undefined; // no head given, no reverse
+  if (!head) return head; // no head given, no reverse
   if (!head.next) return head; // one element, no need to reverse
   let curr = head;
   let newHead;
