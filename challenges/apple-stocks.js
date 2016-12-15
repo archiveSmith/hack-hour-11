@@ -28,6 +28,9 @@ function bestProfit(stock_prices_yesterday) {
     let firstBuy = stocks[0];
 
     for (let i = 1; i < stocks.length; i++){
+        if (typeof stocks[i] !== 'number'){
+            return 0
+        }
         let profit= stocks[i] - firstBuy;
         if (profit > avGrowth){
             return profit;
@@ -36,7 +39,5 @@ function bestProfit(stock_prices_yesterday) {
     return 0;
  
 }
-
-
 
 module.exports = bestProfit;
