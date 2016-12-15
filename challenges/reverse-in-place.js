@@ -13,7 +13,7 @@
  */
 
 function reverseInPlace(array) {
-	if(!array.length) return [];
+	if(!array || !array.length ) return [];
 	let lp = 0;
 	let rp = array.length - 1;
 	let holder = null;
