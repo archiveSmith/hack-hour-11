@@ -36,4 +36,5 @@ function subsetSum(array, target) {
   return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
 }
 
+
 module.exports = subsetSum;
