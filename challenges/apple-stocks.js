@@ -13,11 +13,11 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-if (stock_prices_yesterday) {
+if (!stock_prices_yesterday) {
     return 0;
 }
-let lowest = +infinity;
-let highest = -infinity;
+let lowest = 9000000;
+let highest = -9000000000;
 for (let i = 0; i < stock_prices_yesterday.length; i+=1) {
     if (stock_prices_yesterday[i] > highest) {
         highest = stock_prices_yesterday[i];
