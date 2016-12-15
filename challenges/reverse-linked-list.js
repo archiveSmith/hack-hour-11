@@ -13,7 +13,7 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
-	if(head.next === null || head === null) return head;
+	if(!head || head.next === null) return head;
 
 	let oldHead = head;
 	let curr = head;
