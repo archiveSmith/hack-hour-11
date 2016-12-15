@@ -18,12 +18,12 @@
    let profit;
    buyVal = stock_prices_yesterday[0];
    sellVal = stock_prices_yesterday[1];
-   if(typeof buyVal !== 'number' || buyVal === undefined)
+   if(typeof buyVal !== 'number' || buyVal === undefined) return 0;
    for(let i = 0; i < stock_prices_yesterday.length; i++) {
      if (stock_prices_yesterday[i] < buyVal) {
        buyVal = stock_prices_yesterday[i]
      }
-     if (stock_prices_yesterday[i] > sellVal) {
+     if (stock_prices_yesterday[i] > sellVal && i !== 0) {
        sellVal = stock_prices_yesterday[i]
      }
    }
