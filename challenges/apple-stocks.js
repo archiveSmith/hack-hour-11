@@ -11,17 +11,42 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
-
 function bestProfit(stock_prices_yesterday) {
-	if(!stock_prices_yesterday || !Array.isArray(stock_prices_yesterday)) return 0;
+	if(!stock_prices_yesterday || !Array.isArray(stock_prices_yesterday) || stock_prices_yesterday.length < 2) return 0;
+	for(let i = 0; i < stock_prices_yesterday.length; i++){
+		if(typeof stock_prices_yesterday[i] !== 'number'){
+			return 0;
+		}
+	}
+  let a = stock_prices_yesterday.slice();
+  let b = stock_prices_yesterday.slice();
 	let max = stock_prices_yesterday.indexOf(Math.max(...stock_prices_yesterday));
 	let min = stock_prices_yesterday.indexOf(Math.min(...stock_prices_yesterday));
-	while(max < min){
-		stock_prices_yesterday.splice(max,1);
-		max = stock_prices_yesterday.indexOf(Math.max(...stock_prices_yesterday));
-		min = stock_prices_yesterday.indexOf(Math.min(...stock_prices_yesterday));
+	let maxCheck1 = max;
+	let minCheck1 = min;
+	let options = [];
+	while(maxCheck1 < minCheck1){
+		a.splice(maxCheck1,1);
+		maxCheck1 = a.indexOf(Math.max(...a));
+		minCheck1 = a.indexOf(Math.min(...a));
 	}
-	return stock_prices_yesterday[max] - stock_prices_yesterday[min];
+	options.push(a[maxCheck1] - a[minCheck1]);
+	maxCheck1 = stock_prices_yesterday.indexOf(Math.max(...stock_prices_yesterday));
+	minCheck1 = stock_prices_yesterday.indexOf(Math.min(...stock_prices_yesterday));
+	console.log(stock_prices_yesterday)
+	while(minCheck1 > maxCheck1){
+		b.splice(minCheck1,1);
+		maxCheck1 = b.indexOf(Math.max(...b));
+		minCheck1 = b.indexOf(Math.min(...b));
+	  console.log(minCheck1)
+	
+	}
+	
+	options.push(b[maxCheck1] - b[minCheck1]);
+  //console.log(options);
+
+
+	return Math.max(...options);
 }
 
 module.exports = bestProfit;
