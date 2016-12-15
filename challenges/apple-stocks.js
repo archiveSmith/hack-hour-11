@@ -16,7 +16,7 @@
 function bestProfit(stock_prices_yesterday) {
   if(!stock_prices_yesterday) return 0;
   let len = stock_prices_yesterday.length;
-
+  console.log("stock_prices_yesterday: ", stock_prices_yesterday);
   if(len < 2) return 0;
   let profit = -Infinity;
   let diff = -Infinity;
@@ -27,14 +27,14 @@ function bestProfit(stock_prices_yesterday) {
     console.log(profit);
   }
 
-  return profit;
+  return profit > 0 ? profit : 0;
 }
 
-// let arr = [];
-//
-// for(let i = 0; i < 60; i++){
-//   arr[i] = Math.floor((Math.random() * 1000) + 1);
-// }
-//bestProfit(arr);
+let arr = [];
+
+for(let i = 0; i < 60; i++){
+  arr[i] = Math.floor((Math.random() * 1000) + 1);
+}
+bestProfit(arr);
 
 module.exports = bestProfit;
