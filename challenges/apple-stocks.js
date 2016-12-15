@@ -25,10 +25,11 @@ function bestProfit(stock_prices_yesterday) {
   let hp = stock_prices_yesterday[0];
   let ht = 0;
   let maxProfit = 0;
-  let newHighHit = 0;
+  let newHighHit = 1;
   for (let i = 0; i < stock_prices_yesterday.length; i++) {
     if (spArr[i] < lp || newHighHit) {
       lp = spArr[i];
+      hp = spArr[i];
       newHighHit = 0;
     }
     
@@ -45,5 +46,8 @@ function bestProfit(stock_prices_yesterday) {
   
   return maxProfit;
 }
+
+//const spy = [1000, 300, 290, 287, 1, 5000, 269, 269, 246, 230, 234, 236, 240, 289, 320, 45, 44, 43, 429, 300, 271, 1000, 4, 1000, 251];
+//console.log(bestProfit(spy));
 
 module.exports = bestProfit;
