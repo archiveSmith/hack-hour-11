@@ -15,8 +15,9 @@ function Node(value) {
 
 function reverseLinkedList(head) {
   let node = head;
+  if (!head.value) return null;
   let result = new Node(head.value);
-  console.log(result)
+
   while (node.next) {
     const temp = result;
     result = new Node(node.next.value);
