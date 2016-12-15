@@ -20,6 +20,8 @@ function bestProfit(stock_prices_yesterday) {
   }
   
   let spArr = stock_prices_yesterday;
+  let original = stock_prices_yesterday[0];
+  console.log(original);
   let lp = stock_prices_yesterday[0];
   let lt = 0;
   let hp = stock_prices_yesterday[0];
@@ -42,7 +44,7 @@ function bestProfit(stock_prices_yesterday) {
     }
   }
   
-  if (maxProfit <= 0) {
+  if (maxProfit <= 0 || original > maxProfit) {
     return 0;
   }
   
