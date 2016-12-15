@@ -13,6 +13,35 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+let lowest = array[0];
+let highest = 0;
+
+  if(stock_prices_yesterday !== Array) {
+    return 0;
+  }
+
+  for(let i = 0; i < stock_prices_yesterday; i += 1) {
+    if(array[i] > highest) {
+      highest = array[i];
+    }
+
+    else if(array[i] < lowest) {
+      lowest = array[i];
+    }
+
+    let profit = highest - lowest;
+
+    if(profit > 0) {
+      return profit;
+    }
+
+    else {
+      return 0;
+    }
+
+
+  }
+
 
 }
 
