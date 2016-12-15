@@ -1,3 +1,4 @@
+"use strict";
 /**
  *  I have an array stock_prices_yesterday where:
  *
@@ -13,7 +14,27 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+  if(!stock_prices_yesterday) return 0;
+  let len = stock_prices_yesterday.length;
 
+  if(len < 2) return 0;
+  let profit = -Infinity;
+  let diff = -Infinity;
+
+  for(let i = 0; i < len - 1; i++){
+    diff = stock_prices_yesterday[i + 1] - stock_prices_yesterday[i];
+    profit = diff > profit ? diff : profit;
+    console.log(profit);
+  }
+
+  return profit;
 }
+
+// let arr = [];
+//
+// for(let i = 0; i < 60; i++){
+//   arr[i] = Math.floor((Math.random() * 1000) + 1);
+// }
+//bestProfit(arr);
 
 module.exports = bestProfit;

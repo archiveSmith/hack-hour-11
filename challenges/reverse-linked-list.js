@@ -15,6 +15,7 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+  if(!head) return null;
   let start;
 
   function recurse(head){
@@ -27,6 +28,7 @@ function reverseLinkedList(head) {
     return head;
   }
   recurse(head);
+  head.next = null;
   return start;
 }
 

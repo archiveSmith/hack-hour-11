@@ -23,6 +23,7 @@ Stack.prototype.push = function(val){
 };
 
 Stack.prototype.pop = function(val){
+  if( this.items.length === 0) return undefined;
   this.max.pop();
   return this.items.pop();
 };
