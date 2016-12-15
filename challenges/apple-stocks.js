@@ -14,7 +14,7 @@
 
 function bestProfit(stock_prices_yesterday) {
   if (stock_prices_yesterday.isNaN) return 0;
-  if (stock_prices_yesterday.length === 0 || !stock_prices_yesterday.some(isNaN)) return 0;
+  if (stock_prices_yesterday.length === 0 || stock_prices_yesterday.some(isNaN)) return 0;
   // time complexity O(2n)
   let profit = 0;
   for (let i = 0; i < stock_prices_yesterday.length - 1; i += 1) {
