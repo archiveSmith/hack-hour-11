@@ -27,7 +27,7 @@
 function balancedParens(input){
     let matches;
     let openBrackets;
-    
+
 
     matches = {'[':']','{':'}','(':')'};
     openBrackets = [];
@@ -54,7 +54,5 @@ function balancedParens(input){
 //iterate through the array, and if you find an open bracket {[(, then add one to count. if you find a closing bracket, take one off of count.
     // if (count === 0) return true;  count will be 0 if all brackets have a match
 
-
-
-
+ 
 module.exports = balancedParens;
