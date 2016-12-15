@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Create a stack with the push, pop, and getMax methods.
  * push should return the new length of the stack.
@@ -7,7 +8,23 @@
  */
 
 function Stack() {
-  // body...
+  this.items = [];
+  this.max = [];
 }
+
+Stack.prototype.push = function(val){
+  this.items.push(val);
+  if(this.items.length === 1){
+    this.max.push(val);
+  }else{
+    let max = val > this.max[this.max.length - 1] ? val : this.max[this.max.length - 1];
+    this.max.push(max);
+  }
+};
+
+Stack.prototype.pop = function(val){
+  this.max.pop();
+  return this.items.pop();
+};
 
 module.exports = Stack;

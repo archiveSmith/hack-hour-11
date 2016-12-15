@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Write a function for reversing a linked list.
  * Your function will have one input: the head of the list
@@ -14,7 +15,19 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+  let start;
 
+  function recurse(head){
+    if(head.next === null){
+       start = head
+       return head;
+    }
+
+    recurse(head.next).next = head;
+    return head;
+  }
+  recurse(head);
+  return start;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
