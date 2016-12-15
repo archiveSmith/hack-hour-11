@@ -16,8 +16,8 @@ function Node(value) {
 
 function reverseLinkedList(head) {
 	if (!head)
-		return undefined;
-	
+		return null;
+
 	let c = head;
 	let llvals = [];
 	while (c.next) {
