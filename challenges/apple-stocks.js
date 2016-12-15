@@ -27,7 +27,7 @@ function bestProfit(stock_prices_yesterday) {
   if (max === null) {
     return 0;
   }
-  return max;
+  return max - stock_prices_yesterday[0];
 }
 
 
