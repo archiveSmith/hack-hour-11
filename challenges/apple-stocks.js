@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  *  I have an array stock_prices_yesterday where:
  *
@@ -23,7 +25,8 @@ function bestProfit(stock_prices_yesterday) {
         highest = profit;
       }
     }
-    return highest;
   }
+  return highest;
+}
 
 module.exports = bestProfit;
