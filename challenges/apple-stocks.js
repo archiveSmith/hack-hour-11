@@ -14,17 +14,17 @@
 
 function bestProfit(stock_prices_yesterday) {
   if (!stock_prices_yesterday) return 0;
-  let buy = infinity;
-  let sell = -infinity;
+  let buy = Infinity;
+  let sell = -Infinity;
   const len = stock_prices_yesterday.length;
   for (let i = 0; i < len; i += 1) {
-    if (stock[i] < buy) {
-      buy = stock[i];
+    if (stock_prices_yesterday[i] < buy) {
+      buy = stock_prices_yesterday[i];
     }
   }
   for (let j = 0; j < len; j += 1) {
-    if (stock[j] > sell) {
-      sell = stock[j];
+    if (stock_prices_yesterday[j] > sell) {
+      sell = stock_prices_yesterday[j];
     }
   }
   return (sell - buy > 0) ? (sell - buy) : 0;
