@@ -16,7 +16,8 @@ function bestProfit(stock_prices_yesterday) {
 let lowest = array[0];
 let highest = 0;
 
-  if(stock_prices_yesterday !== Array) {
+
+  if(stock_prices_yesterday.constructor !== Array) {
     return 0;
   }
 

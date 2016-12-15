@@ -21,6 +21,7 @@ function stringRotation(s1, s2) {
     return false;
   }
 
+
   else {
     doubleString = s2 + s2;
     return isSubstring(doubleString, s1);

@@ -20,7 +20,7 @@ let newArr = [];
 // set mode
 let mode = array[0];
 function setMode(array) {
-	
+
 
 for(let i = 0; i < array.length; i++) {
 	if()
@@ -32,5 +32,6 @@ if(average === mode) {
 return false;
 
 }
+
 
 module.exports = modemean;

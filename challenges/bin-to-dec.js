@@ -14,6 +14,7 @@
  */
 
 function binToDec(binary) {
+  
   let answer = 0;
     for(let i = binary.length - 1; i >= 0; i--) {
       answer += Math.pow(2, binary.length -1 - i);

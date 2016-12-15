@@ -21,12 +21,12 @@ var a = new Node('A');
   var c = new Node('C');
   var d = new Node('D');
   var e = new Node('E');
- 
+
   a.next = b;
   b.next = c;
   c.next = d;
   d.next = e;
-  
+
 
 function Node(val) {
   this.value = val;
@@ -41,19 +41,20 @@ function kthToLastNode(k, head) {
   }
   return nodes[nodes.length - k];
   // let count = 2;
-  
+
   // if(head.next !== null) {
   //   count++;
   // }
-  
-  
+
+
   // for(let i = 0; i < count; i++) {
   //   nodes.push(head);
   //   head = head.next;
   // }
-  
-  // return nodes;//[nodes.length - k].value; 
+
+  // return nodes;//[nodes.length - k].value;
 	}
+
 
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

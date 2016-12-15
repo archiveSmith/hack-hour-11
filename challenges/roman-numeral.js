@@ -14,22 +14,23 @@
  *      500   ->    D
  *      900   ->    CM
  *      1000  ->    M
- * 
+ *
  */
 
 function romanNumeral(n) {
- 
+
   let result = '';
   let decimalPlace = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   let roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
 for (let i = 0; i<=decimalPlace.length; i+= 1) {
-    while (n % decimalPlace[i] < n) {     
+    while (n % decimalPlace[i] < n) {
     result += roman[i];
     n -= decimalPlace[i];
-    }  
+    }
 }
 
   return result;
 }
+
 
 module.exports = romanNumeral;

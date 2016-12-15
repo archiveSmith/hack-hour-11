@@ -14,6 +14,7 @@
 */
 
 function drawStairs(n) {
+	
 	let stairs = '';
 	let stairLength = n;
 
