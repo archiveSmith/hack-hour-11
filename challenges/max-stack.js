@@ -23,18 +23,17 @@ class Stack {
     const poppedVal = this.storage[this.index - 1];
     delete this.storage[this.index - 1]
     this.index -= 1;
-    const index = Object.keys(this.storage);
-    this.max = index.reduce((acc, curr) => {
-      return this.storage[curr] > acc
-        ? this.storage[curr]
-        : acc;
-    });
     return poppedVal;
   }
 
   getMax() {
+    const index = Object.keys(this.storage);
     if (!this.storage) return undefined;
-    return this.max;
+    return index.reduce((acc, curr) => {
+      return this.storage[curr] > acc
+      ? this.storage[curr]
+      : acc;
+    });
   }
 }
 

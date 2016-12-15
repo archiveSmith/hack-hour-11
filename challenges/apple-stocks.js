@@ -13,7 +13,24 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  if (!Array.isArray(stock_prices_yesterday)) return undefined;
+  let maxProfit = 0;
+  let low = 0;
+  let high = 0;
+  stock_prices_yesterday.forEach((buy, time, allDay) => {
+    allDay.slice(time).forEach(sell => {
+      if (sell - buy > maxProfit) {
+        maxProfit = sell - buy;
+      }
+    });
+  });
+  return maxProfit;
 }
+
+const prices = [15, 8, 3, 5, 21, 11, 1]; // 17
+
+console.log(bestProfit(prices));
+
+
 
 module.exports = bestProfit;
