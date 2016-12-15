@@ -43,7 +43,6 @@ let highest = 0;
 
   }
 
-
 }
 
 module.exports = bestProfit;
