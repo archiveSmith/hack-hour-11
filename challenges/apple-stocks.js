@@ -13,7 +13,21 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  let buyVal;
+  let sellVal;
+  let profit;
+  for(let i = 0; i < stock_prices_yesterday.length; i++) {
+    buyVal = stock_prices_yesterday[0];
+    sellVal = stock_prices_yesterday[1];
+    if (stock_prices_yesterday[i] < buyVal) {
+      buyVal = stock_prices_yesterday[i]
+    }
+    if (stock_prices_yesterday[i] > sellVal) {
+      sellVal = stock_prices_yesterday[i]
+    }
+  }
+  profit = sellVal - buyVal;
+  return profit;
 }
 
 module.exports = bestProfit;
