@@ -13,7 +13,7 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-  if (!Array.isArray(stock_prices_yesterday) return 0;
+  if (!Array.isArray(stock_prices_yesterday)) return 0;
   if (stock_prices_yesterday.length === 0 || stock_prices_yesterday.some(isNaN)) return 0;
   // time complexity O(2n)
   let profit = 0;
