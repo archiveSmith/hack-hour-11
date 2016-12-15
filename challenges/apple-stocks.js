@@ -36,7 +36,9 @@ function bestProfit(stock_prices_yesterday) {
     if (spArr[i] > hp) {
       hp = spArr[i];
       newHighHit = 1;
-      maxProfit = hp - lp;
+      if (hp - lp > maxProfit) {
+      	maxProfit = hp - lp;
+      }
     }
   }
   
