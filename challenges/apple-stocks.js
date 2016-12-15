@@ -24,9 +24,13 @@ function bestProfit(stock_prices_yesterday) {
         if (arr[i] - lowestPrice > maxProfit) maxProfit = arr[i] - lowestPrice;
         if (arr[i] < lowestPrice) lowestPrice = arr[i];
     }
-    return maxProfit;
+    if (maxProfit >= 0) {
+        return maxProfit;
+    } else {
+        return 0;
+    }
 }
 
-//console.log(bestProfit([1,2,6,4,0,8]));
+// console.log(bestProfit([0,0,0,-1]));
 
 module.exports = bestProfit;
