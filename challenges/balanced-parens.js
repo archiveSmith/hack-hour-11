@@ -30,10 +30,10 @@ let values = { "]": "[", "}": "{", ")": "("};
 
 function balancedParens(input){
 	return input.split("").reduce((open, char, index, array) =>{
-		if(char in brackets){ open.unshift(brackets[char]) }
+		if(char in brackets) open.unshift(brackets[char]);
 
-		if(char == open[0]){
-		  open.shift(); 
+		if(char === open[0]){
+		  open.shift();
 		}else if(char in values){
 		  open.unshift(char);
 		}
@@ -42,7 +42,6 @@ function balancedParens(input){
 
 	}, []).length === 0;
 
-
 }
-//console.log(balancedParens('[({)})]'));
+console.log(balancedParens('[({(}))()]'));
 module.exports = balancedParens;

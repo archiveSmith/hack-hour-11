@@ -19,7 +19,7 @@
  */
 let rome = [{1000: "M"}, {900: "CM"}, {500: "D"}, {400: "CD"}, {100: "C"}, {90: "XC"}, {50: "L"}, {40: "XL"}, {10: "X"}, {5: "V"}, {4: "IV"}, {1:"I"}];
 function romanNumeral(n, i) {
-  if(n === 0 || i === rome.length) return "";
+  if(n === 0) return "";
   if( i === undefined) i = 0;
   let key = Object.keys(rome[i])[0];
   let leftover = n - key;
@@ -31,4 +31,5 @@ function romanNumeral(n, i) {
   }
 }
 
-module.exports = romanNumeral;
+console.log(romanNumeral(37));
+//module.exports = romanNumeral;
