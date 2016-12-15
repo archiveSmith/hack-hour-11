@@ -7,6 +7,7 @@
  */
 
 function Stack() {
+<<<<<<< HEAD
   let arr = [];
   let lengths = 0;
   
@@ -33,4 +34,9 @@ function Stack() {
 }
 
 
+=======
+  // body...
+}
+
+>>>>>>> de11cfd2523f79b3b266504cf25079b2c6a70535
 module.exports = Stack;

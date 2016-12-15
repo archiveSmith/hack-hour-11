@@ -3,6 +3,7 @@
  */
 
 function highestProduct(array) {
+  //arra.length === 0 should be if(array)
   if (array.length === 0 || array.length < 3) {
     return 0;
   }
