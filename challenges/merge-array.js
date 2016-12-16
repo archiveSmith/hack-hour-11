@@ -14,7 +14,23 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+  // create new array
+  // create a counter for each array's index
+  // iterate over the arrays, pushing the lower number of each into new array, increase its index count
+  // when one array is empty, push the rest of the other array into the new array
+  // return new array
+  let merged = [];
+  let index1 = 0, index2 = 0;
+  while (arr1[index1] !== undefined || arr2[index] !== undefined) {
+    if (arr1[index1] < arr2[index2]) {
+      merged.push(arr1[index1++]);
+    } else if (arr2[index2] <= arr1[index1]) {
+      merged.push(arr2[index2++])
+    } else {
+      merged.push(arr1[index1++] || arr2[index2++]);
+    }
+  }
+  return merged;
 }
 
 module.exports = mergeArrays;
