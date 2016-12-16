@@ -44,7 +44,7 @@ function mergeArrays(arr1, arr2) {
         }
     
     }
-    console.log(result);
+    return result;
 }
 
 var my_array = [3,4,6,10,11,15,21];
