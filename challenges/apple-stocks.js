@@ -11,9 +11,29 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
-
-function bestProfit(stock_prices_yesterday) {
-
+ 
+  function bestProfit(arr) {
+  //return max - min and make sure indexes are aligned so min comes before max
+  
+  let min = arr.indexOf(Math.min(...arr));
+  let max = arr.indexOf(Math.max(...arr))
+  
+  if(min === arr.length - 1) {
+    arr.pop();
+    min = arr.indexOf(Math.min(...arr));
+    bestProfit(arr)
+  }
+  
+  if(min > max) {
+    arr.splice(arr[min], 1);
+    bestProfit(arr)
+  }
+  
+  else {
+    return (arr[max] - arr[min])
+  }
+  
 }
+
 
 module.exports = bestProfit;
