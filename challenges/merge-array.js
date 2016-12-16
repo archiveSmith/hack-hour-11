@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * We have our lists of orders sorted numerically already, in arrays.
  * Write a functin to merge our arrays of orders into one sorted array.
@@ -14,7 +16,18 @@
  */
 
 function mergeArrays(arr1, arr2) {
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) return undefined;
+  const res = [];
 
+  while (arr1.length || arr2.length) {
+    if (arr2[0] <= arr1[0] || !arr1[0]) {
+      res.push(arr2.shift());
+    } else {
+      res.push(arr1.shift());
+    }
+  }
+
+  return res;
 }
 
 module.exports = mergeArrays;
