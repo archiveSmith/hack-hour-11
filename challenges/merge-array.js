@@ -15,7 +15,6 @@
 
 function mergeArrays(arr1, arr2) {
 	let i = 0;
-	let j = 0;
 	let finished = 0;
 	const merged = [];
 	while (!finished) {
@@ -26,9 +25,6 @@ function mergeArrays(arr1, arr2) {
 			if (arr2[i]) merged.push(arr2[i]);
 			if (arr1[i]) merged.push(arr1[i]);
 		}
-
-		i++;
-
 
 		if (i >= arr1.length && i >= arr2.length) {
 			if (arr1.length > arr2.length) {
@@ -44,6 +40,8 @@ function mergeArrays(arr1, arr2) {
 			}
 			finished = 1;
 		}
+
+		i++;
 	}
 
 	return merged;
