@@ -16,26 +16,23 @@
 function mergeArrays(arr1, arr2) {
   //solution with built-ins;
   // return arr1.concat(arr2).sort((a, b) => a - b);
+
   if (arr1.length < 2) return arr1;
+
   const arr = arr1.concat(arr2);
   const result = [];
   const mid = Math.floor(arr.length / 2);
   const left = mergeArrays(arr.slice(0, mid), []);
   const right = mergeArrays(arr.slice(mid), []);
 
+  function merge(a, b) {
+    while (a.length > 0 && b.length > 0) {
+      result.push(a[0] < b[0] ? a.shift() : b.shift());
+    }
+    return result.concat(a.length ? a : b);
+  }
   return merge(left, right);
 }
 
-function merge(a, b) {
-  while (a.length > 0 && b.length > 0) {
-    result.push(a[0] < b[0] ? a.shift() : b.shift());
-  }
-  return result.concat(a.length ? a : b);
-}
-
-const my_array = [3,4,6,10,11,15,21];
-const another_array = [1,5,8,12,14,19];
-
-console.log(mergeArrays(my_array, another_array));
 
 module.exports = mergeArrays;
