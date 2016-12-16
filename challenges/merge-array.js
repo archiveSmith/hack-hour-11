@@ -21,7 +21,7 @@ function mergeArrays(arr1, arr2) {
   // return new array
   let merged = [];
   let index1 = 0, index2 = 0;
-  while (arr1[index1] !== undefined || arr2[index] !== undefined) {
+  while (arr1[index1] !== undefined || arr2[index2] !== undefined) {
     if (arr1[index1] < arr2[index2]) {
       merged.push(arr1[index1++]);
     } else if (arr2[index2] <= arr1[index1]) {
