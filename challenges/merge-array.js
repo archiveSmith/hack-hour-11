@@ -33,8 +33,41 @@ let j = 0;
     }
 
   }
-  
   return newArr;
+
+
+
 }
 
 module.exports = mergeArrays;
+
+
+// if(arr1[i] === undefined) {
+//   for(j; j < arr2.length; j += 1) {
+//     newArr.push(arr2[j]);
+//   }
+// }
+//
+// if(arr2[j] === undefined) {
+//   for(i; i < arr1.length; i += 1) {
+//     newArr.push(arr1[i]);
+//   }
+// }
+//
+// if(arr1[i] > arr2[j]) {
+//   newArr.push(arr1[i]);
+//   i += 1;
+// }
+//
+//   else if(arr2[j] > arr1[i]) {
+//   newArr.push(arr2[j]);
+//   j += 1;
+// }
+//
+// else {
+//   newArr.push(arr1[i], arr2[j]);
+//   i += 1;
+//   j += 1;
+// }
+//
+// return newArr;
