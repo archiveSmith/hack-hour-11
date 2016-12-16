@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  *  I have an array stock_prices_yesterday where:
  *
@@ -16,15 +14,28 @@
 
 function bestProfit(stock_prices_yesterday) {
   if (!Array.isArray(stock_prices_yesterday) || stock_prices_yesterday.length < 2) return 0;
-  const len = stock_prices_yesterday.length;
-  let maxDif = 0;
-  for (let i = 0; i < len; i += 1) {
-    for (let j = i + 1; j < len; j += 1) {
-      const dif = stock_prices_yesterday[j] - stock_prices_yesterday[i];
-      if (dif > maxDif) maxDif = dif;
-    }
-  }
-  return maxDif;
+  // const len = stock_prices_yesterday.length;
+  // let maxDif = 0;
+  // for (let i = 0; i < len; i += 1) {
+  //   for (let j = i + 1; j < len; j += 1) {
+  //     const dif = stock_prices_yesterday[j] - stock_prices_yesterday[i];
+  //     if (dif > maxDif) maxDif = dif;
+  //   }
+  // }
+  // return maxDif;
+  const max = Math.max(...stock_prices_yesterday);
+  const maxIndex = stock_prices_yesterday.indexOf(max);
+  const leftSide = stock_prices_yesterday.slice(0, maxIndex);
+  const leftSideMin = Math.min(...leftSide);
+  const leftSideDif = max - leftSideMin;
+
+  const rightSide = stock_prices_yesterday.slice(maxIndex + 1);
+  const rightSideMin = Math.min(...rightSide);
+  const rightSideB = rightSide.slice(rightSide.indexOf(rightSideMin));
+  const rightSideMax = Math.max(...rightSideB);
+  const rightSideDif = rightSideMax - rightSideMin;
+
+  return leftSideDif > rightSideDif ? leftSideDif : rightSideDif;
 }
 
 module.exports = bestProfit;
