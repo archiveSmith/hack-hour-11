@@ -15,7 +15,7 @@
 'use strict';
 
 const wordPoints = [
-10000000000, "HundredBillion",
+100000000000, "HundredBillion",
 1000000000, "Billion",
 100000000, "HundredMillion",
 1000000, "Million",
@@ -48,13 +48,12 @@ const wordPoints = [
 4, "Four",
 3, "Three",
 2, "Two",
-1, "One",
-0, "Zero"];
+1, "One"];
 
 function numToWords(num) {
   let numberWord = "";
-  if (!num) {
-    return wordPoints[0];
+  if (!num || num < 1) {
+    return "Zero";
   }
   
   for (let i = 0; i < wordPoints.length - 2; i = i + 2) {
