@@ -11,6 +11,7 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
+
 function bestProfit(stock_prices_yesterday) {
   if (!stock_prices_yesterday) {
     return 0;
