@@ -14,7 +14,13 @@
 
 'use strict';
 
-const wordPoints = [1000, "Thousand",
+const wordPoints = [
+10000000000, "HundredBillion",
+1000000000, "Billion",
+100000000, "HundredMillion",
+1000000, "Million",
+100000, "HundredThousand",
+1000, "Thousand",
 100, "Hundred",
 90, "Ninety",
 80, "Eighty",
@@ -58,7 +64,7 @@ function numToWords(num) {
         numberWord += wordPoints[wordPoints.indexOf(pointCount) + 1];
       }
       numberWord += wordPoints[i + 1];
-      num = num - wordPoints[i];
+      num = num - (pointCount * wordPoints[i]);
       console.log(pointCount);
     }
   }
