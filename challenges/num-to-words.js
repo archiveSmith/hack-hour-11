@@ -13,7 +13,65 @@
  */
 
 function numToWords(num) {
-
+  const table = {
+    '0': 'Zero',
+    '1': 'One',
+    '2': 'Two',
+    '3': 'Three',
+    '4': 'Four',
+    '5': 'Five',
+    '6': 'Six',
+    '7': 'Seven',
+    '8': 'Eight',
+    '9': 'Nine',
+    '10': 'Ten',
+    '11': 'Eleven',
+    '12': 'Twelve',
+    '13': 'Thirteen',
+    '14': 'Fourteen',
+    '15': 'Fiften',
+    '16': 'Sixteen',
+    '17': 'Seventeen',
+    '18': 'Eighteen',
+    '19': 'Nineteetn',
+    '20': 'Twenty',
+    '30': 'Thirty',
+    '40': 'Forty',
+    '50': 'Fifty',
+    '60': 'Sixty',
+    '70': 'Seventy',
+    '80': 'Eighty',
+    '90': 'Ninty',
+    '100': 'OneHundred',
+    '200': 'TwoHundred',
+    '300': 'ThreeHundred',
+    '400': 'FourHundred',
+    '500': 'FiveHundred',
+    '600': 'SixHundred',
+    '700': 'SevenHundred',
+    '800': 'EightHundred',
+    '900': 'NineHundred',
+    '1000': 'OneThousand'
+  };
+  const arr = [];
+  let str = '';
+  let result;
+  let multiplier = 1;
+  if (num < 21) return table[num];
+  else {
+    while (num > 0) {
+      result = num % 10;
+      if (result > 0) {
+        arr.unshift(result * multiplier);
+      }
+      num = Math.floor(num / 10);
+      multiplier *= 10;
+    }
+  }
+  for (let i = 0; i < arr.length; i += 1) {
+    str += table[arr[i]];
+  }
+  return str;
 }
 
 module.exports = numToWords;
