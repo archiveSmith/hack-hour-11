@@ -14,7 +14,7 @@
 
 function numToWords(num) {
     if (num < 0) {
-        return -1;
+        return false;
     }
     if (num === 0) {
         return 'Zero';
