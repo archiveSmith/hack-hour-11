@@ -11,6 +11,7 @@
  * numToWords(300525151340440) -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
  * numToWords(92120000000000000) -> 'NintyTwoQuadrillionOneHundredTwentyTrillion'
  */
+<<<<<<< HEAD
 function numToWords(num) {
 	let answer = '';
 	num = num.toString();
@@ -115,4 +116,11 @@ return answer;
 
 
 
+=======
+
+function numToWords(num) {
+
+}
+
+>>>>>>> 9da417e7f87dbd0aaf07c4cd03719efc3d319ce9
 module.exports = numToWords;
