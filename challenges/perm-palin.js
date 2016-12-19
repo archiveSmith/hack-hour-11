@@ -10,6 +10,7 @@
  */
 
 function permPalin(str) {
+  if (typeof str !== 'string') return false;
   const obj = {};
   for (let i = 0; i < str.length; i += 1) {
     if (!obj[str[i]]) obj[str[i]] = 0;
