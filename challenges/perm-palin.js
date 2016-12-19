@@ -21,11 +21,7 @@ function permPalin(str) {
       count += 1;
     }
   }
-  if (count === 0 || count === 1) {
-    return true;
-  } else {
-    return false;
-  }
+  return count < 2 ? true : false;
 }
 
 module.exports = permPalin;
