@@ -15,5 +15,4 @@ function permPalin(str) {
   return Object.keys(obj).filter(key => obj[key] % 2 === 1).length <= 1;
 }
 
-
 module.exports = permPalin;
