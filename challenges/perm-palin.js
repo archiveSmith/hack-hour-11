@@ -31,6 +31,4 @@ function permPalin(str) {
 	return canBePalin;
 }
 
-console.log(permPalin('abaccb'));
-
 module.exports = permPalin;
