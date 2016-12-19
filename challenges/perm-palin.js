@@ -25,7 +25,10 @@ function permPalin(str) {
 	letters.shift();
 	}
 
-	if(str.length < 2){
+	if(str.length < 2 && str.length % 2 !== 0){
+		return true;
+	}
+	if(str.length === 0){
 		return true;
 	}
 	return false;
