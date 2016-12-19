@@ -25,6 +25,7 @@ if(!str) {
 			}
 		}
 
+
 	return obj.keys() <= 1;
 }
 

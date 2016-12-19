@@ -16,6 +16,7 @@ function numToWords(n) {
   var string = n.toString(), units, tens, scales, start, end, chunks, chunksLen, chunk, ints, i, word, words, and = 'and';
 
 
+    
      if( parseInt( string ) === 0 ) {
          return 'zero';
      }
