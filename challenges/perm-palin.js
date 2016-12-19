@@ -29,7 +29,6 @@ function permPalin(str) {
 		}
 	});
 
-	console.log("mid: ", middle);
 	if (middle > 1) {
 		return false;
 	} else {
