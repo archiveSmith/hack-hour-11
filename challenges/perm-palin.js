@@ -10,20 +10,19 @@
  */
 
 function permPalin(str) {
+  
   if (!str || str.length < 1) {
     return undefined;
   }
-	const lettersObj = {};
+  const lettersObj = {};
+  const len = str.length;
 
-  const strArr = str.split('');
-  const strArrLen = strArr.length;
-
-  for (let i = 0; i < strArrLen; i += 1) {
-    if (!lettersObj[strArr[i]]) {
-      lettersObj[strArr[i]] = 0;
-      lettersObj[strArr[i]] += 1;
+  for (let i = 0; i < len; i += 1) {
+    if (!lettersObj[str[i]]) {
+      lettersObj[str[i]] = 0;
+      lettersObj[str[i]] += 1;
     } else {
-      lettersObj[strArr[i]] += 1;
+      lettersObj[str[i]] += 1;
     }
   }
 
@@ -35,7 +34,7 @@ function permPalin(str) {
     }
   }
 
-  return numOfOdd <= 1;
+  return numOfOdd <= 1;  
 }
 
 module.exports = permPalin;
