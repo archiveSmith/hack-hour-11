@@ -13,6 +13,7 @@
  */
 
 function numToWords(num) {
+<<<<<<< HEAD
 let numStr = num.toString();
 
     let table = { 
@@ -50,4 +51,9 @@ let numStr = num.toString();
 
 
 
+=======
+
+}
+
+>>>>>>> 9da417e7f87dbd0aaf07c4cd03719efc3d319ce9
 module.exports = numToWords;
