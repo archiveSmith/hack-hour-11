@@ -12,7 +12,9 @@
 function permPalin(str) {
 	const charCount = {};
 	let canBePalin = true;
+	let middle = 0;
 	str = str.toLowerCase();
+	str = str.replace(/\s/g, '');
 	str.split('').forEach(function(char, i){
 		if (!charCount[char]) {
 			charCount[char] = 1;
@@ -23,12 +25,16 @@ function permPalin(str) {
 
 	Object.keys(charCount).forEach(function(i){
 		if (charCount[i] % 2 !== 0) {
-			console.log("here");
-			canBePalin = false;
+			middle++;
 		}
 	});
 
-	return canBePalin;
+	console.log("mid: ", middle);
+	if (middle > 1) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 module.exports = permPalin;
