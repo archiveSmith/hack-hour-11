@@ -14,11 +14,23 @@
  */
 
  function mergeArrays(arr1, arr2) {
-   arr1 = arr1.concat(arr2);
-   arr1.sort(function(a, b){
-     return a - b;
-   })
-   return arr1;
+  //  arr1 = arr1.concat(arr2);
+  //  arr1.sort(function(a, b){
+  //    return a - b;
+  //  })
+  //  return arr1;
+  let longestArr;
+  let i = 0;
+  let mergedArr = []
+   if(arr1.length > arr2.length) {
+     longestArr = arr1;
+   } else {
+     longestArr = arr2;
+   }
+
+   while(i < longestArr.length) {
+
+   }
  }
 
 module.exports = mergeArrays;
