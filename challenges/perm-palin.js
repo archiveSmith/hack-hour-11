@@ -18,10 +18,10 @@ function permPalin(str) {
     if (letterCounts[strArr[i]]) letterCounts[strArr[i]] += 1;
     else letterCounts[strArr[i]] = 1;
   }
-  const evenOddCount = Object.values(letterCounts);
+  const evenOddCount = Object.keys(letterCounts);
   let oddCount = 0;
-  evenOddCount.forEach((num) => {
-    if (num % 2 !== 0) oddCount += 1;
+  evenOddCount.forEach((key) => {
+    if (letterCounts[key] % 2 !== 0) oddCount += 1;
   });
 
   return oddCount <= 1;
