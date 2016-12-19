@@ -39,7 +39,10 @@ let numStr = num.toString();
         '20': 'Twenty'
     }
 
-    let table2 = {}
+    let table2 = {
+        '1000': 'Thousand',
+        '100': 'Hundred'
+    }
     if (numStr.length < 3){
         return table[numStr]
     }
