@@ -14,7 +14,11 @@
  */
 
 function mergeArrays(arr1, arr2) {
+<<<<<<< HEAD
   return arr1.concat(arr2).sort((a,b)=> a - b)
+=======
+
+>>>>>>> 1e7dc497abf1ae9e3b0989d49489348f1f7eaaaf
 }
 
 module.exports = mergeArrays;
