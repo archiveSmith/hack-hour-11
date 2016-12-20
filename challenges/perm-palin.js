@@ -11,7 +11,7 @@
 
 function permPalin(str) {
   const obj = {};
-  str.split('').sort().forEach((letter) =>  {obj[letter] ? obj[letter] += 1 : obj[letter] = 1; });
+  str.split('').forEach((letter) =>  {obj[letter] ? obj[letter] += 1 : obj[letter] = 1; });
   return Object.keys(obj).filter(key => obj[key] % 2 === 1).length <= 1;
 }
 
