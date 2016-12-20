@@ -21,19 +21,12 @@ function rotateGrid(grid, n) {
 	for (let i = 0; i < n; i++){
 		rotated.push(new Array(n));
 	}
-
 	for(let j = 0; j<n; j++){
 		for( let k = 0; k < grid[0].length; k++){
-			rotated[j][k] = grid[k][j];
-
-
+			rotated[n-j-1][n-k-1] = grid[k][n-j-1];
 		}
 	}
-	for(let p = 0; p < rotated.length; p++){
-	  rotated[p] = rotated[p].reverse();
-	}
 	return rotated;
-
 }
 
 
