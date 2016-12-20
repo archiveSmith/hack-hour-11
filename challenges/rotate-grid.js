@@ -35,7 +35,4 @@ function rotateGrid(grid, n) {
   return result;
 }
 
-
-rotateGrid(grid, n)
-
 module.exports = rotateGrid;
