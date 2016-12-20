@@ -1,3 +1,4 @@
+'use strict';
 /* You are given a NxN grid of elements represented by a 2D array. The ith nested array represents 
  * the ith row in the grid.
  * 
@@ -17,7 +18,14 @@
  */
 
 function rotateGrid(grid, n) {
-
+  const indices = [];
+  for (let a = n - 1; a >= 0; a -= 1) {
+    for (let i = 0; i < n; i += 1) {
+      if (!indices[i]) indices.push([grid[a][i]]);
+      else indices[i].push(grid[a][i]);
+    }
+  }
+  return indices;
 }
 
 module.exports = rotateGrid;
