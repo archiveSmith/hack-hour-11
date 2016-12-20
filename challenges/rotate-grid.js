@@ -19,10 +19,9 @@
 function rotateGrid(grid, n) {
 
   function rotate(grid, n) {
-
-      if(n !== 0) {
+    if(n !== 0) {
       for(let i = 0; i < grid.length; i += 1) {
-        for(let j = 0; j < grid[i].length) {
+        for(let j = 0; j < grid[i].length; j += 1) {
           if(j = grid[i].length - 1) {
             if(i = grid.length - 1) {
               grid[0][0] = grid[i][j];
@@ -34,9 +33,9 @@ function rotateGrid(grid, n) {
       }
       rotate(grid, n - 1);
     }
-
+    return grid;
   }
-  return rotate(grid, n); 
+  return rotate(grid, n);
 }
 
 module.exports = rotateGrid;
