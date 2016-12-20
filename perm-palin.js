@@ -13,12 +13,12 @@ function permPalin(str) {
 	str = str.toLowerCase().split('');
 	let countOnce = false;
   while (str.length > 0) {
-    const removed = str.splice(0,1);
-    if (str.indexOf(removed[0]) === -1) {
+    const removed = str.splice(0,1)[0];
+    if (str.indexOf(removed) === -1) {
       if (!countOnce) countOnce = true;
       else return false;
     }
-    else str.splice(str.indexOf(removed[0]), 1);
+    else str.splice(str.indexOf(removed), 1);
   }
   return true;
 }
