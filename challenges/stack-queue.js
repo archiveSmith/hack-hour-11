@@ -59,7 +59,7 @@ Queue.prototype.dequeue = function() {
   return dequeued;
 }
 
-Queue.prototype.queue = function(val) {
+Queue.prototype.enqueue = function(val) {
   this.stack1.push(val);
 }
 
