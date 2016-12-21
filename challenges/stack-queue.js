@@ -29,11 +29,11 @@ function Queue() {
 	this.stack = new Stack();
 	this.temp = new Stack();
 
-	this.push = function(val) {
+	this.enqueue = function(val) {
 		this.stack.push(val);
 	}
 
-	this.pop = function() {
+	this.dequeue = function() {
 		if (this.stack.length()) {
 			let pop;
 			while (this.stack.length() > 1) {
