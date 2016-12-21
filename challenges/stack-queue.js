@@ -6,16 +6,17 @@
 function Stack() {
   this.content = [];
   this.length = 0;
-  this.push = function(ele) {
+  this.prototype.push = function(ele) {
     this.content[this.length] = ele;
     this.length += 1;
-  }
-  this.pop = function() {
+  };
+  this.prototype.pop = function() {
+    if (this.length === 0) return undefined;
     const result = this.content[this.length];
     this.content.splice(this.content[this.length - 1], 1);
     this.length -= 1;
     return result;
-  }
+  };
 }
 
 
@@ -25,7 +26,7 @@ function Stack() {
 
 
 function Queue() {
-
+  this.content = [];
 }
 
 module.exports = {Stack: Stack, Queue: Queue};
