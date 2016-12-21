@@ -34,43 +34,47 @@ function Queue() {
 	}
 
 	this.pop = function() {
-		let pop;
-		while (this.stack.length > 1) {
-			this.temp.push(this.stack.pop());
-			console.log("h");
+		if (this.stack.length()) {
+			let pop;
+			while (this.stack.length() > 1) {
+				let val = this.stack.pop();
+				this.temp.push(val);
+			}
+
+			pop = this.stack.pop();
+
+			while (this.temp.length()) {
+				this.stack.push(this.temp.pop());
+			}
+
+			return pop;
 		}
-
-		pop =  this.stack.pop();
-
-		/*
-		while (this.temp.length) {
-			this.stack.push(this.temp.pop());
-			console.log("i");
-		}
-		*/
-
-		return pop;
 	}
 }
 
-let stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.push(4);
-stack.push(8);
-stack.pop();
+// let stack = new Stack();
+// stack.push(1);
+// stack.push(2);
+// stack.push(4);
+// stack.push(8);
+// stack.pop();
 
 
-console.log(stack.pop());
+// //console.log(stack.pop());
 
-let q = new Queue();
-q.push(1);
-q.push(2);
-q.push(3);
-q.push(4);
-q.push(5);
+// let q = new Queue();
+// q.push(1);
+// q.push(2);
+// q.push(3);
+// q.push(4);
+// q.push(5);
 
 
-console.log(q.pop());
+// console.log(q.pop());
+// console.log(q.pop());
+// console.log(q.pop());
+// console.log(q.pop());
+// console.log(q.pop());
+// console.log(q.pop());
 
 module.exports = {Stack: Stack, Queue: Queue};
