@@ -42,50 +42,25 @@ function Queue() {
   this.stack2 = new Stack();
 }
 
-// Queue.prototype.dequeue = function() {
-//   if (this.stack1.getLength() <=0 ) {
-//     return undefined;
-//   }
-
-//   while (this.stack1.getLength() > 1) {
-//     this.stack2.push(this.stack1.pop());
-//   }
-//   const dequeued = this.stack1.pop();
-  
-//   while (this.stack2.getLength() > 0) {
-//     this.stack1.push(this.stack2.pop());
-//   }
-  
-//   return dequeued;
-// }
 Queue.prototype.dequeue = function() {
-  if (this.stack1.getLength() <=0 && this.stack.length <= 0) {
+  if (this.stack1.getLength() <=0 ) {
     return undefined;
   }
 
-  let dequeued;
-
-  if (this.stack1.length > 0) {
-    while (this.stack1.getLength() > 1) {
-      this.stack2.push(this.stack1.pop());
-    }
-    dequeued = this.stack1.pop();
-  } else {
-    while (this.stack2.getLength() > 1) {
-      this.stack1.push(this.stack2.pop());
-    }
-    dequeued = this.stack1.pop();
+  while (this.stack1.getLength() > 1) {
+    this.stack2.push(this.stack1.pop());
+  }
+  const dequeued = this.stack1.pop();
+  
+  while (this.stack2.getLength() > 0) {
+    this.stack1.push(this.stack2.pop());
   }
   
   return dequeued;
 }
 
 Queue.prototype.enqueue = function(val) {
-  if (this.stack1.getLength() > 0) {
-    this.stack1.push(val);
-  } else {
-    this.stack2.push(val);
-  }
+  this.stack1.push(val);
 }
 
 
