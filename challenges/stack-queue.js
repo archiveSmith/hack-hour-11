@@ -46,7 +46,7 @@ Queue.prototype.dequeue = function() {
   if (this.stack1.getLength() <=0 ) {
     return undefined;
   }
-  
+
   while (this.stack1.getLength() > 1) {
     this.stack2.push(this.stack1.pop());
   }
