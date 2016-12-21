@@ -14,6 +14,7 @@ function Stack() {
 	};
 
 	this.pop = function(){
+		if(this.length === 0) return undefined;
 		let val = this.elements[this.elements.length-1];
 		this.elements.length = this.elements.length-1;
 		this.length--;
@@ -31,13 +32,14 @@ function Queue() {
 	this.elements = [];
 	this.length = 0;
 
-	this.push = function(item){
+	this.enqueue = function(item){
 		this.elements[this.length] = item;
 		this.length++;
 		return this.length;
 	};
 
-	this.pop = function(){
+	this.dequeue = function(){
+		if(this.length === 0) return undefined;
 		let val = this.elements[0];
 		for( let i = 0; i < this.elements.length; i++){
 			this.elements[i] = this.elements[i+1];
