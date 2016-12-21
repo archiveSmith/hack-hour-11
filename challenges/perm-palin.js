@@ -18,7 +18,6 @@ const permPalin = (str) => {
     for (let j = 0, len = perms.length; j < len; j++) {
       const combo = perms[j].concat(arr[i]);
       if (isPalin(combo.join('')) && combo.length === str.length) {
-        return true;
       }
       perms.push(combo);
     }
