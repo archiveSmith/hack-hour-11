@@ -81,7 +81,11 @@ Queue.prototype.dequeue = function() {
 }
 
 Queue.prototype.enqueue = function(val) {
-  this.stack1.push(val);
+  if (this.stack1.getLength() > 0) {
+    this.stack1.push(val);
+  } else {
+    this.stack2.push(val);
+  }
 }
 
 
