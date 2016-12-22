@@ -29,14 +29,14 @@ function Queue() {
   this.stackB = new Stack();
   this.length = 0;
 
-  this.push = function(item){
+  this.enqueue = function(item){
     //let list = this.stackA.length ? this.stackA : this.stackB;
 
     this.stackA.push(item);
     this.length++;
   };
 
-  this.pop = function(){
+  this.dequeue = function(){
     // let list;
     // let holder;
     let value;
