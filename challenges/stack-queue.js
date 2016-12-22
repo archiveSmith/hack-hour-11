@@ -3,6 +3,7 @@
  */
 
 
+<<<<<<< HEAD
 /**
  * Create a stack.Then create a queue using two stacks.
  */
@@ -27,12 +28,19 @@ Stack.prototype.pop = function(){
   this.length -= 1;
   return popVal;
 }
+=======
+function Stack() {
+
+}
+
+>>>>>>> 5f4ce0fffa71fd52c851263a14b523d045dd8077
 
 /**
 * Queue Class
 */
 
 
+<<<<<<< HEAD
 function Queue(...vals) {
   this.back = new Stack (...vals)
 }
@@ -51,4 +59,10 @@ Queue.prototype.dequeue= function(val) {
 }
 
 
+=======
+function Queue() {
+
+}
+
+>>>>>>> 5f4ce0fffa71fd52c851263a14b523d045dd8077
 module.exports = {Stack: Stack, Queue: Queue};
