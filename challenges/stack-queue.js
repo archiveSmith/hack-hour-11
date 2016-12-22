@@ -3,14 +3,13 @@
  */
 
 
- function Stack(n) {
+ function Stack() {
   this.stack = [];
-  this.push = (el) => this.stack.push(el);
-  this.pop = (el) => {
-    if (this.stack = []) {return undefined};
-    else {return this.stack.pop(el)};
+  this.push = (el) => {this.stack.push(el); return el;};
+  this.pop = () => {
+    if (this.stack == []) {return undefined}
+    else {return this.stack.pop()}
   };
-  this.returnStack = () => this.stack;
 }
 
 
@@ -20,16 +19,18 @@
 
 
 function Queue() {
+  let inbox = new Stack();
+  let outbox = new Stack();
 
-  this.queue = [];
-  this.enqueue = (el) {
-    this.queue.unshift(el)
-  }
-  this.dequeue = (el) {
-    (if this.queue = [] ){return undefined}
-    else {return this.queue.pop(el)};
-  }
+  this.enqueue = (el) => {
+    this.inbox.push(el);
+    return el;
+  };
+
+  this.dequeue = () => {
+    this.outbox.push(inbox.pop());
+    return outbox;
+  };
 }
-
 
 module.exports = {Stack: Stack, Queue: Queue};
