@@ -3,7 +3,14 @@
  */
 
 function twoSum(arr, n) {
+  const diffs = {};
+  const len = arr.length;
 
+  for (let i = 0; i < len; i += 1) {
+    if (diffs[arr[i]]) return true;
+    diffs[n - arr[i]] = arr[i];
+  }
+  return false;
 }
 
 module.exports = twoSum;
