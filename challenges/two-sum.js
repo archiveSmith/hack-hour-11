@@ -3,9 +3,9 @@
  */
 
 function twoSum(arr, n) {
-if(!n || typeof n !== "Number") {
-  return false;
-}
+// if(!n || typeof n !== "Number") {
+//   return false;
+// }
 
 for(let i = 0; i < arr.length; i += 1) {
   for(let j = 0; j < arr.length; i += 1) {
