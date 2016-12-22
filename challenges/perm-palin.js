@@ -11,43 +11,11 @@
  */
 
 function permPalin(str) {
-	if(str.length === 1) return true;
-
-	function recurse(arr, n){
-		if(isPalin(arr.join(""))) return true;
-		if(n === arr.length - 1) return false;
-
-		for(let i = 0; i < arr.length; i++){
-			if(recurse(arr, n + 1)) return true;
-			arr.push(arr.slice(n, 1));
-		}
-
-	}
-
-	if(recurse(str.split(), 0)){
-		return true;
-	}
-
-	return false;
+	let count = str.split('').reduce((o,char)=>{
+		o[char] ? delete o[char] : o[char] = true;
+		return o;
+	}, {});
+	return Object.keys(count).length < 2;
 }
-
-function isPalin(str){
-	let l = 0;
-	let r = str.length - 1;
-	while( l < r){
-		if(str[l] !== str[r]){
-			return false;
-		}
-		l++;
-		r--;
-	}
-
-	return true;
-}
-
-console.log(permPalin("abab")); //true
-console.log(permPalin("cbaba")); //true
-console.log(permPalin("cbac")); //false
-console.log(permPalin("a")); //true
 
 module.exports = permPalin;
