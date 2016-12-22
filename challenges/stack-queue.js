@@ -26,7 +26,11 @@ function Stack() {
 
 
 function Queue() {
-  this.content = [];
+  this.s1 = new Stack();
+  this.s2 = new Stack();
+  this.prototype.enqueue = function() {
+    
+  }
 }
 
 module.exports = {Stack: Stack, Queue: Queue};
