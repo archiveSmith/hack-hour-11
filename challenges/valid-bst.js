@@ -20,12 +20,14 @@ function validBST(tree) {
     // }
     // return true;
 
-    validBST(this.left);
-    validBST(this.right);
-    if (this.left.value <= this.value && this.right.value > this.value) {
-        return true;
-    } else {
+    if (this.left === null && this.right === null) {
+        return true
+    }
+    if (this.left.value > this.value || this.right.value <= this.value) {
         return false;
+    } 
+    if (validBST(this.right) && validBST(this.left)){
+        return true
     }
 
 }
