@@ -3,6 +3,7 @@
  */
 
 function twoSum(arr, n) {
+<<<<<<< HEAD
 	let a = arr;
 	while(a.length > 1){
 		let num = a[0];
@@ -13,6 +14,9 @@ function twoSum(arr, n) {
 		a.shift();
 	}
 	return false;
+=======
+
+>>>>>>> 1f81ec2a3846ea99a4288a4fd9b50060a9732414
 }
 
 module.exports = twoSum;
