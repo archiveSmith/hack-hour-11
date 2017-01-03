@@ -5,12 +5,30 @@
  * BONUS: Do this in place
  */
 
-function Node(val) {
-  this.value = val;
-  this.next = null;
-}
 
-function zip(l1, l2) {
-};
+ function Node(val) {
+   this.value = val;
+   this.next = null;
+ }
+
+ function zip(l1, l2) {
+   let first = l1;
+   let curr = l1;
+   l1 = l1.next;
+
+   while( curr.next){
+     curr.next = l2;
+     l2 = l2.next;
+     curr = curr.next;
+
+     if(l1.next === null) break;
+
+     curr.next = l1;
+     l1 = l1.next;
+     curr = curr.next;
+   }
+
+   return first;
+ };
 
 module.exports = {Node: Node, zip: zip};
