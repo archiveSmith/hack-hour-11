@@ -12,7 +12,7 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-	console.log("Looking at value: ", tree.value, tree.left, tree.right);
+	// console.log("Looking at value: ", tree.value, tree.left, tree.right);
 	if (tree.value && (tree.left || tree.right)) {
 		if (tree.left && tree.left.value <= tree.value) {
 			console.log(tree.left.value, tree.value);
