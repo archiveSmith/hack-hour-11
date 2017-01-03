@@ -41,7 +41,7 @@ function validBST(tree) {
       rightCheck = true;
     }
 
-    return leftCheck && rightCheck;
+    return rightCheck;
   }
 
   return validate(tree);
