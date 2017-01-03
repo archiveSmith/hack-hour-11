@@ -19,7 +19,7 @@ function validBST(tree) {
   function validate(tree) {
     if (tree.left) {
       if (tree.value >= tree.left.value) {
-        return validate(tree.left);
+        validate(tree.left);
       } else {
         return;
       }
@@ -33,7 +33,7 @@ function validBST(tree) {
 
     if (tree.right) {
       if (tree.value < tree.right.value) {
-        return validate(tree.right);
+        validate(tree.right);
       } else {
         return;
       }
