@@ -11,29 +11,20 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-	//just do a while loop and alternate passing in LL
-	//pass the nodes into two arrays, and then iterate through the arrays??? nahh
-	//can we inset it into one of the nodes?
-
-	//can I insert them?? do a counter and then on every other one insert it. 
-
-	curr = l2.next;
+	let temp = l1.next;
 
 
-
-	while (curr !== null){
-		let randomLi = li.next;
-
-		li.next = Node(l2.val);
-
-		li.next.next=randomLi;
-
-		curr = curr.next;
+	while (l1.next !== null && l2.next !== null) {
+	 
+		l1.next = new Node(l2.value);
+		
+		l1.next.next = temp;
+		temp = temp.next;
+		l2 = l2.next;
 
 	}
-
-	return li;
+	
+	return l1;
 
 };
-
-module.exports = {Node: Node, zip: zip};
+//module.exports = {Node: Node, zip: zip};

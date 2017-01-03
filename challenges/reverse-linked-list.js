@@ -19,26 +19,7 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
-    //grab last Node
-    //make it = to new Node
-    //remove that last node
-    //new node.next equals the next last one. 
-
-    let current = head;
-    let newNode = new Node;
-    newNode.value = null;
-
-    while (current.next !== null){
-        current = current.next;
-        if (current.next === null){
-            if (newNode.value === null){
-                newNode.value = current.value;
-            }
-            else{
-                newNode.next = current;
-            }
-        }
-    }
+    
 
 
 }
