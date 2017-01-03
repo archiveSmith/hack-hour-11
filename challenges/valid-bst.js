@@ -12,32 +12,23 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-  let result = true;
 
-  //edge case
-  if(tree.value === null) {
-    return result;
+  if (!this.value) {
+    return true;
   }
 
-  //checking all lefts
-  if(tree.left <= tree.val) {
-    result = true;
-    BinaryTree(tree.left);
+  else if (this.left > this.value) {
+    return false;
   }
+
+  else if (this.right <= this.value) {
+    return false;
+  }
+
   else {
-    result = false;
+    return validBST(this.left) || validBST(this.right);
   }
-
-  //checking all right;
-  if(tree.right > tree.value) {
-    result = true;
-    BinaryTree(tree.right);
-  }
-  else {
-    result = false;
-  }
-
-  return result;
 }
+
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
