@@ -9,30 +9,35 @@
 
 function Stack() {
   // body...
-  let stack = {
-    storage: {},
-    length: 0,
-    push: function(val){
-    this.length++;
-    this.storage['length'] = val;
-      return this.length;
-    },
-    pop: function(){
-      let element = this.storage['this.length'];
-      delete this.storage['length'];
-      this.length--;
-      return element;
-    },
-    getMax: function(){
-     let values = Object.values(storage)
-    }
-
-  }
-  return stack;
-
+  this.storage = [];
 
 }
 
+Stack.prototype.push = function(val) {
+  this.storage.push(val);
+  // body...
+};
 
+Stack.prototype.pop = function() {
 
-module.exports = Stack;
+  this.storage.pop();
+}
+
+Stack.prototype.getMax = function() {
+  
+
+  let storage = this.storage.sort(function (a,b) {
+    return a-b
+  });
+  return storage[storage.length-1];
+}
+
+let poop = new Stack();
+
+poop.push(1);
+poop.push(6);
+poop.push(2);
+poop.pop();
+console.log(poop.getMax())
+
+//module.exports = Stack;
