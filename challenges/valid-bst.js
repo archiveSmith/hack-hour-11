@@ -38,8 +38,8 @@ function validBST(tree) {
   }
 
   return result;
-  }
 }
+
 
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
