@@ -21,7 +21,7 @@ function validBST(tree) {
 			return false
 		}
 		else {
-			return tree.left.validBST();
+			return validBST(tree.left)
 		}
 	}
 	else if (tree.right !== null){
@@ -30,10 +30,11 @@ function validBST(tree) {
 			return false
 		}
 		else {
-			return tree.right.validBST();
+			return validBST(tree.right);
 
 		}
 	}
+
 
 }
 
