@@ -28,6 +28,8 @@ function validBST(tree) {
     } 
     if (validBST(this.right) && validBST(this.left)){
         return true
+    } else {
+        return false
     }
 
 }
