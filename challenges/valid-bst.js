@@ -6,13 +6,59 @@
  
 
 function BinaryTree(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
+	this.value = val;
+	this.left = null;
+	this.right = null;
 }
 
 function validBST(tree) {
-
+	if (tree.left && tree.value >= tree.left.value) {
+		return validBST(tree.left) ;
+	} else if(!tree.left) {
+		return true;
+	} else {
+		return false;
+	}
+	if (tree.right && tree.value < tree.right.value) {
+		return validBST(tree.right);
+	} else if(!tree.right) {
+		return true;
+	} else {
+		return false;
+	}
+	return true;
 }
+
+const BST = {
+	value: 5,
+	left: {
+		value: 3,
+		left: {
+			value: 2,
+			left: null,
+			right: null
+		},
+		right: {
+			value: 4,
+			left: null,
+			right: null,
+		}
+	},
+	right: {
+		value: 7,
+		left: {
+			value: 6,
+			left: null,
+			right: null,
+		},
+		right: {
+			value: 8,
+			left: null,
+			right: null
+		}
+	}
+};
+
+console.log(validBST(BST));
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
