@@ -12,14 +12,16 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
+  console.log('left', this.left.value);
+  console.log('right', this.right.value);
   // if (this.left === null && this.right === null) return true;
   // if (this.left.value < this.value) validBST(this.left);
   if (this.left.value > this.value || this.right.value < this.value) return false;
   if (this.left) {
-    validBST(this.left);
+    return validBST(this.left);
   }
   if (this.right) {
-    validBST(this.right);
+    return validBST(this.right);
   }
   return true;
 }
