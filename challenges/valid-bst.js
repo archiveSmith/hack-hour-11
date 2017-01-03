@@ -13,6 +13,38 @@ function BinaryTree(val) {
 
 function validBST(tree) {
 
+  let leftCheck = false;
+  let rightCheck = false;
+
+  function validate(tree) {
+    if (tree.left) {
+      if (tree.value >= tree.left.value) {
+        return validate(tree.left);
+      } else {
+        return;
+      }
+    } else {
+      leftCheck = true;
+    }
+
+    if (!leftCheck) {
+      return leftCheck;
+    }
+
+    if (tree.right) {
+      if (tree.value < tree.right.value) {
+        return validate(tree.right);
+      } else {
+        return;
+      }
+    } else {
+      rightCheck = true;
+    }
+
+    return leftCheck && rightCheck;
+  }
+
+  return validate(tree);
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
