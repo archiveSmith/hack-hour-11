@@ -12,21 +12,32 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
+  let result = true;
 
-  if (!this.value) {
-    return true;
+  //edge case
+  if(tree.value === null) {
+    return result;
   }
 
-  else if (this.left > this.value) {
-    return false;
+  //checking all lefts
+  if(tree.left <= tree.val) {
+    result = true;
+    BinaryTree(tree.left);
   }
-
-  else if (this.right <= this.value) {
-    return false;
-  }
-
   else {
-    return validBST(this.left) || validBST(this.right);
+    result = false;
+  }
+
+  //checking all right;
+  if(tree.right > tree.value) {
+    result = true;
+    BinaryTree(tree.right);
+  }
+  else {
+    result = false;
+  }
+
+  return result;
   }
 }
 
