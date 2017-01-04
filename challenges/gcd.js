@@ -7,8 +7,24 @@
  *
  */
 
-function gcd(a, b) {
+ 'use strict';
 
+function gcd(a, b) {
+	const prod = a * b;
+	const max = a > b ? b : a;
+	let g = 1;
+
+	if (!a || !b) {
+		return 0;
+	}
+
+	for (let i = 1; i <= max; i++) {
+		if (a % i === 0 && b % i === 0) {
+			g = i;
+		}
+	}
+
+	return g;
 }
 
 module.exports = gcd;
