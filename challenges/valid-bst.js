@@ -61,19 +61,19 @@ module.exports = {BinaryTree: BinaryTree, validBST: validBST};
 
 
 
-
-isBinary(root)
-    {
-        if root == null 
-          return true
-       else if( root.left == NULL and root.right == NULL)
-          return true
-       else if(root.left == NULL)
-           if(root.right.element > root.element)
-               rerturn isBInary(root.right)
-        else if (root.left.element < root.element)
-              return isBinary(root.left)
-        else
-              return isBInary(root.left) and isBinary(root.right)
-
-    }
+//
+//isBinary(root)
+//    {
+//        if root == null 
+//          return true
+//       else if( root.left == NULL and root.right == NULL)
+//          return true
+//       else if(root.left == NULL)
+//           if(root.right.element > root.element)
+//               rerturn isBInary(root.right)
+//        else if (root.left.element < root.element)
+//              return isBinary(root.left)
+//        else
+//              return isBInary(root.left) and isBinary(root.right)
+//
+//    }
