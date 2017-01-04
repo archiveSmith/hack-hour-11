@@ -8,8 +8,8 @@
  */
 
 function gcd(a, b) {
-  let arrA = [];
-  let arrB = [];
+  let arrA = [a];
+  let arrB = [b];
   let result = 1;
   let tempProduct;
   for (let i = 2; i <= a / 2; i++) {
