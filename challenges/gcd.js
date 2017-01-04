@@ -6,18 +6,14 @@
  * gcd(10, 9) -> 1
  *
  */
-// console.log(gcd(10, -5));
+console.log(gcd(10, 8));
 
 function gcd(a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number');
-  let max, min;
-  if (a > b) {
-    max = a;
-    min = b;
-  } else {
-    min = a;
-    max = b;
-  }
+  if (typeof a !== 'number' || typeof b !== 'number') return undefined;
+  let min;
+  if (a > b) min = b;
+  else min = a;
+  if (min === 0) return 1;
   while (a % min !== 0 || b % min !== 0) {
     min -= 1;
   }
