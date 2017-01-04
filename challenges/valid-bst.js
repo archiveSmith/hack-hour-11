@@ -43,10 +43,10 @@ newTree.add(-1);
 
 function validBST(tree) {
   function rec(tree){
-  if (tree.left && tree.left.value > tree.value) return false;
-  if (tree.right && tree.right.value < tree.value) return false;
-  if (tree.left && tree.left.value <= tree.value) rec(tree.left);
-  if (tree.right && tree.right.value > tree.value) rec(tree.right);
+    if (tree.left && tree.left.value > tree.value) return false;
+    if (tree.right && tree.right.value <= tree.value) return false;
+    if (tree.left && tree.left.value <= tree.value) rec(tree.left);
+    if (tree.right && tree.right.value > tree.value) rec(tree.right);
   }
   if (rec(tree) === undefined) return true;
   return rec(tree);
