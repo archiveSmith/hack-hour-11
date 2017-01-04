@@ -25,7 +25,7 @@ function gcd(a, b) {
       result = result * tempProduct;
     }
   }
-  return result;
+  return result;       
 }
 
 module.exports = gcd;
