@@ -11,6 +11,7 @@ function BinaryTree(val) {
     this.right = null;
 }
 
+<<<<<<< HEAD
 BinaryTree.prototype.add = function(value) {
   let newTree = new BinaryTree(value);
   if (newTree.value < this.value) {
@@ -43,14 +44,19 @@ newTree.add(-1);
 
 function validBST(tree) {
   function rec(tree){
-  if (tree.left && tree.left.value > tree.value) return false;
-  if (tree.right && tree.right.value < tree.value) return false;
-  if (tree.left && tree.left.value <= tree.value) rec(tree.left);
-  if (tree.right && tree.right.value > tree.value) rec(tree.right);
+    if (tree.left && tree.left.value > tree.value) return false;
+    if (tree.right && tree.right.value <= tree.value) return false;
+    if (tree.left && tree.left.value <= tree.value) rec(tree.left);
+    if (tree.right && tree.right.value > tree.value) rec(tree.right);
   }
   if (rec(tree) === undefined) return true;
   return rec(tree);
 }
 
+=======
+function validBST(tree) {
+
+}
+>>>>>>> 8461b7a03aee64c4e8ba08c96d7b773a7c01d848
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
