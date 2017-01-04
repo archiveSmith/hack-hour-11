@@ -8,6 +8,15 @@
  */
 
 function gcd(a, b) {
+  if(a === 0 || b === 0 || a === null || b === null) {
+    return undefined
+  }
+  
+  let smaller = a < b ? a:b;
+  
+  for (let i = smaller; i > 0; i -= 1) {
+    if (a % i === 0 && b % i === 0) {return i}
+  }
 
 }
 
