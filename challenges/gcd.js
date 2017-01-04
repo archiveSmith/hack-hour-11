@@ -15,7 +15,7 @@ function gcd(a, b) {
   for (let i = 2; i <= a / 2; i++) {
     if (a % i === 0) arrA.push(i);
   }
-  for (let j = 2; j <= j / 2; j++) {
+  for (let j = 2; j <= b / 2; j++) {
     if (b % j === 0) arrB.push(j);
   }
   if (arrA.length === 0 || arrB.length === 0) return result;
