@@ -26,7 +26,14 @@
  */
 
 function applyIt(func, args) {
-
+  let newFunc = func;
+  function bindParam(fn, arg) {
+    return fn.bind(null, arg);
+  }
+  while (args.length) {
+    newFunc = bindParam(newFunc, args.shift());
+  }
+  return newFunc();
 }
 
 module.exports = applyIt;
