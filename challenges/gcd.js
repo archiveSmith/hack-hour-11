@@ -7,7 +7,7 @@
  *
  */
 
-f
+
 function gcd(a, b) {
 	let aDiv=[];
 	let bDiv=[];
