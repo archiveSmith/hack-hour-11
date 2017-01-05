@@ -3,7 +3,15 @@
  *      at any given node, the value of all the nodes in its left tree must be <= its value
  *      at any given node, the value of all the nodes in its right tree must be > its value
  */
- 
+
+const bst = new BinaryTree(10);
+bst.right = new BinaryTree(12);
+bst.left = new BinaryTree('a');
+bst.left.left = new BinaryTree(3);
+bst.left.right = new BinaryTree('a');
+console.log(bst);
+console.log(validBST(bst));
+
 
 function BinaryTree(val) {
     this.value = val;
@@ -13,23 +21,34 @@ function BinaryTree(val) {
 
 function validBST(tree) {
   if (typeof tree.value !== 'number') return false;
-  if (tree.right) {
-    if (tree.right.value < tree.value) return false;
-    return validBST(tree.right);
+  let rightValid = false;
+  let leftValid = false;
+
+  function checkRight(node) {
+    if (!node.right) rightValid = true;
+    else {
+      if (node.right.value > node.value) rightValid = true;
+      return validBST(node.right);
+    }
   }
-  if (tree.left) {
-    if (tree.left.value > tree.value) return false;
-    return validBST(tree.left);
+
+  function checkLeft(node) {
+    if (node.left) {
+      if (node.left.value > node.value) return false;
+      return validBST(node.left);
+    }
   }
   return true;
 }
 
 
-
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
 
-const bst = new BinaryTree(10);
-bst.left = new BinaryTree(9);
-bst.left.right = new BinaryTree(12);
-console.log(bst);
-console.log(validBST(bst));
+// if (tree.right) {
+//   if (tree.right.value < tree.value) return false;
+//   return validBST(tree.right);
+// }
+// if (tree.left) {
+//   if (tree.left.value > tree.value) return false;
+//   return validBST(tree.left);
+// }
