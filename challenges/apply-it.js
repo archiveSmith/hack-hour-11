@@ -26,6 +26,7 @@
  */
 
 function applyIt(func, args) {
+    return func(args);
 
 }
 
