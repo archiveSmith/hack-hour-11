@@ -12,26 +12,22 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-    // if (this.left.value > this.value || this.right.value <= this.value) {
-    //     return false;
-    // } else {
-    //     validBST(this.left);
-    //     validBST(this.right);
-    // }
-    // return true;
+  let array = [];
+  let i = 0;
+    
+  function toArray(tree, array) {
+    if (!tree) return;
 
-    if (this.left === null && this.right === null) {
-        return true
+      toArray(tree.left, array);
+      array[i++] = tree.value;
+      toArray(tree.right, array);
     }
-    if (this.left.value > this.value || this.right.value <= this.value) {
-        return false;
-    } 
-    if (validBST(this.right) && validBST(this.left)){
-        return true
-    } else {
-        return false
-    }
+  toArray(tree, array );
 
+  for (var j = 1; j < array.length; j++) {
+    if (array[j] <= array[j-1]) return false;
+  }
+  return true;
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
