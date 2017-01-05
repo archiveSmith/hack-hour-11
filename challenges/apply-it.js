@@ -42,7 +42,7 @@ function applyIt(func, args) {
 	//console.log("fs: ", funcString);
 
 	return function() {
-		eval(funcString);
+		return eval(funcString);
 	}
 
 }
