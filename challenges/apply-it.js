@@ -1,3 +1,4 @@
+'use strcit';
 /**
  * applies the invoked array to the function's parameter list
  * Example:
@@ -26,7 +27,16 @@
  */
 
 function applyIt(func, args) {
-
+  return () =>{
+    Function.call(func, args);
+  }
 }
 
-module.exports = applyIt;
+var jae = function(name, age, location) {
+  return name + " is " + age + " and he lives in " + location;
+};
+
+  var jaero = applyIt(jae, ["Jae", 19, "South Carolina"]);
+  console.log(jaero()); //Returns "Jae is 19 and he lives in South Carolina"
+
+//module.exports = applyIt;
