@@ -8,6 +8,7 @@
  */
 
 function gcd(a, b) {
+<<<<<<< HEAD
   let highest;
   let most;
   if (a > b) {
@@ -30,6 +31,9 @@ function gcd(a, b) {
   } 
 }
   return most;
+=======
+
+>>>>>>> 8093b01dbcdda5cca9519a700bdf156905365bf4
 }
 
 module.exports = gcd;
