@@ -26,7 +26,7 @@
  */
 
 function applyIt(func, args) {
-<<<<<<< HEAD
+
   let temp = args.slice(0);
   for (let i = 0; i < temp.length; i++){
     arguments[i+1]=temp[i];
@@ -36,9 +36,7 @@ function applyIt(func, args) {
   return function (){
     return func(newArg)
   }
-=======
 
->>>>>>> e2ff899a2d7b9173034c07649f2316d9c5adaa44
 }
 
 module.exports = applyIt;
