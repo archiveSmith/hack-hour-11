@@ -8,7 +8,7 @@
  */
 
 function gcd(a, b) {
-  if(b === 0) return a;
+  if (b === 0) return a;
   const dividend = Math.max(a, b);
   const divisor = Math.min(a, b);
   const quotient = Math.floor(dividend / divisor);
@@ -17,6 +17,6 @@ function gcd(a, b) {
   return gcd(divisor, remainder);
 }
 
-console.log(gcd(210, 45));
+console.log(gcd(0, 0));
 
 module.exports = gcd;
