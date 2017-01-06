@@ -7,7 +7,7 @@
 // countTwos(11420);  -> 4483
 
 
-function countTwos1(num) {
+function countTwos(num) {
   if(num < 1) return undefined;
   let count = 0;
   for (let i = 1; i <= num; i += 1) {
