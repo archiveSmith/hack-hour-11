@@ -7,8 +7,14 @@
 // countTwos(11420);  -> 4483
 
 
-function countTwos(num) {
-
+function countTwos1(num) {
+  if(num < 1) return undefined;
+  let count = 0;
+  for (let i = 1; i <= num; i += 1) {
+    let arr = i.toString().split('');
+    arr.forEach((el) => { parseInt(el) === 2 ? count += 1 : null;});
+  }
+  return count;
 }
 
 module.exports = countTwos;
