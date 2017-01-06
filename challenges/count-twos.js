@@ -14,7 +14,7 @@ function countTwos(num) {
   for(let i = 0; i < num + 1; i += 1) {
     digits = (""+i).split("");
       for(let j = 0; j < digits.length; j += 1) {
-        if(digits[j] === 2) {
+        if(digits[j] === '2') {
           count += 1;
         }
       }
