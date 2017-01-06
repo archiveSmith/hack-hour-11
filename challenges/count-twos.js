@@ -13,11 +13,15 @@ function countTwos(num) {
   let count = 0;
   for(let i = 1; i <= num; i++) {
     let numString = JSON.stringify(i);
-    for(let j = 0; j < numString.length; j++) {
-      if(numString.charAt(j) === '2') count++
-    }
+    if(numString.match(/2/g) === null) continue;
+
+     else {
+       count += numString.match(/2/g).length
+     }
   }
   return count;
 }
+
+
 
 module.exports = countTwos;
