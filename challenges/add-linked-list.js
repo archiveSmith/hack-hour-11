@@ -15,6 +15,35 @@ function Node(val) {
 
 function addLinkedList(l1, l2) {
 
+  if (!l1 || !l2) {
+    return undefined
+  }
+  
+  let l1Arr = [];
+  let l2Arr = [];
+  let node1 = l1
+  let node2 = l2
+  let answerNode;
+  
+  while(node1) {
+    l1Arr.unshift(node1.value);
+    node1 = node1.next;
+  }  
+  
+  while(node2) {
+    l2Arr.unshift(node2.value);
+    node2 = node2.next;
+  }
+  
+  let answer = (parseInt(l1Arr.join('').toString()) + parseInt(l2Arr.join('').toString())).toString().split('')
+
+  for (let i = 0; i < answer.length - 1; i += 1) {
+    answerNode = new Node(answer[i])
+    answerNode.next = new Node(answer[i + 1])
+  }
+  
+  return answer
+  
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
