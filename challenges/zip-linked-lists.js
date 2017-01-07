@@ -27,4 +27,4 @@ function zip(l1, l2) {
 	return l1;
 
 };
-//module.exports = {Node: Node, zip: zip};
+module.exports = {Node: Node, zip: zip};
