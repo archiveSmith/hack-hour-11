@@ -15,6 +15,7 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  if(!l1 || !l2) return NaN;
   let sl1 = '', sl2 = '';
 
   while(l1 || l2){
