@@ -17,12 +17,12 @@ function getDigits(value) {
 	value = value.toString;
 	if (value.length > 1) {
 		return {
-			keep: value[1],
-			carry: value[0]
+			keep: parseInt(value[1], 10),
+			carry: parseInt(value[0], 10)
 		}
 	} else {
 		return {
-			keep: value[0],
+			keep: parseInt(value[0], 10),
 			carry: 0
 		}
 	}
