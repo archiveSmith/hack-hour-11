@@ -30,8 +30,29 @@ function addLinkedList(l1, l2) {
     }
   }
 
-  return parseInt(sl1.split('').reverse().join('')) + parseInt(sl2.split('').reverse().join(''));
+  let number = parseInt(sl1.split('').reverse().join('')) + parseInt(sl2.split('').reverse().join(''));
+  number = number.toString().split('');
+  let head = new Node(parseInt(number[0]));
+  let node, current = head;
 
+  let i = 1;
+  while(number[i]){
+    node = new Node(parseInt(number[i]));
+    current = current.next = node;
+    i++;
+  }
+
+  return head;
 }
+
+let l1 = new Node(5);
+l1.next = new Node(9);
+l1.next.next = new Node(2);
+
+let l2 = new Node(3);
+l2.next = new Node(1);
+l2.next.next = new Node(5);
+
+console.log(addLinkedList(l1, l2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
