@@ -13,12 +13,36 @@ function Node(val) {
   this.next = null;
 }
 
+function getDigits(value) {
+	value = value.toString;
+	if (value.length > 1) {
+		return {
+			keep: value[1],
+			carry: value[0]
+		}
+	} else {
+		return {
+			keep: value[0],
+			carry: 0
+		}
+	}
+}
+	
+
 function addLinkedList(l1, l2) {
-	var addll = new Node(l1.value + l2.value);
+	var value = getDigits(l1.next.value + l2.next.value);
+	var addll = value.keep;
 	var head = addll;
 	while (l1.next) {
-		addll.next = new Node(l1.next.value + l2.next.value);
+		value = getDigits(l1.next.value + l2.next.value + value.carry);
+		addll.next = new Node(value.keep);
 		l1 = l1.next;
+		l2 = l2.next;
+		addll = addll.next;
+	}
+
+	while (l2.next) {
+		addll.next = new Node(l2.next.value);
 		l2 = l2.next;
 		addll = addll.next;
 	}
