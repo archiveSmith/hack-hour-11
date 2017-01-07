@@ -7,7 +7,6 @@
  * Output: 8 -> 0 -> 8
  *
  */
-
 function Node(val) {
   this.value = val;
   this.next = null;
@@ -18,7 +17,7 @@ function addLinkedList(l1, l2) {
 	let carry = 0;
 	if(inVal > 9){
 		carry = 1;
-		inVal = inVal.toString().slice(1).toNumber();
+		inVal = Number(inVal.toString().slice(1));
 	}
 	let newHead = new Node(inVal);
 	let newCurr = newHead;
@@ -31,13 +30,16 @@ function addLinkedList(l1, l2) {
 		carry = 0;
 		if(inVal > 9){
 			carry = 1;
-			inVal = inVal.toString().slice(1).toNumber();
+			inVal = Number(inVal.toString().slice(1));
 		}
 		newCurr.next = new Node(inVal);
 
 		newCurr = newCurr.next;
 		curr1 = curr1.next;
 		curr2 = curr2.next
+	}
+	if(carry === 1){
+	  newCurr.next = new Node(1);
 	}
 
 	return newHead;
