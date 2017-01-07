@@ -26,7 +26,7 @@ function addLinkedList(l1, l2) {
 	let curr2 = l2.next;
 	while(curr1 !== null || curr2 !== null){
 		if(curr1 === null) inVal = curr2.value + carry;
-		if(curr2 === null) inVal = curr1.value + carry;
+		else if(curr2 === null) inVal = curr1.value + carry;
 		else inVal = curr1.value + curr2.value + carry;
 		carry = 0;
 		if(inVal > 9){
