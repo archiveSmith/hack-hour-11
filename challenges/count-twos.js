@@ -8,6 +8,7 @@
 
 
 function countTwos(num) {
+<<<<<<< HEAD
 	let twos = 0;
 	for(let i = 0; i <= num; i++){
 		let inTwo = i.toString().match(/2/g);
@@ -16,6 +17,8 @@ function countTwos(num) {
 		twos += tw;
 	}
 	return twos;
+=======
+>>>>>>> 58b135ebc1438c1e5275c8ffd9ccde40985bef54
 
 }
 
