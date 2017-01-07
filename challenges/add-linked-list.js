@@ -44,7 +44,7 @@ function addLinkedList(l1, l2) {
 	}
 
 	while (l2.next) {
-		addll.next = new Node(l2.next.value);
+		addll.next = new Node(l2.next.value + value.carry);
 		l2 = l2.next;
 		addll = addll.next;
 	}
