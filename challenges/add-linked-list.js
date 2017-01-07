@@ -14,7 +14,7 @@ function Node(val) {
 }
 
 function getDigits(value) {
-	value = value.toString;
+	value = value.toString();
 	if (value.length > 1) {
 		return {
 			keep: parseInt(value[1], 10),
@@ -30,11 +30,13 @@ function getDigits(value) {
 	
 
 function addLinkedList(l1, l2) {
-	var value = getDigits(l1.next.value + l2.next.value);
-	var addll = value.keep;
+	var value = getDigits(l1.value + l2.value);
+	// console.log(value);
+	var addll = new Node(value.keep);
 	var head = addll;
 	while (l1.next) {
 		value = getDigits(l1.next.value + l2.next.value + value.carry);
+		// console.log(value);
 		addll.next = new Node(value.keep);
 		l1 = l1.next;
 		l2 = l2.next;
