@@ -8,8 +8,6 @@
  *
  */
 
-
-
 function LinkedList() {
   this.head = null;
   this.tail = null;
@@ -47,10 +45,11 @@ console.log(l2)
 function addLinkedList(l1, l2) {
   let list1 = ""
   let list2 = ""
-  for (let i = l1.head; i; i = i.next){
+  console.log("l1" l1, "l2" l2)
+  for (let i = l1; i; i = i.next){
     list1 += i.value.toString()
   }
-  for (let i = l2.head; i; i = i.next){
+  for (let i = l2; i; i = i.next){
     list2 += i.value.toString()
   }
   console.log(list1,list2)
