@@ -15,16 +15,32 @@ function Node(val) {
 
 function addLinkedList(l1, l2) {
   // console.log(l1.next.next.value);
-  let strl1 = l1.value.toString() + l1.next.value.toString() + l1.next.next.value.toString();
+  // for(let i = 0; i < ;i += 1) {
+  //   if (l1.val && l2.val){
+  //     l1.value.toString() + l1.next.value.toString() + 
+  //   }
+  let strl1 = l1.value.toString();
+  let strl2 = l2.value.toString();
+  while (l1.next !== null) {
+    strl1 += l1.next.value;
+    l1.next = l1.next.next;
+  }
+  while (l2.next !== null) {
+    strl2 += l2.next.value;
+    l2.next = l2.next.next;
+  }
+  // console.log(strl1)
+  // console.log(strl2)
+  // let strl1 = l1.value.toString() + l1.next.value.toString() + l1.next.next.value.toString();
   let corrected1 = strl1.split('').reverse().join('');
   let correctedNum1 = Number(corrected1);
-  let strl2 = l2.value.toString() + l2.next.value.toString() + l2.next.next.value.toString();
+  // let strl2 = l2.value.toString() + l2.next.value.toString() + l2.next.next.value.toString();
   let corrected2 = strl2.split('').reverse().join('');
   let correctedNum2 = Number(corrected2);
   let summed = correctedNum1 + correctedNum2;
   // console.log(summed)
   let summedStr = summed.toString().split('').reverse();
-  // console.log(summedStr);
+  // console.log(summedStr)
   let l3 = new Node(Number(summedStr[0]));
   let head = l3;
   for (let i = 1; i < summedStr.length; i += 1) {
@@ -36,7 +52,7 @@ function addLinkedList(l1, l2) {
   // console.log(l3)
 }
 
-// let l1 = { value: 3, next: { value: 1, next: { value: 5, next: null } } };
+// let l1 = { value: 3, next: null};
 // let l2 = { value: 5, next: { value: 9, next: { value: 2, next: null } } };
 // console.log(addLinkedList(l1, l2));
 
