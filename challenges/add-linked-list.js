@@ -65,7 +65,7 @@ function addLinkedList(l1, l2) {
     console.log("hi")
   }
   console.log(result)
-  return result;
+  return result.head;
 }
 
 addLinkedList(l1.head,l2.head);
