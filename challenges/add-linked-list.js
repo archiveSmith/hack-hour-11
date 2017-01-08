@@ -32,7 +32,7 @@ LinkedList.prototype.push = function (value) {
 
 let l1 = new LinkedList;
 let l2 = new LinkedList;
-l1.push(3)
+l1.push(4)
 l1.push(1)
 l1.push(5)
 l2.push(5)
@@ -43,9 +43,9 @@ console.log(l1)
 console.log(l2)
 
 function addLinkedList(l1, l2) {
-  let list1 = ""
-  let list2 = ""
-  console.log("l1" l1, "l2" l2)
+  let list1 = "";
+  let list2 = "";
+  console.log("l1", l1, "l2", l2);
   for (let i = l1; i; i = i.next){
     list1 += i.value.toString()
   }
@@ -68,6 +68,6 @@ function addLinkedList(l1, l2) {
   return result;
 }
 
-addLinkedList(l1,l2);
+addLinkedList(l1.head,l2.head);
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
