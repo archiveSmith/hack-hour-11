@@ -45,14 +45,14 @@ function addLinkedList(l1, l2) {
   return head;
 }
 
-let l1 = new Node(5);
-l1.next = new Node(9);
-l1.next.next = new Node(2);
-
-let l2 = new Node(3);
-l2.next = new Node(1);
-l2.next.next = new Node(5);
-
-console.log(addLinkedList(l1, l2));
+// let l1 = new Node(5);
+// l1.next = new Node(9);
+// l1.next.next = new Node(2);
+//
+// let l2 = new Node(3);
+// l2.next = new Node(1);
+// l2.next.next = new Node(5);
+//
+// console.log(addLinkedList(l1, l2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

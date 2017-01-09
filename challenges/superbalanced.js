@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Write a function to see if a binary tree "superbalanced".
  * An empty tree is balanced. A non-empty binary tree T is balanced if:
@@ -14,7 +15,35 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+  let firstTruth = true;
+  let secondTruth = true;
 
+  if(tree.left)
+    if((tree.left.left || tree.left.right) && (!tree.right.left && !tree.right.right))
+      return false;
+    else
+      firstTruth = superbalanced(tree.left);
+
+  if(tree.right)
+    if((tree.right.left || tree.right.right) && (!tree.left.left && !tree.left.right))
+      return false;
+      else
+        secondTruth = superbalanced(tree.left);
+
+  return (!firstTruth || !secondTruth);
 }
+
+// const tree = new BinaryTree(12);
+//
+// tree.left = new BinaryTree(10);
+// tree.left.right = new BinaryTree(11);
+// tree.left.left = new BinaryTree(9);
+//
+// tree.right = new BinaryTree(19);
+// tree.right.right = new BinaryTree(22);
+// tree.right.left = new BinaryTree(17);
+// tree.right.right.left = new BinaryTree(5);
+
+//console.log(superbalanced(tree));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
