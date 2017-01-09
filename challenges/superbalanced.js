@@ -13,14 +13,12 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
-	let depth = 0;
 	if(tree.left === null && tree.right) return false;
 	if(tree.right === null && tree.left) return false;
 	if(tree.left === null && tree.right === null){
 		return true;
 	}
 
-    //depth++;
 return superbalanced(tree.left), superbalanced(tree.right);
 
 
