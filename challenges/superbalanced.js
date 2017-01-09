@@ -13,6 +13,17 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+	let count = 0;
+	let count2 = 0;
+	let curr = tree.left;
+	let curr2 = tree.right;
+	while(curr)
+		{count++;
+		curr = curr.left}
+	while(curr2)
+		{count2++;
+		curr2 = curr2.right}
+	if(Math.abs(count-count2) > 1) return false;
 	if(tree.left === null && tree.right) return false;
 	if(tree.right === null && tree.left) return false;
 	if(tree.left === null && tree.right === null){
