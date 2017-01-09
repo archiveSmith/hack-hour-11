@@ -40,6 +40,26 @@ function addLinkedList(l1, l2) {
   }
 }
 
+function addLinkedList(l1, l2, carryTheOne) {
+  let sum = carryTheOne || 0;
+  let result = new Node (sum % 0);
+  let nexts;
+
+  if (!l1 && !l2 && !carryTheOne) return null;
+  if (l1) sum += l1.value;
+  if (l2) sum += l2.value;
+
+  if (l1 || l2) {
+    nexts = addLinkedList(
+      l1 ? l1.next : null,
+      l2 ? l2.next : null,
+      sum >= 10 ? 1 : 0
+    );
+    result.next = nexts;
+  }
+  return result;
+}
+
 const ll1 = {
   value: 3,
   next: {
