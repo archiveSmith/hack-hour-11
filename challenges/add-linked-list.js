@@ -8,16 +8,20 @@
  *
  */
 
+<<<<<<< HEAD
 function LinkedList() {
   this.head = null;
   this.tail = null;
 }
 
+=======
+>>>>>>> 12c336b064f3f51fe66429a2209bf47c3c79daff
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
+<<<<<<< HEAD
 // adds node to end of list
 LinkedList.prototype.push = function (value) {
   const newNode = new Node(value);
@@ -69,5 +73,10 @@ function addLinkedList(l1, l2) {
 }
 
 addLinkedList(l1.head,l2.head);
+=======
+function addLinkedList(l1, l2) {
+
+}
+>>>>>>> 12c336b064f3f51fe66429a2209bf47c3c79daff
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
