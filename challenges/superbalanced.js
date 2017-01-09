@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Write a function to see if a binary tree "superbalanced".
  * An empty tree is balanced. A non-empty binary tree T is balanced if:
@@ -14,7 +16,58 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+  let deepestSoFarLeft = 0;
+  let deepestSoFarRight = 0;
+  let count = 1;
+ 
+  recurse(tree.right, count, 'right');
+  recurse(tree.left, count, 'left');
 
+  console.log('left depth: ', deepestSoFarLeft);
+  console.log('right depth: ', deepestSoFarRight);
+  
+  return (Math.abs(deepestSoFarRight - deepestSoFarLeft)) <= 1;
+
+  function recurse(curr, count, side) {
+    // console.log(side);
+    if (curr.left) {
+      // console.log("checking left ", curr.left.value)
+      recurse(curr.left, count+1, side);
+    }
+
+    if (curr.right) {
+      // console.log("checking right ", curr.right.value, side)
+      recurse(curr.right, count+1, side);
+    } else { 
+      // console.log('count is: ' + count);
+        if (side === 'left') {
+          if (count > deepestSoFarLeft) {
+            deepestSoFarLeft = count;
+          }
+        }
+        if (side === 'right') {
+          if (count > deepestSoFarRight) {
+            deepestSoFarRight = count;
+          }
+        }
+      return; }
+
+      
+    
+
+  }
 }
+
+// let tree = new BinaryTree(5);
+// tree.left = new BinaryTree(3);
+// tree.right = new BinaryTree(10);
+// tree.left.left = new BinaryTree(2);
+// tree.left.right = new BinaryTree(4);
+// tree.right.left = new BinaryTree(7);
+// tree.right.right = new BinaryTree(12);
+// tree.right.right.right = new BinaryTree(14);
+// tree.right.right.right.right = new BinaryTree(15);
+
+// console.log(superbalanced(tree));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
