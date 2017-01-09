@@ -28,9 +28,8 @@ function superbalanced(tree) {
         }
       }
     }
-    if (tree.left && tree.right) return superbalanced(tree.left) || superbalanced(tree.right);
-    else if (tree.left) return superbalanced(tree.left);
-    else return superbalanced(tree.right);
+    return superbalanced(tree.left) || superbalanced(tree.right);
+    
   }
 }
 
