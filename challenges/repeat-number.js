@@ -11,7 +11,7 @@
  */
 function repeatNumbers(array) {
   for (let i = 1; i < array.length; i++) {
-    if (array[i - 1] != i) return array[i - 1];
+    if (array[i - 1] !== i) return array[i - 1];
   }
 }
 
