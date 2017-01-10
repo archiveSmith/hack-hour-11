@@ -23,7 +23,6 @@ function superbalanced(tree) {
 		let curr= tree
 		while(curr.left !== null){
 			counterArr.push(curr.left)
-		//	console.log(counterArr)
 			curr= curr.left
 		}
 		while(curr.right !== null){
@@ -39,8 +38,6 @@ function superbalanced(tree) {
 	}else{
 		return false;
 	}
-	
-	//console.log(counterArr)
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
