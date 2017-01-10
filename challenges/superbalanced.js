@@ -20,22 +20,12 @@ function superbalanced(tree) {
       return 0;
     }
 
-    const leftHeight = superbalanced(tree.left);
-    if(leftHeight === -1) {
-      return -1;
-    }
+    const leftHeight = checkBalance(tree.left);
 
-    const rightHeight = superbalanced(tree.right);
-    if(rightHeight === -1){
-      return -1;
-    }
+    const rightHeight = checkBalance(tree.right);
 
-    const diff = leftHeight-rightHeight;
-    if(Math.abs(diff) > 1){
-      return -1;
-    }
-
-    return 1 + Math.max(leftHeight, rightHeight);
+    //const diff = Math.abs(leftHeight - rightHeight);
+    return 1 + Math.abs(leftHeight - rightHeight);
   }
 
   return checkbalance(tree) > 0 ? true : false;
