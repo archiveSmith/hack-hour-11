@@ -58,16 +58,16 @@ function superbalanced(tree) {
 // let tree5 = new BinaryTree(3);
 
 // let tree6 = new BinaryTree(8);
-// let tree7 = new BinaryTree(9);
+// //let tree7 = new BinaryTree(9);
 
 // tree1.left = tree4;
 // tree4.right = tree5;
 
 // tree1.right = tree2;
 // tree2.right = tree3;
-// tree3.right = tree6;
-// tree6.right = tree7;
+// //tree3.right = tree6;
+// //tree6.right = tree7;
 
-console.log(superbalanced(tree1));
+// console.log(superbalanced(tree1));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
