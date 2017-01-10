@@ -7,6 +7,7 @@
 example: http://www.geeksforgeeks.org/wp-content/uploads/balanced_tree.GIF
  */
 
+
 function BinaryTree(value) {
   this.value = value;
   this.left = null;
@@ -14,7 +15,32 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+	const counterleft = [];
+	const counterright = [];
+	let i=0;
 
+	function countT(tree,counterArr){
+		let curr= tree
+		while(curr.left !== null){
+			counterArr.push(curr.left)
+		//	console.log(counterArr)
+			curr= curr.left
+		}
+		while(curr.right !== null){
+			counterArr.push(curr.left)
+			curr=curr.right
+		}
+	}
+	countT(tree,counterleft);
+	countT(tree, counterright);
+	
+	if(counterright.length === counterleft.length){
+		return true;
+	}else{
+		return false;
+	}
+	
+	//console.log(counterArr)
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
