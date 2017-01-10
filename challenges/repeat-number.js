@@ -11,6 +11,13 @@
  */
 
 function repeatNumbers(array) {
+	let helper = {};
+	for(let i = 0; i<array.length; i++){
+		if(helper[array[i]]===1){
+			return array[i]
+		}
+			helper[array[i]] = 1 ;		
+	}
 
 }
 
