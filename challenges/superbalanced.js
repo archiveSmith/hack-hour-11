@@ -19,15 +19,14 @@ function superbalanced(tree) {
 
   function checkBalanced(tree) {
 
-    if (!tree.left && !tree.right) {
-      return;
-    }
+    
 
     if (!tree.left) {
       if (tree.right) {
         if (tree.right.right) {
           //return false;
           balanced = false;
+          //return;
         }
       }
     } else {
@@ -39,6 +38,7 @@ function superbalanced(tree) {
         if (tree.left.left) {
           //return false;
           balanced = false;
+          //return;
         }
       }
     } else {
