@@ -11,16 +11,21 @@
  */
 
 function repeatNumbers(array) {
+  const sortedArray = array.sort((a, b) => a > b);
+  const len = sortedArray.length;
 
-
-
+  for (let i = 0, j = 1; j < len;) {
+    if (sortedArray[i] === sortedArray[j]) return sortedArray[j];
+    i += 1;
+    j += 1;
+  }
 
   // BRUTE FORCE
-  const counts = {};
-  for (let i = 0; i < array.length; i += 1) {
-    if (counts[array[i]]) return array[i];
-    counts[array[i]] = 1;
-  }
+  // const counts = {};
+  // for (let i = 0; i < array.length; i += 1) {
+  //   if (counts[array[i]]) return array[i];
+  //   counts[array[i]] = 1;
+  // }
 }
 
 module.exports = repeatNumbers;
