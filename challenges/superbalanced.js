@@ -13,20 +13,19 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
-  return treeHeight(tree) === -1 ? false : true;
-
-  function treeHeight(node) {
-    if (node === null) return 0;
-    if (node.left === null && null.right === null) return 1;
-    const left = treeHeight(node.left);
-    const right = treeHeight(node.right);
-
-    if (left === -1 || right === -1) return -1;
-    if (Math.abs(left - right) > 1) return -1;
-
-    return Math.max(left, right) + 1;
+function height (tree) {
+  if (tree === null) {
+    return 0;
   }
+  return 1 + Math.max(height(tree.left), height(tree.right));
+}
+
+function superbalanced(tree) {
+  if (tree === null) {
+    return true;
+  }
+  return Math.abs(height(tree.left) - height(tree.right)) <= 1
+  && superbalanced(tree.left) && superbalanced(tree.right);
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
