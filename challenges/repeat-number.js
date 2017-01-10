@@ -12,7 +12,6 @@
 
 function repeatNumbers(array) {
   // sort array from smallest to largest
-  array.sort((a, b) => {return a - b});
   // set memory to first element
   let memory = array[0];
   // loop through array starting from 2nd element
