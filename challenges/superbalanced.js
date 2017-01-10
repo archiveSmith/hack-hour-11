@@ -14,7 +14,51 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+  if (!tree.right && !tree.left) return true;
+  let leftMaxH = 0;
+  let rightMaxH = 0;
+
+  function checkHeight(node, count) {
+    if (!node.right && !node.left) return count;
+    else if (node.right || node.left) {
+      count += 1;
+      if (node.right && node.left) {
+        if (checkHeight(node.right, count) > checkHeight(node.left, count)) {
+          return checkHeight(node.right, count);
+        }
+        return checkHeight(node.left, count);
+      } else if (node.right) {
+        return checkHeight(node.right, count);
+      }
+      return checkHeight(node.left, count);
+    }
+  }
+
+  if (tree.left && tree.right) {
+    leftMaxH = 1;
+    rightMaxH = 1;
+    leftMaxH = checkHeight(tree.left, leftMaxH);
+    rightMaxH = checkHeight(tree.right, rightMaxH);
+  } else if (tree.right) {
+    rightMaxH = 1;
+    rightMaxH = checkHeight(tree.right, rightMaxH);
+  } else {
+    leftMaxH = 1;
+    leftMaxH = checkHeight(tree.left, leftMaxH);
+  }
+
+  console.log([leftMaxH, rightMaxH]);
+  return Math.abs(leftMaxH - rightMaxH) <= 1;
 
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
+
+const bst = new BinaryTree(10);
+bst.left = new BinaryTree(7);
+bst.right = new BinaryTree(15);
+bst.right.right = new BinaryTree(17);
+// bst.right.right.right = new BinaryTree(19);
+// bst.right.right.right.left = new BinaryTree(18);
+
+console.log(superbalanced(bst));
