@@ -8,6 +8,7 @@ function highestProduct(array) {
   // multiply the highest number and two lowest numbers (in case they are high negatives)
   // compare the two numbers and return the higher product.
   // profit.
+  
   if (array.length < 3){
     return 0;
   } 
