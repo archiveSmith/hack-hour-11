@@ -9,11 +9,11 @@
  * Do this in O(1) space
  *
  */
-
 function repeatNumbers(array) {
   for (let i = 1; i < array.length; i++) {
-    if (array[i] !== i) return i;
+    if (array[i - 1] != i) return array[i - 1];
   }
 }
+
 
 module.exports = repeatNumbers;
