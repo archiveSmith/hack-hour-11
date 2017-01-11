@@ -14,6 +14,7 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+
   let heightLeft = 0;
   let heightRight = 0;
 
@@ -22,6 +23,7 @@ function superbalanced(tree) {
   while (head.value !== null) {
     
   }
+
 
 
 }
