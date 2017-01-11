@@ -11,13 +11,8 @@
  */
 
 function repeatNumbers(array) {
-  let arr = [];
   for (let i = 0; i < array.length; i += 1) {
-    if (arr.indexOf(array[i]) !== -1) {
-       return array[i];
-    } else {
-      arr.push(array[i]);
-    }
+    if (array[i] === array[i + 1]) return array[i];
   }
 }
 
