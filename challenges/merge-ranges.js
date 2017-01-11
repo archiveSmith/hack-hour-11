@@ -11,6 +11,9 @@
 
 
 function mergeRanges(array) {
+    if (!array) {
+        return false;
+    }
     let result = [];
 
     let sortedArr = array.sort(function(a,b){
@@ -30,7 +33,7 @@ function mergeRanges(array) {
 
     }
     
-    console.log(result);
+    return result;
 }
 
 var times = [[0, 1], [3, 5], [4,8], [7,9], [10, 15]]
