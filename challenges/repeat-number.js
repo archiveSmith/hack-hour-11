@@ -11,6 +11,7 @@
  */
 
 function repeatNumbers(array) {
+<<<<<<< HEAD
   const memo = {};
   for (let i = 0; i < array.length; i+=1) {
     if (memo[array[i]]) return array[i];
@@ -20,4 +21,9 @@ function repeatNumbers(array) {
 }
 
 // console.log(repeatNumbers([1,2,3,4,5,6,7,8,8,9,10]))
+=======
+
+}
+
+>>>>>>> e3e4e18237583e9af58c6f43188f706915c1c9b8
 module.exports = repeatNumbers;
