@@ -11,6 +11,9 @@
 
 
 function mergeRanges(array) {
+let reduced = array.reduce((a,c) => {
+    return a.concat(c)
+}
 
 }
 
