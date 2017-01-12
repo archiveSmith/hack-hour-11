@@ -39,7 +39,7 @@ while(curr !== null){
     if(curr === nexts){
       return true;
     }
-    if(a === 10){
+    if(a === 2){
       a = 0;
       nexts = nexts.next;
     }
