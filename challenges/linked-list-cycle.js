@@ -32,6 +32,7 @@
 }
 
 function hasCycle(head) {
+if(!head) return false;
 let nexts = head;
 let curr = head.next;
 let a = 0;
