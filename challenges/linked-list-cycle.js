@@ -30,10 +30,37 @@
 var Node = function(value) {
   this.value = value;
   this.next = null;
+  this.seen = false;
 }
 
 function hasCycle(head) {
+  if (!head) {
+    return false;
+  }
 
+  let curr = head;
+  
+  while (curr.seen === false && curr !== null) {
+    // console.log(curr.value)
+    curr.seen = true;
+    
+    if (!curr.next) {
+      return false;
+    }
+
+    if (curr.next.seen === true) {
+      return true;
+    }
+    
+    curr = curr.next;
+    
+  }
 }
+
+ 
+
+
+
+
 
 module.exports = {Node: Node, hasCycle: hasCycle}
