@@ -14,14 +14,14 @@ function repeatNumbers(array) {
   
 
   // OTHER BRUTE FORCE
-  // const sortedArray = array.sort((a, b) => a - b);
-  // const len = sortedArray.length;
+  const sortedArray = array.sort((a, b) => a - b);
+  const len = sortedArray.length;
 
-  // for (let i = 0, j = 1; j < len;) {
-  //   if (sortedArray[i] === sortedArray[j]) return sortedArray[j];
-  //   i += 1;
-  //   j += 1;
-  // }
+  for (let i = 0, j = 1; j < len;) {
+    if (sortedArray[i] === sortedArray[j]) return sortedArray[j];
+    i += 1;
+    j += 1;
+  }
 
   // BRUTE FORCE
   // const counts = {};
