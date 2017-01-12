@@ -30,9 +30,10 @@
 var Node = function(value) {
   this.value = value;
   this.next = null;
-}
+} 
 
 function hasCycle(head) {
+  if (!head) return false;
   let checkObj = [head.value];
   let nodes = head;
   while (nodes.next) {
@@ -42,6 +43,6 @@ function hasCycle(head) {
     console.log(checkObj);
   }
   return false;
-}
+} 
 
 module.exports = {Node: Node, hasCycle: hasCycle}
