@@ -30,7 +30,6 @@
 var Node = function(value) {
   this.value = value;
   this.next = null;
-  this.seen = false;
 }
 
 function hasCycle(head) {
@@ -38,17 +37,19 @@ function hasCycle(head) {
     return false;
   }
 
+  let seenObj = {};
+
   let curr = head;
   
-  while (curr.seen === false && curr !== null) {
+  while (!seenObj[curr.value] && curr !== null) {
     // console.log(curr.value)
-    curr.seen = true;
+    seenObj[curr.value] = true;
     
     if (!curr.next) {
       return false;
     }
 
-    if (curr.next.seen === true) {
+    if (seenObj[curr.next.value]) {
       return true;
     }
     
@@ -58,7 +59,14 @@ function hasCycle(head) {
 }
 
  
-
+ var node1 = new Node('1');
+ var node2 = node1.next = new Node('2');
+ var node3 = node2.next = new Node('3');
+ var node4 = node3.next = new Node('4');
+ var node5 = node4.next = new Node('5');
+ console.log(hasCycle(node1)); // => false
+ node5.next = node2;
+ console.log(hasCycle(node1)); // => true
 
 
 
