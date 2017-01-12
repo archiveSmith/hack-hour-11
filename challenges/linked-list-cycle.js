@@ -46,7 +46,6 @@ while(curr !== null){
 	curr=curr.next;
 	a++;
 }
-
 return false;
 
 }
