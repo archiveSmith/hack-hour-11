@@ -33,6 +33,8 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  if (!head || head.next === null) return false;
+
   let node1 = head;
   let node2 = head;
 
