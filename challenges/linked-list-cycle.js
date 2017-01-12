@@ -56,6 +56,7 @@ function hasCycle(head) {
     curr = curr.next;
     
   }
+  return false;
 }
 
  
