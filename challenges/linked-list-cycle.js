@@ -26,27 +26,64 @@
  * Challenge 3: Do not mutate the original nodes in any way
  *
  */
-
-var Node = function(value) {
+ var Node = function(value) {
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
-let nexts = {};
-let curr = head;
+let nexts = head;
+let curr = head.next;
+let a = 0;
 while(curr !== null){
-    if(nexts[curr.value] && nexts[curr.value] === curr){
+    if(curr === nexts){
       return true;
     }
-  nexts[curr.value] = curr;
-
+    if(a === 2){
+      a = 0;
+      nexts = nexts.next;
+    }
 	curr=curr.next;
+	a++;
 }
 
 return false;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var Node = function(value) {
+//   this.value = value;
+//   this.next = null;
+// }
+
+// function hasCycle(head) {
+// let nexts = {};
+// let curr = head;
+// while(curr !== null){
+//     if(nexts[curr.value] && nexts[curr.value] === curr){
+//       return true;
+//     }
+//   nexts[curr.value] = curr;
+
+// 	curr=curr.next;
+// }
+
+// return false;
+
+// }
 
 
 module.exports = {Node: Node, hasCycle: hasCycle}
