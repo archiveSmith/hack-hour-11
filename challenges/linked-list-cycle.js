@@ -33,22 +33,43 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-  let turtle = head;
-  let hare = head;
-  while (true) {
-    turtle = turtle.next;
-    if (hare.next !== null) {
-      hare = hare.next.next;
-    } else {
-      return false;
-    }
-    if (turtle === null  || hare === null) {
-      return false;
-    }
-    if (turtle.value === hare.value) {
-      return true;
-    }
+  // let turtle = head;
+  // let hare = head;
+  // while (true) {
+  //   turtle = turtle.next;
+  //   if (hare.next !== null) {
+  //     hare = hare.next.next;
+  //   } else {
+  //     return false;
+  //   }
+  //   if (turtle === null  || hare === null) {
+  //     return false;
+  //   }
+  //   if (turtle.value === hare.value) {
+  //     return true;
+  //   }
+  // }
+
+  // // O(n^2) time and O(n) space
+  // if (!head || !head.next) return false;
+  // const seen = [];
+  // while (head) {
+  //   if (seen.includes(head)) return true;
+  //   seen.push(head);
+  //   head = head.next;
+  // }
+  // return false;
+
+  let slow = head;
+  let fast = head.next;
+
+  while(fast && fast.next) {
+    if (slow === fast) return true;
+    slow = slow.next;
+    fast = fast.next.next;
   }
+
+  return false;
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
