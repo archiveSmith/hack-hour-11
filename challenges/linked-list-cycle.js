@@ -34,57 +34,55 @@ var Node = function(value) {
 
 function hasCycle(head) {
 
-  // let curr = head;
-
-  // while (true) {
-  //   if (curr === null) {
-  //     return true;
-  //   }
-  //   if (!curr.visited) {
-  //     curr.visited = true;
-  //     curr = curr.next;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-  if (arguments.length < 1) {
+  if (arguments.length < 1 || arguments[0] === null) {
     return false;
   }
 
   let pointer1, pointer2 = head;
 
-  if (head.next) {
-    pointer1 = head.next;
-
-    if (pointer1.next === head) {
-      return true;
+  do {
+    if (!(pointer1 = pointer1.next) || !(pointer1 = pointer1.next)) {
+      return false;
     }
+    pointer2 = pointer2.next;
+    
+    if (pointer1 === pointer2) return true;
+  } while (pointer1 !== pointer2);
 
-    if (head.next.next) {
-      pointer1 = pointer1.next;
-    }
+  return false;
 
-    while (pointer1 !== pointer2) {
-      pointer1 = pointer1.next;
-      if (!pointer1) {
-        return false;
-      }  else if (pointer1 === pointer2) {
-        return true;
-      }
-      pointer1 = pointer1.next;
-      if (!pointer1) {
-        return false;
-      } else if (pointer1 === pointer2) {
-        return true;
-      }
-      pointer2 = pointer2.next;
-    }
+  // if (head.next) {
+  //   pointer1 = head.next;
 
-    return false;
+  //   if (pointer1.next === head) {
+  //     return true;
+  //   }
 
-  } else {
-    return false;
-  }
+  //   if (head.next.next) {
+  //     pointer1 = pointer1.next;
+  //   }
+
+  //   while (pointer1 !== pointer2) {
+  //     pointer1 = pointer1.next;
+  //     if (!pointer1) {
+  //       return false;
+  //     }  else if (pointer1 === pointer2) {
+  //       return true;
+  //     }
+  //     pointer1 = pointer1.next;
+  //     if (!pointer1) {
+  //       return false;
+  //     } else if (pointer1 === pointer2) {
+  //       return true;
+  //     }
+  //     pointer2 = pointer2.next;
+  //   }
+
+  //   return false;
+
+  // } else {
+  //   return false;
+  // }
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
