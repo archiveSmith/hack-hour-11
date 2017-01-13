@@ -14,7 +14,7 @@ function sumMultiples3Or5Below1000() {
       sumArr.push(i);
     }
   }
-  return sumArr.reduce((a, b) {
+  return sumArr.reduce( function(a, b) {
     return a + b;
   }, 0);
 }
