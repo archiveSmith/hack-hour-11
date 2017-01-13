@@ -35,7 +35,7 @@ var Node = function(value) {
 function hasCycle(head) {
   let cur = head;
 
-  while (cur.next) {
+  while (cur) {
     if (cur.seen) return true;
     cur.seen = true;
     cur = cur.next;
