@@ -4,7 +4,7 @@
 
 
 function Stack() {
-<<<<<<< HEAD
+
     this.storage = {};
     this.index = 0;
 
@@ -21,19 +21,10 @@ function Stack() {
     }
 }
 
-=======
-
-}
-
-
->>>>>>> 5f4ce0fffa71fd52c851263a14b523d045dd8077
-/**
-* Queue Class
-*/
 
 
 function Queue() {
-<<<<<<< HEAD
+
     let stack1 = New Stack();
     let stack2 = New Stack();
 
@@ -57,8 +48,7 @@ function Queue() {
         stack1.pop()
     }
 
-=======
->>>>>>> 5f4ce0fffa71fd52c851263a14b523d045dd8077
+
 
 }
 

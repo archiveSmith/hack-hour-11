@@ -11,9 +11,16 @@
 
 
 function mergeRanges(array) {
-let reduced = array.reduce((a,c) => {
-    return a.concat(c)
-}
+const sortedTimes = array.sort((a,b) => a[0] - b[0]);
+const firstTimeSlot = sortedTimes.shift();
+
+return sortedTimes.reduce((merged, currentTimeSlot) => {
+    const previousEndTime = merged[merged.length - 1][1];
+    if (currentTimeSlot[1] <= previousEndTime) return merged;
+    if (currentTimeSlot[0] > previousEndTime) merged.push(currentTimeSlot)
+    if (currentTimeSlot[0] <= previousEndTime) merged[merged.length-1] = currentTimeSlot[1];
+    return merge;
+}, [firstTimeSlot]);
 
 }
 
