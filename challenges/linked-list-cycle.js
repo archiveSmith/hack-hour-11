@@ -48,6 +48,7 @@ function hasCycle(head) {
 }
 
 
+
 //  var node1 = new Node('1');
 //  var node2 = node1.next = new Node('2');
 //  var node3 = node2.next = new Node('3');
