@@ -47,6 +47,9 @@ function hasCycle(head) {
   //     return false;
   //   }
   // }
+  if (arguments.length < 1) {
+    return false;
+  }
 
   let pointer1, pointer2 = head;
 
