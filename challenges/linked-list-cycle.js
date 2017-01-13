@@ -60,6 +60,9 @@ function hasCycle(head) {
   // }
   // return false;
 
+  // O(n) time and O(1) space
+  if (!head) return false;
+
   let slow = head;
   let fast = head.next;
 
