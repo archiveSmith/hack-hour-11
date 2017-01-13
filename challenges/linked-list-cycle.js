@@ -40,48 +40,48 @@ function hasCycle(head) {
 
   let pointer1, pointer2 = head;
 
-  do {
-    if (!(pointer1 = pointer1.next) || !(pointer1 = pointer1.next)) {
-      return false;
+  // do {
+  //   if (!(pointer1 = pointer1.next) || !(pointer1 = pointer1.next)) {
+  //     return false;
+  //   }
+  //   pointer2 = pointer2.next;
+
+  // } while (pointer1 !== pointer2);
+
+  // return true;
+
+  if (head.next) {
+    pointer1 = head.next;
+
+    if (pointer1.next === head) {
+      return true;
     }
-    pointer2 = pointer2.next;
-    
-  } while (pointer1 !== pointer2);
 
-  return true;
+    if (head.next.next) {
+      pointer1 = pointer1.next;
+    }
 
-  // if (head.next) {
-  //   pointer1 = head.next;
+    while (pointer1 !== pointer2) {
+      pointer1 = pointer1.next;
+      if (!pointer1) {
+        return false;
+      }  else if (pointer1 === pointer2) {
+        return true;
+      }
+      pointer1 = pointer1.next;
+      if (!pointer1) {
+        return false;
+      } else if (pointer1 === pointer2) {
+        return true;
+      }
+      pointer2 = pointer2.next;
+    }
 
-  //   if (pointer1.next === head) {
-  //     return true;
-  //   }
+    return false;
 
-  //   if (head.next.next) {
-  //     pointer1 = pointer1.next;
-  //   }
-
-  //   while (pointer1 !== pointer2) {
-  //     pointer1 = pointer1.next;
-  //     if (!pointer1) {
-  //       return false;
-  //     }  else if (pointer1 === pointer2) {
-  //       return true;
-  //     }
-  //     pointer1 = pointer1.next;
-  //     if (!pointer1) {
-  //       return false;
-  //     } else if (pointer1 === pointer2) {
-  //       return true;
-  //     }
-  //     pointer2 = pointer2.next;
-  //   }
-
-  //   return false;
-
-  // } else {
-  //   return false;
-  // }
+  } else {
+    return false;
+  }
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
