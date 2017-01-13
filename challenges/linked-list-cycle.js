@@ -46,10 +46,9 @@ function hasCycle(head) {
     }
     pointer2 = pointer2.next;
     
-    if (pointer1 === pointer2) return true;
   } while (pointer1 !== pointer2);
 
-  return false;
+  return true;
 
   // if (head.next) {
   //   pointer1 = head.next;
