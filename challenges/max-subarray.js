@@ -8,19 +8,30 @@
  */
 
 function maxSubarray(arr) {
-  let temp = [];
-  let highest = -Infinity;
-  for (let i = 0; i < arr.length; i += 1) {
-    for (let j = i; j < arr.length; j += 1) {
-      temp.push(arr[j]);
-      let result = temp.reduce((acc, curr) => acc + curr);   
-      if (result > highest) {
-        highest = result;
-      }
-    }
-    temp = [];
+  // // O(n^3) time complexity
+  // let temp = [];
+  // let highest = -Infinity;
+  // for (let i = 0; i < arr.length; i += 1) {
+  //   for (let j = i; j < arr.length; j += 1) {
+  //     temp.push(arr[j]);
+  //     let result = temp.reduce((acc, curr) => acc + curr);   
+  //     if (result > highest) {
+  //       highest = result;
+  //     }
+  //   }
+  //   temp = [];
+  // }
+  // return highest;
+  
+  // O(n) time complexity
+  var currentMax = Number.NEGATIVE_INFINITY;
+  var finalMax = Number.NEGATIVE_INFINITY;
+
+  for (var i = 0; i < arr.length; i++) {
+    currentMax = Math.max(arr[i], currentMax + arr[i]);
+    finalMax = Math.max(finalMax, currentMax);
   }
-  return highest;
+  return finalMax;
 }
 
 module.exports = maxSubarray;
