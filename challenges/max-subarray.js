@@ -12,20 +12,22 @@ function maxSubarray(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     let maxArr = [];
     let maxNum = arr[i]
-    let newSum = 0
-    console.log('maxArr', maxArr);
+    let newSum = 0;
+    // console.log('maxArr', maxArr);
     for (let j = i; j < arr.length; j++) {
+      newSum = 0;
       console.log('arr[j]', arr[j])
       maxArr.push(arr[j]);
-      console.log('maxArr', maxArr);
+      // console.log('maxArr', maxArr);
       for (let k = 0; k < maxArr.length; k++) {
         newSum += maxArr[k];
       }
-      console.log('maxArr2', maxArr)
+      // console.log('newSum', newSum)
       maxNum = maxNum < newSum ? newSum : maxNum;
+      // console.log('maxNum', maxNum)
     }
     max = max < maxNum ? maxNum : max;
-    console.log('max', max)
+    // console.log('max', max) 
   }
   return max;
 }
