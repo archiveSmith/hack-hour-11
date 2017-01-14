@@ -9,6 +9,7 @@
 
 function maxSubarray(arr) {
   if (!arr.length) return undefined;
+  if (arr.every(e => e < 0)) return arr.reduce((a, b) => Math.max(a, b));
   let max = -Infinity;
 
   function add(sum, array) {
@@ -24,5 +25,3 @@ function maxSubarray(arr) {
 }
 
 module.exports = maxSubarray;
-
-// console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]));
