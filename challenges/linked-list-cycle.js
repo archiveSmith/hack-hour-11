@@ -33,21 +33,20 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-<<<<<<< HEAD
-  let nodeCache = {};
-  let curr = head;
-  while (curr !== null) {
-    if (nodeCache[curr.value]) {
-      return true;
-    } else {
-      nodeCache[curr.value] = 1;
-      curr = curr.next;
-    }
-  }
+if (!head || !head.next) {
   return false;
-=======
+}
+let tortoise = head;
+let hare = head.next;
 
->>>>>>> a9bf62bddfa33167cb8fc038a3ae6ed463891937
+while (hare && hare.next) {
+  if (tortoise === hare) {
+    return true;
+  }
+  tortoise = tortoise.next;
+  hare = hare.next.next
+}
+return false;
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
