@@ -8,7 +8,19 @@
  */
 
 function maxSubarray(arr) {
-
+  if(!arr || arr.length === 0) return undefined;
+  
+  let answer = [];
+  
+  const recurser = (array) => {
+    if(array.length === 0) return;
+    answer.push(array.reduce((base, current) => base + current));
+    return recurser(array.slice(1)) + recurser(array.slice(0, array.length - 1))
+  }
+  
+  recurser(arr)
+  
+  return Math.max(...answer)
 }
 
 module.exports = maxSubarray;
