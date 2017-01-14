@@ -8,7 +8,23 @@
  */
 
 function maxSubarray(arr) {
+    maxSoFar = arr[0];
+    current = arr[0];
 
+    for (let i=1; i<arr.length; i++) {
+        current = current + arr[i];
+        
+        if (current > maxSoFar) {
+            maxSoFar = current;
+        }
+
+        if (current < 0) {
+            current = 0;
+        }
+    }
+    return maxSoFar;
 }
+
+console.log(maxSubarray([-15,-20,-35,-10,-45]));
 
 module.exports = maxSubarray;
