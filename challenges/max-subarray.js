@@ -11,6 +11,9 @@ function maxSubarray(arr) {
   if (!arr) {
     return 0
   }
+	if (arr.length === 1) {
+		return arr[0]
+	}
 	let maxSum = 0;
 	let newStart = 1
   for (var i = 0; i < arr.length; i += 1) {
