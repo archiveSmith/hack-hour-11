@@ -8,6 +8,10 @@
  */
 
 function maxSubarray(arr) {
+    if (!arr) {
+        return false;
+    }
+    
     maxSoFar = arr[0];
     current = arr[0];
 
