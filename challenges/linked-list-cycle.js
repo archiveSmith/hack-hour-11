@@ -33,6 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+<<<<<<< HEAD
   let nodeCache = {};
   let curr = head;
   while (curr !== null) {
@@ -44,6 +45,9 @@ function hasCycle(head) {
     }
   }
   return false;
+=======
+
+>>>>>>> a9bf62bddfa33167cb8fc038a3ae6ed463891937
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
