@@ -27,7 +27,7 @@ function maxSubarray(arr) {
 		}
 	}
 
-	return maxSubArr;
+	return maxSum;
 }
 
 // var arr = [1, -2, 3, 10, -4, 7, 2, -5];
