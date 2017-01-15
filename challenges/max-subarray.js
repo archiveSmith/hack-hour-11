@@ -1,3 +1,4 @@
+'use strict';
 /* You are given an array of integers with both positive and negative numbers. Write a function to
  * find the maximum sum of all subarrays. A subarray is a section of consecutive elements from the
  * original array. The whole array can be considered a sub array of itself.
@@ -8,7 +9,24 @@
  */
 
 function maxSubarray(arr) {
+  let maxSum = -Infinity;
+  let index = 0;
 
+  function recurse(arr){
+    if(arr.length === 0) return;
+    let sum = 0;
+
+      for(let i = index; i < arr.length; i++){
+        sum += arr[i];
+        if(sum > maxSum) maxSum = sum;
+      }
+
+    index++;
+    recurse(arr.slice(index));
+  }
+
+  recurse(arr.slice(index));
+  return maxSum;
 }
 
 module.exports = maxSubarray;
