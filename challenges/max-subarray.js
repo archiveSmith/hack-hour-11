@@ -8,8 +8,8 @@
  */
 
 function maxSubarray(arr) {
-  let currSum = 0;
-  let maxSum = 0;
+  let currSum = arr[0];
+  let maxSum = currSum;
 //   for (let i = 0; i < arr.length; i += 1) {
 //     maxSum += arr[i];
 //   }
@@ -27,7 +27,7 @@ function maxSubarray(arr) {
 //     }
 //   }
   
-  for (let j = 0; j < arr.length; j += 1) {
+  for (let j = 1; j < arr.length; j += 1) {
 
     currSum += arr[j];
     
