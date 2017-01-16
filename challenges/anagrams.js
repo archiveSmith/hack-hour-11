@@ -24,16 +24,21 @@ function anagrams(string) {
   let matches = 0;
   for(let i = 0; i < string.length; i++){
     let a = matchArr.lastIndexOf(string[i]); 
+    let b = matchArr.indexOf(string[i]); 
     if(a > i){
       matches++;
       matchArr.splice(a,1);
+    } else if(b < i){
+      matches++;
+      matchArr.splice(b,1);
+      i++;
     }
   }
-  
+  if(matches>0) matches--;
    let loopLen = rFact(string.length-matches);
-	let answer = [];
-	let work = string.split('');
-	while(answer.length < loopLen){
+  let answer = [];
+  let work = string.split('');
+  while(answer.length < loopLen){
   let curr = [];
   let str = string.split('');;
     while(curr.length < string.length){
@@ -46,10 +51,11 @@ function anagrams(string) {
     if(answer.indexOf(check) === -1){
     answer.push(curr.join(''));
     }
-	 }
-	
-	return answer;
+   }
+  
+  return answer;
 }
+
 
 
 module.exports = anagrams;
