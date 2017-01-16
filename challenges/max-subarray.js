@@ -8,7 +8,42 @@
  */
 
 function maxSubarray(arr) {
+  let currSum = 0;
+  let maxSum = 0;
+//   for (let i = 0; i < arr.length; i += 1) {
+//     maxSum += arr[i];
+//   }
 
+//   for (let j = 0; j < arr.length; j += 1) {
+
+//     for (let k = j; k < arr.length; k += 1) {
+//       sum += arr[j];
+
+//     }
+//     if (sum > maxSum) {
+//         maxSum = sum;
+//     } else {
+//       sum = 0;
+//     }
+//   }
+  
+  for (let j = 0; j < arr.length; j += 1) {
+
+    currSum += arr[j];
+    
+    if (currSum > maxSum) {
+      maxSum = currSum;
+    } 
+    if (arr[j] > maxSum) {
+      maxSum = arr[j];
+      currSum = arr[j];
+    } 
+  }
+
+  return maxSum;
 }
+
+console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]));
+console.log(maxSubarray([15,20,-5,10]));
 
 module.exports = maxSubarray;
