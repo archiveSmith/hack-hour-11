@@ -33,9 +33,5 @@
 
   }
 
-  let string = 'cat';
-
-
-  console.log(anagrams(string));
 
 module.exports = anagrams;
