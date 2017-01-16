@@ -17,10 +17,10 @@ function anagrams(string) {
         return [string];
     }
   
-    result = [];
+    let result = [];
 
     for (let i=0; i<string.length; i++) {
-        console.log(i + ' iteration')
+        // console.log(i + ' iteration')
         let restOfWord = '';
         for (let k=0; k<string.length; k++) {
             if (k !== i) {
@@ -34,7 +34,7 @@ function anagrams(string) {
     return result;
 
     function recurse(first, string) {
-        console.log('recursing with ' + string);
+        // console.log('recursing with ' + string);
         if (string.length <= 1) {
             return string;
         }
@@ -44,8 +44,8 @@ function anagrams(string) {
         do {
             for (let i=0; i<string.length-1; i++) {
                 if (newString[i] !== newString[i+1]) {
-                    console.log('i is ' + i)
-                    console.log(newString[i], newString[i+1])
+                    // console.log('i is ' + i)
+                    // console.log(newString[i], newString[i+1])
                     let temp = newString[i];
                     newString[i] = newString[i+1];
                     newString[i+1] = temp;
@@ -60,29 +60,8 @@ function anagrams(string) {
          return;
 
     }
-    
-
-
-//   if (string.length < 2) {
-//         return [string];
-//     } else {
-//         var result = [];
-//         for (var i = 0; i < string.length; i++) {
-            
-//             var letter = string[i];
-//             console.log('letter: ' + letter)
-//             var restOfWord = string.substr(0, i) + string.substr(i + 1, string.length - 1);
-//             console.log('shorterword ' + restOfWord)
-//             var shortWordArray = anagrams(restOfWord);
-//             console.log('shortwordarray ' + shortWordArray)
-//             for (var j = 0; j < shortWordArray.length; j++) {
-//                 result.push(letter + shortWordArray[j]);
-//             }
-//         }
-//         return result;
-//     }
 }
 
-console.log(anagrams('hey'));
+// console.log(anagrams('abc'));
 
 module.exports = anagrams;
