@@ -13,7 +13,23 @@
   */
 
 function anagrams(string) {
+	// console.log("str: ", string);
+	string = string.split('');
+	var combos = [];
+	if (string.length === 1) {
+		return string;
+	} else {
+		for (var i = 0; i < string.length; i++) {
+			console.log(string, i);
+			var subString = string.slice(0, i).concat(string.slice(i + 1)).join('');
+			// console.log("sub str: ", subString);
+			combos.push(string[i] + anagrams(subString));
+		}
+	}
 
+	return combos;
 }
+
+// console.log(anagrams('abc'));
 
 module.exports = anagrams;
