@@ -12,7 +12,7 @@ function maxSubarray(arr) {
   let total = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
-    current = Math.max(arr[i], currrent + arr[i]);
+    current = Math.max(arr[i], current + arr[i]);
     total = Math.max(total, current);
   }
   return total;
