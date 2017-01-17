@@ -21,7 +21,7 @@ function deleteDups(head) {
   let prev;
   let curr = head;
 
-  while (current) {
+  while (curr) {
     if (nodes[cur.value]) {
       prev.next = curr.next;
       curr = curr.next;
