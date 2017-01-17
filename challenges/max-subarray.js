@@ -12,7 +12,7 @@ function maxSubarray(arr) {
     return 0
   }
 	if (arr.length === 1) {
-		return arr[0]
+		return arr[0];
 	}
 	let maxSum = 0;
 	let newStart = 1
