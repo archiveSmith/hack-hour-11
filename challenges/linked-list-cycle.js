@@ -26,7 +26,8 @@
  * Challenge 3: Do not mutate the original nodes in any way
  *
  for every node that you check check if the node.next exists in the object that you've created.
-
+	
+	can you put a tracker on each node???? not really
  */
 
 var Node = function(value) {
@@ -50,7 +51,8 @@ function hasCycle(head) {
 		current = current.next;
 
 	}
-console.log(nodes)
+
+	console.log(nodes)
 	return false
 }
 
