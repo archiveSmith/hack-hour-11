@@ -16,7 +16,7 @@ function maxSubarray(arr) {
     // console.log('maxArr', maxArr);
     for (let j = i; j < arr.length; j++) {
       newSum = 0;
-      console.log('arr[j]', arr[j])
+      console.log('arr[j]', arr[j]);
       maxArr.push(arr[j]);
       // console.log('maxArr', maxArr);
       for (let k = 0; k < maxArr.length; k++) {
