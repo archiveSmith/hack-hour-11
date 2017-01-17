@@ -15,17 +15,18 @@
 
 function deleteDups(head) {
   let node = head;
+  let store = [];
   while (node) {
+    store.push(node.value);
     if (node.next) {
-      if (node.value === node.next.value) {
-        if (node.next.next) {
-          node.next = node.next.next;
-        }
+      if (store.includes(node.next.value)) {
+        if (node.next.next) node.next = node.next.next;
         else node.next = null;
       }
     }
     node = node.next;
   }
 }
+
 
 module.exports = deleteDups;
