@@ -8,7 +8,14 @@
  */
 
 function maxSubarray(arr) {
+  let current = -Infinity;
+  let total = -Infinity;
 
+  for (let i = 0; i < arr.length; i++) {
+    current = Math.max(arr[i], currrent + arr[i]);
+    total = Math.max(total, current);
+  }
+  return total;
 }
 
 module.exports = maxSubarray;
