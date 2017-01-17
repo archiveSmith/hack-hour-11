@@ -11,9 +11,13 @@
   * var result = anagrams('abc');
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
-
-function anagrams(string) {
-  
+// Added the parameter "built" and "memo"
+function anagrams(string, built = '', memeo = {}) {
+  if (!string) memo[built] = 'whatever';
+  else {
+    string.split('').forEach((char, index) => anagrams(string.slice(0, index).concat(string.slice(index + 1)), built.concat(char), memo));
+  }
+  return Object.keys(memo);
 }
 
 module.exports = anagrams;
