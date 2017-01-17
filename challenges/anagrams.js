@@ -14,6 +14,11 @@
   */
 
 function anagrams(string) {
+	
+	function wordMak(word){
+		let word = '';
+		string[j] + string[]
+	}
 
 	const ans = [];
 
