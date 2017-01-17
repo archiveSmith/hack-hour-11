@@ -16,9 +16,13 @@
 function deleteDups(head) {
   let node = head;
   while (node) {
-    if (node.value === node.next.value) {
-      if (node.next.next) node.next = node.next.next;
-      else node.next = null;
+    if (node.next) {
+      if (node.value === node.next.value) {
+        if (node.next.next) {
+          node.next = node.next.next;
+        }
+        else node.next = null;
+      }
     }
     node = node.next;
   }
