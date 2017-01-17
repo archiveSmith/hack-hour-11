@@ -22,7 +22,6 @@ function deleteDups(head) {
     }
     node = node.next;
   }
-  return head;
 }
 
 module.exports = deleteDups;
