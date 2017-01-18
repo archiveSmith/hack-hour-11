@@ -13,7 +13,17 @@
   */
 
 function anagrams(string) {
+  const anagrams = [];
+  const chars = string.split('');
+  anagrams.push([chars.shift()]);
 
+  for (let i = 0; i < chars.length; i += 1) {
+    for (let j = 0; j <= chars.length; j += 1) {
+      let newWord = 
+    }
+  }
 }
 
 module.exports = anagrams;
+
+anagrams('abc');
