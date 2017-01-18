@@ -32,7 +32,6 @@ while(hVal !== null){
 	}
 
 
-
 	hVal = hVal.next;
 }
 return head;
