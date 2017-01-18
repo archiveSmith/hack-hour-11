@@ -22,15 +22,31 @@
  */
 
 function EventEmitter() {
-
+    this.storage = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+    this.storage[funcName] = func;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+    if (this.storage[funcName]) {
+        this.storage[funcName](...args);
+    } else {
+        console.log('sorry ' + funcName + ' func was not in here');
+    }
 };
+
+
+// var instance = new EventEmitter();
+// var counter = 0;
+// instance.on('increment', function() {
+//     counter++;
+//     console.log(counter);
+// })
+
+// instance.trigger('increment');
+// instance.trigger('increment');
+// instance.trigger('hawaii')
 
 module.exports = EventEmitter;
