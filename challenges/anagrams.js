@@ -13,7 +13,13 @@
   */
 
 function anagrams(string) {
-
+  let arr = string.split('');
+  let uniq = arr.reduce(function(memo, item){
+    if(memo.indexOf(item) === -1) {
+      memo.push(item);
+    }
+    return memo;
+  },[])
 }
 
 module.exports = anagrams;
