@@ -21,16 +21,22 @@
  * - It is not necessary to write a way to remove listeners.
  */
 
-function EventEmitter() {
+ function EventEmitter() {
+   this.events = {};
+ }
 
-}
+ EventEmitter.prototype.on = function(funcName, func) {
+   if(!this.events[funcName]){
+     this.events[funcName] = func;
+     //console.log(this.events[funcName])
+   }
+ };
 
-EventEmitter.prototype.on = function(funcName, func) {
+ EventEmitter.prototype.trigger = function(funcName, ...args) {
 
-};
+     return this.events[funcName].apply(this, ...args);
+   
+ };
 
-EventEmitter.prototype.trigger = function(funcName, ...args) {
-
-};
 
 module.exports = EventEmitter;
