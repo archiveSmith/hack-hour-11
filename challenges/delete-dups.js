@@ -11,61 +11,30 @@
  */
 	
 function deleteDups(head) {	
-// if(!head) return undefined;
-// let hVal = head;
- 			
 
-// // while(hVal !== null){
-// // 	let checkVal = hVal.value;
-// // 	let previous = null;
-// // 	let curr = hVal;
-// // 	while(curr !== null){
-// // 		if(previous !== null && curr.value === checkVal){
-		  
-// // 			previous.next = curr.next;
-// // 			curr.next = null;
-// // 			curr = previous.next;
-// // 	} else {
-// // 		previous = curr;
-// // 		curr = curr.next;
-// // 	}
-// // 	}
+	if(!head) return undefined;
+	let hVal = head; 			
+	check(head);
+	return head;
 
-
-// // 	hVal = hVal.next;
-// // }
-// // return head;
-
-
-
-if(!head) return undefined;
-let hVal = head; 			
-check(head, head, hVal);
-return head;
-
-
-
-
-
-
-function check(someNode, prevNode, hVal){
-	if(someNode === null){
-		hVal = hVal.next;
-		if(hVal === null) return;
-		return check(head,head,hVal);
-	}
-	else {
-		if(someNode !== prevNode){
-			if(someNode.value === hVal.value && someNode !== hVal){
-				prevNode.next = someNode.next;
-				check(someNode.next, prevNode, hVal);
+	function check(someNode, searchVal = head, prevNode = head){
+		if(someNode === null){
+			searchVal = searchVal.next;
+			if(searchVal === null) return;
+			return check(head,searchVal,head);
+		}
+		else {
+			if(someNode !== prevNode){
+				if(someNode.value === hVal.value && someNode !== searchVal){
+					prevNode.next = someNode.next;
+					check(someNode.next, searchVal, prevNode);
+				} else {
+			    check(someNode.next, searchVal, prevNode.next);
+				}
 			} else {
-		    check(someNode.next, prevNode.next, hVal);
+			  check(someNode.next, searchVal, prevNode);
 			}
-		} else {
-		  check(someNode.next, prevNode, hVal);
 		}
 	}
-}
 }
 module.exports = deleteDups;
