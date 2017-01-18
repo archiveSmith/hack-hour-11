@@ -12,8 +12,7 @@
 	
 function deleteDups(head) {	
 
-	if(!head) return undefined;
-	let hVal = head; 			
+	if(!head) return undefined; 			
 	check(head);
 	return head;
 
@@ -25,7 +24,7 @@ function deleteDups(head) {
 		}
 		else {
 			if(someNode !== prevNode){
-				if(someNode.value === hVal.value && someNode !== searchVal){
+				if(someNode.value === searchVal.value && someNode !== searchVal){
 					prevNode.next = someNode.next;
 					check(someNode.next, searchVal, prevNode);
 				} else {
