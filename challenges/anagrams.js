@@ -20,7 +20,7 @@ FORG
 
   */
 
-function anagrams(start, string) {
+function anagrams(string, start= "") {
     if ( string.length == 1 ) {
         return [ start + string ];
     } else {
@@ -37,7 +37,7 @@ function anagrams(start, string) {
     }
 }
 
-  var result = anagrams("",'frog');
+  var result = anagrams('frog');
   console.log(result); 
 
 // http://stackoverflow.com/questions/5232295/is-there-any-pre-built-method-for-finding-all-permutations-of-a-given-string-in-j
