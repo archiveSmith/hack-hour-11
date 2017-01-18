@@ -44,7 +44,7 @@ check(head, head, hVal);
 return head;
 
 
-}
+
 
 
 
@@ -66,5 +66,6 @@ function check(someNode, prevNode, hVal){
 		  check(someNode.next, prevNode, hVal);
 		}
 	}
+}
 }
 module.exports = deleteDups;
