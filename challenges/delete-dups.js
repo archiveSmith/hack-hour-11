@@ -9,7 +9,9 @@
  * Extra:
  * How would you solve this problem if a temporary buffer is not allowed?
  */
-function deleteDups(head) {				//solve head as search value on first loop
+	
+function deleteDups(head) {	
+if(!head) return undefined;
 let hVal = head;
  			
 
@@ -37,5 +39,4 @@ return head;
 
 
 }
-
 module.exports = deleteDups;
