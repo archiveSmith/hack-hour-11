@@ -26,12 +26,19 @@ function EventEmitter() {
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-    this.storage[funcName] = func;
+    // console.log(func.toString())
+    if (!this.storage[funcName]) {
+        this.storage[funcName] = [];
+    } this.storage[funcName].push(func);
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
     if (this.storage[funcName]) {
-        this.storage[funcName](...args);
+        for (let i=0; i<this.storage[funcName].length; i++) {
+           // console.log('current', this.storage[funcName][i].toString())
+            this.storage[funcName][i](...args);
+        }
+        
     } else {
         console.log('sorry ' + funcName + ' func was not in here');
     }
@@ -40,10 +47,20 @@ EventEmitter.prototype.trigger = function(funcName, ...args) {
 
 // var instance = new EventEmitter();
 // var counter = 0;
+// var counter2 = 0;
 // instance.on('increment', function() {
 //     counter++;
 //     console.log(counter);
 // })
+
+// console.log('put in counter func')
+
+// instance.on('increment', function() {
+//     counter2++;
+//     console.log(counter2);
+// })
+
+// // console.log(instance.storage)
 
 // instance.trigger('increment');
 // instance.trigger('increment');
