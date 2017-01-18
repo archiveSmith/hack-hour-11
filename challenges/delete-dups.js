@@ -13,6 +13,7 @@
 
 
 function deleteDups(head) {
+<<<<<<< HEAD
 let curr = head;
 let cache = [];
 
@@ -38,4 +39,9 @@ let li = {value: 1, next: {value: 2, next: {value: 3, next: {value: 3, next: {va
 
 console.log(deleteDups(li))
 
+=======
+
+}
+
+>>>>>>> 62497b9bae3430fdc5034aa48b3208b5a82f6f3b
 module.exports = deleteDups;
