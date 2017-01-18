@@ -13,7 +13,35 @@
 
 
 function deleteDups(head) {
-
+  const buffer = [];
+  for (let i = head; i; i = i.next) {
+    for (let j = head; j; j = j.next) {
+      if (i.value === j.value)
+    }
+  }
+  return buffer;
 }
+
+const linkedlist = {
+  value: 5,
+  next: {
+    value: 3,
+    next: {
+      value: 7,
+      next: {
+        value: 4,
+        next: {
+          value: 7,
+          next: {
+            value: 1,
+            next: null
+          }
+        }
+      }
+    }
+  }
+}
+
+console.log(deleteDups(linkedlist));
 
 module.exports = deleteDups;
