@@ -11,8 +11,26 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
+	//use binary search
+	var midPoint = parseInt(arr.length/2, 10);
 
+	if (!midPoint) {
+		if (target === arr[0]) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	if (target < arr[midPoint]) {
+		return findInOrderedSet(arr.slice(0, midPoint), target);
+	} else {
+		return findInOrderedSet(arr.slice(midPoint), target);
+	}
 }
 
+// var nums = [1, 4, 6, 7, 9, 17, 45];
+
+// console.log(findInOrderedSet(nums, 8));
 
 module.exports = findInOrderedSet;
