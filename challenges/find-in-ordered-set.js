@@ -13,7 +13,7 @@ findInOrderedSet(nums, 2);  -> false
 function findInOrderedSet(arr, target) {
   let l = 0, r = arr.length - 1;
 
-  while(l < r){
+  while(l <= r){
     if(arr[l] === target || arr[r] === target) return true;
     l++; r--;
   }
