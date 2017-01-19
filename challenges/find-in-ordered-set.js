@@ -35,12 +35,13 @@ function findInOrderedSet(arr, target) {
                 // console.log('begin is ' + begin)
                 // console.log('end is ' + end)
             }   
-            if (arr[Math.floor((end+begin)/2)] < target) {
+            else if (arr[Math.floor((end+begin)/2)] < target) {
                 // console.log(arr[Math.floor((end+begin)/2)] + ' smaller');
                 begin = Math.floor((end+begin)/2)
                 // console.log('begin is ' + begin)
                 // console.log('end is ' + end)
             } else {
+                // console.log('got here')
                 return false;
             }
         } if (Math.abs(begin - end) === 1) {
@@ -51,6 +52,6 @@ function findInOrderedSet(arr, target) {
     }
 }
 
-// console.log(findInOrderedSet([1,2,3,4,5,6,8,9], 4))
+// console.log(findInOrderedSet([1,2,3,4,5,6,8,9], 1))
 
 module.exports = findInOrderedSet;
