@@ -20,7 +20,7 @@ function findInOrderedSet(arr, target) {
     
     let found = false;
     let begin = 0;
-    let end = arr.length-1;
+    let end = arr.length;
 
     while (!found) {
         // console.log('coming in')
@@ -43,12 +43,12 @@ function findInOrderedSet(arr, target) {
             }
         } if (Math.abs(begin - end) === 1) {
                 // console.log('last try')
-                return arr[begin]+1 === target;
+                return arr[begin]+1 === target || arr[begin] === target;
             }
 
     }
 }
 
-// console.log(findInOrderedSet([1,2], 1))
+// console.log(findInOrderedSet([1,2,3,4,5,6,7,8,9], 4))
 
 module.exports = findInOrderedSet;
