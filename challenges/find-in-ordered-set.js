@@ -17,7 +17,7 @@ while(!answer){
 if(target === arr[Math.floor(len/2)]) return true;
 if(target > arr[Math.floor(len/2)]) arr = arr.splice(Math.floor(len/2)); len = arr.length;
 if(target < arr[Math.floor(len/2)]) arr = arr.splice(0,Math.floor(len/2)); len = arr.length;
-if (len < 2) answer = true;
+if (len < 1) answer = true;
 
 }
 return false
