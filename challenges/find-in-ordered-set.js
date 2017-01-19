@@ -46,12 +46,12 @@ function findInOrderedSet(arr, target) {
             }
         } if (Math.abs(begin - end) === 1) {
                 // console.log('last try')
-                return arr[begin]+1 === target || arr[begin] === target;
+                return arr[begin+1] === target || arr[begin] === target;
             }
 
     }
 }
 
-// console.log(findInOrderedSet([1,2,3,4,5,6,8,9], 1))
+console.log(findInOrderedSet([1,2,3,4,5,7,8,9,10], 6))
 
 module.exports = findInOrderedSet;
