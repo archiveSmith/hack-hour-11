@@ -10,16 +10,38 @@
  * How would you solve this problem if a temporary buffer is not allowed?
  */
 
-
+class LinkedList {
+  constructor(val) {
+    this.value = val;
+    this.next = null;
+  }
+  
+  add(val) {
+    for (let i = this; i; i = i.next) {
+      if (!i.next) {
+        i.next = new LinkedList(val);
+      }
+    }
+  }
+}
 
 function deleteDups(head) {
   const buffer = [];
   for (let i = head; i; i = i.next) {
-    for (let j = head; j; j = j.next) {
-      if (i.value === j.value)
-    }
+    buffer.push(i.value);
   }
-  return buffer;
+
+  const noDupes = buffer.filter((x, i, a) => {
+    return !a.slice(0, i).includes(x);
+  });
+
+  let result = new LinkedList(noDupes[0]);
+
+  noDupes.forEach((val) => {
+    console.log(result);
+  });
+
+  return result;
 }
 
 const linkedlist = {
