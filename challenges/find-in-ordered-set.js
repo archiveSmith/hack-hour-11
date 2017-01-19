@@ -40,6 +40,8 @@ function findInOrderedSet(arr, target) {
                 begin = Math.floor((end+begin)/2)
                 // console.log('begin is ' + begin)
                 // console.log('end is ' + end)
+            } else {
+                return false;
             }
         } if (Math.abs(begin - end) === 1) {
                 // console.log('last try')
@@ -49,6 +51,6 @@ function findInOrderedSet(arr, target) {
     }
 }
 
-// console.log(findInOrderedSet([1,2,3,4,5,6,7,8,9], 4))
+// console.log(findInOrderedSet([1,2,3,4,5,6,8,9], 4))
 
 module.exports = findInOrderedSet;
