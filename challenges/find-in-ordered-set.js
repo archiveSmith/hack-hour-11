@@ -12,6 +12,11 @@ findInOrderedSet(nums, 2);  -> false
 
 function findInOrderedSet(arr, target) {
 	//use binary search
+
+	if (!arr) {
+		return false;
+	}
+
 	var midPoint = parseInt(arr.length/2, 10);
 
 	if (!midPoint) {
