@@ -23,5 +23,4 @@ if (len < 1) answer = true;
 return false
 }
 
-
 module.exports = findInOrderedSet;
