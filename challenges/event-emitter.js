@@ -30,7 +30,7 @@ EventEmitter.prototype.on = function(funcName, func) {
     this.storage.funcName = func;
   }
   else {
-    this.st
+    this.storage.funcName();
   }
 };
 
