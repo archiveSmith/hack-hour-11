@@ -10,9 +10,15 @@ findInOrderedSet(nums, 2);  -> false
  */
 
 
-function findInOrderedSet(arr, target) {
+ function findInOrderedSet(arr, target) {
+   if(arr[arr.length - 1] === undefined) return false;
 
-}
+   if(arr[arr.length - 1] === target) return true;
+
+   arr.pop()
+
+   return findInOrderedSet(arr, target)
+ }
 
 
 module.exports = findInOrderedSet;
