@@ -5,6 +5,7 @@
 
 
 function insertionSort(array) {
+  if (!Array.isArray(array)) return undefined;
   const len = array.length;
   let temp;
 
