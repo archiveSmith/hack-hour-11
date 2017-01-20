@@ -6,8 +6,8 @@
 
 function insertionSort(array) {
   
-  if (!array || !array.length) {
-    return undefined;
+  if (!array.length) {
+    return [];
   }
   
   let i = 0;
