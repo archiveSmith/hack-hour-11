@@ -5,7 +5,28 @@
 
 
 function insertionSort(array) {
+  let pivot = 1;
+  let step;
+  let len = array.length;
 
+  if(len < 2) return array;
+
+  while(pivot < len){
+    console.log(array);
+    step = pivot - 1;
+    while(step >= 0){
+      if(array[step] <= array[pivot]){
+        array.splice(step + 1, 0, array.splice(pivot, 1)[0]);
+        break;
+      }
+      step--;
+    }
+    pivot++;
+  }
+
+  return array;
 }
+
+insertionSort([2,41,6,8,2,6,2,9,6,9,45,75]);
 
 module.exports = insertionSort;
