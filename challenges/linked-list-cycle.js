@@ -34,6 +34,7 @@ var Node = function(value) {
 
 function hasCycle(head) {
   if (!head) return false;
+  if (!head.next) return false;
   const n1 = head;
   const n2 = head;
   while (true) {

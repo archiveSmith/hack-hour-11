@@ -13,6 +13,25 @@
   */
 
 function anagrams(string) {
+  // get number of permutations
+  let len = string.length;
+  let perms = len;
+  while (len - 1) {
+    len -= 1;
+    perms *= (len);
+  }
+  const output = [];
+  const div = string.length - 1;
+  let letter = 0;
+  for (let i = 0; i < perms; i += 1) {
+    console.log(letter);
+    output[i] = string[letter];
+    if (i % div) letter += 1;
+  }
+  return output;
+}
+
+function loopGen(n) {
 
 }
 

@@ -42,27 +42,27 @@ function validBST(tree) {
   return true;
 }
 
-const tree1 = {
-  value : 5,
-  left : {
-    value: 2,
-    left: {
-      value: 1,
-      left: null,
-      right: null
-    },
-    right: {
-      value: 3,
-      left: null,
-      right: null
-    }
-  },
-  right: {
-    value: 7,
-    left: null,
-    right: null
-  }
-};
+// const tree1 = {
+//   value : 5,
+//   left : {
+//     value: 2,
+//     left: {
+//       value: 1,
+//       left: null,
+//       right: null
+//     },
+//     right: {
+//       value: 3,
+//       left: null,
+//       right: null
+//     }
+//   },
+//   right: {
+//     value: 7,
+//     left: null,
+//     right: null
+//   }
+// };
 
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
