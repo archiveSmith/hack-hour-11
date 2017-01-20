@@ -21,16 +21,40 @@
  * - It is not necessary to write a way to remove listeners.
  */
 
-function EventEmitter() {
-
+class EventEmitter {
+  constructor() {
+    this.event = '';
+    this.eventHandlers = [];
+  }
+  on(funcName, func) {
+    this.event = funcName;
+    this.eventHandlers.push(func);
+  }
+  trigger(funcName, ...args) {
+    if (funcName === this.event) {
+      this.eventHandlers.forEach(handler => {
+        handler(...args);
+      });
+    }
+  }
 }
 
-EventEmitter.prototype.on = function(funcName, func) {
+// let counter = 0;
+// const myEventEmitter = new EventEmitter();
 
-};
+// myEventEmitter.on('increment', () => {
+//   counter++
+// });
 
-EventEmitter.prototype.trigger = function(funcName, ...args) {
+// myEventEmitter.on('increment', () => {
+//   console.log('another action');
+// });
 
-};
+// myEventEmitter.trigger('increment');
+// myEventEmitter.trigger('increment');
+// myEventEmitter.trigger('increment');
+
+// console.log(counter);
+
 
 module.exports = EventEmitter;

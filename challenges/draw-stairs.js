@@ -14,8 +14,27 @@
 */
 
 function drawStairs(n) {
-
+	let levelCheck;
+  let stairCase = '';
+  for (let i = 0; i <= n; i++) {
+    let level = '';
+    for (let j = 0; j <= i; j++) {
+      if (j === i) {
+        level += '*\n';
+      } else {
+        level += '*';
+      }
+    }
+    levelCheck = level.split('');
+    while (levelCheck.length - 1 <= n) {
+      levelCheck.unshift(' ');
+    }
+    stairCase += levelCheck.join('');
+  }
+  return stairCase;
 }
+
+console.log(drawStairs(3));
 
 
 module.exports = drawStairs;
