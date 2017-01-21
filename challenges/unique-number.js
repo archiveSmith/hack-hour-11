@@ -10,7 +10,7 @@
  *
  */
 function uniqueNumber(array) {
-array = array.sort((a,b) => a>b);
+array = array.sort((a,b) =>  a - b);
 for(let i = 0; i < array.length; i++){
   if(array[i] !== array[i-1] && array[i] !== array[i+1]){
     return array[i];
