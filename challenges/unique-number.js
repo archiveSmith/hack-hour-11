@@ -10,7 +10,7 @@
  *
  */
 function uniqueNumber(array) {
-
+  return array.filter((el, i, arr) => arr.indexOf(el) === arr.lastIndexOf(el))[0];
 }
 
 module.exports = uniqueNumber;
