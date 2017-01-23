@@ -10,6 +10,10 @@
  */
 
 function getAllProducts(array) {
+
+  if (!array.length) {
+    return [0];
+  }
   
   let counter = 0, newProduct;
   const arr = [];
