@@ -1,3 +1,4 @@
+'use strict';
 /*
   You have a knapsack with a weight limit.
   You are presented with an array of objects, each with its own weight and value.
@@ -10,7 +11,21 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+  let highestValue = -Infinity;
 
+  function recurse(index, weight, value){
+    if(value > highestValue) highestValue = value;
+    if(index >= items.length) return;
+
+    if(items[index].weight + weight <= weightAvailable){
+      let newIndex = index + 1;
+      recurse(newIndex, items[index].weight + weight, value + items[index].value);
+    }
+    recurse(++index, weight, value);
+  }
+
+  recurse(0, 0, 0);
+  return highestValue;
 };
 
 module.exports = solveKnapsack;
