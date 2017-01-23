@@ -11,6 +11,7 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+  if(!items || items.length === 0) return 0;
   let highestValue = -Infinity;
 
   function recurse(index, weight, value){

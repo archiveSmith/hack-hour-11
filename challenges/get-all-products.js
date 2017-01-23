@@ -11,6 +11,7 @@
  */
 
 function getAllProducts(array) {
+  if(!array || array.length === 0) return 0;
   return array.map((int, i, arr) => {
     return arr.reduce((acc, curr, n, col) => {
       if(n === i) return acc;
