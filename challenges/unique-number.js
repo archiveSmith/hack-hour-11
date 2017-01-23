@@ -10,7 +10,15 @@
  *
  */
 function uniqueNumber(array) {
-
+  for (let i = 0; i < array.length; i += 1) {
+    if (!array.slice(i + 1).includes(array[i])) {
+      console.log('hi');
+      console.log(array[i]);
+      return array[i];
+    }
+  }
 }
+
+uniqueNumber(uniqueNumber([1, 2, 1, 3, 3]));
 
 module.exports = uniqueNumber;
