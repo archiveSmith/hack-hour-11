@@ -10,7 +10,7 @@
  */
 
 function getAllProducts(array) {
-	if (!array) {
+	if (!array.length) {
 		return [0];
 	}
 
