@@ -15,6 +15,7 @@ function findInOrderedSet(arr, target) {
 	function recurse(array, target) {
 		let left = array.slice(0,Math.floor(array.length/2));
 		let right = array.slice(Math.floor(array.length/2), array.length);
+		
 		if (target === left[0]){
 			return true
 		}
