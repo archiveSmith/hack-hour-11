@@ -40,14 +40,11 @@ function Stack() {
    this.getMax = function () {return this.maxNum}
 }
 
-// let stack = new Stack();
-// stack.push(3);
-// stack.push(4);
-// stack.push(4);
-// stack.push(9);
-// stack.push(9);
-// stack.pop();
-// stack.pop();
-// console.log(stack.getMax());
+let stack = new Stack();
+stack.push(3);
+stack.push(4);
+stack.push(9);
+stack.pop();
+console.log(stack.getMax());
 
 module.exports = Stack;

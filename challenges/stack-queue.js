@@ -4,6 +4,11 @@
 
 
 function Stack() {
+    this.storage = [];
+    this.push = function(val){
+        this.storage.push(val);
+    };
+    this.pop = function(){this.storage.pop()};
 
 }
 
@@ -16,5 +21,11 @@ function Stack() {
 function Queue() {
 
 }
+
+let stack = new Stack;
+stack.push(3);
+stack.push(5);
+stack.pop();
+console.log(stack.storage);
 
 module.exports = {Stack: Stack, Queue: Queue};
