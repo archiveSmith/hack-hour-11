@@ -10,11 +10,12 @@
  */
 
 function getAllProducts(array) {
+  if (!array.length) return [0];
   const result = [];
   const len = array.length;
 
   for (let i = 0; i < len; i += 1) {
-    result.push(array.filter((e) => e !== array[i]).reduce((a, b) => a * b))
+    result.push(array.filter((e, index) => index !== i).reduce((a, b) => a * b))
   }
 
   return result;
