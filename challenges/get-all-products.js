@@ -9,8 +9,19 @@
  * do not use division, becuase zero might be in the array and you cannot divide by zero
  */
 
-function getAllProducts(array) {
 
+function getAllProducts(array) {
+  function summer(arr) {
+    const sum = arr.reduce((base, el) => {
+      return base * el
+    }, 1)
+    return sum
+  }
+  
+  return array.map((el, ind) => {
+    if(array.includes(0) && el === 0) return summer(array.slice(0, ind).concat(array.slice(ind + 1)))
+    return summer(array)/el
+  })
 }
 
 module.exports = getAllProducts;
