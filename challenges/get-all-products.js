@@ -10,7 +10,21 @@
  */
 
 function getAllProducts(array) {
+	let newArr = array;
+	
+ let arr = newArr.map((item)=>{
+  return mult(item)
+})
 
+function mult(item){
+	let ans = 1;
+ 	for(let i=0; i<array.length; i++){
+ 		item === array[i] ? ans *= 1 : ans *= array[i];
+ 	}
+ 		return ans
+ }
+ 
+return arr
 }
 
 module.exports = getAllProducts;
