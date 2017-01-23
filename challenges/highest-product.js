@@ -23,5 +23,18 @@ function highestProduct(array) {
 
 }
 
+//console.log(highestProduct([2,6,5,4,9,7,3,-11,-8]))
+
+function runThrough(arr) {
+    for (let i=0; i<arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            console.log('this number is even: ' + arr[i] + '!!');
+        } else {
+            console.log('this number is odd: ' + arr[i] + '!!');
+        }
+    }
+}
+
+runThrough([2,3,8,5,6,4,9]);
 
 module.exports = highestProduct;

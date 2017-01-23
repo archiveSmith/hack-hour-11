@@ -26,6 +26,6 @@ function permPalin(str) {
 	
 }
 
-//console.log(permPalin('a'));
+console.log(permPalin('afdv'));
 
 module.exports = permPalin;

@@ -30,6 +30,6 @@ function maxSubarray(arr) {
     return maxSoFar;
 }
 
-console.log(maxSubarray([-15]));
+console.log(maxSubarray([-15,-20,-35,-10,-45]));
 
 module.exports = maxSubarray;
