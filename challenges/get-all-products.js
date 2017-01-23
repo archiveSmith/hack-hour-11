@@ -10,7 +10,16 @@
  */
 
 function getAllProducts(array) {
-
+  let result = [];
+  for (let i = 0; i < array.length; i += 1) {
+    let temp = array.filter(function(val) {
+      return array.indexOf(val) !== i;
+    });
+    result.push(temp.reduce(function(acc, curr) {
+      return acc * curr;
+    }));
+  }
+  return result;
 }
 
 module.exports = getAllProducts;
