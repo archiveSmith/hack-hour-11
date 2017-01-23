@@ -11,7 +11,23 @@
 
 
 function mergeRanges(array) {
-
+  if (array.length === 1 || array.length === 0) return array;
+  // output array
+  const output = [array[0]];
+  // loop through array
+  for (let i = 1; i < array.length; i += 1) {
+    const curr = output.length - 1;
+    if (output[curr][0] <= array[i][0] && array[i][0] <= output[curr][1]) {
+      console.log('start');
+      output[curr] = [output[curr][0], array[i][1]];
+    } else if (output[curr][0] <= array[i][1] && array[i][1] <= output[curr][1]) {
+      console.log('end');
+      output[curr] = [array[i][0], output[curr][1]];
+    } else {
+      output.push(array[i]);
+    }
+  }
+  return output;
 }
 
 module.exports = mergeRanges;

@@ -10,6 +10,37 @@
   ****
  *****
 ******
+<<<<<<< HEAD
+*/
+
+function drawStairs(n) {
+  for (let i = 1; i <= n; i++) {
+    let level = '';
+    for (let k = 0; k < n - i; k++) {
+      level += ' ';
+    }
+    for (let j = 0; j < i; j++) {
+      level += '*';
+    }
+    console.log(level);
+  }
+
+  // Solution 2
+  // for (let i = 1; i <= n; i++) {
+  //   let level = '';
+  //   for (let k = 0; k < n - i; k++) {
+  //     level += ' ';
+  //   }
+  //   for (let j = 1; j <= i; j++) {
+  //     level += '*';
+  //   }
+  //   console.log(level);
+  // }
+}
+
+
+module.exports = drawStairs;
+=======
 
 */
 
@@ -19,3 +50,4 @@ function drawStairs(n) {
 
 
 module.exports = drawStairs;
+>>>>>>> fe0e09e39e24b93f6b7ba7713891d144539a85b7

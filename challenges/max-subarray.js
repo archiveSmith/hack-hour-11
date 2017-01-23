@@ -8,7 +8,23 @@
  */
 
 function maxSubarray(arr) {
-
+  // sums arr
+  const sums = [];
+  // start looping through arr
+  for (let i = 0; i < arr.length; i += 1) {
+    // each iteration start with current element and loop through rest array
+    let stop = i + 1;
+    let sum = 0;
+    while (stop < arr.length) {
+      for (let j = i; j < stop; j += 1) {
+        sum += arr[j];
+      }
+      stop += 1;
+    }
+    sums.push(sum);
+  }
+  // loop through sums and find max value
+  return Math.max(...sums);
 }
 
 module.exports = maxSubarray;

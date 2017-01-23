@@ -16,9 +16,18 @@
  *      1000  ->    M
  * 
  */
-
 function romanNumeral(n) {
-
+  const lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1};
+  let numeral = '';
+  let value = n;
+  const keys = Object.keys(lookup);
+  for (let i = 0; i < keys.length; i++) {
+    while (value >= lookup[keys[i]]) {
+      numeral += keys[i];
+      value -= lookup[keys[i]];
+    }
+  }
+  return numeral;
 }
 
 module.exports = romanNumeral;
