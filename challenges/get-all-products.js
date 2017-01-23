@@ -10,7 +10,7 @@
  */
 
 function getAllProducts(array) {
-  return array.map((n, i, a) => a.slice(0, i).concat(a.slice(i + 1))).map(x => x.reduce((a, c) => a * c));
+  return array.length === 0 ? [0] : array.map((n, i, a) => a.slice(0, i).concat(a.slice(i + 1))).map(x => x.reduce((a, c) => a * c));
 }
 
 console.log(getAllProducts([1, 7, 3, 4]));
