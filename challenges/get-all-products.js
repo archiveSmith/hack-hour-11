@@ -13,6 +13,7 @@
    let avoid = 0;
    let result = [];
    let product = 1;
+   if(array[0] === undefined) return 0;
    while(avoid !== array.length){
    product = 1;
    for(let i = 0; i < array.length; i++) {
