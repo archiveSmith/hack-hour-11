@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array) {
+  if (array.length < 2) return 0;
   const products = [];
   for (let i = 0; i < array.length; i += 1) {
     let product = 1;
@@ -21,6 +22,6 @@ function getAllProducts(array) {
   return products;
 }
 
-console.log(getAllProducts([1, 7, 3, 4]));
+// console.log(getAllProducts([1, 7, 3, 4]));
 
 module.exports = getAllProducts;
