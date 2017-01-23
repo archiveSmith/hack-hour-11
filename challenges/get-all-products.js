@@ -29,7 +29,8 @@
 // }
 
 function getAllProducts(array, answer = [], count = 0) {
-  if(!array || array.length < 2) return 0;
+  if(!array || array.length < 1) return [0];
+  if(!array || array.length === 1) return array;
 	if(count === array.length)  return answer;
 	let a = array.slice();
 	a.splice(count,1)
@@ -38,7 +39,6 @@ function getAllProducts(array, answer = [], count = 0) {
 	return getAllProducts(array, answer, count);
 	
 }
-
 
 
 
