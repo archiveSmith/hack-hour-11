@@ -11,27 +11,28 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  let current1 = l1;
-  let count1 = 0;
-  let current2 = l2;
-  let count2 = 0;
-  while (current1) {
-    current1 = current1.next;
-    count1 += 1;
+  if (!l1) {
+    return l2;
   }
-  while (current2) {
-    current2 = current2.next;
-    count2 += 1;
+  if (!l2) {
+    return l1;
   }
-  if (count1 === count2) {
-    current1 = current2
-  }
-  if (count1 > count2) {
 
+  let head = l1, temp = l1, l1 = l1.next;
+  while (l2 && l1) {
+
+    temp.next = l2;
+    l2 = l2.next;
+    temp = temp.next;
+
+    temp.next = l1;
+    l1 = l1.next;
+    temp = temp.next;
   }
-  if (count1 < count2) {
-    
-  }
-};
+
+  temp.next = l2 ? l2 : l1;
+
+  return head;
+}
 
 module.exports = {Node: Node, zip: zip};
