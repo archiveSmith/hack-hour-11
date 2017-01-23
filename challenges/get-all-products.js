@@ -12,7 +12,7 @@
  function getAllProducts(array) {
  	var newArr = [];
 
-  if (!array) {
+  if (!array.length) {
   return [0];
 }
 
