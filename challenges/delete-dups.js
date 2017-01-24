@@ -12,7 +12,7 @@
 
 
 
-ffunction deleteDups(head) {
+function deleteDups(head) {
 	if(head === null) return 'LinkedList is empty'
   let curr = head;
   let prev = null;

@@ -18,7 +18,6 @@ function Stack() {
 
   this.pop = function(){
     let temp = myStack[lengths-1]
-    console.log(temp)
     myStack[lengths-1] = undefined;
     lengths -=1;
     return temp;
