@@ -24,8 +24,8 @@ LinkedList.prototype.add = function(val) {
   }
 
   if (this.tail !== null) {
-  	node.prev = tail;
-	tail.next = node;
+  	node.prev = this.tail;
+	this.tail.next = node;
   }
 	  
   this.tail = node;
@@ -47,9 +47,9 @@ LinkedList.prototype.remove = function(val) {
 	}
 
 	if (found) {
-		if (current === head) {
+		if (current === this.head) {
 			current.next.prev = null;
-			head = current.next;
+			this.head = current.next;
 		} else {
 			if (current.next !== null) {
 				current.prev.next = current.next;
@@ -58,7 +58,7 @@ LinkedList.prototype.remove = function(val) {
 			}
 
 			if (current === this.tail) {
-				tail = current.prev;
+				this.tail = current.prev;
 			}
 		}
 	}
