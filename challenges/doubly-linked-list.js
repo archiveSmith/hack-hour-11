@@ -43,6 +43,10 @@ Removes the first node with the inputted value
  */
 LinkedList.prototype.remove = function(val, node = this.head) {
 	if(!node) return this.head;
+	if(node === this.head && node.val = val){
+		this.head = this.head.next;
+		this.head.prev = null;
+	}
 	if(node.val === val){
 	  if(node === this.head) this.head = this.head.next;
 	  if(node === this.tail) this.tail = this.tail.prev
