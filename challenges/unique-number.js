@@ -10,7 +10,7 @@
  *
  */
 function uniqueNumber(array) {
-
+  array.reduce((a,c) => return a ^ c);
 }
 
 module.exports = uniqueNumber;
