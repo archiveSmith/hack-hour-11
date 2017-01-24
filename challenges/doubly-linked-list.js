@@ -42,9 +42,10 @@ LinkedList.prototype.remove = function(val) {
       console.log('found match');
       if (!curr.prev) {
         this.head = curr.next;
+        this.head.prev = null;
       } else if (!curr.next) {
         curr.prev = this.tail;
-        curr.prev.next = null;
+        this.tail.next = null;
       } else {
         curr.prev.next = curr.next;
         curr.next.prev = curr.prev;
@@ -66,8 +67,9 @@ ll.add(3);
 ll.add(4);
 // ll.add(5);
 // console.log(ll);
-console.log(ll.head);
+// console.log(ll.head);
 ll.remove(2);
-console.log(ll.head);
+// console.log(ll.head);
+console.log(ll);
 
 module.exports = LinkedList;
