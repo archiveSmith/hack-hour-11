@@ -17,14 +17,51 @@ function Node(val) {
 Adds a node to the end of the list
  */
 LinkedList.prototype.add = function(val) {
-  
+  var node = new Node(val);
+
+  if (this.head === null) {
+  	this.head = node;
+  }
+
+  if (this.tail !== null) {
+  	node.prev = tail;
+	tail.next = node;
+  }
+	  
+  this.tail = node;
 };
 
 /*
 Removes the first node with the inputted value
  */
 LinkedList.prototype.remove = function(val) {
-  
+	var found = false;
+	var current = this.head;
+
+	while (current) {
+		if (current.val === val) {
+			found = true;
+			break;
+		}
+		current = current.next;
+	}
+
+	if (found) {
+		if (current === head) {
+			current.next.prev = null;
+			head = current.next;
+		} else {
+			if (current.next !== null) {
+				current.prev.next = current.next;
+			} else {
+				current.prev.next = null;
+			}
+
+			if (current === this.tail) {
+				tail = current.prev;
+			}
+		}
+	}
 };
 
 module.exports = LinkedList;
