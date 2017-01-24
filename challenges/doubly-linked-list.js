@@ -44,7 +44,7 @@ LinkedList.prototype.remove = function(val) {
         this.head = curr.next;
         this.head.prev = null;
       } else if (!curr.next) {
-        curr.prev = this.tail;
+        this.tail = curr.prev;
         this.tail.next = null;
       } else {
         curr.prev.next = curr.next;
