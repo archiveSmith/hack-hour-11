@@ -17,10 +17,9 @@ function deleteDups(head) {
 let curr = head;
 let cache = [];
 
-cache.push(curr);
 
-while (curr.next !== null) {
-    if (cache.includes(curr.next)) {
+while (curr !== null) {
+    if (cache.includes(curr.val)) {
       if (curr.next.next === null) {
         curr.next = null;
       } else {
@@ -28,9 +27,10 @@ while (curr.next !== null) {
         curr = curr.next;
       }
     } else {
-        cache.push(curr.next)
+        cache.push(curr.val)
         curr = curr.next;
     }
+    curr = curr.next''
 }
 return head
 }
