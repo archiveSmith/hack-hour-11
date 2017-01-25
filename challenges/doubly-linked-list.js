@@ -52,7 +52,7 @@ LinkedList.prototype.remove = function(val) {
 
     if (curr.prev && curr.prev.next !== null) {
       curr.next.prev = curr.prev;
-    } else {
+    } else if (curr.prev && curr.prev.next === null) {
       this.tail = curr.prev;
     }
     temp = null;
