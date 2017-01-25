@@ -1,3 +1,4 @@
+'use strict';
 /*
 Create a doubly linked list with an add and remove method
  */
@@ -42,8 +43,8 @@ LinkedList.prototype.remove = function(val) {
     return node;
   }
 
-  let curr = this.head.next;
-  let prev = this.head
+  curr = this.head.next;
+  prev = this.head
 
   while(curr){
     if(curr.value === val){
