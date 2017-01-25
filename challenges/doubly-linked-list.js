@@ -34,11 +34,14 @@ Removes the first node with the inputted value
 
 LinkedList.prototype.remove = function (val) {
   let curr = this.head;
-
+  if (curr.val === val) {
+    this.head = curr.next;
+    curr.next.prev = null;
+  }
   while (curr.next) {
     if (curr.next.val === val) {
-      curr.next = curr.next.next;
       curr.next.prev = curr;
+      curr.next = curr.next.next;
     } else {
       curr = curr.next;
     }
