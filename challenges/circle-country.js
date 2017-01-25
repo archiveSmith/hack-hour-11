@@ -22,41 +22,71 @@
  *
  */
 
+// function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+// 	let borderCount = 0;
+// 	let slopeRise = (end_y - start_y)/10;
+// 	let slopeRun = (end_x - start_x)/10;
+// 	let inCircles = [];
+
+// 	while(start_x < end_x && start_y < end_y){
+// 		for(let i = 0; i < x.length; i++){
+// 			if(isInCircle(start_x, start_y, x[i], y[i], r[i])){
+// 			  console.log(i)
+// 			  if(i === 0){
+// 			    inCircles.push(i);
+// 			  }else
+// 				if(inCircles.indexOf(i) === -1){
+// 				 // borderCount++;
+// 					inCircles.push(i);
+// 				}
+// 			} else {
+// 				if(inCircles.indexOf(i) !== -1){
+// 				  console.log('dfsdfsd')
+// 					inCircles.splice(i,1);
+// 					borderCount++;
+// 				}
+// 			}
+
+// 		}
+
+
+
+
+// 		start_x += slopeRun;
+// 		start_y += slopeRise
+// 	}
+
+// 	function isInCircle(x,y,center_x, center_y, radius){
+// 	 // console.log( Math.pow((x - center_x),2) + Math.pow((y - center_y),2) ,  Math.pow(radius, 2) );
+// 		if((Math.pow((x - center_x),2) + Math.pow((y - center_y),2)) < Math.pow(radius, 2)) return true;
+// 		return false;
+// 	}
+// 	return borderCount;
+
+// }
+
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-	let borderCount = 0;
-	let slopeRise = (end_y - start_y)/100;
-	let slopeRun = (end_x - start_x)/100;
-	let inCircles = [];
-
-	while(start_x < end_x && start_y < end_y){
-		for(let i = 0; i < x.length; i++){
-			if(isInCircle(start_x, start_y, x[i], y[i], r[i])){
-				if(inCircles.indexOf(i) === -1){
-				  borderCount++;
-					inCircles.push(i);
-				}
-			} else {
-				if(!inCircles.indexOf(i) === -1){
-					inCircles.splice(i,1);
-					borderCount++;
-				}
-			}
-
-		}
-
-
-
-
-		start_x += slopeRun;
-		start_y += slopeRise
-	}
+	let startInCircles = [];
+	let endInCircles = [];
+	for(let i = 0; i < x.length; i++){
+	  if(isInCircle(start_x, start_y, x[i], y[i], r[i]) && isInCircle(end_x, end_y, x[i], y[i], r[i])){
+	    
+	  }else
+	  if(isInCircle(start_x, start_y, x[i], y[i], r[i])){
+	    startInCircles.push(i);
+	  }else
+	  if(isInCircle(end_x, end_y, x[i], y[i], r[i])){
+	    endInCircles.push(i);
+	  }else{
+	  }
+	  }
 
 	function isInCircle(x,y,center_x, center_y, radius){
-		if(Math.pow((x - center_x),2) + Math.pow((y - center_y),2) < Math.pow(radius, 2)) return true;
+	 // console.log( Math.pow((x - center_x),2) + Math.pow((y - center_y),2) ,  Math.pow(radius, 2) );
+		if((Math.pow((x - center_x),2) + Math.pow((y - center_y),2)) < Math.pow(radius, 2)) return true;
 		return false;
 	}
-	return borderCount;
+	return startInCircles.length + endInCircles.length;
 
 }
-
 module.exports = circleCountry;
