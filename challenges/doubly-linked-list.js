@@ -32,7 +32,6 @@ LinkedList.prototype.add = function(val) {
     }
     curr = curr.next;
   }
-
 };
 
 /*
