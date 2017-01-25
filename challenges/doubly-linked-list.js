@@ -1,0 +1,53 @@
+/*
+Create a doubly linked list with an add and remove method
+ */
+
+function LinkedList() {
+  this.head = null;
+  this.tail = null;
+}
+
+function Node(val) {
+  this.val = val;
+  this.next = null;
+  this.prev = null;
+}
+
+/*
+Adds a node to the end of the list
+ */
+ LinkedList.prototype.add = function (val) {
+   const node = new Node(val);
+   if (this.head === null) {
+     this.head = node;
+     this.tail = this.head;
+   } else if (this.tail.next === null) {
+     this.tail.next = node;
+     node.prev = this.tail;
+     this.tail = node;
+   }
+   return nn;
+ };
+
+/*
+Removes the first node with the inputted value
+ */
+ LinkedList.prototype.remove = function (val) {
+   let curr = this.head;
+   if (curr.val === val) {
+     this.head = curr.next;
+     curr.next.prev = null;
+   }
+   while (curr.next) {
+     if (curr.next.val === val) {
+       curr.next.prev = curr;
+       curr.next = curr.next.next;
+     } else {
+       curr = curr.next;
+     }
+   }
+   return curr;
+ };
+
+ 
+module.exports = LinkedList;
