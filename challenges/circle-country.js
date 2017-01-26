@@ -22,8 +22,16 @@
  *
  */
 
-function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+let x = [-1, 0, 0, 4];
+let y = [0, ,0, 0, 4];
+let r = [1, 3, 6, 1];
+let start_x = 1;
+let start_y = 0;
+let end_x = 4;
+let end_y = 4;      // 2
 
+function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  
 }
 
 module.exports = circleCountry;
