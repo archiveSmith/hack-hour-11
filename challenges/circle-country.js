@@ -23,7 +23,15 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
+  const circles = {};
+  const numOfCircles = r.length;
+  for (let i = 0; i < numOfCircles; i += 1) {
+    circles[i] = {
+      center: [x[i], y[i]],
+      radius: r[i],
+      area: Math.PI * (Math.pow(r[i], 2))
+    }
+  }
 }
 
 module.exports = circleCountry;
