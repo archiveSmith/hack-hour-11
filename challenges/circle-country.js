@@ -26,10 +26,10 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
   let crossed = 0, i;
 
   for (i = 0; i < x.length; i++) {
-    const start = Math.sqrt((x[i] - startX)
-      * (x[i] - startX) + (y[i] - startY) * (y[i] - startY));
-    const end = Math.sqrt((x[i] - endX)
-      * (x[i] - endX) + (y[i] - endY) * (y[i] - endY));
+    const start = Math.sqrt((x[i] - start_x)
+      * (x[i] - start_x) + (y[i] - start_y) * (y[i] - start_y));
+    const end = Math.sqrt((x[i] - end_x)
+      * (x[i] - end_x) + (y[i] - end_y) * (y[i] - end_y));
     const radius = r[i];
 
     if ( start > radius && end > radius || start > radius && end < radius ) {
