@@ -18,7 +18,7 @@ function bubbleSort(array) {
 	return array;
 }
 
-// var array = [6,2,9,1,7,4,5,3,8];
+// var array = [6,2,9,1,7,4,5,3,8]; 
 
 // console.log(bubbleSort(array));
 
