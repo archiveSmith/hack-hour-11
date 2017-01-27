@@ -2,12 +2,6 @@
 
 // https://en.wikipedia.org/wiki/Bubble_sort
 
-function swap(a, b) {
-  const temp = a;
-  a = b;
-  b = temp;
-}
-
 function bubbleSort(array) {
   const swap = (array, i) => {
     const temp = array[i];
