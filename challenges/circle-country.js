@@ -82,7 +82,6 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
 	  }
 
 	function isInCircle(x,y,center_x, center_y, radius){
-	 // console.log( Math.pow((x - center_x),2) + Math.pow((y - center_y),2) ,  Math.pow(radius, 2) );
 		if((Math.pow((x - center_x),2) + Math.pow((y - center_y),2)) < Math.pow(radius, 2)) return true;
 		return false;
 	}
