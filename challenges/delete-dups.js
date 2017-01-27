@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 /**
  * Write a function deleteDups that removes duplicates from an unsorted linked list.
  *
@@ -14,6 +17,7 @@
 
 
 function deleteDups(head) {
+<<<<<<< HEAD
   let node = head;
   let store = [];
   while (node) {
@@ -30,3 +34,9 @@ function deleteDups(head) {
 
 
 module.exports = deleteDups;
+=======
+
+}
+
+module.exports = deleteDups;
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

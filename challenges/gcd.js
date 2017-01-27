@@ -8,6 +8,7 @@
  */
 
 function gcd(a, b) {
+<<<<<<< HEAD
   let arrA = [a];
   let arrB = [b];
   let result = 1;
@@ -26,6 +27,9 @@ function gcd(a, b) {
     }
   }
   return result;       
+=======
+
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 }
 
 module.exports = gcd;

@@ -1,6 +1,10 @@
 /**
+<<<<<<< HEAD
  * Write a function mergeRanges that takes an array of meeting time 
  * ranges and returns an array of condensed ranges.
+=======
+ * Write a function mergeRanges that takes an array of meeting time ranges and returns an array of condensed ranges.
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
  *
  * Example:
  * var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]
@@ -12,6 +16,7 @@
 
 
 function mergeRanges(array) {
+<<<<<<< HEAD
   if (!Array.isArray(array)) return [];
   let result = [];
   for (let i = 0; i < array.length; i++) {
@@ -37,3 +42,9 @@ function mergeRanges(array) {
   return result;
 }
 module.exports = mergeRanges;
+=======
+
+}
+
+module.exports = mergeRanges;
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

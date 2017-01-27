@@ -30,6 +30,7 @@
 var Node = function(value) {
   this.value = value;
   this.next = null;
+<<<<<<< HEAD
 } 
 
 function hasCycle(head) {
@@ -46,3 +47,12 @@ function hasCycle(head) {
 } 
 
 module.exports = {Node: Node, hasCycle: hasCycle}
+=======
+}
+
+function hasCycle(head) {
+
+}
+
+module.exports = {Node: Node, hasCycle: hasCycle}
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

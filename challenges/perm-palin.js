@@ -10,6 +10,7 @@
  */
 
 function permPalin(str) {
+<<<<<<< HEAD
 	str = str.toLowerCase().split('');
 	let countOnce = false;
   while (str.length > 0) {
@@ -21,6 +22,9 @@ function permPalin(str) {
     else str.splice(str.indexOf(removed), 1);
   }
   return true;
+=======
+	
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 }
 
 module.exports = permPalin;

@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array) {
+<<<<<<< HEAD
   let result = [];
   let prod;
   for (let i = 0; i < array.length; i++) {
@@ -23,3 +24,9 @@ function getAllProducts(array) {
 }
 
 module.exports = getAllProducts;
+=======
+
+}
+
+module.exports = getAllProducts;
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

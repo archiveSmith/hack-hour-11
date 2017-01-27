@@ -9,6 +9,7 @@
  */
 
 function Node(value) {
+<<<<<<< HEAD
   this.value = value;
   this.next = null;
 }
@@ -28,3 +29,14 @@ function reverseLinkedList(head) {
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
+=======
+    this.value = value;
+    this.next = null;
+}
+
+function reverseLinkedList(head) {
+
+}
+
+module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

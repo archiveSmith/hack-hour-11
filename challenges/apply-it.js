@@ -26,6 +26,7 @@
  */
 
 function applyIt(func, args) {
+<<<<<<< HEAD
   let parameters = '';
   for (let i = 0; i < args.length; i++) {
     if (i !== 0) parameters += ',' + JSON.stringify(args[i]);
@@ -35,3 +36,9 @@ function applyIt(func, args) {
 }
 
 module.exports = applyIt;
+=======
+
+}
+
+module.exports = applyIt;
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
