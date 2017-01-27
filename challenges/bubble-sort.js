@@ -5,7 +5,8 @@
 
 
 function bubbleSort(array, ind = 0) {
-  if (!array || array.length === 0) {return undefined}
+  if (!array) { return undefined }
+  if (!array.length === 0)) { return [] }
   if(ind === array.length - 1) {return array}
 
   let curr = ind;
@@ -17,7 +18,6 @@ function bubbleSort(array, ind = 0) {
     array[curr] = array[next];
     array[next] = temp;
     next += 1;
-    console.log(array)
   }
   
   while(array[curr] < array[prev]) {
@@ -25,7 +25,6 @@ function bubbleSort(array, ind = 0) {
     array[prev] = array[curr];
     array[curr] = temp;
     prev += 1;
-    console.log(array)
   }
   
   return bubbleSort(array, curr += 1)
