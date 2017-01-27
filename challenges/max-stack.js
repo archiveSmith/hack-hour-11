@@ -7,6 +7,7 @@
  */
 
 function Stack() {
+<<<<<<< HEAD
   this.storage = {};
   this.index = 0;
   this.array = [];
@@ -29,6 +30,9 @@ Stack.prototype.pop = function() {
 
 Stack.prototype.getMax = function() {
   return this.array.length > 0 ? Math.max.apply(Math, this.array) : undefined;
+=======
+  // body...
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 }
 
 module.exports = Stack;

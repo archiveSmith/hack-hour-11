@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* You have two numbers represented by linked lists. Each node contains a single digit. The digits
  * are stored in reverse order, such that the 1's digit is at the head of the list. Write
@@ -10,6 +11,8 @@
  */
 
 
+=======
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 /* You have two numbers represented by linked lists. Each node contains a single digit. The digits
  * are stored in reverse order, such that the 1's digit is at the head of the list. Write
  * a function that adds the two numbers and returns the sum as a linked list with the same
@@ -25,6 +28,7 @@ function Node(val) {
   this.next = null;
 }
 
+<<<<<<< HEAD
 function findNum(node, sum) {
   if (!node.value) return 0;
   else {
@@ -99,3 +103,10 @@ console.log('l2', l2);
 
 addLinkedList(l1, l2);
 module.exports = {Node: Node, addLinkedList: addLinkedList};
+=======
+function addLinkedList(l1, l2) {
+
+}
+
+module.exports = {Node: Node, addLinkedList: addLinkedList};
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

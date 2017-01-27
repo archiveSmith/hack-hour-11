@@ -17,6 +17,7 @@ function Node(val) {
 Adds a node to the end of the list
  */
 LinkedList.prototype.add = function(val) {
+<<<<<<< HEAD
   if (!this.head) {
     this.head = new Node(val);
     this.tail = this.head;
@@ -29,12 +30,16 @@ LinkedList.prototype.add = function(val) {
     node.next.prev = node;
     this.tail = node.next;
   }
+=======
+  
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 };
 
 /*
 Removes the first node with the inputted value
  */
 LinkedList.prototype.remove = function(val) {
+<<<<<<< HEAD
   if (this.head.val === val) {
     if (this.head.next) {
       console.log('hi');
@@ -60,3 +65,9 @@ LinkedList.prototype.remove = function(val) {
 };
 
 module.exports = LinkedList;
+=======
+  
+};
+
+module.exports = LinkedList;
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848

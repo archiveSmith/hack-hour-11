@@ -9,6 +9,7 @@
  * Do this in O(1) space
  *
  */
+<<<<<<< HEAD
 function repeatNumbers(array) {
   for (let i = 1; i < array.length; i++) {
     if (array[i - 1] !== i) return array[i - 1];
@@ -17,3 +18,11 @@ function repeatNumbers(array) {
 
 
 module.exports = repeatNumbers;
+=======
+
+function repeatNumbers(array) {
+
+}
+
+module.exports = repeatNumbers;
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
