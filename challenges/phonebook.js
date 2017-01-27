@@ -49,20 +49,19 @@ function makePhoneBookObject(jazbook){
   for (let i = 0; i < jazbook.length; i += 1) {
     temp[jazbook[i][0]] = jazbook[i][1];
   }
-  return {
-    directory : temp,
-    find : function(name) {
-      return this.directory[name];
-    },
-    add : function(name, number) {
-      this.directory[name] = number;
-      return this.directory;
-    },
-    remove: function(name) {
-      delete this.directory[name];
-      return this.directory;
-    }
-  }
+  temp.find = function(name) {
+    return this[name];
+  };
+  temp.add = function(name, number) {
+    this[name] = number;
+    return this[name];
+  };
+  temp.remove =  function(name) {
+    tempNum = this[name];
+    delete this[name];
+    return temp;
+  };
+  return temp;
 }
 const pb1 = makePhoneBookObject(j1);
 console.log('pb1:', pb1);
