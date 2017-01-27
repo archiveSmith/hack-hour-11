@@ -5,6 +5,7 @@
 
 
 function bubbleSort(array) {
+<<<<<<< HEAD
   let done = true;
   sort(array);
   if (done === true) {
@@ -23,6 +24,9 @@ function bubbleSort(array) {
         }
     }
   }
+=======
+
+>>>>>>> 1a7485c2a025fa8d3cb0d86037701456406ed848
 }
 
 module.exports = bubbleSort;
