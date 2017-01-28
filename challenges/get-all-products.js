@@ -7,10 +7,22 @@
  * [7*3*4, 1*3*4, 1*7*4, 1*7*3]
  *
  * do not use division, becuase zero might be in the array and you cannot divide by zero
+just need to go through and get product with one missing at a time... easy!!!
  */
 
 function getAllProducts(array) {
 
+	let products = [];
+
+	for (let i = 0; i < array.length; i++){
+		let newArray = array.splice(i,1)
+		
+		console.log(newArray);
+	}
+	
+
 }
+
+console.log(getAllProducts([1, 7, 3, 4]))
 
 module.exports = getAllProducts;

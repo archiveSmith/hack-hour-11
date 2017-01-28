@@ -14,6 +14,30 @@
 
 function bestProfit(stock_prices_yesterday) {
 
+    if (typeof stock_prices_yesterday[0] !== 'number'){
+        return 0;
+    }
+    
+    let stocks = stock_prices_yesterday;
+
+    //avGrowth is what you could make letting it sit in the market
+    //thus anything less than this is not worth the effort of day trading
+
+    let avGrowth = stocks[0] * .08;
+
+    let firstBuy = stocks[0];
+
+    for (let i = 1; i < stocks.length; i++){
+        if (typeof stocks[i] !== 'number'){
+            return 0
+        }
+        let profit= stocks[i] - firstBuy;
+        if (profit > avGrowth){
+            return profit;
+        }
+    }
+    return 0;
+ 
 }
 
 module.exports = bestProfit;

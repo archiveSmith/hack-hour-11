@@ -25,6 +25,9 @@
  * Challenge 2: Do this in constant space
  * Challenge 3: Do not mutate the original nodes in any way
  *
+ for every node that you check check if the node.next exists in the object that you've created.
+	
+	can you put a tracker on each node???? not really
  */
 
 var Node = function(value) {
@@ -33,7 +36,34 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+	const nodes = [];
 
+	let current = head;
+
+	while (current.next !== null){
+		
+		if (nodes.indexOf(current) !== -1){
+			return true
+		}
+		else {
+			nodes.push(current);
+		}
+		current = current.next;
+
+	}
+
+	console.log(nodes)
+	return false
 }
 
-module.exports = {Node: Node, hasCycle: hasCycle}
+var node1 = new Node('1');
+var node2 = node1.next = new Node('2');
+var node3 = node2.next = new Node('3');
+var node4 = node3.next = new Node('4');
+var node5 = node4.next = new Node('5');
+console.log(hasCycle(node1)); // => false
+node5.next = node2;
+hasCycle(node1); // => true
+
+
+//module.exports = {Node: Node, hasCycle: hasCycle}

@@ -16,6 +16,7 @@
  * kthToLastNode(2,a); -> returns the node with the value 'D' (the second to last node)
  */
 
+
 function Node(val) {
   this.value = val;
   this.next = null;
@@ -23,6 +24,30 @@ function Node(val) {
 
 function kthToLastNode(k, head) {
 
+//first lets get the length of the LL
+
+//then we will traverse down the length and return the index at length-k
+
+	let currentNode = head;
+	let counter = 0;
+	while (currentNode !== null){
+		currentNode = currentNode.next;
+		counter++;
+	}
+	//now counter === length of LL
+
+	//traverse LL counter times minus k
+
+	let newCurrent = head;
+
+	while (counter > k){
+		newCurrent = newCurrent.next;
+		counter--
+	}
+	return newCurrent.value;
 }
+
+
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

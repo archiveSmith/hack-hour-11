@@ -26,6 +26,35 @@
 
 function balancedParens(input){
 
+
+	let newInput = input.split("");
+	
+
+	const openClose = [];
+
+	for (let i = 0; i < newInput.length; i++){
+		if (newInput[i] === "{" || newInput[i] === "(" || newInput[i] === "[" ||newInput[i] === "}" || newInput[i] === ")" || newInput[i] === "]"){
+			openClose.push(newInput[i])
+		};
+		if (openClose[openClose.length-1] === "}" && openClose[openClose.length-2] === "{" || openClose[openClose.length-1] === "]" && openClose[openClose.length-2] === "[" || openClose[openClose.length-1] === ")" && openClose[openClose.length-2] === "("){
+			openClose.pop();
+			openClose.pop();
+		};
+
+	}
+	if (openClose.length > 0){
+		return false
+	}
+	return true
 }
 
-module.exports = balancedParens;
+
+
+
+
+
+
+
+
+console.log(balancedParens('[(]{)}'));
+//module.exports = balancedParens;

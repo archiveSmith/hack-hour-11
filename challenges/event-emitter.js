@@ -23,13 +23,18 @@
 
 function EventEmitter() {
 
+
 }
 
+EventEmitter.prototype.functions = {};
+
 EventEmitter.prototype.on = function(funcName, func) {
+	EventEmitter.prototype.functions[funcName] = func;
 
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
+	EventEmitter.prototype.functions[funcName](..args);
 
 };
 

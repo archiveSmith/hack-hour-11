@@ -15,6 +15,40 @@
 
 function binToDec(binary) {
 
+<<<<<<< HEAD
+	let newBin = binary.split("");
+
+	let newestBin = newBin.map(function(val){
+		return parseInt(val)
+	});
+
+	
+	let counter = 0;
+
+	while(newestBin.length > 0){
+
+	if (newestBin[newestBin.length-1] === 0){
+		counter++;
+		newestBin.pop();
+	}
+
+	else if(newestBin[newestBin.length-1] === 1){
+		counter++;
+		newestBin[newestBin.length-1] = newestBin[newestBin.length-1]-1;
+
+	}
+}
+	return counter;
+
+
+
+}
+
+console.log(binToDec("101"))
+
+//module.exports = binToDec;
+=======
 }
 
 module.exports = binToDec;
+>>>>>>> b5eb6fc6d69a6a9df3d646c7dd6937e7605f82a0

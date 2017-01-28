@@ -14,6 +14,43 @@
  */
 
 function mergeArrays(arr1, arr2) {
+   const newArr = [];
+    let pop1;
+    let pop2;
+    while (arr1.length && arr2.length){
+       
+        pop1 = arr1[0];
+        pop2 = arr2[0];
+        
+        if (pop1 > pop2){
+        
+            newArr.push(pop2);
+            newArr.push(pop1)
+
+        }
+        else{
+            
+            newArr.push(pop1)
+            newArr.push(pop2);
+
+        }
+        arr1.shift();
+        arr2.shift();   
+    }
+
+    if (arr1){
+        arr1.forEach(function(val){
+            newArr.push(val)
+        })
+
+    }
+     if (arr2){
+        arr2.forEach(function(val){
+            newArr.push(val)
+        })  
+    }
+
+return newArr;
 
 }
 

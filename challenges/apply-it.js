@@ -26,6 +26,9 @@
  */
 
 function applyIt(func, args) {
+	let length = args.length;
+
+	return func(args[0],);
 
 }
 

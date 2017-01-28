@@ -6,14 +6,21 @@
  * BONUS:
  * Do it in place
  *
- */
+ * 
+get to the end of the LL, assign that to head
+the make head.next equal to the next one..
 
+make a counter to counter the LL..
+then go down counter to add them...
+ */
 function Node(value) {
     this.value = value;
     this.next = null;
 }
 
 function reverseLinkedList(head) {
+    
+
 
 }
 

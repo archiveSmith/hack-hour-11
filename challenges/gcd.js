@@ -8,6 +8,22 @@
  */
 
 function gcd(a, b) {
+ 
+  let counter = 0;
+  let divisor;
+  
+  while (counter <= a && counter <= b){
+    
+    if (a % counter === 0 && b % counter === 0){
+    
+      divisor = counter;
+    }
+    counter ++
+    
+  }
+  
+  return divisor;
+	
 
 }
 

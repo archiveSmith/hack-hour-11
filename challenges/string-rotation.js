@@ -16,7 +16,28 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+	//iterate over every element in array 
+	//check if following element is in proper sequence
+	//if not return false
+	//if i is greater than word.length-1 go back to 0;
+
+
+	//this is challenging because we don't know where to start...
+
+	//how about this?
+	//we can find the first letter, keep checking the next to see if it's in order
+	//if not, find the other letter that matches the first letter, if no other foubd, return false 
+
+	
+	//doesnt work, need to go back and fix it!!
+
+	let newStr = s2 + s2;
+	
+	return isSubstring(newStr,s1);
+
+	
 
 }
 
+console.log(stringRotation("hello", "he"))
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

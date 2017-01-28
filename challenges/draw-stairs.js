@@ -14,7 +14,24 @@
 */
 
 function drawStairs(n) {
+function addStuff(stuff, times){
+    let emptyString = ""
+    for (let i = 0; i < times; i++){
+      emptyString = emptyString + stuff;
+    }
+    return emptyString;
+  }
+  
+  let whiteSpace = n - 1;
+  let asterisks = 1;
 
+  while (whiteSpace >= 0){
+ let stair = ""
+  stair = stair + addStuff(" ", whiteSpace) + addStuff("*", asterisks);
+  whiteSpace--;
+  asterisks++;
+  console.log(stair);
+  }
 }
 
 
