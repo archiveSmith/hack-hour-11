@@ -22,6 +22,7 @@
 * develop a function that takes in the poorly constructed jazbook and returns a proper phonebook 
 * complete with methods to add new names and look up and remove existing entries
 */
+
 //  return the number associated with the name in the jazbook
 
 function findName(jazbook, name){
@@ -80,3 +81,22 @@ function makePhoneBookObject(jazbook){
 const objectToExport = { findName, makePhoneBookObject };
 
 module.exports = objectToExport;
+=======
+
+//  return the number associated with the name in the jazbook
+function findName(jazbook, name) {
+
+}
+
+// return an object literal representing the jazbook
+function makePhoneBookObject(jazbook){
+
+}
+
+const objectToExport = {
+  findName,
+  makePhoneBookObject,
+};
+
+module.exports = objectToExport;
+>>>>>>> b13e34ac983b2e5aca58ec9da8c097bcd4e0cd23
