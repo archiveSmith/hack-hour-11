@@ -16,9 +16,9 @@
 
 function countStairs(n) {
     if (n === 0) {
-        return ;
+        return 1;
     }
-    let ways = 1;
+    let ways = 0;
 
     function recurse (curr, n) {
         if (curr === n) {
@@ -35,6 +35,6 @@ function countStairs(n) {
 
 }
 
-console.log(countStairs(3));
+console.log(countStairs(5));
 
 module.exports = countStairs;
