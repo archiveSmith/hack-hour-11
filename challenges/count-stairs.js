@@ -15,7 +15,21 @@
  */
 
 function countStairs(n) {
+  let permutations = 0;
 
+  function recurse(n){
+    if(n < 0) return;
+    if(n === 0){
+      permutations++;
+      return;
+    }
+
+    recurse(n - 2);
+    recurse(n - 1);
+  }
+
+  recurse(n);
+  return permutations;
 }
 
 module.exports = countStairs;
