@@ -16,18 +16,17 @@
 
 function countStairs(n) {
     if (n === 0) {
-        return 0;
+        return ;
     }
-    let ways = 0;
+    let ways = 1;
 
     function recurse (curr, n) {
         if (curr === n) {
             ways++;
             return;
         }
-        if (curr > n) {
-            return;
-        }
+        if (curr > n) return;
+
         recurse(curr+1, n);
         recurse(curr+2, n);
     }
