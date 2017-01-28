@@ -15,10 +15,8 @@
  */
 
 function countStairs(n, opts = [], build = '') {
+  if(n === undefined) return 1;
 	let options = opts;
-	// let numSteps = 0;
-	//let build = [];
-
 	if(n < 1){
 		if(n<0)return options;
 		let a = build
@@ -30,7 +28,7 @@ function countStairs(n, opts = [], build = '') {
 			}
 		}
 		if(!isIt) options.push(build);
-		return options;
+		return options.length;
 	}
 	 let c = build += '1'
    let d =  build += '2'
@@ -41,6 +39,8 @@ function countStairs(n, opts = [], build = '') {
 
 return options.length;
 }
+
+
 
 
 module.exports = countStairs;
