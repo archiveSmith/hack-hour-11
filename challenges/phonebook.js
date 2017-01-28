@@ -17,6 +17,8 @@
 * returns the persons phone number. If the person does not exists, return false.
 *
 * How efficient can you make this?
+
+
 * Part 2:
 * Why are we storing names and phone numbers in an array?
 * develop a function that takes in the poorly constructed jazbook and returns a proper phonebook
@@ -44,6 +46,12 @@ makePhoneBookObject.add = function(name, number){
 		this[name] = number;
 		return number;
   }
+
+makePhoneBookObject.remove = function(name) {
+  delete this[name];
+}
+
+
 
 const objectToExport = {
   findName,
