@@ -8,4 +8,4 @@ function insertionSort(array) {
 
 }
 
-module.exports = insertionSort;
+module.exports = insertionSort;,

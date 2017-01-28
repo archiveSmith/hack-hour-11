@@ -24,7 +24,7 @@ function bestProfit(stock_prices_yesterday) {
       }else if(spy[i] === min){
         placeMin = i;
       }else if( placeMin > i){
-        return 0;
+       spy = spy.splice(i);
       }
     }
       return max-min;

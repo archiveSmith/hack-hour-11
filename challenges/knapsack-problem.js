@@ -10,7 +10,8 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
-
+  //be able to select which weights will addup to the limit 
+  //add up the obj. values 
 };
 
 module.exports = solveKnapsack;
