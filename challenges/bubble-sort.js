@@ -25,7 +25,7 @@ function bubbleSort(array) {
             }
         }
     }
-    console.log(array);
+    return array;
 
 }
 
