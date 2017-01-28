@@ -49,7 +49,6 @@ function makePhoneBookObject(jazbook){
 		}
 		return 'entry not found';
 	}
-
 	pBook.remove  = function(name){
 		if(this.hasOwnProperty(name)){
 			let num = this[name];
