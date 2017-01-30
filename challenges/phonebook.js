@@ -17,6 +17,10 @@
 * returns the persons phone number. If the person does not exists, return false.
 *
 * How efficient can you make this?
+<<<<<<< HEAD
+=======
+
+>>>>>>> b13e34ac983b2e5aca58ec9da8c097bcd4e0cd23
 * Part 2: 
 * Why are we storing names and phone numbers in an array?
 * develop a function that takes in the poorly constructed jazbook and returns a proper phonebook 
@@ -25,6 +29,7 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
+<<<<<<< HEAD
   for (let i = 0; i < jazbook.length; i += 1) {
     if (jazbook[i][0] === name) return jazbook[i][1];
   }
@@ -68,10 +73,23 @@ console.log('pb1:', pb1);
 console.log('find:', pb1.find('jae'));
 console.log('removed:', pb1.remove('alex'));
 console.log('added:', pb1.add('joe', '917-858-4988'));
+=======
+
+}
+
+// return an object literal representing the jazbook
+function makePhoneBookObject(jazbook){
+
+}
+>>>>>>> b13e34ac983b2e5aca58ec9da8c097bcd4e0cd23
 
 const objectToExport = {
   findName,
   makePhoneBookObject,
 };
 
+<<<<<<< HEAD
 module.exports = objectToExport;
+=======
+module.exports = objectToExport;
+>>>>>>> b13e34ac983b2e5aca58ec9da8c097bcd4e0cd23
