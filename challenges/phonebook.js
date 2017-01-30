@@ -26,7 +26,7 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-  for (let i = 0; o < jazbook.length; i++) {
+  for (let i = 0; i < jazbook.length; i++) {
     if (jazbook[i][0] === name) {
       return jazbook[i][1];
     }
