@@ -20,6 +20,6 @@ function countStairs(n) {
   return countStairs(n - 1) + countStairs(n - 2);
 }
 
-console.log(countStairs(5));
+console.log(countStairs(13));
 
 module.exports = countStairs;
