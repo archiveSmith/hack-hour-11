@@ -26,13 +26,34 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-
+  for (let i = 0; i < jazbook.length; i += 1) {
+    if (jazbook[i][0] === name) {
+      return jazbook[i][1]
+    }
+  }
+  return false;
 }
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
+  this.phonebook = {};
+  jazbook.forEach(function(individual) {
+    this.phonebook[individual[0]]=individual[1];
+  });
+};
 
+makePhoneBookObject.prototype.add = function (name, number) {
+  this.phonebook[name] = number;
 }
+
+makePhoneBookObject.prototype.lookup = function (name) {
+  return this.phonebook[name];
+}
+
+makePhoneBookObject.prototype.remove = function (name) {
+  delete this.phonebook[name];
+}
+
 
 const objectToExport = {
   findName,
