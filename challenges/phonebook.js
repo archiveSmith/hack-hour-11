@@ -40,6 +40,7 @@ function makePhoneBookObject(jazbook){
   jazbook.forEach(function(individual) {
     this.phonebook[individual[0]]=individual[1];
   });
+  return this.phonebook;
 };
 
 makePhoneBookObject.prototype.add = function (name, number) {
