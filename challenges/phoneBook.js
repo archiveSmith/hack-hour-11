@@ -22,10 +22,10 @@
 * develop a function that takes in the poorly constructed jazbook and returns a proper phonebook 
 * complete with methods to add new names and look up and remove existing entries
 */
-//  return the number associated with the name in the jazbook
 
+//  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-  for(let i = 0; i < jazbook.length; i++) {
+  for (let i = 0; i < jazbook.length; i++) {
     if (jazbook[i][0] === name) {
       return jazbook[i][1];
     }
@@ -35,56 +35,29 @@ function findName(jazbook, name) {
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-  const func = function() {
-    this.phoneBook = jazbook.reduce((a, c) => {
-      a[c[0]] = c[1];
-      return a;
-    }, {});
-  }
 
-  func.prototype.add = function(arr) {
-    this[arr[0]] = arr[1];
-    return func;
-  }
+  const obj = jazbook.reduce((a, c) => a[c[0]] = c[1]);
 
-  func.prototype.add = function(arr) {
-    this[arr[0]] = arr[1];
-    return func;
-  }
+  return class phoneBook {
+    constructor(obj) {
+      this.store = obj;
+    }
 
-  func.prototype.add = function(arr) {
-    this[arr[0]] = arr[1];
-    return func;
+    add(arr) {
+      this.store[arr[0]] = arr[1];
+      return this.store;
+    }
+
+    find(name) {
+      return this.store[name];
+    }
+
+    remove(arr) {
+      this.store[arr[0]] = arr[1];
+      return this.store;
+    }
   }
 }
-
-const book = [
-  ['alex','301-844-3421'],
-  ['jae','301-844-1211'],
-  ['david','301-844-0978'],
-  ['travis','301-844-8505'],
-  ['jasmine','1800-974-4539'],
-];
-
-const Jazbook = makePhoneBookObject(book);
-
-console.log(Jazbook);
-
-
-Jazbook.prototype.add = function(arr) {
-  this[arr[0]] = arr[1];
-  return this;
-}
-
-Jazbook.prototype.find = function(str) {
-  return this[str];
-}
-
-Jazbook.prototype.remove = function(str) {
-  delete this[str];
-}
-
-console.log(Jazbook.prototype);
 
 const objectToExport = {
   findName,
