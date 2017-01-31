@@ -1,3 +1,4 @@
+
 /**
 * Part 1:
 * You are given an array of arrays.  The subarrays are first names and phone numbers.
@@ -17,26 +18,40 @@
 * returns the persons phone number. If the person does not exists, return false.
 *
 * How efficient can you make this?
-
 * Part 2: 
 * Why are we storing names and phone numbers in an array?
 * develop a function that takes in the poorly constructed jazbook and returns a proper phonebook 
 * complete with methods to add new names and look up and remove existing entries
 */
-
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-
+  if(jazbook === null || jazbook === undefined || name === null || name === undefined) return false
+  jazbook.sort((a,b) => a[0] > b[0])
+  
+  for (let i = 0; i < jazbook.length; i += 1) {
+    if(name === jazbook[i][0]) return jazbook[i][1]
+  }
+  
+  return false
+  
 }
-
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-
+  jazbook.sort((a,b) => a[0] > b[0])
+  let newJazz = {
+    add: function(name, number) {this[name] = number},
+    remove: function(name) {delete this[name]},
+  }
+  
+  for(let i = 0; i < jazbook.length; i += 1) {
+    newJazz[jazbook[i][0]] = jazbook[i][1]
+  }
+  
+  return newJazz
 }
 
 const objectToExport = {
   findName,
   makePhoneBookObject,
 };
-
 module.exports = objectToExport;
