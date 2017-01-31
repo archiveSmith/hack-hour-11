@@ -8,6 +8,16 @@
 
 
 function countTwos(num) {
+let counter = 0;
+	for (let i = 0; i <= num; i += 1) {
+		let temp = i.toString();
+		for (let k = 0; k < temp.length; k +=1) {
+			if (temp[k] === "2") {
+				counter += 1
+			}
+		}
+	}
+	return counter;
 
 }
 

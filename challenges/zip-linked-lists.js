@@ -11,6 +11,28 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (!l1) {
+    return l2;
+    }
+  if (!l2) {
+    return l1;
+  }
+
+var head = l1, temp = l1, l1 = l1.next;
+
+  while (l2 & l1) {
+    temp.next = l2;
+    l2 = l2.next;
+    temp = temp.next
+
+    temp.next = 11;
+    11 = 11.next;
+    temp = temp.next;
+  }
+
+  temp.next = 12 ? 12 : 11;
+
+  return head;
 };
 
 module.exports = {Node: Node, zip: zip};

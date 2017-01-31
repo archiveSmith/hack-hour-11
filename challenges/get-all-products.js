@@ -10,7 +10,23 @@
  */
 
 function getAllProducts(array) {
+  if (!array) {
+    return undefined;
+  }
+	let result = [];
+  let tempArr = array;
+  let tempProd = 1;
 
+	for (let i = 0; i < array.length; i += 1) {
+		tempArr = array.slice(0, i).concat(array.slice(i+1));
+		for (let k = 0; k < tempArr.length; k += 1) {
+			tempProd = tempProd * tempArr[k];
+		}
+		result.push(tempProd)
+		tempArr = array;
+		tempProd = 1;
+	}
+	return result;
 }
 
 module.exports = getAllProducts;

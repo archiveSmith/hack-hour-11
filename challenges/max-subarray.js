@@ -8,7 +8,26 @@
  */
 
 function maxSubarray(arr) {
-
+  if (!arr) {
+    return 0
+  }
+	if (arr.length === 1) {
+		return arr[0];
+	}
+	let maxSum = 0;
+	let newStart = 1
+  for (var i = 0; i < arr.length; i += 1) {
+		let tempAccum = arr[i];
+		for (var k = newStart; k < arr.length; k += 1) {
+			tempAccum += arr[k];
+			if (tempAccum > maxSum) {
+				maxSum = tempAccum
+			}
+		}
+		tempAccum = 0;
+		newStart += 1;
+	}  
+return maxSum;
 }
 
 module.exports = maxSubarray;

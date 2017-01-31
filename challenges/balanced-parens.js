@@ -25,7 +25,42 @@
  */
 
 function balancedParens(input){
+<<<<<<< HEAD
+ strArr = input.match(/\[|\]|{|}|\(|\)/gi)
 
+ let stack = [];
+ 
+ for (var i = 0; i<strArr.length; i++) {
+  if (strArr[i] === "[" || strArr[i] === "{" || strArr[i] === "(") {
+      stack.push(strArr[i]);
+  }
+  if (strArr[i] === "]") {
+      if (stack[stack.length-1] === "[") {
+          stack.splice(0,stack.length-1);
+      } else {
+          return false;
+      }
+  } else if (strArr[i] === "}") {
+       if (stack[stack.length-1] === "{") {
+          stack.splice(0,stack.length-1);
+      } else {
+          return false;
+      }
+  } else if (strArr[i] === ")") {
+       if (stack[stack.length-1] === "()") {
+          stack.splice(0,stack.length-1);
+      } else {
+          return false;
+      }
+  }
+ }
+ if (stack.length === 0){
+     return true;
+ }
+return false;
+=======
+
+>>>>>>> c2d85d98aadc865e5372179f960654118c7a2930
 }
 
 module.exports = balancedParens;

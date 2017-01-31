@@ -12,7 +12,22 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
+  let array = [];
+  let i = 0;
+    
+  function toArray(tree, array) {
+    if (!tree) return;
 
+      toArray(tree.left, array);
+      array[i++] = tree.value;
+      toArray(tree.right, array);
+    }
+  toArray(tree, array );
+
+  for (var j = 1; j < array.length; j++) {
+    if (array[j] <= array[j-1]) return false;
+  }
+  return true;
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};

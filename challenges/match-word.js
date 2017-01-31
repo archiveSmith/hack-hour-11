@@ -8,7 +8,31 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+strClean = str.toLowerCase().replace(/\W|_/g, " ")
+strArr = strClean.trim().split(" ");
+stack = [];
 
+if (str === "") {
+  return true;
+}
+
+if (strArr.length === 0) {
+  return false;
+}
+
+for (var i=0; i<strArr.length; i++) {
+  if (strArr[i].length>0){
+    if (stack[stack.length-1] === strArr[i].split("").reverse().join("")){
+      stack.pop()
+    } else {
+    stack.push(strArr[i]);
+    }
+  }
+}
+if (stack.length === 0){
+return true;
+  }
+return false
 }
 
 module.exports = matchWord;
