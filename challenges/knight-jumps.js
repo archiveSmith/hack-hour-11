@@ -11,7 +11,45 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+	var jumps = 0;
+	var knightPos = {
+		x: parseInt(str[1], 10),
+		y: parseInt(str[3], 10)
+	}
 
+	// console.log("Knight pos: ", knightPos);
+
+	if (str.length === 5 && (knightPos.x >= 1 && knightPos.y <= 8) && (knightPos.y >= 1 && knightPos.y <= 8)) {
+		if (knightPos.x + 2 <= 8 && knightPos.y + 1 <= 8) {
+			jumps++;
+		}
+		if (knightPos.x + 2 <= 8 && knightPos.y - 1 >= 1) {
+			jumps++;
+		}
+		if (knightPos.x - 2 >= 1 && knightPos.y + 1 <= 8) {
+			jumps++;
+		}
+		if (knightPos.x - 2 >= 1 && knightPos.y - 1 >= 1) {
+			jumps++;
+		}
+		if (knightPos.y + 2 <= 8 && knightPos.x + 1 <= 8) {
+			jumps++;
+		}
+		if (knightPos.y + 2 <= 8 && knightPos.x - 1 >= 1) {
+			jumps++;
+		}
+		if (knightPos.y - 2 >= 1 && knightPos.x + 1 <= 8) {
+			jumps++;
+		}
+		if (knightPos.y - 2 >= 1 && knightPos.x - 1 >= 1) {
+			jumps++;
+		}
+	}
+		
+
+	return jumps;
 }
+
+ // console.log(knightjumps("(2 6)"));
 
 module.exports = knightjumps;
