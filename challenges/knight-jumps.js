@@ -11,7 +11,19 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+  const start = str.replace(/\D/g, '').split('').map(x => parseInt(x));
+  const up2Right1 = start.map((n, i) => i ? n + 1 : n + 2);
+  const right2Up1 = start.map((n, i) => i ? n + 2 : n + 1);
+  const right2Down1 = start.map((n, i) => i ? n + 2 : n - 1);
+  const down2Right1 = start.map((n, i) => i ? n + 1 : n - 2);
+  const down2Left1 = start.map((n, i) => i ? n - 1 : n - 2);
+  const left2Down1 = start.map((n, i) => i ? n - 2 : n - 2);
+  const left2Up1 = start.map((n, i) => i ? n - 2 : n + 1);
+  const up2Left1 = start.map((n, i) => i ? n - 1 : n + 2);
+  const moves = [up2Right1, right2Up1, right2Down1, down2Right1, down2Left1, left2Down1, left2Up1, up2Left1];
+  return moves.filter(n => n[0] > 0 && n[0] < 9 && n[1] > 0 && n[1] < 9).length;
 }
+
+console.log(knightjumps("(7 4)"));
 
 module.exports = knightjumps;
