@@ -11,7 +11,25 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+  const coor = [Number(str[1]), Number(str[3])];
+  const spaces = [[coor[0] + 2, coor[1] + 1], 
+                  [coor[0] + 2, coor[1] - 1], 
+                  [coor[0] - 2, coor[1] + 1], 
+                  [coor[0] - 2, coor[1] - 1], 
+                  [coor[0] + 1, coor[1] + 2], 
+                  [coor[0] - 1, coor[1] + 2], 
+                  [coor[0] + 1, coor[1] - 2], 
+                  [coor[0] - 1, coor[1] - 2]];
+  const goodSpaces = [];
+  for (let i = 0; i < spaces.length; i += 1) {
+    console.log(spaces[i]);
+    if (spaces[i][0] <= 8 && spaces[i][0] >= 1 && spaces[i][1] <= 8 && spaces[i][1] >= 1) {
+      goodSpaces.push(spaces[i]);
+    }
+  }
+  return goodSpaces.length;
 }
+
+console.log(knightjumps('(4 4'));
 
 module.exports = knightjumps;
