@@ -61,14 +61,18 @@ function newIntersections(x, y){
   });
 
   for (num in xdoubles) {
-    for (let i = xdoubles[num].ymin; i < xdoubles[num].ymax; i += 1) {
-      if (i !== xdoubles[num].ymin) xposs.push([parseInt(num), i]);
+    let inc = 0.1;
+    if (xdoubles[num].ymin % 1 === 0) inc = 1;
+    for (let i = xdoubles[num].ymin; i < xdoubles[num].ymax; i += inc) {
+      if (i !== xdoubles[num].ymin) xposs.push([Number(num), i]);
     }
   }
 
   for (num in ydoubles) {
-    for (let i = ydoubles[num].xmin; i < ydoubles[num].xmax; i += 1) {
-      if (i !== ydoubles[num].xmin) yposs.push([i, parseInt(num)]);
+    let inc = 0.1;
+    if (ydoubles[num].xmin % 1 === 0) inc = 1;
+    for (let i = ydoubles[num].xmin; i < ydoubles[num].xmax; i += inc) {
+      if (i !== ydoubles[num].xmin) yposs.push([i, Number(num)]);
     }
   }
 
@@ -85,8 +89,7 @@ function newIntersections(x, y){
 
 module.exports = newIntersections;
 
-// console.log(newIntersections([1, 3, 2, 2], [2, 2, 1, 3]));
-
+// console.log(newIntersections([0.1, 0.3, 0.2, 0.2], [0.2, 0.2, 0.1, 0.3]));
 
 // const xcount = {};
 // const ycount = {};
