@@ -25,17 +25,6 @@ function knightjumps(str) {
   return moves.filter(n => n[0] > 0 && n[0] < 9 && n[1] > 0 && n[1] < 9).length;
 }
 
-// MATHS
-// function knightjumps(str) {
-//   var x = reflect(+str[1]); // yet another way to parse integers, then reflect the coordinate
-//   var y = reflect(+str[3]);
-//   var x_distance = Math.max(3 - x, 0);
-//   var y_distance = Math.max(3 - y, 0);
-//   return 8 - distanceToValue(x_distance + y_distance);
-// }
-// function distanceToValue(d) { return d < 2 ? 2 * d : d + 2; }
-// function reflect(n) { return n > 4 ? 9 - n : n; }
-
 console.log(knightjumps("(7 4)"));
 
 module.exports = knightjumps;
