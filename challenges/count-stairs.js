@@ -15,7 +15,14 @@
  */
 
 function countStairs(n) {
+<<<<<<< HEAD
   
 }
 
 module.exports = countStairs;
+=======
+
+}
+
+module.exports = countStairs;
+>>>>>>> 8e5481efd628ea5e087dd41d880a5d7ecb30cf12
