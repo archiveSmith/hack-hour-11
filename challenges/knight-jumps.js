@@ -9,44 +9,43 @@
 // from position x = 4 and y = 5.
 //  example input:
 // var str = "(4 5)"
-
 function knightjumps(str) {
 	let count = 0;
 	let x = Number(parseInt(str.replace(/[^1-9]/g, '')).toString().split('')[0]);
 	let y = Number(parseInt(str.replace(/[^1-9]/g, '')).toString().split('')[1]);
    
 	if((x+2) < 9){
-		if((y+2) < 9){
+		if((y+1) < 9){
 		count++;
 		}
-		if((y-2) > 0){
+		if((y-1) > 0){
 		count++;
 		}
 
 	}
 	if((x-2) > 0){
-		if((y+2) < 9){
+		if((y+1) < 9){
 		count++;
 		}
-		if((y-2) > 0){
+		if((y-1) > 0){
 		count++;
 		}
 		
 	}
 	if((y+2) < 9){
-		if((x+2) < 9){
+		if((x+1) < 9){
 		count++;
 		}
-		if((x-2) > 0){
+		if((x-1) > 0){
 		count++;
 		}
 		
 	}
 	if((y-2) > 0){
-		if((x+2) < 9){
+		if((x+1) < 9){
 		count++;
 		}
-		if((x-2) > 0){
+		if((x-1) > 0){
 		count++;
 		}
 		
