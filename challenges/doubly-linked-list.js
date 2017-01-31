@@ -16,46 +16,43 @@ function Node(val) {
 /*
 Adds a node to the end of the list
  */
-// LinkedList.prototype.add = function(val) {
-//   if (this.head === null) {
-//     this.head = new Node(val);
-//     this.tail = this.head
-//   }
+LinkedList.prototype.add = function(val) {
+  const node = new Node(val);
 
-//   let curr = this.head;
-//   while (curr.next !== null) {
-//     if (curr.next === null) {
-//       curr.next = new Node(val);
-//       curr.next.prev = curr;
-//       this.tail = curr.next;
-//       break;
-//     }
-//     curr = curr.next;
-//   }
-// };
+  if (!this.head === null) {
+    this.head = this.tail = node;
+  } else {
+    this.tail.next = node;
+    node.prev = this.tail;
+    this.tail = node;
+  }
+};
 
 /*
 Removes the first node with the inputted value
  */
-// LinkedList.prototype.remove = function(val) {
-//   let curr = this.head;
+LinkedList.prototype.remove = function(val) {
+  let curr = this.head;
 
-//   if (curr.val === val) {
-//     curr.next = this.head;
-//     curr.next.prev = null;
-//   }
-
-//   while (curr !== null) {
-//     if (curr.val === val) {
-//       if (curr = this.tail) {
-//         this.tail = this.prev;
-//         this.prev.next = null;
-//       }
-//       curr.next.prev = curr.prev
-//       curr.prev.next = curr.next;
-//     }
-//     curr = curr.next;
-//   }
-// };
+  while (curr) {
+    if (val === curr.val) {
+      if (curr === this.head && curr === this.tail) {
+        this.head = this.tail = null;
+      } else if (curr === this.head) {
+        curr.next.prev = null;
+        this.head = curr.next;
+      } else if (curr === this.tail) {
+        curr.prev.next = null;
+        this.tail = curr.prev;
+      } else {
+        curr.prev.next = curr.next;
+        curr.next.prev = curr.prev;
+      }
+      return;
+    }
+    curr = curr.next;
+  }
+  return "No values matched, so nothing removed.";
+};
 
 module.exports = LinkedList;
