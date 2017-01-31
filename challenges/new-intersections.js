@@ -17,8 +17,26 @@
  * 	 
  */
 
-function newIntersections(x, y){
+// What we have: arr x = [old x coordinates], arr y = [old y coordinates]
 
+function newIntersections(x, y){
+  let count = 0;
+  let arr = [];
+  for (let i = 0; i < x.length; i += 1) {
+    if (x[i] === x[i + 1]) {
+      for (let j = Math.min(y[i], y[i + 1]); j < Math.max(y[i], y[i + 1]); j += 1) {
+        arr.push(j);
+      }
+    }
+  }
+  for (let k = 0; k < y.length; k += 1) {
+    if (y[k] === y[k + 1]) {
+      if (arr.indexOf(y[k])) {
+        count += 1;
+      }
+    }
+  }
+  return count;
 }
 
 module.exports = newIntersections;
