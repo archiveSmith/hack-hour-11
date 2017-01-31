@@ -11,6 +11,7 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  // BRUTE FORCE
   const start = str.replace(/\D/g, '').split('').map(x => parseInt(x));
   const up2Right1 = start.map((n, i) => i ? n + 1 : n + 2);
   const right2Up1 = start.map((n, i) => i ? n + 2 : n + 1);

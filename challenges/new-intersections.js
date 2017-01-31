@@ -34,11 +34,19 @@ function newIntersections(x, y){
   let counter = 0;
 
   coords.forEach(coord => {
-    // check if there are matching x
-    const colinearsX = x.filter(point => coord[0] === point);
-    console.log(colinearsX);
+    let isAbove = false;
+    let isBelow = false;
+    let isRight = false;
+    let isLeft = false;
+    for (let i = 0; i < x.length; i++) {
+      if (coord[0] === x[i] && y[i] > coord[1]) isAbove = true;
+      if (coord[0] === x[i] && y[i] < coord[1]) isBelow = true;
+      if (coord[1] === y[i] && x[i] > coord[0]) isRight = true;
+      if (coord[1] === y[i] && x[i] < coord[0]) isLeft = true;
+    }
+    if (isAbove, isBelow, isRight, isLeft) counter++;
   });
-
+  return counter;
 }
 
 console.log(newIntersections([1, 3, 2, 2], [2, 2, 1, 3]));
