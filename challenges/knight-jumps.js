@@ -19,8 +19,7 @@ function knightjumps(str) {
   
   for (let i = 0; i < moves.length; i += 1) {
         let flag = false;
-        if (y + moves[i].top >= 0 || y + moves[i].top <= 7) flag = true;
-        if (x + moves[i].left >= 0 || x + moves[i].left <= 7) flag = true;
+        if (y + moves[i].top >= 0 && y + moves[i].top <= 7 && x + moves[i].left >= 0 && x + moves[i].left <= 7) flag = true;
         if (flag === true) answer += 1;
     }
 
