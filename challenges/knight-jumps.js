@@ -11,7 +11,23 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  const x = parseInt(str[0]);
+  const y = parseInt(str[2]);
 
+  if (x === 1) x = 8;
+  if (y === 1) y = 8;
+  if (x === 2) x = 7;
+  if (y === 2) y = 7;
+  if (x === 3) x = 6;
+  if (y === 3) y = 6;
+
+  if (x === 8 && y === 8) return 2;
+  else if (x === 7 && y === 8 || y === 7 && x === 8) return 3;
+  else if (x === 7 && y === 7) return 4;
+  else if (x === 6 && y === 8 || y === 6 && x === 8) return 4;
+  else if (x === 6 && y === 7 || y === 6 && x === 7) return 6;
+  else if (x > 0 && x < 7 && y > 0 && y < 7) return 8;
+  else return 0;
 }
 
 module.exports = knightjumps;
