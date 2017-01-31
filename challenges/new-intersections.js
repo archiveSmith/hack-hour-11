@@ -18,7 +18,16 @@
  */
 
 function newIntersections(x, y){
+  let arr = [];
+  x.forEach((val,i)=> arr.push([val,y[i]]))
+  arr.sort((a,b)=> a[0]+(a[1]/10) - b[0]+(b[1]/10))
+  return arr;
+  // x.forEach((val, index, arr)=> {
+  //   if(index !== arr.lastIndexOf(val)){}
+  // })
 
 }
+
+console.log(newIntersections([1, 3, 2, 2], [2, 2, 3, 1]))
 
 module.exports = newIntersections;
