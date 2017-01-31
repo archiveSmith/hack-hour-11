@@ -11,6 +11,7 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  // BRUTE FORCE
   const start = str.replace(/\D/g, '').split('').map(x => parseInt(x));
   const up2Right1 = start.map((n, i) => i ? n + 1 : n + 2);
   const right2Up1 = start.map((n, i) => i ? n + 2 : n + 1);
@@ -23,6 +24,17 @@ function knightjumps(str) {
   const moves = [up2Right1, right2Up1, right2Down1, down2Right1, down2Left1, left2Down1, left2Up1, up2Left1];
   return moves.filter(n => n[0] > 0 && n[0] < 9 && n[1] > 0 && n[1] < 9).length;
 }
+
+// MATHS
+// function knightjumps(str) {
+//   var x = reflect(+str[1]); // yet another way to parse integers, then reflect the coordinate
+//   var y = reflect(+str[3]);
+//   var x_distance = Math.max(3 - x, 0);
+//   var y_distance = Math.max(3 - y, 0);
+//   return 8 - distanceToValue(x_distance + y_distance);
+// }
+// function distanceToValue(d) { return d < 2 ? 2 * d : d + 2; }
+// function reflect(n) { return n > 4 ? 9 - n : n; }
 
 console.log(knightjumps("(7 4)"));
 
