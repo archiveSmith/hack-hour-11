@@ -8,10 +8,26 @@
 // For example: if str is "(4 5)" then your program should output 8 because the knight can move to 8 different spaces
 // from position x = 4 and y = 5.
 //  example input:
-// var str = "(4 5)"
+var str = "(8 5)"
 
 function knightjumps(str) {
-
+  let parse = [parseInt(str.slice(1,2)), parseInt(str.slice(3,4))]
+  
+  const changes = [
+[ 1, 2],
+[ 1, -2],
+[ 2, 1],
+[ 2, -1],
+[ -1, 2],
+[ -1, -2],
+[ -2, -1],
+[ -2, 1],
+  ]
+return changes.map((val)=> [val[0] += parse[0], val[1] += parse[1]])
+  .filter((val)=> (val[0] > 0 && val[0] <= 8 && val[1] > 0 && val[1] <= 8))
+  .length
 }
+
+console.log(knightjumps(str))
 
 module.exports = knightjumps;
