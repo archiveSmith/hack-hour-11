@@ -18,7 +18,29 @@
  */
 
 function newIntersections(x, y){
+  // limits
+  const upper = Math.max.apply(null, y);
+  const lower = Math.min.apply(null, y);
+  const right = Math.max.apply(null, x);
+  const left = Math.min.apply(null, x);
+  // all coords within limit
+  const coords = [];
+  for (let i = lower; i < upper; i++) {
+    for (let j = left; j < right; j++) {
+      coords.push([i, j]);
+    }
+  }
+  
+  let counter = 0;
+
+  coords.forEach(coord => {
+    // check if there are matching x
+    const colinearsX = x.filter(point => coord[0] === point);
+    console.log(colinearsX);
+  });
 
 }
+
+console.log(newIntersections([1, 3, 2, 2], [2, 2, 1, 3]));
 
 module.exports = newIntersections;
