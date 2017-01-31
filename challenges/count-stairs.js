@@ -21,5 +21,5 @@ function countStairs(n) {
 
 }
 
-console.log(countStairs(5))
+// console.log(countStairs(5))
 module.exports = countStairs;
