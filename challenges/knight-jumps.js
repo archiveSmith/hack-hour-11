@@ -11,7 +11,31 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+    if (!str) return false;
+    let jumps = 0;
+    let coords = str.match(/\d/g);
+    if (coords.length > 2) return false;
+    coords[0] = parseInt(coords[0]);
+    coords[1] = parseInt(coords[1]);
+
+    if (coords[0] + 2 <= 8 && coords[1] + 1 <= 8) jumps++;
+    if (coords[0] + 2 <= 8 && coords[1] - 1 >= 1) jumps++;
+    if (coords[0] - 2 >= 1 && coords[1] + 1 <= 8) jumps++;
+    if (coords[0] - 2 >= 1 && coords[1] - 1 >= 1) jumps++;
+
+    console.log('so far jumps is at ' + jumps);
+
+    if (coords[0] + 1 <= 8 && coords[1] + 2 <= 8) jumps++;
+    if (coords[0] + 1 <= 8 && coords[1] - 2 >= 1) jumps++;
+    if (coords[0] - 1 >= 1 && coords[1] + 2 <= 8) jumps++;
+    if (coords[0] - 1 >= 1 && coords[1] - 2 >= 1) jumps++;
+    
+    return jumps;
+    
 
 }
+
+// console.log(knightjumps('(1 1)'))
+
 
 module.exports = knightjumps;
