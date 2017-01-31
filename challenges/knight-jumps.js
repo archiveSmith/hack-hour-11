@@ -11,7 +11,23 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  let [x, y] = str.slice(1, 4).split(' ');
+  let oneSpace = 1, twoSpace = 2, possible = 0;
+  x = parseInt(x), y = parseInt(y);
 
+  for(let i = 0; i < 4; i++){
+    valid(x + twoSpace, y + oneSpace) && possible++;
+    valid(y + twoSpace, x + oneSpace) && possible++;
+
+    oneSpace *= -1;
+    if(i % 2 === 1) twoSpace *= -1;
+  }
+
+  function valid(x, y){
+    return x <= 8 && x >= 1 && y <= 8 && y >= 1;
+  }
+
+  return possible;
 }
 
 module.exports = knightjumps;
