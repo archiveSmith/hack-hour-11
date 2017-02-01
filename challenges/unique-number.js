@@ -8,8 +8,16 @@
  * Complete the challenge in O(n) time
  * Complete the challenge in O(1) space
  *
+ loop through each one and put into cache, if you find another, delete it from cache, return 
+ whatever is in cache
  */
 function uniqueNumber(array) {
+	const cache = {};
+	array.forEach((num) => {
+		if (cache.hasOwn)
+	})
+
+
 
 }
 
