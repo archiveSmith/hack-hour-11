@@ -18,6 +18,7 @@
  */
 
 function newIntersections(x, y){
+<<<<<<< HEAD
 	let arrLength = x.length;
   let count = 0;
 	let maxX = Math.max(...x);
@@ -29,6 +30,9 @@ function newIntersections(x, y){
       if (x.includes(x[i]) && y[k] < k)
     }
   }
+=======
+
+>>>>>>> 4e4d9f1583d9b957be7e3ec443d3521ad1cd4cc6
 }
 
 module.exports = newIntersections;
