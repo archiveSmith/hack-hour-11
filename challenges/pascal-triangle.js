@@ -33,7 +33,7 @@
 */
 
 function pascalTriangle(numRows) {
-  if(numRows === 1) return [1];
+  if(numRows === 1) return [[1]];
   if (numRows === undefined || numRows === 0) return [];
   let ans = [[1]];
   let count = 0;
