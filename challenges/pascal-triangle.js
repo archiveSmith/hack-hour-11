@@ -32,7 +32,7 @@
   ]
 */
 
-function pascalTriangle(numRows, containerArray = []) {
+function pascalTriangle(numRows, containerArray = [[1]]) {
   if(numRows === 1) return containerArray;
   if(containerArray[0] === undefined) containerArray = [[1]]
   let firstInt;
