@@ -11,9 +11,19 @@
 // var str = "(4 5)"
 function knightjumps(str) {
 	let count = 0;
+	let temp;
+	let other;
 	let x = Number(parseInt(str.replace(/[^1-9]/g, '')).toString().split('')[0]);
 	let y = Number(parseInt(str.replace(/[^1-9]/g, '')).toString().split('')[1]);
-   
+   for(let i = 0; i < 2; i++){
+   	if(i === 0) temp = x, other = y;
+   	if(i === 1) temp = y, other = x;
+
+
+
+   }
+
+
 	if((x+2) < 9){
 		if((y+1) < 9){
 		count++;
