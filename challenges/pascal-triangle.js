@@ -33,7 +33,36 @@
 */
 
 function pascalTriangle(numRows) {
+  if(numRows === 1) return [1];
+  if (numRows === undefined || numRows === 0) return [];
+  let ans = [[1]];
+  let count = 0;
 
+  const pascal = (num) => {
+    let temp = [1]
+    if(num === 0) temp.push(1);
+    
+    for (let i = 0; i < num; i += 1) {
+      if (i + 1 >= num) temp.push(1);
+      else temp.push(ans[num][i] + ans[num][i + 1]);
+    }
+    
+    ans.push(temp)
+    if (count + 1 >= numRows) return ans;
+    
+    else {
+      count += 1;
+      pascal(count);
+    }
+    
+  }
+
+  pascal(count)
+  
+  let temp = ans.shift();
+  ans.shift();
+  ans.unshift([1])
+  return ans;
 }
 
 module.exports = pascalTriangle;
