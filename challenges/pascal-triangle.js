@@ -32,8 +32,24 @@
   ]
 */
 
-function pascalTriangle(numRows) {
-
+function pascalTriangle(numRows, containerArray = []) {
+  if(numRows === 1) return containerArray;
+  if(containerArray[0] === undefined) containerArray = [[1]]
+  let firstInt;
+  let secondInt;
+  let lastArr = containerArray[containerArray.length - 1]
+  let populatedArr = [];
+  for(let i = 0; i < lastArr.length; i++){
+    firstInt = i;
+    secondInt = i + 1;
+    if(i === 0) populatedArr.push(1);
+    if(i === lastArr.length - 1) populatedArr.push(1);
+    else{
+      populatedArr.push(lastArr[firstInt] + lastArr[secondInt])
+    }
+  }
+  containerArray.push(populatedArr)
+  return pascalTriangle(--numRows, containerArray)
 }
 
 module.exports = pascalTriangle;
