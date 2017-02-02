@@ -43,8 +43,37 @@ expectations = {
 
 
 function getPINs(observed) {
+  const vars = {
+    0: [0, 8],
+    1: [1, 2, 4],
+    2: [1, 2, 3, 5],
+    3: [2, 3, 6],
+    4: [1, 4, 5, 7],
+    5: [2, 4, 5, 6, 8],
+    6: [3, 5, 6, 9],
+    7: [4, 7, 8],
+    8: [0, 5, 7, 8, 9],
+    9: [6, 8, 9]
+  }
+  const numsToCheck = observed.split('');
+  const len = numsToCheck.length;
+  let result = [''];
 
+  for (let i = 0; i < len; i += 1) {
+    const newRes = [];
+    const possNums = vars[numsToCheck[i]]
+    possNums.forEach(num => {
+      result.forEach(combo => {
+        newRes.push(combo.concat(num));
+      });
+    });
+    result = newRes;
+  }
+
+  return result;
 }
 
 
 module.exports = getPINs
+
+// console.log(getPINs('36936936'));
