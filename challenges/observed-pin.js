@@ -41,7 +41,6 @@ expectations = {
 
 
 
-
 function getPINs(observed) {
 const options = {
 	'1': ['1','2','4'],
@@ -53,24 +52,40 @@ const options = {
 	'7': ['4','7','8'],
 	'8': ['5','7','8','9','0'],
 	'9': ['6','8','9'],
-	'0': ['8']
+	'0': ['0','8']
 }
 let answer = [];
 let obArr = observed.split('');
+let str= [];
 for(let i = 0; i < obArr.length; i++){
 	obArr[i] = options[obArr[i]];
+	answer.push(obArr[0][i]);
+}
+let count = 1;
+while(count < obArr.length){
+  let temp = [];
+  for(let k = 0; k < answer.length; k++){
+  for(let i = 0; i <obArr[count].length; i++){
+    let a = answer[k] + obArr[count][i];
+    //console.log(answer);
+    temp.push(a);
+      
+    }
+    
+  }
+answer = temp;
+
+
+count++;
 }
 
-for(let i = 0; i < obArr[0].length; i++){
-  for(let j = 0; j < obArr[1].length; j++){
-    for(let k = 0; k < obArr[2].length; k++){
-      answer.push(obArr[0][i] + obArr[1][j] + obArr[2][k]);
-    }
-  }
-  
-}
+
+
+
 
 return answer;
+
+
 }
 
 module.exports = getPINs
