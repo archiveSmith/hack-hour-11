@@ -10,11 +10,21 @@ findInOrderedSet(nums, 2);  -> false
  */
 
 
-function findInOrderedSet(arr, target) {
-  let obj = {};
-  if(arr[arr.length/2]> target){
-    console.log(arr.slice(0, arr.length/2))
-  }
+// function findInOrderedSet(arr, target) {
+//   for(let i = 0; i<arr.length; i++){
+//     if(arr[i]===target)return true;
+//   }
+// }
+
+function findInOrderedSet(arr, target){
+  let mid = Math.floor(arr.length/2);
+  if(arr[mid] ===target)return true;
+  if(arr.length ===1)return false;
+
+  if(arr[mid] > target)
+    return findInOrderedSet(arr.slice(0, mid),target);
+  if(arr[mid] < target)
+    return findInOrderedSet(arr.slice(mid+1), target);
 }
 
 

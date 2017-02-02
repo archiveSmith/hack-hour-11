@@ -43,8 +43,29 @@ expectations = {
 
 
 function getPINs(observed) {
-
+	let finalStr = '';
+  let obj = {
+			"1":["1","2","4"],
+			"2":["1","2","3","5"],
+			"3":["1","3","5"],
+			"4":["4","1","5","7"],
+			"5":["5","2","6","8"],
+			"6":["6","3","5","9"],
+			"7":["7","4","8"],
+			"8":["8","5","7","9"],
+			"9":["9","6","8"],
+			"0":["0","8"],
+		}
+	let tempArr = observed.split('');
+	for(let i=0; i<tempArr.length; i++){
+    obj[tempArr[i]].forEach((valArr)=>{
+     return tempArr[i]+=valArr;
+    })
+  }
+  return tempArr;
+	
 }
+
 
 
 module.exports = getPINs

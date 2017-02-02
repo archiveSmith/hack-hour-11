@@ -12,8 +12,12 @@
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-function anagrams(string) {
-
+function anagrams(string, added = '', store = {}) {
+if(!string)store[added] = true
+else string.split('').forEach((char,index)=>{
+  anagrams(string.slice(0,index).concat(string.slice(index+1)), added.concat(char), store)
+})
+return Object.keys(all)
 }
 
 module.exports = anagrams;
