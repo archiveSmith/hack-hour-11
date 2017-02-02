@@ -43,8 +43,36 @@ expectations = {
 
 
 function getPINs(observed) {
+	var adjacents = {
+		1: [2,4],
+		2: [1,3,5],
+		3: [2,6],
+		4: [1,5,7],
+		5: [2,4,6,8],
+		6: [3,5,9],
+		7: [4,8],
+		8: [5,7,9,0],
+		9: [6,8],
+		0: [8]
+	};
 
+	var combos = [];
+
+	for (var i = 0; i < observed.length; i++) {
+		combos.push([]);
+		for (var p = 0; p < observed.length; p++) {
+			combos[i].push([]);
+			var digit = parseInt(observed[p], 10);
+
+			for (var j = 0; j < adjacents[digit].length; j++) {
+				combos[i][p][j] = adjacents[digit][j];
+			}
+		}
+	}
+
+	return combos;
 }
 
+console.log(getPINs("1234"));
 
 module.exports = getPINs
