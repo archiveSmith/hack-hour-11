@@ -30,11 +30,12 @@
     [1,4,6,4,1],
     [1,5,10,10,5,1]
   ]
+  
 */
 
 function pascalTriangle(numRows) {
   const rows = [];
-  for (let i = 0; i <= numRows; i++){
+  for (let i = 0; i < numRows; i++){
     let row = Math.pow(11,i).toString();
     let newRow = row.split("");
     for (let i = 0; i < newRow.length; i++){
@@ -44,8 +45,9 @@ function pascalTriangle(numRows) {
   }
   return rows
 
+
 }
 
-console.log(pascalTriangle(5))
+console.log(pascalTriangle(6))
 
 module.exports = pascalTriangle;
