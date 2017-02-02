@@ -11,23 +11,21 @@
 var str = "(8 5)"
 
 function knightjumps(str) {
-  let parse = [parseInt(str.slice(1,2)), parseInt(str.slice(3,4))]
+  let parse = [parseInt(str[1]), parseInt(str[3])]
   
   const changes = [
-[ 1, 2],
-[ 1, -2],
-[ 2, 1],
-[ 2, -1],
-[ -1, 2],
-[ -1, -2],
-[ -2, -1],
-[ -2, 1],
+    [ 1, 2],
+    [ 1, -2],
+    [ 2, 1],
+    [ 2, -1],
+    [ -1, 2],
+    [ -1, -2],
+    [ -2, -1],
+    [ -2, 1],
   ]
-return changes.map((val)=> [val[0] += parse[0], val[1] += parse[1]])
-  .filter((val)=> (val[0] > 0 && val[0] <= 8 && val[1] > 0 && val[1] <= 8))
-  .length
+  return changes.map((val)=> [val[0] += parse[0], val[1] += parse[1]])
+    .filter((val)=> (val[0] > 0 && val[0] <= 8 && val[1] > 0 && val[1] <= 8))
+    .length
 }
-
-console.log(knightjumps(str))
 
 module.exports = knightjumps;
