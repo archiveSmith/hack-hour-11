@@ -59,7 +59,9 @@ let obArr = observed.split('');
 let str= [];
 for(let i = 0; i < obArr.length; i++){
 	obArr[i] = options[obArr[i]];
-	answer.push(obArr[0][i]);
+}
+for(let i = 0; i < obArr[0].length; i++){
+  answer.push(obArr[0][i]);
 }
 let count = 1;
 while(count < obArr.length){
@@ -67,25 +69,14 @@ while(count < obArr.length){
   for(let k = 0; k < answer.length; k++){
   for(let i = 0; i <obArr[count].length; i++){
     let a = answer[k] + obArr[count][i];
-    //console.log(answer);
     temp.push(a);
-      
     }
-    
   }
 answer = temp;
-
-
 count++;
 }
-
-
-
-
-
 return answer;
 
 
 }
-
 module.exports = getPINs
