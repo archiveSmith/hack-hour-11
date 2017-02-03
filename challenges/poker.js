@@ -1,6 +1,6 @@
 /*Build a function that takes in two arrays of five elements, with each
-* array representing a player's hand and each element
-* representing a card from a standard deck of cards:
+* array repcountenting a player's hand and each element
+* repcountenting a card from a standard deck of cards:
 * 52 cards, 2 - Ace, NO suits. (Jack = 11, Queen = 12, King = 13, Ace = 14)
 *
 * The function should return either the string "Player 1 wins", "Player 2 wins", or "Draw"
@@ -19,7 +19,74 @@
 */
 
 function poker(hand1, hand2) {
+  const res1 = checker(hand1);
+  const res2 = checker(hand2);
+  console.log(res1, res2);
 
+  if (res1[0] > res2[0]) return "Player 1 wins";
+  if (res2[0] > res1[0]) return "Player 2 wins";
+  if (res1[0] === res2[0]) {
+    if (res1[1] > res2[1]) return "Player 1 wins";
+    if (res2[1] > res1[1]) return "Player 2 wins";
+    if (res1[0] === 6) {
+      if (res1[2] > res2[2]) return "Player 1 wins";
+      if (res2[2] > res1[2]) return "Player 2 wins";
+      else return "Draw";
+    }
+    else return "Draw";
+  }
+
+  function checker(hand) {
+    const count = {};
+    const res = [];
+    let FoaK = false;
+    let FH = false;
+    let ToaK = false;
+    let TP = false;
+    hand.forEach((card) => {
+      if (!count[card]) count[card] = 1;
+      else count[card] += 1;
+    });
+    for (card in count) {
+      if (count[card] === 4) {
+        res.push([7, card]);
+        FoaK = true;
+      }
+      if (count[card] === 3) {
+        res.push([4, card]);
+        ToaK = true;
+      }
+      if (count[card] === 2) {
+        res.push([2, card]);
+        TP = true;
+      }
+    }
+    if (ToaK === true && TP === true) {
+      if (res[0][0] === 4) res.unshift([6, res[0][1], res[1][1]]);
+      else res.unshift([6, res[1][1], res[0][1]]);
+      FH = true;
+    }
+    else if (FoaK === false && FH === false) {
+      let sorted = hand.sort((a, b) => a - b);
+      let count = 0;
+      for (let i = 1; i < 5; i += 1) {
+        if (hand[i] - hand[i - 1] === 1) count += 1;
+      }
+      if (count === 4) res.push([5, hand[4]])  
+    }
+    if (!res.length) return [1, hand.sort((a, b) => a - b).pop()];
+
+    return res.reduce((best, cur) => {
+      if (best[0] > cur[0]) return best;
+      else if (best[0] < cur[0]) return cur;
+      else {
+        if (best[1] >= cur[1]) return best;
+        else return cur;
+      }
+    });
+  }
 }
 
 module.exports = poker;
+
+// console.log(poker([1, 2, 3, 4, 7], [1, 2, 3, 4, 6]));
