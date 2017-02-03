@@ -44,7 +44,7 @@ function poker(hand1, hand2) {
     if (values[computeBest(hand1)[0]] === values[computeBest(hand2)[0]]){
         if (computeBest(hand1)[1] > computeBest(hand2)[1]) return 'Player 1 wins';
         if (computeBest(hand1)[1] < computeBest(hand2)[1]) return 'Player 2 wins';
-        if (computeBest(hand1)[1] === computeBest(hand2)[1]) return 'DRAW!';
+        if (computeBest(hand1)[1] === computeBest(hand2)[1]) return 'Draw';
     };
 
     function computeBest(hand) {
