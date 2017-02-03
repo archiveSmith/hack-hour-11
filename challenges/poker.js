@@ -42,11 +42,17 @@ if(findPair(hand2)) hand2Res = 'pair';
 if(findHighCard(hand1) > findHighCard(hand2) && !hand1Res) hand1Res = 'high card';
 if(findHighCard(hand1) < findHighCard(hand2) && !hand2Res) hand2Res = 'high card';
 
-console.log(hand1Res, hand2Res)
+if(!hand1Res && hand2Res) return "Player 2 wins";
+if(hand1Res && !hand2Res) return "Player 1 wins";
+if(!hand1Res && !hand2Res) return "Draw";
 if(winOrder.indexOf(hand1Res) === winOrder.indexOf(hand2Res)) return "Draw";
 if(winOrder.indexOf(hand1Res) < winOrder.indexOf(hand2Res)) return "Player 1 wins";
 if(winOrder.indexOf(hand1Res) > winOrder.indexOf(hand2Res)) return "Player 2 wins";
 }
+
+
+
+
 
 function findHighCard(arr){
 	return Math.max(...arr);
