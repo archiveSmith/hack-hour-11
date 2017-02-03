@@ -10,34 +10,48 @@
  * How would you solve this problem if a temporary buffer is not allowed?
  */
 
-
-
-function deleteDups(head) {
-	if(head === null) return 'LinkedList is empty'
-  let curr = head;
-  let prev = null;
-  let temp = null; 
-  let ans = false;
-  while(curr.next !== null){
-  	temp = head;
-  	while(temp !== curr){
-  		if(curr.value != temp.value){
-  			temp= temp.next;
-  			ans = false;
-  		}else{
-  			prev.next = curr.next;
-  			curr=prev.next;
-  			flag = true;
-  			return flag;
-  		}
-  }
-  if(ans === false){
-  	prev = curr;
-  	curr = curr.next
-  }
+function deleteDups(head){
+	let curr= head; 
+	let previous;
+	while(curr && curr.next){
+		previous=curr;
+		while(previous.next){
+		if(curr.value === previous.next.value){
+			previous.next - previous.next.next;
+		}else{
+			previous = previous.next
+		}
+	}
+	curr= curr.next
+		}
 }
-return ans;
-}
+
+// function deleteDups(head) {
+// 	if(head === null) return 'LinkedList is empty'
+//   let curr = head;
+//   let prev = null;
+//   let temp = null; 
+//   let ans = false;
+//   while(curr.next !== null){
+//   	temp = head;
+//   	while(temp !== curr){
+//   		if(curr.value != temp.value){
+//   			temp= temp.next;
+//   			ans = false;
+//   		}else{
+//   			prev.next = curr.next;
+//   			curr=prev.next;
+//   			flag = true;
+//   			return flag;
+//   		}
+//   }
+//   if(ans === false){
+//   	prev = curr;
+//   	curr = curr.next
+//   }
+// }
+// return ans;
+// }
 
 
 module.exports = deleteDups;

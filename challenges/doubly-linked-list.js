@@ -16,39 +16,44 @@ function Node(val) {
 /*
 Adds a node to the end of the list
  */
-LinkedList.prototype.add = function (val) {}
-  if (this.head === null) {
-    let curr = new Node(val)
-    this.tail=curr;
-    this.head=curr;
+LinkedList.prototype.add = function (val) {
+  const node = newNode(val)
+  if (!this.head) {
+   this.head=this.tail=node;
   } else {
-    let curr = this.tail
-   if(curr.next === null){
-    curr.next = new Node(val);
-    curr.next.prev = curr;
-     curr = curr.next;
+    this.tail.next = node;
+    node.prev = this.tail;
+    this.tail = node;
    }
   }
-
-
+  
 /*
 Removes the first node with the inputted value
  */
 LinkedList.prototype.remove = function (val) {
   let curr = this.head;
-  if (curr.val === val) {
-    curr = curr.next;
-    this.head = curr;
-    this.prev = null;
-  } else {
-    while (curr.next !== null) {
-      if (curr.next.val === val) {
-        curr.next = curr.next.next;
-        cur.next.prev = curr;
-      }
+    while (curr) {
+      if (curr.val === val) {
+
+        if(curr === this.head && curr === this.tail){
+          this.head = this.tail = null;
+        }else if(curr = this.head){
+          curr.next.prev = null;
+          this.head =curr.next;
+        }else if(curr === this.tail){
+          curr.prev.next = null;
+          this.tail = curr.prev;
+        }else{
+          curr.prev.next = curr.next;
+          curr.next.prev = curr.prev;
+        }
+      return;
     }
+    curr= curr.nxt
+    }
+    return 'unable to remove unmatched value'
   }
   
-};
+
 
 module.exports = LinkedList;
