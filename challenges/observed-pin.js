@@ -56,7 +56,6 @@ const options = {
 }
 let answer = [];
 let obArr = observed.split('');
-let str= [];
 for(let i = 0; i < obArr.length; i++){
 	obArr[i] = options[obArr[i]];
 }
@@ -76,7 +75,6 @@ answer = temp;
 count++;
 }
 return answer;
-
 
 }
 module.exports = getPINs
