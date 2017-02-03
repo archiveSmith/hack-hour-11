@@ -38,8 +38,8 @@ function poker(hand1, hand2) {
   if(playerOne > playerTwo) return "Player 1 wins";
   else if(playerTwo > playerOne) return "Player 2 wins";
   else if(playerOne === playerTwo) {
-    if(hand1[4] > hand2[4]) return "Player 1 wins"
-    else if(hand2[4] > hand1[4]){
+    if(hand1[hand1.length - 3] > hand2[hand2.length - 3]) return "Player 1 wins"
+    else if(hand2[hand2.length - 3] > hand1[hand1.length - 3]){
       return "Player 2 wins"
     }
     else {
