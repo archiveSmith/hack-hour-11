@@ -19,6 +19,8 @@
 */
 
 function poker(hand1, hand2) {
+    console.log('hand1: ', hand1);
+    console.log('hand2: ', hand2);
     values = {
         'Four of a Kind': 7,
         'Full House': 6,
@@ -137,5 +139,5 @@ function poker(hand1, hand2) {
 }
 
 
-console.log(poker([2,4,4,4,4],[2,8,2,2,8]));
+console.log(poker([2,9,7,5,10],[2,3,6,10,13]));
 module.exports = poker;
