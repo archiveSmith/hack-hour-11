@@ -19,6 +19,33 @@
 */
 
 function poker(hand1, hand2) {
+  let playerOne = 0;
+  let playerTwo = 0;
+  hand1 = hand1.sort(function(a, b){
+    return a - b;
+  })
+  hand2 = hand2.sort(function(a, b){
+    return a - b;
+  })
+  for(let i = 0; i < hand1.length; i++) {
+    if(hand1[i] === hand1[i + 3]) playerOne+=2;
+    if(hand2[i] === hand2[i + 3]) playerTwo+=2;
+    else{
+    if(hand1[i] === hand1[i + 1]) playerOne++;
+    if(hand2[i] === hand2[i + 1]) playerTwo++;
+  }
+  }
+  if(playerOne > playerTwo) return "Player 1 wins";
+  else if(playerTwo > playerOne) return "Player 2 wins";
+  else if(playerOne === playerTwo) {
+    if(hand1[4] > hand2[4]) return "Player 1 wins"
+    else if(hand2[4] > hand1[4]){
+      return "Player 2 wins"
+    }
+    else {
+    return "Draw";
+  }
+  }
 
 }
 
