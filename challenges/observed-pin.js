@@ -56,25 +56,11 @@ function getPINs(observed) {
     0: ["0","8"]
   }
 
-  let obsStr = observed.toString();
-  let nums = [];
-  let final = [];
+  if (observed.length === 1) return chart[observed];
 
-  for (let i = 0; i < obsStr.length; i += 1) {
-    nums.push(chart[obsStr[i]])
-  }
-  console.log(nums)
+  const theRest = getPINs(observed.slice(1));
 
-  for (let i = 0; i < nums.length; i += 1) {
-            let tempArr = []
-    for (let k = 1; k < nums[i].length; k += 1) {
-      for (let j = 0; j < nums[i][k].length; j += 1) {
-          tempArr.push(nums[i][k])
-      }
-      return tempArr
-    }
-  }
-
+  return chart[observed[0]].reduce((accum, num) => [...accum, ...theRest.map(pins => num.concat(pins))], []);
 
 }
 
