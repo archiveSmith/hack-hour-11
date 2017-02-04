@@ -76,8 +76,31 @@ function getPINs(observed) {
 		
 	},[])
 
-	return newArr
+	//return newArr
 
+	const getPerms = (itemsArr, len = itemsArr.length) => {
+  const result = []; // permutations will be stored here
+  // this is our recursive function that will populate the result arr
+  function perm(items, cur = []) {
+    if (cur.length === len) return result.push(cur); // base condition to end the recursive call
+    let item;
+    for (let i = 0; i < items.length; i += 1) {
+      // get the ith item out of the array
+      item = items.splice(i, 1)[0];
+      // recurisve call with copy of items array and copy of cur with the item added
+      perm(items.slice(), cur.concat(item));
+      // place the item back in the array
+      items.splice(i, 0, item);
+    }
+  }
+  // use perm to populate result arr with possible permutations
+  perm(itemsArr);
+  return result;
+
+
+};
+
+return getPerms(newArr,observed.length)
 
 }
 
