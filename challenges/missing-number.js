@@ -26,6 +26,11 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  if (!Array || Array.length === 1) return false;
+  return (Array.reduce(function(a,b,i){return a+(i+1)}, Array.length+1) - Array.reduce(function(a,b){return a+b}, 0));
 }
+
+// console.log(missingNum([1,2,3,4]))
+
 
 module.exports = missingNum;
