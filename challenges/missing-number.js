@@ -27,12 +27,7 @@ Challange:
 */
 function missingNum(Array) {
   let sum = Array.reduce((acc, curr) => acc + curr);
-  let highest = -Infinity;
-  for (let i = 0; i < Array.length; i += 1) {
-    if (Array[i] > highest) {
-      highest = Array[i];
-    }
-  }
+  let highest = Math.max(...Array);
   for (let j = 1; j <= highest; j += 1) {
     sum -= j;
   }
