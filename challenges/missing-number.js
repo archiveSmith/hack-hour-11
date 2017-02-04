@@ -26,17 +26,20 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
-  if(!array) return undefined;
+  if (Array.length <= 1 || Array === 'undefined') return undefined;
 
-  let start = arr[0];
+  let sum = Array.reduce((acc, el) => {
+    return acc + el;
+  })
 
-  for (let i = 1; i < arr.length; i++) {
-    start++;
-    if (start !== arr[i]) {
-      return start;
-    }
+  let neededSum = 0;
+
+  for (let i = 1; i <= Array.length + 1; i += 1) {
+    neededSum += i;
   }
-  return false;
+
+  return neededSum - sum
+
 }
 
 module.exports = missingNum;
