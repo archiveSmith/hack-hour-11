@@ -21,17 +21,24 @@
 function poker(hand1, hand2) {
   const res1 = checker(hand1);
   const res2 = checker(hand2);
-  console.log(res1, res2);
 
-  if (res1[0] > res2[0]) return "Player 1 wins";
-  if (res2[0] > res1[0]) return "Player 2 wins";
-  if (res1[0] === res2[0]) {
-    if (res1[1] > res2[1]) return "Player 1 wins";
-    if (res2[1] > res1[1]) return "Player 2 wins";
+  if (res1[0][0] > res2[0][0]) return "Player 1 wins";
+  if (res2[0][0] > res1[0][0]) return "Player 2 wins";
+  if (res1[0][0] === res2[0][0]) {
+    if (res1[0][1] > res2[0][1]) return "Player 1 wins";
+    if (res2[0][1] > res1[0][1]) return "Player 2 wins";
     if (res1[0] === 6) {
-      if (res1[2] > res2[2]) return "Player 1 wins";
-      if (res2[2] > res1[2]) return "Player 2 wins";
+      if (res1[0][2] > res2[0][2]) return "Player 1 wins";
+      if (res2[0][2] > res1[0][2]) return "Player 2 wins";
       else return "Draw";
+    }
+    if (res1[1] && !res2[1]) return "Player 1 wins";
+    if (res2[1] && !res1[1]) return "Player 2 wins";
+    if (res1[1][1] > res2[1][1]) return "Player 1 wins";
+    if (res2[1][1] > res1[1][1]) return "Player 2 wins";
+    if (res1[1][1] === res2[1][1]) {
+      if (res1[2][1] > res2[2][1]) return "Player 1 wins";
+      if (res2[2][1] > res1[2][1]) return "Player 2 wins";
     }
     else return "Draw";
   }
@@ -60,6 +67,9 @@ function poker(hand1, hand2) {
         res.push([2, card]);
         TP = true;
       }
+      if (count[card] === 1) {
+        res.push([1, card]);
+      }
     }
     if (ToaK === true && TP === true) {
       if (res[0][0] === 4) res.unshift([6, res[0][1], res[1][1]]);
@@ -74,19 +84,20 @@ function poker(hand1, hand2) {
       }
       if (count === 4) res.push([5, hand[4]])  
     }
-    if (!res.length) return [1, hand.sort((a, b) => a - b).pop()];
 
-    return res.reduce((best, cur) => {
-      if (best[0] > cur[0]) return best;
-      else if (best[0] < cur[0]) return cur;
-      else {
-        if (best[1] >= cur[1]) return best;
-        else return cur;
+    res.sort((a, b) => {
+      if (a[0] === b[0]) {
+        const x = a[1];
+        const y = b[1];
+        return y < x ? -1 : y > x ? 1 : 0;
       }
+      return b[0] - a[0]
     });
+    // console.log(res);
+    return res;
   }
 }
 
 module.exports = poker;
 
-// console.log(poker([1, 2, 3, 4, 7], [1, 2, 3, 4, 6]));
+// console.log(poker([1, 1, 2, 2, 6], [1, 1, 2, 2, 8]));
