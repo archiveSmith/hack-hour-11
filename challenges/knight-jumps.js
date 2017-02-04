@@ -11,41 +11,48 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-  const coor = str.match(/[0-9]/g).map((ele) => parseInt(ele));
-  const x = coor[0];
-  const y = coor[1];
-  let count = 0;
+  // const coor = str.match(/[0-9]/g).map((ele) => parseInt(ele));
+  // const x = coor[0];
+  // const y = coor[1];
+  // let count = 0;
 
-  if (x > 8 || y > 8) return 0;
-  // Checking top
-  if (y + 2 < 9 && x + 2 < 9) {
-    count += 2;
-  } else if ((y + 2 < 9 && x + 1 < 9) || (y + 1 < 9 && x + 2 < 9)) {
-    count += 1;
+  // if (x > 8 || y > 8) return 0;
+  // // Checking top
+  // if (y + 2 < 9 && x + 2 < 9) {
+  //   count += 2;
+  // } else if ((y + 2 < 9 && x + 1 < 9) || (y + 1 < 9 && x + 2 < 9)) {
+  //   count += 1;
+  // }
+
+  //   // Checking right
+  // if (y + 2 < 9 && x - 2 < 9) {
+  //   count += 2;
+  // } else if ((y - 1 < 9 && x + 2 < 9) || (y - 2 < 9 && x + 1 < 9)) {
+  //   count += 1;
+  // }
+
+  //   // Checking bottom
+  // if (y - 2 < 9 && x - 2 < 9) {
+  //   count += 2;
+  // } else if ((y - 2 < 9 && x - 1 < 9) || (y - 1 < 9 && x - 2 < 9)) {
+  //   count += 1;
+  // }
+
+  //   // Checking left
+  // if (y + 2 < 9 && x - 2 < 9) {
+  //   count += 2;
+  // } else if ((y + 2 < 9 && x - 1 < 9) || (y + 1 < 9 && x -2 < 9)) {
+  //   count += 1;
+  // }
+
+  // return count;
+  let x = +str[1];
+  let y = 1*str[3];
+  let spaces = 0;
+
+  if (x - 1 >= 1) {
+    if (y - 2)
   }
-
-    // Checking right
-  if (y + 2 < 9 && x - 2 < 9) {
-    count += 2;
-  } else if ((y - 1 < 9 && x + 2 < 9) || (y - 2 < 9 && x + 1 < 9)) {
-    count += 1;
-  }
-
-    // Checking bottom
-  if (y - 2 < 9 && x - 2 < 9) {
-    count += 2;
-  } else if ((y - 2 < 9 && x - 1 < 9) || (y - 1 < 9 && x - 2 < 9)) {
-    count += 1;
-  }
-
-    // Checking left
-  if (y + 2 < 9 && x - 2 < 9) {
-    count += 2;
-  } else if ((y + 2 < 9 && x - 1 < 9) || (y + 1 < 9 && x -2 < 9)) {
-    count += 1;
-  }
-
-  return count;
 }
 
 module.exports = knightjumps;
