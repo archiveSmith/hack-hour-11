@@ -33,6 +33,9 @@
 */
 
 function pascalTriangle(numRows) {
+  if (!numRows || numRows < 1) {
+    return [];
+  }
   let result = [];
 
   for (let i = 0; i <= numRows; i += 1) {

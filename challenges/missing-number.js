@@ -27,6 +27,9 @@ Challange:
 */
 
 function missingNum(Array) {
+  if (!Array || Array.length === 0) {
+    return undefined;
+  }
   const max = Array.length + 1;
   for (let i = 1; i <= max; i += 1) {
     if (Array.indexOf(i) === -1) {

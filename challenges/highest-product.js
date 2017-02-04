@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-  if (!array || array.length<3){
+  if (!array || array.length < 3){
     return 0
   }
   let allPos;
