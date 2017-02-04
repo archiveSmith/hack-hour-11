@@ -26,6 +26,19 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+	Array = Array.sort(function(a,b){
+		return a - b;
+	});
+
+	for (var i = 0; i < Array.length - 1; i++) {
+		if (Array[i + 1] > Array[i] + 1) {
+			return Array[i + 1] - 1;
+		}
+	}
 }
+
+// var a = [5,3,7,1,8,2,6];
+
+// console.log(missingNum(a));
 
 module.exports = missingNum;
