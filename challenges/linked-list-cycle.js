@@ -25,7 +25,7 @@
  * Challenge 2: Do this in constant space
  * Challenge 3: Do not mutate the original nodes in any way
  *
- */
+ *///
 
 var Node = function(value) {
   this.value = value;

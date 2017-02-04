@@ -16,7 +16,7 @@
 * BONUS: Account for suits and add in Flush & Straight Flush/Royal Flush.
 *
 * Example: poker([3,5,5,5,2], [4,6,7,8,8]) -> "Player 1 wins"
-*/
+*///
 
 function poker(hand1, hand2) {
 

@@ -2,7 +2,7 @@
   Construct Pascal's Triangle up to n levels deep, starting from n = 1. Each row
   is represented as an array of numbers.
 
-  https://en.wikipedia.org/wiki/Pascal%27s_triangle
+  https://en.wikipedia.org/wiki/Pascal%27s_triangle//
 
   e.g.
   pascalTriangle(1):

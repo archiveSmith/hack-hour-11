@@ -30,7 +30,7 @@ LinkedList.prototype.add = function(val) {
 
 /*
 Removes the first node with the inputted value
- */
+ *///
 LinkedList.prototype.remove = function(val) {
   let curr = this.head;
 

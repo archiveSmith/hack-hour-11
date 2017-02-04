@@ -14,7 +14,7 @@
  *                                          [9, 6, 3]  ]
  *
  * BONUS: Do this in place
- */
+ *///
 
 function rotateGrid(grid, n) {
 let tempArr = [];

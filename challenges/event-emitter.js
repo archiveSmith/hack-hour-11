@@ -19,7 +19,7 @@
  * - If `obj.trigger` is called with additional arguments, pass those to the
  *   listeners.
  * - It is not necessary to write a way to remove listeners.
- */
+ *///
 
 function EventEmitter() {
 this.listeners = [];

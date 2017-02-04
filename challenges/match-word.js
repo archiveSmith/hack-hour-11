@@ -5,7 +5,7 @@
 // matchWord('IF()()fi[]');  -> true        (should be case-insensitive)
 // matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ] 
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
-// matchWord('');  -> true
+// matchWord('');  -> true//
 
 function matchWord(str) {
 strClean = str.toLowerCase().replace(/\W|_/g, " ")

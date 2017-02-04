@@ -11,7 +11,7 @@
  * BONUS: 
  * Complete in O(n) time and O(n) space 
  *
- */
+ *///
 
 function mergeArrays(arr1, arr2) {
 arrMerge = arr1.concat(arr2);

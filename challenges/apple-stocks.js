@@ -10,7 +10,7 @@
  *  and 1 sale of 1 Apple stock yesterday
  *
  *  Return 0 if no profit is possible OR if input is invalid.
- */
+ *///
 
 function bestProfit(stock_prices_yesterday) {
   if (!stock_prices_yesterday) {
