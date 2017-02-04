@@ -26,6 +26,18 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  if (!Array.length) return undefined;
+  // find range of array
+  const range = Array.length + 1;
+  // find triangular sum based on range
+  const expectedSum = (range * (range  + 1)) / 2;
+  // find actual sum of Array
+  const sum = Array.reduce((a, c) => a + c);
+  // missing num is difference
+  return expectedSum - sum;
 }
+
+const arr = [2, 3, 1, 5, 8, 4, 7];
+console.log(missingNum(arr));
 
 module.exports = missingNum;
