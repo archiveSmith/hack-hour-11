@@ -30,11 +30,11 @@ function missingNum(Array) {
   // for the current integer (array[i]), if the value at the following index array[i + 1] is not equivalent to array[i] + 1, return array[i] + 1.
   // otherwise, return undefined;
   for (let i = 0; i < Array.length - 1; i++) {
-    if (Array[i] + 1 !== Array[i + 1]) return Array[i] + 1;
+    if (Array.indexOf(Array[i] + 1) === -1) return Array[i] + 1;
   }
   return undefined;
 }
 
-console.log(missingNum([1, 2, 3, 5]));
+console.log(missingNum([2, 1, 3, 5]));
 
 module.exports = missingNum;
