@@ -26,9 +26,17 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
-  let sum = 100000 * (1 + 100000) / 2;
-  array.forEach((num) => sum -= num);
-  return sum;
+  if(!array) return undefined;
+
+  let start = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    start++;
+    if (start !== arr[i]) {
+      return start;
+    }
+  }
+  return false;
 }
 
 module.exports = missingNum;
