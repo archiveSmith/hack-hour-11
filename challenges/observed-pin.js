@@ -39,11 +39,42 @@ expectations = {
 
 */
 
-
-
-
 function getPINs(observed) {
 
+  const len = observed.length;
+  const combos = [];
+
+  function perms(str, curr = '') {
+    if (curr.length === len) return combos.push(curr);
+
+    let num;
+
+    for (let i = 0; i < str.length; i += 1) {
+      
+      //item = arr.splice(i, 1)[0];
+
+      num = str.slice(i, i + 1)[0];
+      // if (num === '8') {
+
+      // }
+
+      str = str.slice(0, i) + str.slice(i + 1);
+
+
+      // num = str[0];
+
+      //perms(str.slice(), curr.concat(item));
+      perms(str.slice(), curr.slice() + num);
+
+      //str = num + str.slice();
+      //str.splice(i, 0, item);
+      str = str.slice(0, i) + item + str.slice(i);
+    }
+  }
+
+  perms(observed);
+
+  return combos;
 }
 
 
