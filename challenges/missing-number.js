@@ -26,6 +26,15 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  // iterate through the array
+  // for the current integer (array[i]), if the value at the following index array[i + 1] is not equivalent to array[i] + 1, return array[i] + 1.
+  // otherwise, return undefined;
+  for (let i = 0; i < Array.length - 1; i++) {
+    if (Array[i] + 1 !== Array[i + 1]) return Array[i] + 1;
+  }
+  return undefined;
 }
+
+console.log(missingNum([1, 2, 3, 5]));
 
 module.exports = missingNum;
