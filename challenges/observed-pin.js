@@ -43,8 +43,33 @@ expectations = {
 
 
 function getPINs(observed) {
+  let result = []; 
+  let x = null;
+  const map = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [x, 0, x],
+  ]
+  observed.split('').forEach((digit) => {
+    digit=parseInt(digit)
+    map.forEach((row,index) => {
+      digitMap.push(digit)
+      if(row.includes(digit)){ 
+       let rowIndex =  row.indexOf(digit)
+       if (map[index]&& map[index][rowIndex + 1]) digitMap.push(map[index][rowIndex + 1])
+       if (map[index]&& map[index][rowIndex - 1]) digitMap.push(map[index][rowIndex - 1])
+       if (map[index+1]&& map[index+1][rowIndex]) digitMap.push(map[index+1][rowIndex])
+       if (map[index-1]&& map[index-1][rowIndex]) digitMap.push(map[index-1][rowIndex])
+      }
 
+    })
+  })
+  return result;
 }
+
+
+console.log(getPINs('2929'))
 
 
 module.exports = getPINs
