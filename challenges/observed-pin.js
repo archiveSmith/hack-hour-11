@@ -1,0 +1,110 @@
+/*
+Alright, detective, one of our colleagues successfully observed our target person, Robby the robber. 
+We followed him to a secret warehouse, where we assume to find all the stolen stuff. The door to 
+this warehouse is secured by an electronic combination lock. Unfortunately our spy isn't
+ sure about the 
+PIN he saw, when Robby entered it.
+
+The keypad has the following layout:
+
+┌───┬───┬───┐
+│ 1 │ 2 │ 3 │
+├───┼───┼───┤
+│ 4 │ 5 │ 6 │
+├───┼───┼───┤
+│ 7 │ 8 │ 9 │
+└───┼───┼───┘
+    │ 0 │
+    └───┘
+He noted the PIN 1357, but he also said, it is possible that each of the digits he saw could actually 
+be another adjacent digit (horizontally or vertically, but not diagonally). E.g. instead of the 1 it 
+could also be the 2 or 4. And instead of the 5 it could also be the 2, 4, 6 or 8.
+
+He also mentioned, he knows this kind of locks. You can enter an unlimited amount of wrong PINs, they 
+never finally lock the system or sound the alarm. That's why we can try out all possible (*) 
+variations.
+
+* possible in sense of: the observed PIN itself and all variations considering the adjacent digits
+
+Can you help us to find all those variations? It would be nice to have a function, that returns an
+ array 
+of all variations for an observed PIN with a length of 1 to 8 digits. We could name the function
+ getPINs. 
+But please note that all PINs, the observed one and also the results, must be strings, because of 
+potentially leading '0's. Don't worry about the order of the array.
+
+Detective, we count on you!
+
+expectations = {
+  "8": ["5", "7", "8", "9", "0"],
+  "11": ["11", "22", "44", "12", "21", "14", "41", "24", "42"],
+  "369": ["339","366","399","658","636","258","268","669","668","266","369","398","256","296","259","368","638","396","238","356","659","639","666","359","336","299","338","696","269","358","656","698","699","298","236","239"],
+}
+build object that holds all options per number
+for every digit, it pushes all options into a bigger array, of all options, then generates permuation
+
+
+*/
+
+
+
+
+function getPINs(observed) {
+	const options = {
+		"0": ["8"],
+		'1': ['1','2','4'],
+		"2": ['2','1','3','5'],
+		"3": ['3','2','6'],
+		"4": ['4','1','5'],
+		"5": ['4','2','6','8','5'],
+		"6": ['3','5','6','9'],
+		"7": ['7','4','8'],
+		"8": ['5','7','8','9','0'],
+		"9": ['9','6','8']
+	}
+
+	let observedArr = [];
+
+	for (let i = 0; i < observed.length; i++){
+		observedArr.push(options[observed[i]])
+	}
+
+	//console.log(observedArr)
+
+	let newArr = observedArr.reduce(function(acc,curr){
+		return acc.concat(curr);
+		
+	},[])
+
+	//return newArr
+
+	const getPerms = (itemsArr, len = itemsArr.length) => {
+  const result = []; // permutations will be stored here
+  // this is our recursive function that will populate the result arr
+  function perm(items, cur = []) {
+    if (cur.length === len) return result.push(cur); // base condition to end the recursive call
+    let item;
+    for (let i = 0; i < items.length; i += 1) {
+      // get the ith item out of the array
+      item = items.splice(i, 1)[0];
+      // recurisve call with copy of items array and copy of cur with the item added
+      perm(items.slice(), cur.concat(item));
+      // place the item back in the array
+      items.splice(i, 0, item);
+    }
+  }
+  // use perm to populate result arr with possible permutations
+  perm(itemsArr);
+  return result;
+
+
+};
+
+return getPerms(newArr,observed.length)
+
+}
+
+console.log(getPINs("1234"))
+
+
+module.exports = getPINs
