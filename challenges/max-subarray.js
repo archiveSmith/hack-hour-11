@@ -5,7 +5,7 @@
  * For example: maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]) -> 18 from [3, 10, -4, 7, 2]
  *              maxSubarray([15,20,-5,10])  -> 40
  *
- */
+ *///
 
 function maxSubarray(arr) {
   if (!arr) {

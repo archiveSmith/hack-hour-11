@@ -8,7 +8,7 @@
  * Complete the challenge in O(n) time
  * Complete the challenge in O(1) space
  *
- */
+ *///
 function uniqueNumber(array) {
   array.reduce((a,c) => return a ^ c);
 }

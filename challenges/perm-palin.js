@@ -7,7 +7,7 @@
  * 	- permPalin('cbac') => false
  * 	- permPalin('a') => true
  *
- */
+ *///
 
 function permPalin(str) {
     let permStack = [];

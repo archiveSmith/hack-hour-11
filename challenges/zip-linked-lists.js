@@ -3,7 +3,7 @@
  * Implement the linked list using only a Node class. No need for a wrapper LinkedList class
  *
  * BONUS: Do this in place
- */
+ *///
 
 function Node(val) {
   this.value = val;

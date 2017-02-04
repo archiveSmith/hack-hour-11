@@ -11,7 +11,7 @@
   * var result = anagrams('abc');
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
-
+//
 function anagrams(string, rem = '', all = {}) {  
   if (!string) all[rem] = true
   else string.split('').forEach((e, i) => anagrams(slice(0,i).concat(slice(i + 1)), rem.concat(e), all))

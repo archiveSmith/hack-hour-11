@@ -11,7 +11,7 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-<<<<<<< HEAD
+
   if (!str || str.length < 5) {
     return undefined;
   }
@@ -43,9 +43,7 @@ function knightjumps(str) {
     count += 1;
   } 
   return count;
-=======
 
->>>>>>> 4e4d9f1583d9b957be7e3ec443d3521ad1cd4cc6
 }
 
 module.exports = knightjumps;

@@ -9,7 +9,7 @@
  *              stringRotation("hello", "llohe") -> true
  *              stringRotation("hello", "he") -> false
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
- */
+ *///
 
 function isSubstring(s1, s2) {
   return s1.indexOf(s2) >= 0;

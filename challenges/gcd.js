@@ -5,7 +5,7 @@
  * gcd(10, 8) -> 2
  * gcd(10, 9) -> 1
  *
- */
+ *///
 
 function gcd(a, b) {
     let smaller = Math.min(a,b);
