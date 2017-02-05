@@ -28,18 +28,11 @@ Challange:
 function missingNum(Array) {
   const min = Math.min.apply(null, Array);
   const max = Math.max.apply(null, Array);
-
   const ArraySum = Array.reduce((acc, cur) => acc + cur);
-
-  let ErraySum = 0;
-
-  for (let i = min; i <= max; i++) {
-    ErraySum += i;
-  }
-
+  const ErraySum = ((Array.length + 1) * (Array.length + 2)) / 2;
   return ErraySum - ArraySum;
 }
 
-console.log(missingNum([2, 1, 3, 5, 4, 7, 10, 9, 8, 6, 12, 16, 15, 14, 13]));
+console.log(missingNum([2, 1, 3, 5, 4, 6, 7, 9, 11, 10]));
 
 module.exports = missingNum;
