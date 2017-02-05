@@ -32,8 +32,44 @@
   ]
 */
 
-function pascalTriangle(numRows) {
-  
+function factorial(num) {
+
+  if (num === 0) {
+    return 1;
+  }
+
+  let product = 1;
+
+  for (let i = num; i > 0; i -= 1) {
+    //console.log('num:', num);
+    product *= i;
+  }
+  return product;
 }
+
+function calculateNum(n, r) {
+  return Math.floor((factorial(n))/((factorial(r) * factorial(n - r))));
+}
+
+function pascalTriangle(numRows) {
+
+  const pascalsArr = [];
+  let newArr;
+  //let newNum;
+
+  for (let i = 0; i < numRows; i += 1) {
+    
+    newArr = [];
+
+    for (let j = 0; j <= i; j += 1) {
+
+      newArr.push(calculateNum(i, j));
+    }
+    pascalsArr.push(newArr);
+  }
+  
+  return pascalsArr;
+}
+
 
 module.exports = pascalTriangle;
