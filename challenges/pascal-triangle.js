@@ -52,6 +52,6 @@ function pascalTriangle(n, t = [[1]]) {
   return pascalTriangle(n - 1, t);
 }
 
-console.log(pascalTriangle(6));
+// console.log(pascalTriangle(6));
 
 module.exports = pascalTriangle;
