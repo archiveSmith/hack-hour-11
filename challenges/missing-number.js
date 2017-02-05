@@ -26,15 +26,20 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
-  // iterate through the array
-  // for the current integer (array[i]), if the value at the following index array[i + 1] is not equivalent to array[i] + 1, return array[i] + 1.
-  // otherwise, return undefined;
-  for (let i = 0; i < Array.length - 1; i++) {
-    if (Array.indexOf(Array[i] + 1) === -1) return Array[i] + 1;
+  const min = Math.min.apply(null, Array);
+  const max = Math.max.apply(null, Array);
+
+  const ArraySum = Array.reduce((acc, cur) => acc + cur);
+
+  let ErraySum = 0;
+
+  for (let i = min; i <= max; i++) {
+    ErraySum += i;
   }
-  return undefined;
+
+  return ErraySum - ArraySum;
 }
 
-console.log(missingNum([2, 1, 3, 5]));
+console.log(missingNum([2, 1, 3, 5, 4, 7, 10, 9, 8, 6, 12, 16, 15, 14, 13]));
 
 module.exports = missingNum;
