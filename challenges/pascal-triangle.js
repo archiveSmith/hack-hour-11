@@ -51,6 +51,26 @@ function calculateNum(n, r) {
   return Math.floor((factorial(n))/((factorial(r) * factorial(n - r))));
 }
 
+// function pascalTriangle(numRows) {
+
+//   const pascalsArr = [];
+//   let newArr;
+//   //let newNum;
+
+//   for (let i = 0; i < numRows; i += 1) {
+    
+//     newArr = [];
+
+//     for (let j = 0; j <= i; j += 1) {
+
+//       newArr.push(calculateNum(i, j));
+//     }
+//     pascalsArr.push(newArr);
+//   }
+  
+//   return pascalsArr;
+// }
+
 function pascalTriangle(numRows) {
 
   const pascalsArr = [];
@@ -60,10 +80,30 @@ function pascalTriangle(numRows) {
   for (let i = 0; i < numRows; i += 1) {
     
     newArr = [];
+    
+    if (i === 0) {
+      newArr.push(1);
+      pascalsArr.push(newArr);
+      continue;
+    }
 
     for (let j = 0; j <= i; j += 1) {
+      let left;
+      if (j - 1 < 0) {
+        left = 0;
+      } else {
+        left = pascalsArr[i - 1][j - 1];
+      }
+        
+      if (j + 1 > i) {
+        right = 0;
+      } else {
+        right = pascalsArr[i - 1][j];
+      }
+      //console.log('calculate num:', calculateNum(i,j));
 
-      newArr.push(calculateNum(i, j));
+      //newArr.push(calculateNum(i, j));
+      newArr.push(left + right);
     }
     pascalsArr.push(newArr);
   }
