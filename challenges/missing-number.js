@@ -44,7 +44,7 @@ function missingNum(Array) {
 
   let arraySum = 0;
   const len = Array.length;
-  let sum = (len*(len+1))/2;
+  let sum = ((len + 1)*(len+2))/2;
   let max = -Infinity;
   let comp = 0;
 
@@ -52,14 +52,11 @@ function missingNum(Array) {
     if (max < Array[i]) max = Array[i];
     arraySum += Array[i];
   }
+// console.log('array sum:', arraySum);
+//   //return max - (arraySum - sum);
+//   console.log('sum',sum);
   
-  for (let j = 1; j <= max; j += 1) {
-     comp += j;
-  }
-
-  //return max - (arraySum - sum);
-  //return sum - arraySum;
-  return comp - arraySum;
+  return sum - arraySum;
 }
 
 module.exports = missingNum;
