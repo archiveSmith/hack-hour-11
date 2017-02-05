@@ -28,8 +28,7 @@ Challange:
 function missingNum(Array) {
   const arraySum = Array.reduce((acc, cur) => acc + cur);
   const rangeSum = ((Array.length + 1) * (Array.length + 2)) / 2;
-  console.log(arraySum);
-  console.log(rangeSum);
+  return rangeSum - arraySum;
 }
 
 console.log(missingNum([2, 1, 3, 5, 4, 6, 7, 9, 11, 10]));
