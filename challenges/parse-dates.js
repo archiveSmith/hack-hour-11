@@ -39,8 +39,40 @@
 //   (i.e. the function will not be called with 'Jul 84th 1:00 PM') since that's not a real date
 // - if any part of the date string is missing then you can consider it an invalid date
 
+const months = {
+  Jan: 'Jan',
+  Feb: 'Feb',
+  Mar: 'Mar',
+  Apr: 'Apr',
+  May: 'May',
+  Jun: 'Jun',
+  Jul: 'Jul',
+  Aug: 'Aug',
+  Sep: 'Sep',
+  Oct: 'Oct',
+  Nov: 'Nov',
+  Dec: 'Dec'
+};
+
 function parseDates(str) {
+  const dateEl = str.split(' ')
+  let result = new Date().toString().split('')
+  let i = 0;
+  let len = dateEl.length;
+  //Check for Week Day
+  for (i; i < len; i += 1){
+    if (dateEl[i].slice(-3) === 'day' && dateEl[i] !== 'Today'){
+      result.splice(0,3, (dateEl[0].slice(0,3)) )
+    }
+    if (months[dateEl[i]] ){
+      result.splice(4,3,(months[dateEl[i]]))
+    }
+
+  }
+  return result.join('');
   
 }
+
+console.log(parseDates('Mar 12th 12:59 PM'))
 
 module.exports = parseDates;
