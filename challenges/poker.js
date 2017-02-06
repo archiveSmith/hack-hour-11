@@ -19,7 +19,12 @@
 */
 
 function poker(hand1, hand2) {
+ 
 
+  let hand1Score =  hand1.sort((a,b) => a-b).filter
+  reduce((accum, el) => accum + el)
+  let hand2Score =  hand2.sort((a,b) => a-b)
+  .reduce((accum, el) => accum + el)
 }
 
 module.exports = poker;
