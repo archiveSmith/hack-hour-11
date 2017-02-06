@@ -40,7 +40,10 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
-  
+  const dateArr = [];
+  dateArr.push(str.slice(0, str.indexOf(":") - 2));
+  dateArr.push(str.slice(str.indexOf(":") - 1));
+  return dateArr;
 }
 
 module.exports = parseDates;
