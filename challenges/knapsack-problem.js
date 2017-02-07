@@ -29,16 +29,16 @@ function solveKnapsack(itemsLeft, weightAvailable) {
      }
     else {
       return leave;
-     };
+     }
   }
 }
 
 
 
 
-items = [{weight: 1, value : 3}, {weight: 2, value : 4}, {weight: 3, value : 5}];
-
-console.log(solveKnapsack(items, 3));
-console.log(solveKnapsack(items, 5));
+// items = [{weight: 1, value : 3}, {weight: 2, value : 4}, {weight: 3, value : 5}];
+//
+// console.log(solveKnapsack(items, 3));
+// console.log(solveKnapsack(items, 5));
 
 module.exports = solveKnapsack;
