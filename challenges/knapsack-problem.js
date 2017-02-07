@@ -10,7 +10,29 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+	var greatestValue = 0;
+	for (var i = 0; i < items.length; i++) {
+		var currentWeight = 0;
+		var currentValue = 0;
+		for (var j = 0; j < items.length; j++) {
+			if (i !== j) {
+				if (currentWeight + items[j].weight <= weightAvailable) {
+					currentValue += items[j].value;
+					currentWeight += items[j].weight;
+				}
+			}
+		}
 
+		if (currentValue > greatestValue) {
+			greatestValue = currentValue;
+		}
+	}
+
+	return greatestValue;
 };
+
+// var items = [{weight: 1, value : 3}, {weight: 2, value : 4}, {weight: 3, value : 5}];
+
+// console.log(solveKnapsack(items, 5));
 
 module.exports = solveKnapsack;
