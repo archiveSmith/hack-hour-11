@@ -40,7 +40,9 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
-  
+  return str.split(' ').map(x => Date.parse(x));
 }
+
+console.log(parseDates('Jan 12th 1:09 AM'));
 
 module.exports = parseDates;

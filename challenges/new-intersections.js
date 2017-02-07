@@ -18,7 +18,37 @@
  */
 
 function newIntersections(x, y){
+  // limits
+  const upper = Math.max.apply(null, y);
+  const lower = Math.min.apply(null, y);
+  const right = Math.max.apply(null, x);
+  const left = Math.min.apply(null, x);
+  // all coords within limit
+  const coords = [];
+  for (let i = lower; i < upper; i++) {
+    for (let j = left; j < right; j++) {
+      coords.push([i, j]);
+    }
+  }
+  
+  let counter = 0;
 
+  coords.forEach(coord => {
+    let isAbove = false;
+    let isBelow = false;
+    let isRight = false;
+    let isLeft = false;
+    for (let i = 0; i < x.length; i++) {
+      if (coord[0] === x[i] && y[i] > coord[1]) isAbove = true;
+      if (coord[0] === x[i] && y[i] < coord[1]) isBelow = true;
+      if (coord[1] === y[i] && x[i] > coord[0]) isRight = true;
+      if (coord[1] === y[i] && x[i] < coord[0]) isLeft = true;
+    }
+    if (isAbove, isBelow, isRight, isLeft) counter++;
+  });
+  return counter;
 }
+
+console.log(newIntersections([1, 3, 2, 2], [2, 2, 1, 3]));
 
 module.exports = newIntersections;

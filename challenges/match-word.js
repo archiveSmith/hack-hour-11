@@ -8,7 +8,21 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  let words = str.split('');
+  let p = words.map(x => {
+    const letter = x.charCodeAt(0);
+    if (letter >= 65 && letter <= 65 + 25) {
+      return x.toLowerCase();
+    }
+    if (letter >= 97 && letter <= 97 + 25) {
+      return x;
+    } else {
+      return ' ';
+    }
+  });
+  console.log(p);
 }
+
+console.log(matchWord('For__if__rof__fi'))
 
 module.exports = matchWord;

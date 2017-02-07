@@ -23,7 +23,22 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  // visualize districts
+  const districts = {};
+  for (let i = 0; i < x.length; i++) {
+    districts[i] = {
+      xCoord: x[i],
+      yCoord: y[i],
+      radius: r[i]
+    };
+  }
+  // determine district nesting
 
+  // figure out what district starting/ending point is in
+  
 }
+
+
+circleCountry([-1, 0, 0, 4], [0,0,0,4], [1,3,6,1], 1, 0, 4, 4);
 
 module.exports = circleCountry;

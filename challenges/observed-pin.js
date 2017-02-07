@@ -19,17 +19,17 @@ He noted the PIN 1357, but he also said, it is possible that each of the digits 
 be another adjacent digit (horizontally or vertically, but not diagonally). E.g. instead of the 1 it 
 could also be the 2 or 4. And instead of the 5 it could also be the 2, 4, 6 or 8.
 
-He also mentioned, he knows this kind of locks. You can enter an unlimited amount of wrong PINs, they 
-never finally lock the system or sound the alarm. That's why we can try out all possible (*) variations.
+He also mentioned that he knows this kind of lock. You can enter an unlimited amount of incorrect PINs and 
+never lock the system or sound the alarm. That's why we can try out all possible (*) variations.
 
 * possible in sense of: the observed PIN itself and all variations considering the adjacent digits
 
-Can you help us to find all those variations? It would be nice to have a function, that returns an array 
+Can you help us to find all variations? It would be nice to have a function that returns an array 
 of all variations for an observed PIN with a length of 1 to 8 digits. We could name the function getPINs. 
 But please note that all PINs, the observed one and also the results, must be strings, because of 
 potentially leading '0's. Don't worry about the order of the array.
 
-Detective, we count on you!
+Detective, we're counting on you!
 
 expectations = {
   "8": ["5", "7", "8", "9", "0"],
@@ -42,9 +42,24 @@ expectations = {
 
 
 
-function getPINs(observed) {
-
+function getPINs(observed, perms = {}) {
+  const keypad = {
+    '0': [0, 8],
+    '1': [1, 2, 4],
+    '2': [2, 1, 3, 5],
+    '3': [3, 2, 6],
+    '4': [4, 1, 5, 7],
+    '5': [5, 2, 4, 6, 8],
+    '6': [6, 3, 5, 9],
+    '7': [7, 4, 8],
+    '8': [8, 7, 9, 5, 0],
+    '9': [9, 8, 6]
+  }
+  const result = [];
+  const possible = observed.split('').map(num => keypad[num]);
+  return result;
 }
 
+console.log(getPINs('1357'));
 
 module.exports = getPINs

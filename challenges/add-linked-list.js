@@ -14,7 +14,74 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-
+  let sumVal;
+  let l1Val = 0;
+  let l2Val = 0;
+  let counter = 0;
+  let sum;
+  for(let i = l1; i; i = i.next) {
+    l1Val += i.value * Math.pow(10, counter);
+    counter += 1;
+  }
+  counter = 0;
+  for(let i = l2; i; i = i.next) {
+    l2Val += i.value * Math.pow(10, counter);
+    counter += 1;
+  }
+  sum = (l2Val + l1Val).toString().split('').reverse();
+  sumVal = new Node(parseInt(sum[0]));
+  counter = 1;
+  for(let i = sumVal; i; i = i.next) {
+    if(counter >= sum.length) return sumVal;
+    if(!i.next) {
+      i.next = new Node(parseInt(sum[counter]));
+      counter++;
+    }
+  }
 }
+
+function addLinkedList(l1, l2, carryTheOne) {
+  let sum = carryTheOne || 0;
+  let result = new Node (sum % 0);
+  let nexts;
+
+  if (!l1 && !l2 && !carryTheOne) return null;
+  if (l1) sum += l1.value;
+  if (l2) sum += l2.value;
+
+  if (l1 || l2) {
+    nexts = addLinkedList(
+      l1 ? l1.next : null,
+      l2 ? l2.next : null,
+      sum >= 10 ? 1 : 0
+    );
+    result.next = nexts;
+  }
+  return result;
+}
+
+const ll1 = {
+  value: 3,
+  next: {
+    value: 1,
+    next: {
+      value: 5,
+      next: null
+    }
+  }
+}
+
+const ll2 = {
+  value: 5,
+  next: {
+    value: 9,
+    next: {
+      value: 2,
+      next: null
+    }
+  }
+}
+
+console.log(addLinkedList(ll1, ll2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
