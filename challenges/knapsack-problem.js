@@ -10,7 +10,19 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+  if (items.length === 0 || weightAvailable === 0) return 0;
 
+  if (items[0].weight > weightAvailable) {
+    return solveKnapsack(items.slice(1), weightAvailable);
+  }
+
+  else {
+    const left = items.slice(1);
+    const useItem = items[0].value + solveKnapsack(left, weightAvailable - items[0].weight);
+    const discardItem = solveKnapsack(left, weightAvailable);
+
+    return (useItem > discardItem) ? useItem : discardItem;
+  }
 };
 
 module.exports = solveKnapsack;
