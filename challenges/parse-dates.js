@@ -39,8 +39,59 @@
 //   (i.e. the function will not be called with 'Jul 84th 1:00 PM') since that's not a real date
 // - if any part of the date string is missing then you can consider it an invalid date
 
+const Months = {'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April', 'May': 'May', 
+    'Jun': 'June', 'Jul': 'July', 'Aug': 'August', 'Sep': 'September', 'Nov': 'November', 'Dec': 'December'};
+
+const Days = {'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Today': 7};
+
 function parseDates(str) {
+  str = str.split(' ');
   
+  if(str[0] in Months){
+    return monthMaker(str);
+  }else if(str[0] in Days){
+    return dayMaker(str);
+  }else{
+      return new Date().now();
+  }
+
+
 }
+
+function monthMaker(str){  
+    let month = Months[str[0]];
+    let date = parseInt(str[1]);
+    let time = str[2];
+    let period = str[3];
+
+    if(!month || !date || !time || !period) return new Date().now();
+    
+    let d = `${month} ${date}, 2017 ${time}`;
+    return new Date(d);
+}
+
+function dayMaker(str){
+    let d;
+    let current = new Date();
+    let currentDay = current.getUTCDay();
+    let currentDate = current.getUTCDate();
+    let givenDay = Days[str[0]];
+    let diff = currentDay - givenDay;
+
+    console.log('givenDay: ', givenDay);
+    console.log('currentDay: ', currentDay);
+    console.log('date: ', current);
+
+    if(diff > 0){
+      console.log('diff is less than zero', diff);
+      d = 
+    }else if(diff === 0){
+      console.log('diff is equal to zero', diff);
+    }else{
+      console.log('diff is more than zero', diff);
+    }
+}
+
+console.log(parseDates('Sunday 12:59 PM'));
 
 module.exports = parseDates;
