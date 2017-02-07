@@ -9,7 +9,8 @@
   solveKnapsack(items, 5); // returns 9 (from items[1] and items[2])
 */
 
-function solveKnapsack(items, weightAvailable, combos = [[]]) {
+function solveKnapsack(items, weightAvailable) {
+  const combos = [[]];
   for (let i = 0; i < items.length; i++) {
     for (let j = 0, len = combos.length; j < len; j++) {
       combos.push(combos[j].concat(items[i]));
