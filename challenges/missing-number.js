@@ -24,6 +24,7 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 Challange: 
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
+<<<<<<< HEAD
 *///
 
 function missingNum(Array) {
@@ -37,6 +38,10 @@ function missingNum(Array) {
     }
   }
   return 'No missing';
+=======
+*/
+function missingNum(Array) {
+>>>>>>> b7868c2ab7103580d6735cb754aeec982bcf7a9f
 }
 
 module.exports = missingNum;
