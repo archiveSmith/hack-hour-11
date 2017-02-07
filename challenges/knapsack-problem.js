@@ -10,17 +10,23 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
-  const combos = [[0, 0]];
+  const combos = [];
+  let maxVal = 0;
   items.forEach(item => {
     combos.forEach(combo => {
-      if (combo[1] + item.weight <= weightAvailable) combos.push([(combo[0] + item.value), (combo[1] + item.weight)]);
+      if (combo[1] + item.weight <= weightAvailable) {
+        combos.push([(combo[0] + item.value), (combo[1] + item.weight)]);
+        if (combo[0] + item.value > maxVal) maxVal = combo[0] + item.value;
+      }
     });
-    if (item.weight <= weightAvailable) combos.push([item.value, item.weight]);
+    if (item.weight <= weightAvailable) {
+      combos.push([item.value, item.weight]);
+      if (item.value > maxVal) maxVal = item.value;
+    };
   });
-  combos.sort((a, b) => b[0] - a[0]);
-  return combos[0][0];
+  return maxVal;
 };
 
 module.exports = solveKnapsack;
-const items = [{ weight: 1, value: 3 }, { weight: 2, value: 4 }, { weight: 3, value: 5 }];
-console.log(solveKnapsack(items, 5));
+// const items = [{ weight: 1, value: 3 }, { weight: 2, value: 4 }, { weight: 3, value: 5 }];
+// console.log(solveKnapsack(items, 3));
