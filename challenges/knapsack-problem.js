@@ -3,6 +3,12 @@
   You have a knapsack with a weight limit.
   You are presented with an array of objects, each with its own weight and value.
   Find the maximum value you can fit into your knapsack.
+=======
+/*
+  You have a knapsack with a weight limit.
+  You are presented with an array of objects, each with its own weight and value.
+  Find the maximum value you can fit into your knapsack, given the weight constraint.
+>>>>>>> c90e60f62a6ba5143e14fb9691e3f2c998f57977
 
   e.g.
   items = [{weight: 1, value : 3}, {weight: 2, value : 4}, {weight: 3, value : 5}];
@@ -27,6 +33,7 @@ function solveKnapsack(items, weightAvailable) {
 
   recurse(0, 0, 0);
   return highestValue;
+
 };
 
 module.exports = solveKnapsack;
