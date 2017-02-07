@@ -42,25 +42,22 @@ expectations = {
 
 
 
-function getPINs(observed) {
-  const possible = observed
-  .split('')
-  .map(n => parseInt(n))
-  .map(n => [n, n - 1, n + 1, n - 3, n + 3])
-  .map(n => n.filter(n => n < 10 && n > 0))
-  .map(n => n[0] === 8 ? n.concat(0) : n);
-
-
-  const getPerms = (arr, memo = {}) => {
-    const perm = arr.map(x => x[Math.floor(Math.random() * x.length)]).join('');
-    if (Object.keys(memo).length === 240) return Object.keys(memo);
-    if (!memo[perm]) {
-      memo[perm] = null;
-    }
-    return getPerms(arr, memo);
+function getPINs(observed, perms = {}) {
+  const keypad = {
+    '0': [0, 8],
+    '1': [1, 2, 4],
+    '2': [2, 1, 3, 5],
+    '3': [3, 2, 6],
+    '4': [4, 1, 5, 7],
+    '5': [5, 2, 4, 6, 8],
+    '6': [6, 3, 5, 9],
+    '7': [7, 4, 8],
+    '8': [8, 7, 9, 5, 0],
+    '9': [9, 8, 6]
   }
-
-  return getPerms(possible);
+  const result = [];
+  const possible = observed.split('').map(num => keypad[num]);
+  return result;
 }
 
 console.log(getPINs('1357'));

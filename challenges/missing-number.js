@@ -31,6 +31,6 @@ function missingNum(Array) {
   return rangeSum - arraySum;
 }
 
-console.log(missingNum([2, 1, 3, 5, 4, 6, 7, 9, 11, 10]));
+// console.log(missingNum([2, 1, 3, 5, 4, 6, 7, 9, 11, 10]));
 
 module.exports = missingNum;
