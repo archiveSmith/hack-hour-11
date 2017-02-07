@@ -40,7 +40,109 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
+
+  const dateArgs = str.split(' ');
+
+  const currDate = new Date();
+  const currYear = currDate.getFullYear();
+  const currDay = currDate.getUTCDay();
+
+  if (dateArgs.length < 3 || dateArgs.length > 4) return new Date();
+
+  const DATE_TYPES = {
+    'month': 'month',
+    'day': 'day'
+  }
+
+  let dateType;// = 'day';
   
+  const validMonths = {
+    'Jan': 'Jan',
+    'Feb': 'Feb',
+    'Mar': 'Mar',
+    'Apr': 'Apr',
+    'May': 'May',
+    'Jun': 'Jun',
+    'Jul': 'Jul',
+    'Aug': 'Aug',
+    'Sep': 'Sep',
+    'Oct': 'Oct',
+    'Nov': 'Nov',
+    'Dec': 'Dec'
+  }
+
+  const validDays = {
+    'Monday': 'Monday',
+    'Tuesday': 'Tuesday',
+    'Wednesday': 'Wednesday',
+    'Thursday': 'Thursday',
+    'Friday': 'Friday',
+    'Saturday': 'Saturday',
+    'Sunday': 'Sunday',
+    'Today': 'Today'
+  }
+
+  const validNumDays = {
+    '1st': '1st',
+    '2nd': '2nd',
+    '3rd': '3rd',
+    '4th': '4th',
+    '5th': '5th',
+    '6th': '6th',
+    '7th': '7th',
+    '8th': '8th',
+    '9th': '9th',
+    '10th': '10th',
+    '11th': '11th',
+    '12th': '12th',
+    '13th': '13th',
+    '14th': '14th',
+    '15th': '15th',
+    '16th': '16th',
+    '17th': '17th',
+    '18th': '18th',
+    '19th': '19th',
+    '20th': '20th',
+    '21st': '21st',
+    '22nd': '22nd',
+    '23rd': '23rd',
+    '24th': '24th',
+    '25th': '25th',
+    '26th': '26th',
+    '27th': '27th',
+    '28th': '28th',
+    '29th': '29th',
+    '30th': '30th',
+    '31st': '31st'  
+  }
+
+  const meridiem = {
+    'AM': 'AM',
+    'PM': 'PM'
+  }
+
+  if (validMonths[dateArgs[0]]) {
+    dateType = DATE_TYPES.month;
+  } else if (validDays[dateArgs[0]]) {
+    dateType = DATE_TYPES.day;
+  } else {
+    return new Date();
+  }
+
+  if (dateType === DATE_TYPES.month) {
+    if (!validNumDays[dateArgs[1]]) return new Date();
+    if (!meridiem[dateArgs[3]]) return new Date();
+     
+    const timeArr = dateArgs[2].split(':');
+
+    return new Date(currYear, dateArgs[0], currDay, timeArr[0], timeArr[1]);
+  } else {
+    if (!merideum[dateArgs[2]]) return new Date();
+    //'Mon Jan 12 2015 01:09:00 
+    return new Date();
+  }
+
+
 }
 
 module.exports = parseDates;
