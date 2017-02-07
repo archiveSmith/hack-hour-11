@@ -42,10 +42,19 @@
 function parseDates(str) {
 
   const dateArgs = str.split(' ');
+  console.log('dateArgs', dateArgs);
 
   const currDate = new Date();
   const currYear = currDate.getFullYear();
-  const currDay = currDate.getUTCDay();
+  console.log('currYear:', currYear);
+  const currMonth = currDate.getMonth();
+  console.log('currMonth:', currMonth);
+  const currDay = currDate.getDay();
+  console.log('currDay:', currDay);
+  const currHour = currDate.getHours();
+  console.log('currHour:', currHour);
+  const currMinutes = currDate.getMinutes();
+  console.log('currMinutes:', currMinutes);
 
   if (dateArgs.length < 3 || dateArgs.length > 4) return new Date();
 
@@ -57,18 +66,18 @@ function parseDates(str) {
   let dateType;// = 'day';
   
   const validMonths = {
-    'Jan': 'Jan',
-    'Feb': 'Feb',
-    'Mar': 'Mar',
-    'Apr': 'Apr',
-    'May': 'May',
-    'Jun': 'Jun',
-    'Jul': 'Jul',
-    'Aug': 'Aug',
-    'Sep': 'Sep',
-    'Oct': 'Oct',
-    'Nov': 'Nov',
-    'Dec': 'Dec'
+    'Jan': 0,//'Jan',
+    'Feb': 1,//'Feb',
+    'Mar': 2,//'Mar',
+    'Apr': 3,//'Apr',
+    'May': 4,//'May',
+    'Jun': 5,//'Jun',
+    'Jul': 6,//'Jul',
+    'Aug': 7,//'Aug',
+    'Sep': 8,//'Sep',
+    'Oct': 9,//'Oct',
+    'Nov': 10,//'Nov',
+    'Dec': 11,//'Dec'
   }
 
   const validDays = {
@@ -124,22 +133,51 @@ function parseDates(str) {
   if (validMonths[dateArgs[0]]) {
     dateType = DATE_TYPES.month;
   } else if (validDays[dateArgs[0]]) {
+    console.log('hello');
     dateType = DATE_TYPES.day;
+    
   } else {
+    //return new Date();
+    //console.log('hello: ')
+    //const newDate = new Date();
+    //return newDate.now();
+    
     return new Date();
   }
 
   if (dateType === DATE_TYPES.month) {
+    console.log('TYPE MONTH');
     if (!validNumDays[dateArgs[1]]) return new Date();
     if (!meridiem[dateArgs[3]]) return new Date();
      
     const timeArr = dateArgs[2].split(':');
-
-    return new Date(currYear, dateArgs[0], currDay, timeArr[0], timeArr[1]);
+//     console.log('hello');
+//     console.log('currYear', currYear);
+//     console.log('dateArgs[0]', dateArgs[0]);
+//     console.log('currDay', currDay);
+//     console.log('timeArr[0]', parseInt(timeArr[0]));
+//     console.log('timeArr[1]',parseInt(timeArr[1]));
+//     console.log('validMonths[dateArgs[0]]', validMonths[dateArgs[0]]);
+    
+    let day = dateArgs[1];
+    
+    if (day.length === 4) {
+      day = day.slice(0, 2);
+    } else if (
+    day.length === 3) {
+      day = day.slice(0, 1);
+    }
+    
+    const date = new Date(currYear, validMonths[dateArgs[0]], day, parseInt(timeArr[0]), parseInt(timeArr[1]));
+     
+    return date.toString();
   } else {
-    if (!merideum[dateArgs[2]]) return new Date();
+    if (!meridiem[dateArgs[2]]) return new Date();
     //'Mon Jan 12 2015 01:09:00 
-    return new Date();
+    
+    console.log('HOLLAA');
+    const newDayDate = new Date(currYear, currMonth, currDay, currHour, currMinutes);
+    return newDayDate.toString();
   }
 
 
