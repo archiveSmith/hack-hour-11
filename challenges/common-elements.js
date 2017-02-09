@@ -16,6 +16,7 @@ function commonElements(array1, array2, array3, array4){
   
   const args = [...arguments];
   
+  
   args[0] = args[0].reduce((accum, curr) => {
     if (accum.indexOf(curr) === -1) {
       accum.push(curr);
