@@ -27,7 +27,7 @@ function commonElements(array1, array2, array3, array4){
   //console.log('args[0]:', args[0]);
 
   const result =  args.reduce((accum, curr) => {
-    console.log(accum);
+    //console.log(accum);
     return accum.filter((val) => {
       if (curr.indexOf(val) > -1 ) {
         return val;
