@@ -40,7 +40,35 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const arr = str.split(' ');
+  // check if first element is "today"
+  if (arr[0] === 'Today') {
+    // if so, get today's date
+    const d = JSON.stringify(new Date());
+    // stringify date
+    // get first 4 words from string
+    let dModded = d.split(' ').slice(0, 4).join(' ');
+    let dModded1 = dModded.substring(1, dModded.length - 1);
+    // concat the time onto the string date
+    const time = arr.slice(1).join(' ');
+    console.log(time);
+    dModded1 += ` ${time}`;
+    // date object of string
+    console.log(dModded1);
+    if (new Date(dModded1) !== 'Invalid Date') return new Date(dModded1);
+    // if not invalid return it
+  }
+  // check if first element is 3 chars long
+  // if so, its a month
+    // remove the last two chars from the second element (the th/st from the date number)
+    // hceck for valid date
+  // if not, its a day
+    // get today's day
+    // 
   
 }
+
+console.log(parseDates('Today 8:15 PM') );
 
 module.exports = parseDates;

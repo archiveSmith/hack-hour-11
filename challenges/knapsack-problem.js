@@ -10,7 +10,23 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+  let value = 0;
+  let weights = [];
+  for (let i = 0 ; i < items.length; i += 1) {
+    weights.push(items[i].weight);
+  }
+  items.sort((a, b) => b.value / b.weight - a.value / a.weight);
+  let minWeight = Math.min(...weights);
+  const weight = weightAvailable;
+  while (weight > minWeight) {
+    
+  }
+  console.log(minWeight);
 
 };
+
+const items = [{weight: 1, value : 3}, {weight: 2, value : 4}, {weight: 3, value : 5}];
+
+console.log(solveKnapsack(items, 3));
 
 module.exports = solveKnapsack;
