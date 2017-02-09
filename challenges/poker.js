@@ -95,6 +95,6 @@ function poker(hand1, hand2) {
   }
 }
 
-console.log(poker([3,5,5,5,2], [4,3,3,8,3]));
+console.log(poker([3,5,5,2,2], [4,5,5,2,2]));
 
 module.exports = poker;
