@@ -59,7 +59,6 @@ function parseDates(str) {
   let result = new Date().toString().split('')
   let i = 0;
   let len = dateEl.length;
-  //Check for Week Day
   for (i; i < len; i += 1){
     if (dateEl[i].slice(-3) === 'day' && dateEl[i] !== 'Today'){
       result.splice(0,3, (dateEl[0].slice(0,3)) )
