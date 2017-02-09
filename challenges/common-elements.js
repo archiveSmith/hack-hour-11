@@ -29,7 +29,7 @@ function commonElements(array1, array2, array3, array4){
   return results.length > 0 ? results : 'Nothing in Common!';
 }
 
-module.exports = commonElements;
+module.exports = commonElements; 
 
 // var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
 // var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
