@@ -17,7 +17,7 @@ function commonElements(array1, array2, array3, array4){
 	array1.reduce((acc, ele, index) => {
 		if(array2.indexOf(ele) !== -1 && array3.indexOf(ele) !== -1 && array4.indexOf(ele) !== -1){
 			if(answer.indexOf(ele) === -1){
-			answer.push(ele);
+			answer.unshift(ele);
 			}
 		}
 	});
