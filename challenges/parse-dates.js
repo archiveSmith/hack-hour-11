@@ -39,10 +39,13 @@
 //   (i.e. the function will not be called with 'Jul 84th 1:00 PM') since that's not a real date
 // - if any part of the date string is missing then you can consider it an invalid date
 
+
 const Months = {'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April', 'May': 'May', 
     'Jun': 'June', 'Jul': 'July', 'Aug': 'August', 'Sep': 'September', 'Nov': 'November', 'Dec': 'December'};
 
 const Days = {'Sunday': 0, 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Today': 7};
+
+const Mili = 1000 * 60 * 60 * 24;
 
 function parseDates(str) {
   str = str.split(' ');
@@ -73,25 +76,38 @@ function monthMaker(str){
 function dayMaker(str){
     let d;
     let current = new Date();
-    let currentDay = current.getUTCDay();
     let currentDate = current.getUTCDate();
     let givenDay = Days[str[0]];
-    let diff = currentDay - givenDay;
+    let time = str[1];
+    let diff = current.getUTCDay() - givenDay;
 
-    console.log('givenDay: ', givenDay);
-    console.log('currentDay: ', currentDay);
-    console.log('date: ', current);
+    //console.log('givenDay: ', givenDay);
+    //console.log('date: ', current);
 
     if(diff > 0){
       console.log('diff is less than zero', diff);
-      d = 
+      d = `${current.getUTCMonth() + 1} ${currentDate - diff}, 2017 ${time}`;
     }else if(diff === 0){
       console.log('diff is equal to zero', diff);
+      let date = currentDate - 7;
+      
+      if(date > 0){
+        d = `${current.getUTCMonth() + 1} ${date}, 2017 ${time}`;
+      }else{
+        diff = 7 - currentDate;
+        date = new Date();
+        date.setMonth(current.getUTCMonth() - 1);
+        date = date.getUTCDate() - diff;
+        console.log('date: ', date);
+        d 
+      }
     }else{
       console.log('diff is more than zero', diff);
     }
-}
 
+    return new Date(d);
+}
+console.log(parseDates('Jan 12th 1:09 AM'));
 console.log(parseDates('Sunday 12:59 PM'));
 
 module.exports = parseDates;
