@@ -84,6 +84,10 @@ function commonElements(array1, array2, array3, array4){
 		}
 	}
 
+	if (!ce.length) {
+		return "Nothing in Common!";
+	}
+
 	return ce;
 }
 
