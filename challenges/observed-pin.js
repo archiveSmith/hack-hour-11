@@ -43,6 +43,7 @@ expectations = {
 
 
 function getPINs(observed) {
+<<<<<<< HEAD
   const chart = {
     1: ["1","2","4"],
     2: ["1","2","3","5"],
@@ -61,6 +62,8 @@ function getPINs(observed) {
   const theRest = getPINs(observed.slice(1));
 
   return chart[observed[0]].reduce((accum, num) => [...accum, ...theRest.map(pins => num.concat(pins))], []);
+=======
+>>>>>>> b7868c2ab7103580d6735cb754aeec982bcf7a9f
 
 }
 

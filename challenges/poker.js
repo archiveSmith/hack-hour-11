@@ -16,6 +16,7 @@
 * BONUS: Account for suits and add in Flush & Straight Flush/Royal Flush.
 *
 * Example: poker([3,5,5,5,2], [4,6,7,8,8]) -> "Player 1 wins"
+<<<<<<< HEAD
 *///
 
 function poker(hand1, hand2) {
@@ -63,6 +64,12 @@ function determineHand (hand) {
 
 
 
+=======
+*/
+
+function poker(hand1, hand2) {
+
+>>>>>>> b7868c2ab7103580d6735cb754aeec982bcf7a9f
 }
 
 module.exports = poker;
