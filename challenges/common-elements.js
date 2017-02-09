@@ -25,7 +25,7 @@ function commonElements(array1, array2, array3, array4){
   
   //console.log('args[0]:', args[0]);
 
-  return args.reduce((accum, curr) => {
+  const result =  args.reduce((accum, curr) => {
     console.log(accum);
     return accum.filter((val) => {
       if (curr.indexOf(val) > -1 ) {
@@ -33,6 +33,13 @@ function commonElements(array1, array2, array3, array4){
       }
     });
   })
+  
+  if (result.length < 1) {
+    return 'Nothing in Common!';
+  }
+  
+  return result;
+  
 }
 
 module.exports = commonElements;
