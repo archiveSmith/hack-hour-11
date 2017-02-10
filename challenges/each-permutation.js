@@ -22,6 +22,23 @@ eachPermutation([1, 2, 3], function(perm) {
 
 function eachPermutation(arr, callback) {
 
+  const len = arr.length;
+
+  function perm(arr, curr = []) {
+    if (curr.length === len) callback(curr);
+
+    let currVal;
+
+    for (let i = 0; i < arr.length; i += 1) {
+
+      currVal = arr.splice(i, 1)[0];
+      perm(arr.slice(), curr.concat(currVal));
+      arr.splice(i, 0, currVal);
+    }
+  }
+
+  perm(arr);
+  return undefined;
 }
 
 
