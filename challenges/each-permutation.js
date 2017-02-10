@@ -20,10 +20,24 @@ eachPermutation([1, 2, 3], function(perm) {
 [ 3, 2, 1 ]
 */
 
-function eachPermutation(arr, callback) {
-
+function eachPermutation(arr, callback, len = arr.length) {
+  const result = [];
+  function perm(list, cur = []) {
+    if (cur.length === len) return result.push(cur);
+    let item;
+    for (let i = 0; i < list.length; i++) {
+      item = list.splice(i, 1)[0];
+      console.log('items', list);
+      perm(list.slice(), cur.concat(item));
+      list.splice(i, 0, item);
+    }
+  }
+  perm(arr);
+  return result;
 }
 
-
+// console.log(eachPermutation([1, 2, 3], function(perm) {
+//   console.log(perm) 
+// }));
 
 module.exports = eachPermutation;
