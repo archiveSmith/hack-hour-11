@@ -32,9 +32,9 @@ function commonElements(...args){
 }
 
 const array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
-const array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
-const array3 = [23,12,12,77,'ferret',9,88,100,'dog'];
-const array4 = ['ferret',12,12,45,9,66,77,78,2000];
+const array2  = [1, 15,9,9,'ferret',9,26,12,12,'dog'];
+const array3 = [1, 23,12,12,77,'ferret',9,88,100,'dog'];
+const array4 = [1, 'ferret',12,12,45,9,66,77,78,2000, 'dog'];
 
 console.log(commonElements(array1, array2, array3, array4));
 
