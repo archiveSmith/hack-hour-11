@@ -15,7 +15,6 @@
 function commonElements(array1, array2, array3, array4){
   const combined = [array1, array2, array3, array4];
   return combined.reduce(intersection);
-
 }
 
 function intersection(arr1, arr2) {
