@@ -12,6 +12,7 @@
 
 // if there are no common numbers or strings return the string "Nothing in Common!"
 
+<<<<<<< HEAD
 function commonElements(...args) {
   let result = [];
   let commons = args.reduce((accum, curr) => {
@@ -28,6 +29,10 @@ function commonElements(...args) {
     return 'Nothing in Common!';
   }
   return result;
+=======
+function commonElements(array1, array2, array3, array4){
+
+>>>>>>> d2423fb4c5dc7f8e289cf89c23642090cb87010e
 }
 
 module.exports = commonElements;
