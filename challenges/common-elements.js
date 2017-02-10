@@ -20,7 +20,8 @@ function commonElements(array1, array2, array3, array4){
       return acc;
   }, {});
 
-  return Object.keys(common);
+  let result = Object.keys(common);
+  return result > 0 ? result : 'Nothing in Common';
 }
 
   // var array1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
