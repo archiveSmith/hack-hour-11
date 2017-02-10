@@ -13,17 +13,10 @@
 // if there are no common numbers or strings return the string "Nothing in Common!"
 
 function commonElements(array1, array2, array3, array4){
-	let answer = [];
-	let testArray = array1.length > 0 ? array1 : array2.length > 0 ? array2 : array3.length > 0 ? array3 : array4.length > 0 ? array4 : "Nothing in Common!";
-	testArray.reduce((acc, ele, index) => {
-		if(array2.indexOf(ele) !== -1 && array3.indexOf(ele) !== -1 && array4.indexOf(ele) !== -1){
-			if(answer.indexOf(ele) === -1){
-			answer.unshift(ele);
-			}
-		}
-	});
-  return answer.length > 0 ? answer : "Nothing in Common!";
+	 return (array1.length > 0 ? array1 : array2.length > 0 ? array2 : array3.length > 0 ? array3 : array4.length > 0 ? array4 : "Nothing in Common!").reduce((acc, ele) =>  array1.indexOf(ele) !== -1 ? array2.indexOf(ele) !== -1 ? array3.indexOf(ele) !== -1 ? array4.indexOf(ele) !== -1 ?  acc === "Nothing in Common!" ? acc = [ele] : acc.indexOf(ele) !== -1 ? acc : acc.concat([ele]) : acc: acc: acc: acc, "Nothing in Common!");
 }
+
+
 
 
 
