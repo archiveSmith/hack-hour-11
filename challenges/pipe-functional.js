@@ -18,7 +18,7 @@
  */
 
 function H(letters) {
-  return 'H' + letters;
+  return (!letters) ? 'H' : 'H' + letters;
 }
 
 // OR
@@ -42,15 +42,16 @@ function H(letters) {
  */
 
 function e(letters) {
-  return "e" + letters;
+  return (!letter) ? 'e' : 'e' + letters
+
 }
 
 function l(letters) {
- return "l" + letters;
+  return (!letter) ? 'l' : 'l' + letters
 }
 
 function o(letters) {
-  return "o" + letters;
+  return (!letter) ? 'o' : 'o' + letters
 }
 
 // const e = (letters) =>;
