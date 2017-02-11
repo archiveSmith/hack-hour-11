@@ -18,8 +18,12 @@
  */
 
 function H(letters) {
+  if (!letters) return 'H'
+  return 'H'.concat(letters);
 
 }
+
+// console.log(H('ello'));
 
 // OR
 
@@ -42,15 +46,18 @@ function H(letters) {
  */
 
 function e(letters) {
-
+  if (!letters) return 'e'
+  return 'e'.concat(letters);
 }
 
 function l(letters) {
-
+  if (!letters) return 'l'
+  return 'l'.concat(letters);
 }
 
 function o(letters) {
-
+  if (!letters) return 'o'
+  return 'o'.concat(letters);
 }
 
 // const e = (letters) =>;
@@ -75,8 +82,13 @@ function o(letters) {
  */
 
 function pipe(functions) {
-
+  return function(startingValue) {
+    return functions.reduce(function(a,b){return a.concat(b())},startingValue);
+  }
 }
+
+// const ello = pipe([e,l,l,o]);
+// console.log(ello('J'));
 
 // OR
 
