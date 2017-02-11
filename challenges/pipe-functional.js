@@ -17,13 +17,13 @@
  * H(); // -> 'H'
  */
 
-function H(letters) {
+// function H(letters) {
 
-}
+// }
 
 // OR
 
-// const H = (letters) =>;
+const H = (letters) => letters ? 'H'.concat(letters) : 'H';
 
 
 
@@ -41,21 +41,21 @@ function H(letters) {
  * o(); // -> 'o'
  */
 
-function e(letters) {
+// function e(letters) {
 
-}
+// }
 
-function l(letters) {
+// function l(letters) {
 
-}
+// }
 
-function o(letters) {
+// function o(letters) {
 
-}
+// }
 
-// const e = (letters) =>;
-// const l = (letters) =>;
-// const o = (letters) =>;
+const e = (letters) => letters ? 'e'.concat(letters) : 'e';
+const l = (letters) => letters ? 'l'.concat(letters) : 'l';
+const o = (letters) => letters ? 'o'.concat(letters) : 'o';
 
 
 
@@ -75,7 +75,9 @@ function o(letters) {
  */
 
 function pipe(functions) {
-
+  return function(start) {
+    return functions.reduceRight((acc, curr) => acc = curr(acc));
+  }
 }
 
 // OR
