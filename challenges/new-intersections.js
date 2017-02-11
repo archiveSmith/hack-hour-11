@@ -14,11 +14,25 @@
  *
  * 	 - x and y will contain the same number of elements
  *   - if a new point is bounded by old points and lands on an old point, then count it
- * 	 
+ * 	 //
  */
 
 function newIntersections(x, y){
+<<<<<<< HEAD
+	let arrLength = x.length;
+  let count = 0;
+	let maxX = Math.max(...x);
+	let minX = Math.min(...x);
+	let maxY = Math.max(...y);
+	let minY = Math.min(...y);
+  for (let i = minX; i < maxX; i += 1) {
+    for (let k = minY; k < maxY; k += 1) {
+      if (x.includes(x[i]) && y[k] < k)
+    }
+  }
+=======
 
+>>>>>>> 4e4d9f1583d9b957be7e3ec443d3521ad1cd4cc6
 }
 
 module.exports = newIntersections;

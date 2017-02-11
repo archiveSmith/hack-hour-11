@@ -40,7 +40,55 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
+  const year = 2017;
+  let month = null;
+  let date = null;
+  let hours = null;
+  let minutes = null;
   
+  const now = new Date();
+
+  let strArr = str.split(' ');
+
+  if (!str.includes(':')) {
+    return now;
+  }
+  if (strArr.length < 3) {
+      return now;
+  }
+
+  if (strArr[0] === "Today" && strArr[1].includes(':')  && strArr[2] === 'AM' || strArr[2] === 'PM') {
+    month = now.getMonth();
+    date = now.getDate(now);
+    
+    let hourSplit = strArr[1].split(':');
+    let tempHour = parseInt(hourSplit[0]);
+    let tempMinutes = parseInt(hourSplit[1]);
+    let amPm = strArr[2];
+    if (amPm === 'PM') {
+        tempHour += 12;
+    }
+    hours = tempHour;
+    minutes = tempMinutes
+
+    return new Date(year, month, date, hours, minutes);
+  }
+
+  if (strArr[0] === 'Sunday' || strArr[0] === 'Monday' || strArr[0] === 'Tuesday' || strArr[0] === 'Wednesday' || strArr[0] === 'Thursday' || strArr[0] === 'Friday' || strArr[0] === 'Saturday' && strArr[1].includes(':')  && strArr[2] === 'AM' || strArr[2] === 'PM') {
+    let dayCache = {
+        Sunday: 0,
+        Monday: 1,
+        Tuesday: 2,
+        Wednesday: 3,
+        Thursday: 4,
+        Friday: 5,
+        Saturday: 6
+    }
+  }
+
+
+
+return now;
 }
 
 module.exports = parseDates;

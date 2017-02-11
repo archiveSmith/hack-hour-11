@@ -11,13 +11,35 @@
 //                     'buzz',
 //                     11,
 //                     'fizz',
-//                     13,
+//                     13,//
 //                     14,
 //                     'fizzbuzz',
 //                     16 ]
 
 function fizzbuzz(num) {
-
+  const result = [];
+  let i = 1;
+  if (num < 0) {
+    for (i; i>=num; i--) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        result.push('fizzbuzz');
+      } else if (i % 5 === 0) {
+        result.push('buzz');
+      } else if (i % 3 === 0) {
+        result.push('fizz');
+      } else result.push(i);
+    }
+  } else {
+    for (i; i<=num; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        result.push('fizzbuzz');
+      } else if (i % 5 === 0) {
+        result.push('buzz');
+      } else if (i % 3 === 0) {
+        result.push('fizz');
+      } else result.push(i);
+    }
+  }
+  return result;
 }
-
 module.exports = fizzbuzz;

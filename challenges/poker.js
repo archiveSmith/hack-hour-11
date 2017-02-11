@@ -16,10 +16,60 @@
 * BONUS: Account for suits and add in Flush & Straight Flush/Royal Flush.
 *
 * Example: poker([3,5,5,5,2], [4,6,7,8,8]) -> "Player 1 wins"
+<<<<<<< HEAD
+*///
+
+function poker(hand1, hand2) {
+
+let hands = {
+    kind4: 6,
+    fullHouse: 5,
+    straight: 4,
+    kind3: 3,
+    pair2: 2,
+    pair: 1,
+    highest: 0,
+}
+
+
+function determineHand (hand) {
+  let handCache = {};
+  let handSort = [];
+
+  handSort = hand.sort((a, b) => { return a - b});
+
+  for (let i = 0; i < hand.length; i += 1) {
+    if (handCache[i]) {
+        handCache[i] += 1;
+    } else {
+        handCache[i] = 1
+    }
+  }
+
+  if (Object.values(handCache).includes(4)) {
+      return 'kind4';
+  } 
+  if (Object.values(handCache).includes(3) && Object.values(handCache).includes(2)) {
+      return 'fullHouse';
+  }
+  if (handSort.reduce)
+  if (Object.values(handCache).includes(3)) {
+      return 'kind3';
+  }
+
+
+
+}
+
+
+
+
+=======
 */
 
 function poker(hand1, hand2) {
 
+>>>>>>> b7868c2ab7103580d6735cb754aeec982bcf7a9f
 }
 
 module.exports = poker;

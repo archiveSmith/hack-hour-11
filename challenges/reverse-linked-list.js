@@ -6,7 +6,7 @@
  * BONUS:
  * Do it in place
  *
- */
+ *///
 
 function Node(value) {
     this.value = value;
@@ -14,7 +14,35 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+let count = -infinity;
+let curr = head;
+let head2 = null
+while(curr !== null){
+    if (curr.next === null) {
+        head2 = new Node(curr)
+    }
+ count++;
+ curr = curr.next;
+}
 
+curr = head;
+let second = head2
+for (let i=count; i>=0;i--) {
+    let counter = i;
+    while(curr !=null){
+     if (curr === counter){
+         while(second != null) {
+            if (second.next === null){
+            second.next = curr;
+            }
+     }
+        count--
+        second = second.next
+    }
+}
+
+
+return head2
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};

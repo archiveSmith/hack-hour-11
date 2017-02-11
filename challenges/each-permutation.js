@@ -21,7 +21,21 @@ eachPermutation([1, 2, 3], function(perm) {
 */
 
 function eachPermutation(arr, callback) {
+  let perms = [];
+  let len = arr.length;
 
+  perm(arr)
+
+  function perm(arr, cur = []) {
+    if (cur.length === len) return perms.push(cur); 
+    let item;
+    for (let i = 0; i < arr.length; i += 1) {
+      item = arr.splice(i, 1)[0];
+      perm(arr.slice(), cur.concat(item));
+      arr.splice(i, 0, item);
+    }
+  }
+perms.forEach((val) => callback(val));
 }
 
 

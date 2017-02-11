@@ -25,7 +25,7 @@
  * Challenge 2: Do this in constant space
  * Challenge 3: Do not mutate the original nodes in any way
  *
- */
+ *///
 
 var Node = function(value) {
   this.value = value;
@@ -33,7 +33,20 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+if (!head || !head.next) {
+  return false;
+}
+let tortoise = head;
+let hare = head.next;
 
+while (hare && hare.next) {
+  if (tortoise === hare) {
+    return true;
+  }
+  tortoise = tortoise.next;
+  hare = hare.next.next
+}
+return false;
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}

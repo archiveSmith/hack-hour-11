@@ -12,6 +12,38 @@
 
 function knightjumps(str) {
 
+  if (!str || str.length < 5) {
+    return undefined;
+  }
+  let count = 0;
+  const startingX = parseInt(str[1]);
+  const startingY = parseInt(str[3]);
+  if (startingX - 1 > 0 && startingY + 2 < 9) {
+    count += 1;
+  }
+  if (startingX - 2 > 0 && startingY + 1 < 9) {
+    count += 1;
+  } 
+  if (startingX - 2 > 0 && startingY - 1 > 0) {
+    count += 1;
+  } 
+  if (startingX - 1 > 0 && startingY - 2 > 0) {
+    count += 1;
+  } 
+  if (startingX+1 < 9 && startingY + 2 < 9) {
+    count += 1;
+  }
+  if (startingX+2 < 9 && startingY + 1 < 9) {
+    count += 1;
+  }
+  if (startingX+2 < 9 && startingY - 1 > 0) {
+    count += 1;
+  }
+  if (startingX+1 < 9 && startingY - 2 > 0) {
+    count += 1;
+  } 
+  return count;
+
 }
 
 module.exports = knightjumps;

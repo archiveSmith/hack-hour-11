@@ -10,7 +10,11 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+<<<<<<< HEAD
+  
+=======
 
+>>>>>>> d2423fb4c5dc7f8e289cf89c23642090cb87010e
 };
 
 module.exports = solveKnapsack;

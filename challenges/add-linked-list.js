@@ -7,14 +7,48 @@
  * Output: 8 -> 0 -> 8
  *
  */
-
+//
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function addLinkedList(l1, l2) {
+let strNum1 = ''
+let strNum2 = ''
 
+let head = l1;
+
+while (head !== null) {
+  console.log(head.value)
+  strNum1 += parseInt(head.value);
+  head = head.next;
+}
+
+head = l2
+while (head !== null) {
+  console.log(head.value)
+  strNum2 += parseInt(head.value);
+  head = head.next;
+}
+
+strNum1 = strNum1.split('').reverse().join('');
+strNum2 = strNum2.split('').reverse().join('');
+
+let resultNum = parseInt(strNum1) + parseInt(strNum2);
+
+let array = resultNum.toString().split('');
+
+let l3 = new Node(parseInt(array[array.length-1]))
+
+head = l3
+
+for (let i = array.length-2; i>=0; i--){
+  head.next = new Node(parseInt(array[i]));
+  head = head.next
+}
+
+return l3;
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

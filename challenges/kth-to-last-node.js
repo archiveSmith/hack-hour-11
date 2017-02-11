@@ -14,7 +14,7 @@
  * d.next = e;
  *
  * kthToLastNode(2,a); -> returns the node with the value 'D' (the second to last node)
- */
+ *///
 
 function Node(val) {
   this.value = val;
@@ -22,6 +22,28 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+
+  let listLength = 0;
+  let focusPosition = 0;
+  let countPosition = 0;
+  let curr = head;
+  while (curr !== null) {
+    listLength++;
+    curr = curr.next;
+}
+
+focusPosition = listLength - k;
+curr = head;
+
+  while (curr !== null) {
+    if (countPosition === focusPosition) {
+      return curr;
+    }
+    countPosition++;
+    curr = curr.next
+  }
+
+return undefined;
 
 }
 

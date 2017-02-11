@@ -11,10 +11,20 @@
  *
  * Extension:
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
- */
+ *///
 
 function binToDec(binary) {
-
+let result = 0
+let multiplier = 1
+for (let i=binary.length-1;i>=0;i--){
+    if (binary[i] === "1"){
+        result += multiplier  
+    } else {
+        result = result
+    }
+    multiplier*=2
+}
+return result;
 }
 
 module.exports = binToDec;

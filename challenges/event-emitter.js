@@ -19,18 +19,22 @@
  * - If `obj.trigger` is called with additional arguments, pass those to the
  *   listeners.
  * - It is not necessary to write a way to remove listeners.
- */
+ *///
 
 function EventEmitter() {
-
+this.listeners = [];
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+this.listeners.push({funcName: func})
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+this.listeners.forEach((val) => {
+    if (val[funcName]){
+        val[funcName](...args);
+    }
+})
 };
 
 module.exports = EventEmitter;
