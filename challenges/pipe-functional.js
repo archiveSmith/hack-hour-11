@@ -76,10 +76,10 @@ function o(letters) {
  */
 
 function pipe(functions) {
-  return (startVal) => startVal ? functions.reverse().reduce((acc, cur) => cur(acc), startVal) : functions.reverse().reduce((acc, cur) => cur(acc), '');
+  return (startVal) => startVal ? functions.reduceRight((acc, cur) => cur(acc), startVal) : functions.reduceRight((acc, cur) => cur(acc), '');
 }
 // const hello = pipe([H, e, l, l, o]);
-// console.log(hello());
+// console.log(hello('!'));
 // OR
 
 // const pipe = (functions) =>;
@@ -131,6 +131,7 @@ function letterGenerator(letter) {
 // OR
 
 // const letterGenerator = (letter) =>;
+
 //  const Hello = pipe([
 //    letterGenerator('H'),
 //     letterGenerator('e'),
