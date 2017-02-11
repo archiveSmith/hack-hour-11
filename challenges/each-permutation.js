@@ -21,9 +21,22 @@ eachPermutation([1, 2, 3], function(perm) {
 */
 
 function eachPermutation(arr, callback) {
+  getPerms(arr).forEach(perm => callback(perm));
 
+  function getPerms(arr, len = arr.length) {
+    const result = [];
+    function perm(items, cur = []) {
+      if (cur.length === len) return result.push(cur);
+      let item;
+      for (let i = 0; i < items.length; i += 1) {
+        item = items.splice(i, 1)[0];
+        perm(items.slice(), cur.concat(item));
+        items.splice(i, 0, item);
+      }
+    }
+    perm(arr);
+    return result;
+  }
 }
-
-
 
 module.exports = eachPermutation;
