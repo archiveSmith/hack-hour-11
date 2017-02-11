@@ -18,7 +18,7 @@
  */
 
 function H(letters) {
-
+  if (arguments < 1) return 'H'; else return 'H' + [...arguments].join('');
 }
 
 // OR
@@ -42,15 +42,15 @@ function H(letters) {
  */
 
 function e(letters) {
-
+  if (arguments < 1) return 'e'; else return 'e' + [...arguments].join('');  
 }
 
 function l(letters) {
-
+  if (arguments < 1) return 'l'; else return 'l' + [...arguments].join('');
 }
 
 function o(letters) {
-
+  return 'o';
 }
 
 // const e = (letters) =>;
@@ -75,7 +75,7 @@ function o(letters) {
  */
 
 function pipe(functions) {
-
+  const pipeArgs = arguments; return (startVal) => pipeArgs.reduceRight((accum, curr) => curr(accum()), pipeArgs[0](startVal) );
 }
 
 // OR
@@ -123,7 +123,7 @@ function pipe(functions) {
  */
 
 function letterGenerator(letter) {
-
+  if (arguments === 1) return letter; else if (arguments.length > 1) return letter + [...arguments].slice(1).join(''); else return undefined;
 }
 
 // OR
