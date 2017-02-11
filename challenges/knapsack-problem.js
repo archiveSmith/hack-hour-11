@@ -9,12 +9,20 @@
   solveKnapsack(items, 5); // returns 9 (from items[1] and items[2])
 */
 
-function solveKnapsack(items, weightAvailable) {
-<<<<<<< HEAD
-  
-=======
+function solveKnapsack(itemsLeft, weightAvailable) {
+  if (itemLeft.length === 0 || weightAvailable === 0) return 0;
 
->>>>>>> d2423fb4c5dc7f8e289cf89c23642090cb87010e
+  if (itemsLeft[0].weight > weightAvailable) {
+    return solveKnapsack(itemsLeft.slice(1), weightAvailable)
+  }
+
+  else {
+    var left = itemsLeft.slice(1);
+    var takeItem = itemsLeft[0].value + solveKnapsack(left, weightAvailable - itemsLeft[0].weight);
+    var leaveItem = solveKnapsack(left, weightAvailable);
+
+    return (takeItem > leaveItem) ? takeItem : leaveItem;
+  }
 };
 
 module.exports = solveKnapsack;
