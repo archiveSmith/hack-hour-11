@@ -18,8 +18,11 @@
  */
 
 function H(letters) {
-
+	return 'H' + (letters || '');
 }
+
+// console.log(H('ello'));
+// console.log(H());
 
 // OR
 
@@ -42,15 +45,15 @@ function H(letters) {
  */
 
 function e(letters) {
-
+	return 'e' + (letters || '');
 }
 
 function l(letters) {
-
+	return 'l' + (letters || '');
 }
 
 function o(letters) {
-
+	return 'o' + (letters || '');
 }
 
 // const e = (letters) =>;
@@ -75,8 +78,11 @@ function o(letters) {
  */
 
 function pipe(functions) {
-
+	return function() {return functions.forEach(function(func, i){return func();});};
 }
+
+// const hello = pipe([H, e, l, l, o]);
+// console.log(hello());
 
 // OR
 
