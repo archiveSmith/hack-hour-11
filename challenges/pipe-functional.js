@@ -128,7 +128,7 @@ function pipe(functions) {
 
 function letterGenerator(letter) {
   return function (input) {
-    return letter += input;
+    return  letter += input;
   }
 }
 
