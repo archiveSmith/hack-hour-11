@@ -17,10 +17,12 @@
  * H(); // -> 'H'
  */
 
+
 function H(letters) {
 	return letters ? 'H' + letters : 'H';
 
 }
+
 
 // OR
 
@@ -43,15 +45,15 @@ function H(letters) {
  */
 
 function e(letters) {
-	return letters ?'e' + letters : 'e';
+	return letters ? letters + 'e' : 'e';
 }
 
 function l(letters) {
-	return letters ? 'l' + letters : 'l';
+	return letters ? letters + 'l' : 'l';
 }
 
 function o(letters) {
-	return letters ? 'o' + letters : 'o';
+	return letters ? letters + 'o' : 'o';
 }
 
 // const e = (letters) =>;
@@ -76,7 +78,7 @@ function o(letters) {
  */
 
 function pipe(functions) {
-	return (value) => value ? value + functions.reduceRight((acc, ele, ind) => ele(acc), undefined) : functions.reduceRight((acc, ele, ind) => ele(acc), undefined);
+	return (value) => value ? value + functions.reduce((acc, ele, ind) => ele(acc), undefined) : functions.reduce((acc, ele, ind) => ele(acc), undefined);
 }
 
 // OR
@@ -124,7 +126,7 @@ function pipe(functions) {
  */
 
 function letterGenerator(letter) {
-	return val => val ? letter ? letter + val : val : letter ? letter : '';
+	return val => val ? letter ? val + letter : val : letter ? letter : '';
 }
 
 // OR
