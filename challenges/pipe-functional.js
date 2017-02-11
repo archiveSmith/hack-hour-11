@@ -18,7 +18,7 @@
  */
 
 function H(letters) {
-
+  return letters ? 'H' + letters : 'H';
 }
 
 // OR
@@ -42,15 +42,15 @@ function H(letters) {
  */
 
 function e(letters) {
-
+  return letters ? 'e' + letters : 'e';
 }
 
 function l(letters) {
-
+  return letters ? 'l' + letters : 'l';
 }
 
 function o(letters) {
-
+  return letters ? 'o' + letters : 'o';
 }
 
 // const e = (letters) =>;
@@ -67,16 +67,22 @@ function o(letters) {
  * It will then return a function that takes one input, a starting value
  * This inner function will call all the functions in the passed in array
  * It will pass each function's returned result into the next function call
- * If there is a starting value it will plug it in as the input to the first function called
+ * If there is a starting value it will plug it in as the input to the first function
+ called
  * const hello = pipe([H, e, l, l, o]); // -> [function]
  * hello(); // -> 'Hello'
  * const ello = pipe([e, l, l, o]); // -> [function]
  * ello('J'); // -> 'Jello'
  */
 
-function pipe(functions) {
-
-}
+ function pipe(functions) {
+   return (input) => {
+     return functions.reduce((memo, item, index) => {
+       console.log(memo)
+       return input && index === 0 ? memo += input + item() : memo += item()
+     }, '')
+   }
+ }
 
 // OR
 
@@ -93,7 +99,8 @@ function pipe(functions) {
  * How can we abstract that out into a function
  * Create a function letterGenerator
  * It will abstract out the functionality of those earlier defined letter functions
- * It is going to return functions with the same functionality as your previous letter functions
+ * It is going to return functions with the same functionality as your previous
+ letter functions
  * These functions will create the letter based on the input to the outer function
  * const H = letterGenerator('H');
  * const i = letterGenerator('i');
@@ -122,9 +129,11 @@ function pipe(functions) {
  * helloWorld(); // -> 'Hello, World!'
  */
 
-function letterGenerator(letter) {
-
-}
+ function letterGenerator(letter) {
+   return function (letters) {
+     return letters ? letter + letters : letter;
+   }
+ }
 
 // OR
 
