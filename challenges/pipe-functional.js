@@ -18,7 +18,7 @@
  */
 
 function H(letters) {
-	return letters ? letters + 'H' : 'H';
+	return letters ? 'H' + letters : 'H';
 
 }
 
@@ -43,15 +43,15 @@ function H(letters) {
  */
 
 function e(letters) {
-	return letters ? letters + 'e' : 'e';
+	return letters ?'e' + letters : 'e';
 }
 
 function l(letters) {
-	return letters ? letters + 'l' : 'l';
+	return letters ? 'l' + letters : 'l';
 }
 
 function o(letters) {
-	return letters ? letters + 'o' : 'o';
+	return letters ? 'o' + letters : 'o';
 }
 
 // const e = (letters) =>;
@@ -76,7 +76,7 @@ function o(letters) {
  */
 
 function pipe(functions) {
-	return (value) => value ? functions.reduce((acc, ele, ind) => ele(acc), value) : functions.reduce((acc, ele, ind) => ele(acc), undefined);
+	return (value) => value ? value + functions.reduceRight((acc, ele, ind) => ele(acc), undefined) : functions.reduceRight((acc, ele, ind) => ele(acc), undefined);
 }
 
 // OR
