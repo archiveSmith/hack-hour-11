@@ -76,7 +76,7 @@ function o(letters) {
  */
 
 function pipe(functions) {
-  return (startVal) => functions.reverse().reduce((acc, cur) => cur(acc), startVal);
+  return (startVal) => startVal ? functions.reverse().reduce((acc, cur) => cur(acc), startVal) : functions.reverse().reduce((acc, cur) => cur(acc));
 }
 // const hello = pipe([H, e, l, l, o]);
 // console.log(hello());
