@@ -100,4 +100,4 @@ function poker(hand1, hand2) {
 
 module.exports = poker;
 
-// console.log(poker([1, 1, 2, 2, 6], [1, 1, 2, 2, 8]));
+// console.log(poker([1, 1, 1, 2, 2], [1, 1, 1, 3, 3]));
