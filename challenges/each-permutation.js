@@ -35,7 +35,7 @@ function eachPermutation(arr, callback) {
       arr.splice(i, 0, item);
     }
   }
-return perms.forEach((val) => callback(val));
+perms.forEach((val) => callback(val));
 }
 
 
