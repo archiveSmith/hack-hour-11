@@ -23,7 +23,7 @@
 
 // OR
 
-const H = (letters) => `H${letters}`;
+const H = (letters) => `H${ letters || '' }`;
 
 /*
  * PART 2
@@ -47,9 +47,9 @@ const H = (letters) => `H${letters}`;
 
 // }
 
-const e = (letters) => `e${letters}`;
-const l = (letters) => `l${letters}`;
-const o = (letters) => `o${letters}`;
+const e = (letters) => `e${ letters || '' }`;
+const l = (letters) => `l${ letters || '' }`;
+const o = (letters) => `o${ letters || '' }`;
 
 
 /*
@@ -77,7 +77,7 @@ const pipe = (functions, result = '') => {
   return pipe(functions, result);
 };
 
-// const hello = pipe([H, e, l, l, o]);
+const hello = pipe([H, e, l, l, o]);
 
 // console.log(hello);
 
@@ -124,15 +124,15 @@ const pipe = (functions, result = '') => {
 
 // OR
 
-const letterGenerator = (letter) => (letters) => `${letter}${letters}`;
+const letterGenerator = (letter) => (letters) => `${ letter }${ letters || ''}`;
 
-// const Hello = pipe([
-//   letterGenerator('H'),
-//   letterGenerator('e'),
-//   letterGenerator('l'),
-//   letterGenerator('l'),
-//   letterGenerator('o'),
-// ]);
+const Hello = pipe([
+  letterGenerator('H'),
+  letterGenerator('e'),
+  letterGenerator('l'),
+  letterGenerator('l'),
+  letterGenerator('o'),
+]);
 
 // console.log(Hello);
 
