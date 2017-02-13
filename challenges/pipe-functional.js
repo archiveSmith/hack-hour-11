@@ -76,7 +76,15 @@ const o = (letters) => letters ? 'o'.concat(letters) : 'o';
 
 function pipe(functions) {
   return function(start) {
-    return functions.reduceRight((acc, curr) => acc = curr(acc));
+    if (start) {
+      return functions.reduce(function(acc, curr) {
+        return acc = curr(acc);
+      }, start).split('').reverse().join('');
+    } else {
+      return functions.reduceRight(function(acc, curr) {
+        return acc = curr(acc);
+      }, '');
+    }
   }
 }
 
