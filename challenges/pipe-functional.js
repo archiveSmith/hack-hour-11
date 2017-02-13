@@ -71,16 +71,18 @@ const o = (letters) => `o${ letters || '' }`;
 
 // OR
 
-const pipe = (functions, result = '') => {
-  if (functions.length === 0) return result;
-  result = functions.pop()(result);
-  return pipe(functions, result);
+const pipe = (functions, result = '', func = functions[0]) => {
+  if (functions.length === 0) return (str = '') => str + result;
+  func = functions.pop();
+  result = func(result);
+  return pipe(functions, result, func);
 };
 
-const hello = pipe([H, e, l, l, o]);
+// const hello = pipe([H, e, l, l, o]);
+// console.log(hello());
 
-// console.log(hello);
-
+// const ello = pipe([e, l, l, o]); // -> [function]
+// console.log(ello('J')); // -> 'Jello'
 
 /*
  * PART 4 DYNAMIC FUNCTION CREATION
@@ -134,7 +136,7 @@ const Hello = pipe([
   letterGenerator('o'),
 ]);
 
-// console.log(Hello);
+
 
 const objectToExport = {
   H,
