@@ -14,7 +14,6 @@
 */
 
 function drawStairs(n) {
-    let stairs = '';
     for (let i = n - 1; i >= 0; i--) {
         let level = '';
         for (let j = i; j >= 1; j--) {
@@ -23,11 +22,8 @@ function drawStairs(n) {
         while(level.length < n) {
             level += '*';
         }
-        stairs += level + '\n';
+        console.log(level);
     }
-    console.log(stairs);
 }
-
-// drawStairs(3);
 
 module.exports = drawStairs;
