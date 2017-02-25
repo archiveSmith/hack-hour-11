@@ -14,32 +14,19 @@
 
 function modemean(array) {
 	const arrLen = array.length;
-	const arrTotal = array.reduce((acc, curr) => { return acc + curr; });
+	const arrTotal = array.reduce((acc, curr) => acc + curr);
 	const mean = Math.floor(arrTotal / arrLen);
-	const counts = {};
-	const modes = [];
-	let modeCount = 0;
-	let mode;
+  const counts = {};
+  let max = -Infinity;
+  let mode = -Infinity;
+  
+  array.forEach(num => {
+    if (counts[num]) counts[num] += 1;
+    else counts[num] = 1;
+    if (counts[num] >= max && num > mode) mode = num;
+  });
 
-	for (let i = 0; i < arrLen; i += 1) {
-		if (counts[array[i]]) counts[array[i]] += 1;
-		else counts[array[i]] = 1;
-	}
-
-	for (const num in counts) {
-		if (counts[num] > modeCount) modeCount = counts[num];
-	}
-
-	for (let num in counts) {
-		if (counts[num] === modeCount) modes.push(num);
-	}
-
-	mode = modes.reduce((max, cur) => {
-		if (cur > max) return cur;
-		else return max;
-	});
-
-	return mean === mode;
+  return mean === mode;
 }
 
 module.exports = modemean;

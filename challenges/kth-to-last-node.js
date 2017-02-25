@@ -22,23 +22,18 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-	if (head === undefined || k === undefined) return 'Error: k index and head node must be provided';
+	if (head === undefined || k === undefined || k < 1) return undefined;
 
-	const nodeValueStorage = {};
+	const values = [];
 	let current = head;
-	let count = 1;
-	let indexOfTarget;
-	while (current.next !== null) {
-		nodeValueStorage[count - 1] = current;
-		current = current.next;
-		count += 1;
+	while (current !== null) {
+		values.push(current.val);
+    current = current.next;
 	}
 
-	if (k > count || k < 1) return 'Error: k index is out of bounds';
+	if (k > values.length - 1) return undefined;
 
-	nodeValueStorage[count - 1] = current;
-	indexOfTarget = count - k;
-	return nodeValueStorage[indexOfTarget];
+	return values[values.length - k];
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
