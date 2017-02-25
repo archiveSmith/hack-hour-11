@@ -24,16 +24,29 @@ function Node(val) {
 function kthToLastNode(k, head) {
 	if (head === undefined || k === undefined || k < 1) return undefined;
 
-	const values = [];
+	const nodes = [];
 	let current = head;
 	while (current !== null) {
-		values.push(current.val);
+		nodes.push(current);
     current = current.next;
 	}
 
-	if (k > values.length - 1) return undefined;
+	if (k > nodes.length - 1) return undefined;
 
-	return values[values.length - k];
+	return nodes[nodes.length - k].value;
 }
+
+// var a = new Node('A');
+// var b = new Node('B');
+// var c = new Node('C');
+// var d = new Node('D');
+// var e = new Node('E');
+
+// a.next = b;
+// b.next = c;
+// c.next = d;
+// d.next = e;
+
+// console.log(kthToLastNode(2,a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

@@ -23,9 +23,11 @@ function drawStairs(n) {
         while(level.length < n) {
             level += '*';
         }
-        i > 0 ? stairs += level + '\n': stairs += level;
+        stairs += level + '\n';
     }
     console.log(stairs);
 }
+
+// drawStairs(3);
 
 module.exports = drawStairs;
