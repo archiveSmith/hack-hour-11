@@ -24,9 +24,9 @@ function modemean(array) {
   array.forEach(num => {
     if (counts[num]) counts[num] += 1;
     else counts[num] = 1;
-    if (counts[num] >= max && num > mode) {
+    if (counts[num] >= max) {
       max = counts[num];
-      mode = num;
+      if (counts[num] > mode) mode = num;
     };
   });
 
@@ -35,5 +35,5 @@ function modemean(array) {
 
 module.exports = modemean;
 
-// const a = [1, 1, 1, 3, 3, 3];
+// const a = [1, 1, 1, 2, 2, 2, 3, 3];
 // console.log(modemean(a));
