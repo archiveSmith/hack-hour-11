@@ -7,21 +7,15 @@
 // countTwos(11420);  -> 4483
 
 
-function countTwos(num) {
-  let counter = 0;
-  for (let i = 2; i <= num; i++) {
-    i.toString().split('').forEach(digit => digit.toString() === '2' ? counter++ : null);
-  }
-  return counter;
+function countTwos(num, counter = 0) {
+  if (num === 0) return counter;
+  return countTwos(num - 1, counter += num.toString().split('').filter(digit => digit === '2').length);
 }
 
-console.log(countTwos(1));
-console.log(countTwos(10));
-console.log(countTwos(100));
-console.log(countTwos(1000));
-console.log(countTwos(10000));
-console.log(countTwos(11420));
-
-
+// console.log(countTwos(1));
+// console.log(countTwos(3));
+// console.log(countTwos(13));
+// console.log(countTwos(1000));
+// console.log(countTwos(11420));
 
 module.exports = countTwos;

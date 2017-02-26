@@ -23,6 +23,7 @@
 
 // OR
 
+// prefix input letters with `H`
 const H = (letters) => `H${ letters || '' }`;
 
 /*
@@ -47,6 +48,7 @@ const H = (letters) => `H${ letters || '' }`;
 
 // }
 
+// prefix 
 const e = (letters) => `e${ letters || '' }`;
 const l = (letters) => `l${ letters || '' }`;
 const o = (letters) => `o${ letters || '' }`;
@@ -136,6 +138,23 @@ const Hello = pipe([
   letterGenerator('o'),
 ]);
 
+const World = pipe([
+  letterGenerator('W'),
+  letterGenerator('o'),
+  letterGenerator('r'),
+  letterGenerator('l'),
+  letterGenerator('d'),
+]);
+
+const helloWorld = pipe([
+   Hello,
+   letterGenerator(','),
+   letterGenerator(' '),
+   World,
+   letterGenerator('!'),
+ ]);
+
+ console.log(helloWorld()); // -> 'Hello, World!'
 
 
 const objectToExport = {

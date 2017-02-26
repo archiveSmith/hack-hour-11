@@ -16,28 +16,21 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
-  const error = { error: 'Input must be a number greater than 0!' };
-  const list = [];
-  let i;
-
-  if (num < 1 || typeof num !== 'number') {
-    throw error;
-  }
-
-  for (i = 1; i <= num; i++) {
+function fizzbuzz(num, result = []) {
+  for (let i = 1; i <= num; i += 1) {
     if (i % 3 === 0 && i % 5 === 0) {
-      list.push('fizzbuzz');
+      result.push('fizzbuzz');
     } else if (i % 3 === 0) {
-      list.push('fizz');
+      result.push('fizz');
     } else if (i % 5 === 0) {
-      list.push('buzz');
+      result.push('buzz');
     } else {
-      list.push(i);
+      result.push(i);
     }
   }
-
-  return list;
+  return result;
 }
+
+console.log(fizzbuzz(16));
 
 module.exports = fizzbuzz;

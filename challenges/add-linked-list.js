@@ -31,31 +31,31 @@ function addLinkedList(l1, l2) {
   }
 }
 
-const ll1 = {
-  value: 3,
-  next: {
-    value: 1,
-    next: {
-      value: 5,
-      next: null
-    }
-  }
-}
+// const ll1 = {
+//   value: 3,
+//   next: {
+//     value: 1,
+//     next: {
+//       value: 5,
+//       next: null
+//     }
+//   }
+// }
 
-const ll2 = {
-  value: 5,
-  next: {
-    value: 9,
-    next: {
-      value: 2,
-      next: {
-        value: 3,
-        next: null
-      }
-    }
-  }
-}
+// const ll2 = {
+//   value: 5,
+//   next: {
+//     value: 9,
+//     next: {
+//       value: 2,
+//       next: {
+//         value: 3,
+//         next: null
+//       }
+//     }
+//   }
+// }
 
-console.log(addLinkedList(ll1, ll2));
+// console.log(addLinkedList(ll1, ll2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
