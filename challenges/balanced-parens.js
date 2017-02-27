@@ -23,7 +23,6 @@
  *
  *
  */
-console.log(balancedParens(' var hubble = function() { telescopes.awesome();'));
 
 function balancedParens(input) {
 	if (typeof input !== 'string') return undefined;
