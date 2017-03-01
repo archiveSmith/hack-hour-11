@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Write a function to reverse an array in place
  *
@@ -18,9 +17,8 @@ function reverseInPlace(array) {
 	const len = array.length;
 	const halfPoint = (len - 1) / 2;
 	let temp;
-	let i = 0;
 
-	for (; i < halfPoint; i += 1) {
+	for (let i = 0; i < halfPoint; i += 1) {
 		temp = array[i];
 		array[i] = array[len - 1 - i];
 		array[len - 1 - i] = temp;
