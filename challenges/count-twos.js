@@ -12,10 +12,10 @@ function countTwos(num, counter = 0) {
   return countTwos(num - 1, counter += num.toString().split('').filter(digit => digit === '2').length);
 }
 
-// console.log(countTwos(1));
-// console.log(countTwos(3));
-// console.log(countTwos(13));
-// console.log(countTwos(1000));
-// console.log(countTwos(11420));
+console.log(countTwos(1));
+console.log(countTwos(3));
+console.log(countTwos(13));
+console.log(countTwos(1000));
+console.log(countTwos(11420));
 
 module.exports = countTwos;
