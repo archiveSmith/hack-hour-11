@@ -14,9 +14,9 @@ function mergeRanges(arr) {
   .sort((a, b) => a[0] - b[0])
   .reduce((acc, cur, i, a) => {
     if (!acc[acc.length - 1]) acc.push(cur);
+    if (cur[0] >= acc[acc.length - 1][1] && cur[1] <= acc[acc.length - 1][0]) return acc;
     if (cur[0] > acc[acc.length - 1][1]) acc.push(cur);
     if (cur[0] <= acc[acc.length - 1][1]) acc[acc.length - 1][1] = acc[acc.length - 1][1][1] > cur[1] ? acc[acc.length - 1][1][1] : cur[1];
-    if (cur[0] >= acc[acc.length - 1][1] && cur[1] <= acc[acc.length - 1][0]) return acc;
     return acc;
   }, []);
 }
