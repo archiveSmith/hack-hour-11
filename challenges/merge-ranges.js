@@ -16,9 +16,10 @@ function mergeRanges(arr) {
     if (!acc[acc.length - 1]) acc.push(cur);
     if (cur[0] > acc[acc.length - 1][1]) acc.push(cur);
     if (cur[0] <= acc[acc.length - 1][1]) acc[acc.length - 1][1] = acc[acc.length - 1][1][1] > cur[1] ? acc[acc.length - 1][1][1] : cur[1];
+    if (cur[0] >= acc[acc.length - 1][1] && cur[1] <= acc[acc.length - 1][0]) return acc;
     return acc;
   }, []);
 }
 
-// console.log(mergeRanges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]));
+console.log(mergeRanges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]));
 module.exports = mergeRanges;
