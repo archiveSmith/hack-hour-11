@@ -3,13 +3,8 @@
  */
 
 function pow(base, power) {
-	let result;
-	let fixedPower = Math.abs(Math.floor(power));
-	if (fixedPower === 0) return 1;
-	if (fixedPower === 1) return base;
-	result = base * pow(base, (fixedPower - 1));
-	if (power < 0) return 1 / result;
-	return result;
+	if (!power) return 1;
+  return base * pow(base, power - 1);
 }
 
 module.exports = pow;
