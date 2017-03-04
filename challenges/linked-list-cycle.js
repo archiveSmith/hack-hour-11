@@ -33,14 +33,13 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-  let cur = head;
-
-  while (cur) {
-    if (cur.seen) return true;
-    cur.seen = true;
-    cur = cur.next;
+  let tort = head;
+  let hare = head.next;
+  while (hare) {
+    if (tort === hare) return true;
+    tort = tort.next;
+    hare = hare.next.next;
   }
-
   return false;
 }
 
