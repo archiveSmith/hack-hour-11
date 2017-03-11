@@ -33,6 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  if (!head) return false;
   let tort = head;
   let hare = head.next;
   while (hare) {
