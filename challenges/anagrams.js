@@ -13,8 +13,8 @@
   */
 
 function anagrams(string, cur = '', cache = {}) {
-  if (typeof string !== 'string') return [''];
-  if (!string.length) return cache[cur] = true;
+  if (typeof string !== 'string') return undefined;
+  if (!string.length) cache[cur] = true;
   for (let i = 0; i < string.length; i += 1) {
     const selected = string.charAt(i);
     const rest = string.slice(0, i) + string.slice(i + 1);
