@@ -58,11 +58,8 @@ function numToWords(num) {
   for (let i = 0; i < len; i += 2) {
     if (n >= numWords[i]) {
       const prepend = Math.floor(n / numWords[i]);
-      if (prepend === 1) {
-        word += numWords[i + 1];
-      } else {
-        word += numToWords(prepend) + numWords[i + 1];
-      }
+      if (prepend === 1) word += numWords[i + 1];
+      else word += numToWords(prepend) + numWords[i + 1];
       n -= (prepend * numWords[i]);
     }
   }
@@ -70,3 +67,5 @@ function numToWords(num) {
 }
 
 module.exports = numToWords;
+
+// console.log(numToWords(300546));
