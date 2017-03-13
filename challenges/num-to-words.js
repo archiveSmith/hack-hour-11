@@ -1,4 +1,3 @@
-'use strict';
 // Write a function that takes a number as an argument and returns its english word representation as a string. Answers should be in upper camel case (a.k.a. Pascal case). Don't worry about spaces.
 // Include support for 11-19 ('Eleven', 'Twelve', 'Thirteen', ... 'Nineteen').
 
@@ -68,4 +67,4 @@ function numToWords(num) {
 
 module.exports = numToWords;
 
-// console.log(numToWords(300546));
+// console.log(numToWords(211));
