@@ -4,13 +4,13 @@
  *      at any given node, the value of all the nodes in its right tree must be > its value
  */
 
-const bst = new BinaryTree(10);
-bst.right = new BinaryTree(12);
-bst.left = new BinaryTree('a');
-bst.left.left = new BinaryTree(3);
-bst.left.right = new BinaryTree('a');
-console.log(bst);
-console.log(validBST(bst));
+// const bst = new BinaryTree(10);
+// bst.right = new BinaryTree(12);
+// bst.left = new BinaryTree('a');
+// bst.left.left = new BinaryTree(3);
+// bst.left.right = new BinaryTree('a');
+// console.log(bst);
+// console.log(validBST(bst));
 
 
 function BinaryTree(val) {
