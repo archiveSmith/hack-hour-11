@@ -6,8 +6,8 @@
 
 // const bst = new BinaryTree(10);
 // bst.right = new BinaryTree(11);
-// bst.left = new BinaryTree(9);
-// bst.left.left = new BinaryTree(3);
+// bst.left = new BinaryTree(7);
+// bst.left.right = new BinaryTree(8);
 // bst.left.right = new BinaryTree('a');
 // console.log(bst);
 // console.log(validBST(bst));
@@ -19,43 +19,22 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(node) {
-  if (typeof node.value !== 'number') return false;
-  if (node.right) {
-    if (node.value >= node.right.value) return false;
-    if (validBST(node.right) === false) return false;
-  }
-  if (node.left) {
-    if (node.value < node.left.value) return false;
-    if (validBST(node.left) === false) return false;
+function validBST(tree) {
+  const flatTree = getArray(tree);
+
+  for (let l = flatTree.length - 1, i = 0; i < l; i += 1) {
+    if (flatTree[i] > flatTree[i + 1]) return false;
   }
 
   return true;
+  
+  function getArray(node, arr = []) {
+    if (node.left) getArray(node.left, arr);
+    arr.push(node.value);
+    if (node.right) getArray(node.right, arr);
+    return arr;
+  }
 }
 
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
-
-// if (tree.right) {
-//   if (tree.right.value < tree.value) return false;
-//   return validBST(tree.right);
-// }
-// if (tree.left) {
-//   if (tree.left.value > tree.value) return false;
-//   return validBST(tree.left);
-// }
-// function checkRight(node) {
-//   if (!node.right) rightValid = true;
-//   else {
-//     if (node.right.value > node.value) rightValid = true;
-//     return validBST(node.right);
-//   }
-// }
-
-// function checkLeft(node) {
-//   if (node.left) {
-//     if (node.left.value > node.value) return false;
-//     return validBST(node.left);
-//   }
-// }
-// return rightValid && leftValid;
