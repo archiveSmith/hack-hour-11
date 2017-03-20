@@ -21,7 +21,7 @@ eachPermutation([1, 2, 3], function(perm) {
 */
 
 function eachPermutation(arr, callback) {
-
+  arr.forEach(callback());
 }
 
 
