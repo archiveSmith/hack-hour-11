@@ -32,19 +32,15 @@ function superbalanced(tree) {
       }
       return checkHeight(node.left, count);
     }
-  }
+  };
 
   if (tree.left && tree.right) {
-    leftMaxH = 1;
-    rightMaxH = 1;
-    leftMaxH = checkHeight(tree.left, leftMaxH);
-    rightMaxH = checkHeight(tree.right, rightMaxH);
+    leftMaxH = checkHeight(tree.left, 1);
+    rightMaxH = checkHeight(tree.right, 1);
   } else if (tree.right) {
-    rightMaxH = 1;
-    rightMaxH = checkHeight(tree.right, rightMaxH);
+    rightMaxH = checkHeight(tree.right, 1);
   } else {
-    leftMaxH = 1;
-    leftMaxH = checkHeight(tree.left, leftMaxH);
+    leftMaxH = checkHeight(tree.left, 1);
   }
 
   // console.log([leftMaxH, rightMaxH]);
