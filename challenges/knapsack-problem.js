@@ -10,24 +10,19 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
-  let itemsWeights = [];
-  let result = 0;
-  let k = 0;
-  for (let i = 0; i < items.length; i++) {
-    const density = items[i].value / items[i].weight
-    itemsWeights.push({"density": density, "weight": items[i].weight, "value": items[i].value});
+  if (!items.length || !weightAvailable) return 0;
+
+  if (items[0] > weightAvailable) {
+    return solveKnapsack(items.slice(1), weightAvailable);
   }
-  itemsWeights.sort((a,b) => a.density < b.density);
-  console.log(itemsWeights);
-  while (weightAvailable > 0) {
-    if (!itemsWeights[k]) return result;
-    if (itemsWeights[k].weight < weightAvailable) {
-      result += itemsWeights[k].value;
-      weightAvailable -= itemsWeights[k].weight;
-    }
-    k += 1;
+
+  else {
+    var left = items.slice(1);
+    var takeItem = items[0].value + solveKnapsack(left, weightAvailable - items[0]);
+    var leaveItem = solveKnapsack(left, weightAvailable);
+
+    return (takeItem > leaveItem) ? takeItem : leaveItem;
   }
-  return result;
 };
 
 module.exports = solveKnapsack;
