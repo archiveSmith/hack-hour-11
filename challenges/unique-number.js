@@ -10,7 +10,12 @@
  *
  */
 function uniqueNumber(array) {
-
+  let resultObj = {};
+  array.forEach((i) => {
+    if (resultArr[i]) delete resultObj[i];
+    else resultArr[i] = i;
+  })
+  return Object.keys(resultObj)[0];
 }
 
 module.exports = uniqueNumber;
