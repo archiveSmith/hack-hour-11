@@ -79,8 +79,11 @@ function pipe(functions) {
   return (startVal) => startVal ? functions.reduceRight((acc, cur) => cur(acc), startVal) : functions.reduceRight((acc, cur) => cur(acc), '');
 }
 // const hello = pipe([H, e, l, l, o]);
-// console.log(hello('!'));
+// console.log(hello);
+// console.log(hello());
 // OR
+// const ello = pipe([e, l, l, o]);
+// console.log(ello('J'));
 
 // const pipe = (functions) =>;
 
