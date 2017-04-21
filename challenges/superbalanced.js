@@ -14,7 +14,7 @@ function BinaryTree(value) {
 }
 
 function getHeight(bst) {
-  if (bst === undefined) {
+  if (!bst) {
     return 0;
   }
 
@@ -22,6 +22,8 @@ function getHeight(bst) {
 }
 
 function superbalanced(tree) {
+
+  if (!tree) return true;   
   
   const leftHeight = getHeight(tree.left);
   const rightHeight = getHeight(tree.right);
