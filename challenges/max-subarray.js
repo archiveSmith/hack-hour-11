@@ -25,7 +25,7 @@ function maxSubarray(arr) {
 //     } else {
 //       sum = 0;
 //     }
-//   }
+//   } //hello
   
   for (let j = 1; j < arr.length; j += 1) {
 
