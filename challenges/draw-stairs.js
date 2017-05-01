@@ -14,7 +14,31 @@
 */
 
 function drawStairs(n) {
+	let str = "";
+for(let i = n; i > 0; i--) {
 
+	let difference = n - i;
+str = str + strGen(i) + "/n";
+}
+
+function whiteGen(num) {
+		let str1 = "";
+	if(num > 0) {
+		str1 = str1 + " ";
+		whiteGen(num - 1);
+	}
+	console.log(str1);
+}
+
+function strGen(num) {
+	let str1 = "";
+	if(num > 0) {
+	str1 = str1 + "*";
+	strGen(num - 1);
+} else {
+	console.log(str1;
+}
+console.log(str1);
 }
 
 
