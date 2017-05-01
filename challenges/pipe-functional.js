@@ -133,7 +133,7 @@ function letterGenerator(letter) {
 
 // OR
 
-// const letterGenerator = (letter) =>;
+// const letterGenerator = (letter) => {
 
 //  const Hello = pipe([
 //    letterGenerator('H'),
@@ -157,7 +157,7 @@ function letterGenerator(letter) {
 //     letterGenerator('!'),
 //   ]);
 //   console.log(helloWorld()); // -> 'Hello, World!'
-
+// }
 
 const objectToExport = {
   H,
