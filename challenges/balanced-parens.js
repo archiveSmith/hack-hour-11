@@ -25,7 +25,13 @@
  */
 
 function balancedParens(input){
-
+  const test = ['[', ']', '(', ')', '{', '}']
+  let copy = input.split('').filter(x => test.includes(x));
+  for (let i = 0; i < copy.length; i ++) {
+    
+  }
 }
+
+balancedParens(' var wow  = { yo: thisIsAwesome() }');
 
 module.exports = balancedParens;

@@ -9,7 +9,18 @@
  */
 
 function subsetSum(array, target) {
-
+  let subset = [[]];
+  let len;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0, len = subset.length; j < len; j++) {
+      let combo = subset[j].concat(array[i]);
+      if (combo.reduce((a, c) => a + c) === target) return true;
+      subset.push(combo);
+    }
+  }
+  return false;
 }
 
-module.exports = subsetSum;
+console.log(subsetSum([3, 7, 4, 2], 5));
+
+// module.exports = subsetSum;
