@@ -10,6 +10,32 @@
 
 function subsetSum(array, target) {
 
+
+
+    // if (!array || !target) {
+    //     return false;
+    // }
+
+    // let sortedArr = array.sort(function(a,b){ return a-b; });
+    // let sum = 0;
+
+    // let filteredArr = sortedArr.filter(function(value) { return value <= target; })
+    
+    // for (let i=filteredArr.length-1; i>=0; i--) {
+    //     sum += filteredArr[i];
+    //     if (sum === target) {
+    //         return true;
+    //     }
+    //     if (sum > target) {
+    //         sum = 0;
+    //         filteredArr.splice(i+1);
+    //         i++;
+    //     }
+    // } 
+    // return false;
+
 }
+
+console.log(subsetSum([2,2,2,3,6], 8));
 
 module.exports = subsetSum;

@@ -8,7 +8,39 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    str += ' ';
+    result = [];
+    newWord = '';
 
+    for (let i=0; i<str.length; i++) {
+        if (str[i].match(/[a-zA-Z]/i)) {
+            newWord += str[i].toLowerCase();
+        
+        } else if (newWord || !str[i+1]) { 
+            let reversedWord = newWord.split('').reverse().join('');
+        
+            if (reversedWord === result[result.length-1]){
+                result.pop();
+            } else {
+                if (newWord !== '') {
+                    result.push(newWord);
+                }
+            }
+            newWord = '';
+        }
+    }
+    if (result.length > 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
+
+
+console.log(matchWord('IF()()fi[]'));
+console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw'));
+console.log(matchWord('__ENDDNE__'));
+console.log(matchWord('you hi ih uoy you'));
+console.log(matchWord('__END_DNE-----'));
 
 module.exports = matchWord;
