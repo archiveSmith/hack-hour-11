@@ -7,7 +7,13 @@
  */
 
 function Stack() {
-  // body...
+  this.contents = {};
+  this.length = 0;
+}
+
+Stack.prototype.push = function(ele) {
+  this.contents[this.length + 1] = ele;
+  return this.lenght += 1;
 }
 
 module.exports = Stack;

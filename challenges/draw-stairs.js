@@ -14,7 +14,11 @@
 */
 
 function drawStairs(n) {
-
+  let arr = new Array(n).fill(' ');
+  for (let i = n - 1; i >= 0; i -= 1) {
+    arr[i] = '*';
+    console.log(arr.join(""));
+  }
 }
 
 
