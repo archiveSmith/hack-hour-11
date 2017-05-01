@@ -13,7 +13,20 @@
  */
 
 function reverseInPlace(array) {
-
+  array.length = array.length * 2;
+  let i = 0;
+  let j = array.length;
+  let k = 0;
+  while (i < (array.length / 2)) {
+    array[j] = array[i];
+    j--;
+    i++
+  }
+  while (k <= (array.length / 2) + 2) {
+    array.shift(k)
+    k++;
+  }
+  return array;
 }
 
 module.exports = reverseInPlace;
