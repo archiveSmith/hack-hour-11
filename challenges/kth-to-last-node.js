@@ -19,10 +19,40 @@
 function Node(val) {
   this.value = val;
   this.next = null;
+  this.counts = 0;
 }
 
 function kthToLastNode(k, head) {
-
+  let currentNode = head;
+  currentNode.counts = 1;
+  let lastNode;
+  if(head.next === null && k !== 1){
+   return head;
+  }else{
+    while(currentNode.next !== null){
+      let thisCount = currentNode.counts += 1;
+      currentNode = currentNode.next;
+      currentNode.counts = thisCount;
+    }
+  }
+	 
+  if(currentNode.next === null){
+    currentNode.counts =  currentNode.counts + 1;
+    lastNode = currentNode;
+  }
+  currentNode = head;
+  while(currentNode !== lastNode){
+     if(currentNode.counts === lastNode.counts - k){
+        return currentNode.value;
+     }else{
+    currentNode = currentNode.next;
+  }
+  }
+  return undefined;
 }
 
+
+
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+//Contact GitHub API Training Shop Blog About
+
