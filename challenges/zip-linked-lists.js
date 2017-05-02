@@ -11,6 +11,13 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  let currentMergeOne = l1;
+  let currentMergeTwo = l2;
+  while(currentTravOne.next !== null && currentTravTwo !== null) {
+    currentMergeTwo = currentMergeOne.next;
+    currentMergeOne = currentMergeTwo.next;
+
+  }
 };
 
 module.exports = {Node: Node, zip: zip};

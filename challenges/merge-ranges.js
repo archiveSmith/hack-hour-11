@@ -10,8 +10,28 @@
  */
 
 
-function mergeRanges(array) {
-
-}
+ function mergeRanges(array) {
+   let newRanges = [];
+   let i = 0;
+   while(i < array.length) {
+     if(array[i] === array[array.length - 1]) return newRanges
+     let a = array[i][0];
+     let b = array[i][1];
+     let c = array[i + 1][0];
+     let d = array[i + 1][1];
+     if(b > c || a > c) {
+     let min = Math.min(a, b , c, d)
+     let max = Math.max(a, b, c, d)
+     newRanges.push([min, max])
+     i+=2
+     console.log(newRanges)
+     }
+     else {
+     newRanges.push([a, b])
+     i++;
+     }
+   }
+   return newRanges
+ }
 
 module.exports = mergeRanges;

@@ -13,7 +13,42 @@
  */
 
 function numToWords(num) {
-
+  let nums = {
+    '0': 'Zero',
+    '1': 'One',
+    '2': 'Two',
+    '3': 'Three',
+    '4': 'Four',
+    '5': 'Five',
+    '6': 'Six',
+    '7': 'Seven',
+    '8': 'Eight',
+    '9': 'Nine',
+    '10': 'Ten',
+    '11': 'Eleven',
+    '12': 'Twelve'
+  }
+  let prefixTen = {
+    '2': 'Twen',
+    '3': 'Thir',
+    '4': 'Four',
+    '5': 'Fif',
+    '6': 'Six',
+    '7': 'Seven',
+    '8': 'Eigh',
+    '9': 'Nine'
+  }
+  let prefixIllions = {
+    '9': 'Million',
+    '12': 'Billion',
+    '15': 'Trillion',
+    '18': 'Quadrillion',
+    '21': 'Quintillion'
+  }
+  num = JSON.stringify(num);
+  if(nums[num]){
+    return nums[num]
+  }
 }
 
 module.exports = numToWords;
