@@ -14,7 +14,14 @@
  */
 
 function binToDec(binary) {
-
+  let binArr = binary.split('').reverse();
+  let total=0;
+  let curVal = 1;
+  while(binArr.length){
+   total += binArr.shift() * curVal;
+   curVal = curVal*2;
+  }
+  return total;
 }
 
 module.exports = binToDec;
