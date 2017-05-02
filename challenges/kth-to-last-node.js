@@ -22,7 +22,35 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+	/*
+  let toTheEnd = 0;
+  
+  function inner(k, head) {
+    console.log(toTheEnd, k);
+    if (head.next === null) {
+      //console.log("At the end");
+      toTheEnd = 1;
+      return toTheEnd;
+    } else if (toTheEnd && toTheEnd < k) {
+      //console.log("Retreating");
+      return toTheEnd++;
+    } else {
+      //console.log("Dig deeper");
+      toTheEnd = inner(k, head.next);
+      return toTheEnd++;
+    }
+  }
+  
+  if (toTheEnd === k) {
+    return head;
+  }
+  
+  toTheEnd = inner(k, head);
+  */
 
+  for (let i = head; i; i = head.next) {
+
+  }
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

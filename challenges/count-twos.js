@@ -8,7 +8,20 @@
 
 
 function countTwos(num) {
+	var twosCount = 0;
+	for (var i = 0; i <= num; i++) {
+		var search = i.toString();
 
+		for (var j = 0; j < search.length; j++) {
+			if (search[j] === "2") {
+				twosCount++;
+			}
+		}
+	}
+
+	return twosCount;
 }
+
+// console.log(countTwos(22));
 
 module.exports = countTwos;

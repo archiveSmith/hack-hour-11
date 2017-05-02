@@ -11,7 +11,36 @@
 
 
 function mergeRanges(array) {
+	var merged = [];
+	var mergedPos = 0;
 
+	array = array.sort(function(a, b){
+		if (a[0] > b[0]) {
+			return 1;
+		} else {
+			return -1;
+		}
+	});
+
+	merged.push(array[0]);
+
+	for (var i = 1; i < array.length; i++) {
+		if (!(array[i][0] >= merged[mergedPos][0] && array[i][1] <= merged[mergedPos][1])) {
+			if (merged[mergedPos][1] >= array[i][0]) {
+				merged[mergedPos][1] = array[i][1];
+			} else {
+				merged.push(array[i]);
+				mergedPos++;
+			}
+		}		
+	}
+
+	console.log(array);
+	return merged;
 }
+
+ // var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10], [5, 7]];
+
+ // console.log(mergeRanges(times));
 
 module.exports = mergeRanges;

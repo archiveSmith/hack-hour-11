@@ -8,7 +8,56 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+  var wordCloses = {};
+  var wordArr = [];
+  
+  //make all letters uppercase for the purpose of matching later
+  str = str.toUpperCase();
+  
+  //replace all non alpha chars with a space
+  str = str.replace(/[^0-9A-Z]/g, " ");
+  
+  //convert to an array of words
+  str = str.split(" ");
 
+  //now loop through string and push new word/closes to wordCloses object for checking
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== "") {
+      wordArr.push(str[i]);
+    }
+  }
+  
+  //now we have a clean word arr with only potential words and there respective closing (reversed) words  
+  //firstly, we can check to make sure there are an even number of elements. If there aren't, we know that we will have an unclosed tag
+  if (wordArr.length % 2 !== 0) {
+    return false;
+  }
+
+  //now loop through the array for open/closing matches
+  let innerCloseFound = true;
+  while (innerCloseFound) {
+    innerCloseFound = false;
+    for (let i = 0; i < wordArr.length - 1; i++) {
+      //first see if we have to check for a close
+      
+      //check for same length
+      if (wordArr[i].length === wordArr[i + 1].length) {
+        //see if the last character of the current word is equal to the first character of the next word
+        if (wordArr[i] === wordArr[i + 1].split("").reverse().join("")) {
+          wordArr.splice(i, 2);
+          innerCloseFound = true;
+        }
+      }
+    }
+  }
+  
+  //if we don't have any elements left in the array, all words have been closed -> return true. Otherwise return false
+  if (!wordArr.length) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
 
 module.exports = matchWord;

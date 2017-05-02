@@ -13,8 +13,55 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
-
+function getDigits(value) {
+	value = value.toString();
+	if (value.length > 1) {
+		return {
+			keep: parseInt(value[1], 10),
+			carry: parseInt(value[0], 10)
+		}
+	} else {
+		return {
+			keep: parseInt(value[0], 10),
+			carry: 0
+		}
+	}
 }
+	
+
+function addLinkedList(l1, l2) {
+	var value = getDigits(l1.value + l2.value);
+	// console.log(value);
+	var addll = new Node(value.keep);
+	var head = addll;
+	while (l1.next) {
+		value = getDigits(l1.next.value + l2.next.value + value.carry);
+		// console.log(value);
+		addll.next = new Node(value.keep);
+		l1 = l1.next;
+		l2 = l2.next;
+		addll = addll.next;
+	}
+
+	while (l2.next) {
+		addll.next = new Node(l2.next.value + value.carry);
+		l2 = l2.next;
+		addll = addll.next;
+	}
+
+	return head;
+}
+
+// var l1 = new Node(1);
+// l1.next = new Node(2);
+// l1.next.next = new Node(3);
+// l1.next.next.next = new Node(4);
+
+// var l2 = new Node(1);
+// l2.next = new Node(2);
+// l2.next.next = new Node(3);
+// l2.next.next.next = new Node(4);
+
+// console.log(addLinkedList(l1, l2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

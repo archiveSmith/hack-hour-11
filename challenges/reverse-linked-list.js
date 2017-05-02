@@ -7,6 +7,7 @@
  * Do it in place
  *
  */
+ 'use strict'
 
 function Node(value) {
     this.value = value;
@@ -14,7 +15,29 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+	if (!head)
+		return null;
 
+	let c = head;
+	let llvals = [];
+	while (c.next) {
+		llvals[llvals.length] = c.value;
+		c = c.next
+	}
+
+	llvals[llvals.length] = c.value;
+
+	c = head;
+	let i = llvals.length - 1;
+	while (head.next) {
+		head.value = llvals[i];
+		head = head.next
+		i--;
+	}
+
+	head.value = llvals[i];
+
+	return c;
 }
 
 module.exports = {Node: Node, reverseLinkedList: reverseLinkedList};

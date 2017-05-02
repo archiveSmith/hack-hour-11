@@ -9,7 +9,34 @@
  */
 
 function subsetSum(array, target) {
-
+  let sum = 0;
+  let potentialAdditions= [];
+  for (let start = 0; start < array.length; start++) {
+    
+      //create a smaller array with only numbers that can result in a sum of <= target
+      potentialAdditions = array.filter(function(num){
+        if (sum + num <= target) {
+          return num;
+        }
+      });
+      
+      if (potentialAdditions.length) {
+        //still a possibility of getting a subset sum
+        for (let i = 0; i < potentialAdditions.length; i++) {
+          if (sum + potentialAdditions[i] <= target) {
+            sum = sum + potentialAdditions[i];
+            console.log("Adding " + potentialAdditions[i] + " to "+ sum);
+          }
+        }
+      } else {
+        //there aren't any potential additions left -> return false;
+        console.log("\n\nStarting!");
+        sum = array[start];
+      }
+      
+      console.log("current sum: ", sum);
+      console.log("potentials: ", potentialAdditions);
+  }
 }
 
 module.exports = subsetSum;

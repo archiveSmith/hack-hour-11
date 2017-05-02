@@ -25,7 +25,57 @@
  */
 
 function balancedParens(input){
-
+  //generate array with all non bracket characters removed
+  const openBracket = {
+    "[": "]",
+    "{": "}",
+    "(": ")"
+  };
+  const closeBracket = {
+    "]": "[",
+    "}": "{",
+    ")": "("
+  };
+  const bracketArr = [];
+  
+  if (!input) {
+    return false;
+  }
+  
+  input = input.split("");
+  
+  input.forEach(function(char) {
+    if (char === "(" || char === ")" || char === "[" || char === "]" || char === "{" || char === "}") {
+      bracketArr.push(char);
+    }
+  });
+  
+  //check to make sure array is even length, if not a matching opening/closing bracket is missing and therefor not balanced -> return false
+  if (bracketArr.length % 2 !== 0) {
+    return false;
+  }
+  
+  //loop through the array making sure every corresponding character on the opposite end is the correct closing bracket
+  /*
+  for (let i = 0; i < bracketArr.length/2; i++) {
+    if (bracketArr[i] !== closeBracket[bracketArr[bracketArr.length - 1 - i]]) {
+      return false;
+    }
+  }
+  */
+  
+  let startPos = 0;
+  
+  while (startPos < bracketArr.length) {
+    let openChar = bracketArr[startPos];
+    for (let i = startPos + 1; i < bracketArr.length; i++) {
+      if (openBracket[bracketArr[i]]) {
+        
+      }
+    }
+  }
+  
+  return true;
 }
 
 module.exports = balancedParens;
