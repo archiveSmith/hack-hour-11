@@ -12,7 +12,42 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
+    if (!tree) {
+        return false;
+    }
+    let isBalanced = true;
+    recurse(tree);
+
+    function recurse(curr) {
+        //console.log('curr is now ' + curr.value)
+        if (curr.left !== null) {
+            if (curr.left.value <= curr.value) {
+                recurse(curr.left);
+            } else {
+                isBalanced = false;
+                
+            }
+        }
+        if (curr.right !== null) {
+            if (curr.right.value >= curr.value) {
+                recurse(curr.right);
+            } else {
+                isBalanced = false;
+                
+            }
+        } return;
+    } 
+    
+    return isBalanced;
 
 }
+
+let tree = new BinaryTree(6);
+// tree.left = new BinaryTree(3);
+// tree.right = new BinaryTree(9);
+// tree.left.left = new BinaryTree(1);
+// tree.right.right = new BinaryTree(12);
+
+console.log(validBST(tree));
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};

@@ -11,7 +11,19 @@
  */
 
 function repeatNumbers(array) {
+    if (!array) {
+        return false;
+    }
 
+    let seenSoFar = {};
+    for (let i=0; i<array.length; i++) {
+        if (!seenSoFar[array[i]]) {
+            seenSoFar[array[i]] = true;
+        } else {
+            return array[i];
+        }
+    } return false;
 }
+
 
 module.exports = repeatNumbers;
