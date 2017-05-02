@@ -25,7 +25,38 @@ Challange:
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
 */
+// function missingNum(Array) {
+
+//   let arraySum = 0;
+//   const len = Array.length;
+//   let sum = (len*(len+1))/2;
+//   let max = -Infinity;
+
+//   for (let i = 0; i < len; i += 1) {
+//     if (max < Array[i]) max = Array[i];
+//     arraySum += Array[i];
+//   }
+
+//   return max - (arraySum - sum);
+// }
+
 function missingNum(Array) {
+
+  let arraySum = 0;
+  const len = Array.length;
+  let sum = ((len + 1)*(len+2))/2;
+  let max = -Infinity;
+  let comp = 0;
+
+  for (let i = 0; i < len; i += 1) {
+    if (max < Array[i]) max = Array[i];
+    arraySum += Array[i];
+  }
+// console.log('array sum:', arraySum);
+//   //return max - (arraySum - sum);
+//   console.log('sum',sum);
+  
+  return sum - arraySum;
 }
 
 module.exports = missingNum;

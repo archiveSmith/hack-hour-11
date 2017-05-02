@@ -10,12 +10,26 @@
   ****
  *****
 ******
+<<<<<<< HEAD
+=======
 
+>>>>>>> fe0e09e39e24b93f6b7ba7713891d144539a85b7
 */
 
 function drawStairs(n) {
 
+  for (let i = 1; i <= n; i += 1) {
+    let str = '';
+    for (let j = i; j < n; j += 1) {
+      str += ' ';
+    }
+    for (let k = n - i ; k < n; k += 1) {
+      str += '*';
+    }
+    console.log(str);
+  }
 }
 
 
 module.exports = drawStairs;
+

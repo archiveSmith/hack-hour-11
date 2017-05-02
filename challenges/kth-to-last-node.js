@@ -23,6 +23,37 @@ function Node(val) {
 
 function kthToLastNode(k, head) {
 
+  let length = 0;
+  let currNode = head;
+
+  while (currNode !== null) {
+    length += 1;
+    currNode = currNode.next;
+  }
+
+  if (length - k <= 0) {
+    return undefined;
+  }
+
+  let currNode2 = head;
+
+  const stop = length - k;
+
+  let count = 0;
+
+  let kthNode;
+
+  while (currNode2 !== null && count <= stop) {
+    if (count !== stop) {
+      currNode2 = currNode2.next
+      count += 1;
+    } else {
+      kthNode = currNode2;
+      break;
+    }
+  }
+
+  return kthNode.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

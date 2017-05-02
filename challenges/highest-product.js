@@ -3,7 +3,20 @@
  */
 
 function highestProduct(array) {
+  const len = array.length;
 
+  if (!array) {
+    return 0;
+  } else if (len < 3) {
+    return 0;
+  }
+  array.sort();
+
+  const productBeginning = array[0] * array[1] * array[len - 1];
+  const productEnd = array[len - 1] * array[len - 2] * array[len - 3];
+  const result = productEnd > productBeginning ? productEnd : productBeginning;
+
+  return result;
 }
 
 

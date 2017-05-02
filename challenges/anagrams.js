@@ -14,6 +14,18 @@
 
 function anagrams(string) {
 
+  const arr = [];
+  const stringArray = string.split('');
+
+  function addPerms(stringArr) {
+    if (stringArr.length < 1) {
+      return stringArr;
+    }
+    let newStr = '';
+    for (let i = 0; i < string.length; i += 1) {
+      newStr += string[i];
+    }
+  }
 }
 
 module.exports = anagrams;

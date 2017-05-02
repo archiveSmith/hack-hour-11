@@ -16,6 +16,28 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+  if (s2.length === 0 && s1.length === 0) {
+    return '';
+  } else if (s2.length < s1.length) {
+    return false;
+  } else if (s2.length === 2 && s1.length === 2) {
+    if (s1.indexOf(s2[0]) > -1 && s2.indexOf(s2[1]) > -1) {
+      return true;
+    }
+    return false;
+  } else if (!isSubstring(s1, s2.slice(0, 2))) {
+    return false;
+  } else {
+    let copyStr = s2.slice(0);
+    for (let i = 0; i < s1.length; i += 1) {
+
+      if (s1 === copyStr) {
+        return true;
+      }
+      copyStr = copyStr.slice(copyStr.length - 1) + copyStr.slice(0, copyStr.length - 1);    
+    }
+    return false;
+  }
 
 }
 

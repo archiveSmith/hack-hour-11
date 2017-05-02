@@ -15,7 +15,32 @@
  */
 
 function countStairs(n) {
+  
+  let sum = 0;
 
+  function count(n) {
+    if (n < 0) {
+      //return 0;
+      return;
+    }
+    if (n < 1) { 
+      sum += 1;
+      //return 1;
+      return;
+    }
+
+    // sum += count(n-2);
+    // sum += count(n-1);
+
+    count(n-2);
+    count(n-1);
+
+    //return sum;
+  }
+
+  count(n);
+
+  return sum;
 }
 
 module.exports = countStairs;

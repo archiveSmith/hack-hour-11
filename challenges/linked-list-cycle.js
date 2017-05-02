@@ -34,6 +34,54 @@ var Node = function(value) {
 
 function hasCycle(head) {
 
+  if (arguments.length < 1 || arguments[0] === null) {
+    return false;
+  }
+
+  let pointer1, pointer2 = head;
+
+  // do {
+  //   if (!(pointer1 = pointer1.next) || !(pointer1 = pointer1.next)) {
+  //     return false;
+  //   }
+  //   pointer2 = pointer2.next;
+
+  // } while (pointer1 !== pointer2);
+
+  // return true;
+
+  if (head.next) {
+    pointer1 = head.next;
+
+    if (pointer1.next === head) {
+      return true;
+    }
+
+    if (head.next.next) {
+      pointer1 = pointer1.next;
+    }
+
+    while (pointer1 !== pointer2) {
+      pointer1 = pointer1.next;
+      if (!pointer1) {
+        return false;
+      }  else if (pointer1 === pointer2) {
+        return true;
+      }
+      pointer1 = pointer1.next;
+      if (!pointer1) {
+        return false;
+      } else if (pointer1 === pointer2) {
+        return true;
+      }
+      pointer2 = pointer2.next;
+    }
+
+    return false;
+
+  } else {
+    return false;
+  }
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
