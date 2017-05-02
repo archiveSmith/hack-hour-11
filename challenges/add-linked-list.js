@@ -14,7 +14,31 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  let value = 0, last, list;
 
+  while (l1 || l2) {
+    if (l1) {
+      value += l1.value;
+      l1 = l1.next;
+    }
+    if (l2) {
+      value += l2.value;
+      l2 = l2.next;
+    }
+    if (last) {
+      last.next = new Node(value % 10);
+      last = last.next
+    } else {
+      list = new Node(value % 10);
+      last = list;
+    }
+    value = value / 10 | 0;
+  }
+  if (value) {
+    last.next = new Node(value);
+  }
+  return list;
 }
+
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
