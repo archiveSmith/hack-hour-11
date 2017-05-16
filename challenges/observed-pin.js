@@ -39,6 +39,15 @@ expectations = {
 
 */
 
+// Success Conditions: I need to get every possible combination of a sequence of possible numbers. Each permutation of the number is limited
+// by its adjacent neighbors. 
+// Possible numbers are numbers that are valid within the sequence, the condition of validity is that they are adjacent to the number on the pad,
+// or in the array of possible numbers corresponding to that key.
+// I need to get every combination of numbers from a sequence of possibilities, every set of possiblities being number being adjacent to an observed digit.
+// For each number in the sequence, I need to get the possible combination of other numbers (the next numbers in the sequence) in the sequence.
+// for the 0th index in the sequence, I need to get the possible combination of for the sequence.slice(1)
+
+
 // const adjacents = {
 //   '0': ['0', '8'],
 //   '1': ['1', '2', '4'],
@@ -54,111 +63,75 @@ expectations = {
 
 // function getPINs(observed) {
 
-//   const len = observed.length;
-//   const combos = [];
+//   // const len = observed.length;
+//   // const adjacentsArr = [];
 
-//   function perms(str, curr = '') {
-//     if (curr.length === len) {
-//       if (combos.indexOf(curr) === -1) {
-//         return combos.push(curr);
-//       } else {
-//         return;
+//   // for (let i = 0; i < observed.length; i += 1) {
+//   //   for (let j = 0; j < adjacent[observed]; j +=1) {
+
+//   //   }
+//   // }
+
+//   // function getCombos(prev = '', letter) { 
+
+//   //   for(let j = 0; j < adjacents[letter].length; j += 1) {
+//   //     adjacentsArr.push(adjacents[observed[i]]);
+//   //   }
+//   // }
+
+//   //const combos = [];
+
+//   function getCombos(observed) {
+//     if (observed.length <= 1) {
+//       return adjacents[observed];
+//     }
+
+//     const remaining = getCombos(observed.slice(1));
+//     const combos = [];
+//     for (let i = 0; i < adjacents[observed][0]; i += 1) {
+//       for (let j = 0; j < remaining.length; j += 1) {
+//         combos = combos.concat((adjacents[observed][0]).concat(remaining[j]));
 //       }
 //     }
 
-//     let num;
-
-//     for (let i = 0; i < str.length; i += 1) {
-      
-//       //item = arr.splice(i, 1)[0];
-
-//       num = str.slice(i, i + 1)[0];
-//       // if (num === '8') {
-
-//       // }
-
-//       str = str.slice(0, i) + str.slice(i + 1);
-
-
-//       // num = str[0];
-
-//       //perms(str.slice(), curr.concat(item));
-//       perms(str.slice(), curr.slice() + num);
-
-//       //str = num + str.slice();
-//       //str.splice(i, 0, item);
-//       str = str.slice(0, i) + num + str.slice(i);
-//     }
+//     return combos;
 //   }
 
-//   for (let i = 0; i < len; i += 1) {
-    
-//     //for (let x = 0; x < len; x += 1) {
-//       for (let j = 0; j < adjacents[observed[i]].length; j += 1) {
-//         if (i === 0) {
-//           // console.log('adjacents[observed[i]][j]', adjacents[observed[i]][j]);
-//           // console.log('observed.slice(i + 1)', observed.slice(i + 1));
-//           //perms(adjacents[observed[i]][j] + observed.slice(i + 1));
-          
-//         } else {
-//           // console.log('observed.slice(0, i)', observed.slice(0, i));
-//           // console.log('adjacents[observed[i]][j]', adjacents[observed[i]][j]);
-//           // console.log('observed.slice(i + 1)', observed.slice(i + 1));
-//           perms(observed.slice(0, i) + adjacents[observed[i]][j] + observed.slice(i + 1));
-
-//         }
-//       }
-//     //}
-//   }
-
-//   //perms(observed);
-
-//     //return combos;
-
-//   return combos;
+//   return getCombos(observed);
 // }
-
 const adjacents = {
-  '0': ['0', '8'],
-  '1': ['1', '2', '4'],
-  '2': ['2', '1', '3', '5'],
-  '3': ['3', '2', '6'],
-  '4': ['4', '5', '7'],
-  '5': ['5', '2', '4', '6', '8'],
-  '6': ['6', '3', '5', '9'],
-  '7': ['7', '4', '8'],
-  '8': ['8', '5', '7', '9', '0'],
-  '9': ['9', '6', '8']
+  0: ['8', '0'],
+  1: ['1', '2', '4'],
+  2: ['1', '2', '3', '5'],
+  3: ['2', '3', '6'],
+  4: ['1', '4', '5', '7'],
+  5: ['2', '4', '5', '6', '8'],
+  6: ['3', '5', '6', '9'],
+  7: ['4', '7', '8'],
+  8: ['5', '7', '8', '9', '0'],
+  9: ['6', '8', '9']
 }
 
 function getPINs(observed) {
+  
+  function getCombos(observed) {
+    if (observed.length <= 1) {
+      return adjacents[observed];
+    }
 
-  const len = observed.length;
-  const adjacentsArr = [];
+    const remaining = getCombos(observed.slice(1));
 
-  for(let i = 0; i < observed.length; i += 1) {
-    adjacentsArr.push(adjacents[observed[i]]);
-  }
-
-  const combos = [];
-
-
-  //function perms(nums) {
-    for(let i = 0; i < len; i += 1) {
-
-      for(let j = 0; j < adjacent[nums[i]].length; j += 1) {
-
+    let combos = [];
+    for (let i = 0; i < adjacents[observed[0]].length; i += 1) {
+      for (let j = 0; j < remaining.length; j += 1) {
+        combos = combos.concat((adjacents[observed[0]][i]).concat(remaining[j]));
       }
     }
-  //}
 
+    return combos;
+  }
 
-  //perms(observed);
-
-    //return combos;
-
-  return combos;
+  return getCombos(observed);
 }
-
 
 module.exports = getPINs
