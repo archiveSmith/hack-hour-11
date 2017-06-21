@@ -23,7 +23,7 @@ function drawStairs(n) {
         while(level.length < n) {
             level += '*';
         }
-        i > 0 ? stairs += level + '\n': stairs += level;
+        i > 0 ? stairs += level + '\n' : stairs += level;
     }
     console.log(stairs);
 }
